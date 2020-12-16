@@ -1,6 +1,10 @@
 <?php namespace App\Models;
 use CodeIgniter\Model;
 
+
+/* Esta clase contiene todas las fucnieons que solicitan lan informacion a la base de datos para la pagina.
+Para acceder a la base de datos, los controladores solo crean una instalcia de esta clase y usan sus metodos 
+cuando se requiere*/ 
 class InicioModel extends Model
 {
 	//coneccion a la base de datos
@@ -75,6 +79,10 @@ class InicioModel extends Model
 	   $query = $db->query("select * from t_preguntas_frecuentes limit 5");
 	   return $query->getResult();
 	}
+
+	/* Este metodo sube la informacion a la tabla t_cita en la base de datos del servidor
+	El parametro $data contiene una matriz de cada valor y su respectivo indext. Los index coniciden con 
+	el nombre de las columnas en la base de datos */
 	public function process_booking($data)
 	{
 		$db   = \Config\Database::connect();

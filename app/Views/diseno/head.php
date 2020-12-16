@@ -289,7 +289,6 @@ foreach ($list_employe as $xx) {
 		})
 
 		}
-
 		
 	}
 </script>

@@ -55,6 +55,9 @@ $query_ss = $db->query("select * from th_employe");
 								<h5 class="link-drop-title"><i class="icon-clock"></i>Tiempo de trabajo</h5>
 								
 								<table class="row-table">
+
+	 								<!--Por que usar una coneccion directa a la base de datos en el View
+									 Porque no usar al Model para obteneer la informacion? Considerese para cambiarse usando la estructura MVC-->
 									<?php
 								   $time_jobs = $db->query("select * from t_time_job");
 								 foreach ($time_jobs->getResult() as $xx) {?>

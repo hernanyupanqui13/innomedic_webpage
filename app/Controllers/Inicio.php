@@ -36,7 +36,12 @@ class Inicio extends BaseController
 		echo view("body/index",$data);
 		echo view("diseno/footer",$data);
 	}
-
+	
+	
+	/* 
+	Esta funcion cuenta el numero de visitas de la pagina. El numero esta en la parte inferior en el footer. 
+	Es solo para el desarrollador, no deberia salir en la pagina final 
+	*/
 	public function cantidad_registro()
 	{
 		if ($this->request->getMethod() === 'post') {
