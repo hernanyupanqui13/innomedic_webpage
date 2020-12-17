@@ -5,14 +5,7 @@
 use App\Models\InicioModel;
 use CodeIgniter\Controller;
 use PHPMailer\PHPMailer\PHPMailer;
-class Inicio extends BaseController
-{
-	
-	function __construct()
-	{
-		# code...
-	} 
-
+class Inicio extends BaseController {
 	public function index()
 	{
 		$model = new InicioModel();
@@ -175,11 +168,12 @@ class Inicio extends BaseController
 
 
 
-	//
-	//
-	//
-	 public function Resultados()
-	 {
+	/* 
+	Esta funcion controla los resultados de loa busqueda en la pagina web. 
+	Carga la plantilla de View/Reusltados y conecta con el Inicio Model  
+	*/
+	public function Resultados()
+	{
 	 	$model = new InicioModel();
 
 		$data = array(
@@ -194,36 +188,25 @@ class Inicio extends BaseController
 			'lista_empleado_categoria' => $model->lista_empleado_categoria(),
 			'lista_employes_data' => $model->lista_employes_data(),
 			'lista_preguntas' => $model->lista_preguntas(),
-
 		);
+
 	 	echo view("body/duplicate/head",$data);
 		echo view("body/resultados");
 		echo view("body/duplicate/footer",$data);
-	 }
-	//
-	//
-	//
-	//
-	//end
-	//
-	//
-	//optimizacion de codigo
-	//
+	}
+
+
 	private function _cargaError()
 	{
 		return redirect()->to(base_url('Inicio/Zona_roja/'));
 	}
-	//
-	//
-	//
-	//Zona Roja
-	//
+	
+
 	public function Zona_roja()
 	{
 		echo view("errors/html/error_501");
 	}
-	//
-	//end 
+
 
 	//Enviar a correo y a celular mensaje 
 

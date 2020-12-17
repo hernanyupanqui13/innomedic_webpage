@@ -699,21 +699,14 @@ En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
 						<div class="doctor-box doctor-box-style2 text-center">
 							<!--<div class="doctor-box-photo">-->
 							<div class="doctor-box-photo">
-								<!--<img src="<?php echo esc(base_url('public/assets/images/content/'.$x->image));?>" class="img-fluid" alt="">-->
 								<center><img src="<?php echo esc(base_url('public/assets/images/content/'.$x->image));?>" class="img-fluid img-responsive img-circle" alt="" style="width: 124px; height: 121px;"></center>
 							</div>
 							<div class="doctor-box-top">
 								<h5 class="doctor-box-name"><?php echo esc($x->name);?></h5>
 								<div class="doctor-box-position"><?php echo esc($x->description);?></div>
 							</div>
-							<!--<ul class="doctor-box-shedule">
-								<li><span>Mon-Thu</span><span>08:00 - 20:00</span></li>
-								<li><span>Friday</span><span>07:00 - 22:00</span></li>
-								<li><span>Saturday</span><span>08:00 - 18:00</span></li>
-							</ul>-->
 							<div class="doctor-box-booking">
 								<a href="javascript:void(0)" onclick="return validate('<?php echo $x->name;?>')">Ver mas<i class="icon-right-arrow"></i></a>
-								<!--<a href="javascript:void(0)" data-toggle="modal" data-target="#modalBookingForm">Ver mas<i class="icon-right-arrow"></i></a>-->
 							</div>
 						</div>
 					</div>
@@ -725,23 +718,21 @@ En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
 	<!--section testimonials-->
 
 	<!--section-->
-	<!--ESTO DE ES PRUEBA-->
-
-
-	<!--ESTO ES DE PRUEBA-->
 	<div class="section py-0" id="testimonialsSectionS">
 		<div class="container-fluid px-0">
 			<div class="row no-gutters" style="background-image: url('<?php echo base_url('public/assets/images/content/reviews-bg.jpg');?>');">
 				
 				
-					<div class="col-sm-4 col-md-2 col-lg-2 col-xl-2">
-					
-					</div>
+				<div class="col-sm-4 col-md-2 col-lg-2 col-xl-2">
+				
+				</div>
 				
 
 			</div>
 		</div>
 	</div>
+
+
 	<!--section services-->
 	<div class="section bg-grey mt-0" id="testimonialsSection">
 		<div class="container">
@@ -772,70 +763,9 @@ En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
 								</div>
 							</div>
 						<?php } ?>
-
-<!--
-						<div class="col-md-6 col-lg-4">
-							<div class="service-card-style3">
-								<div class="service-card-icon">
-									<i class="icon-eye-3"></i>
-								</div>
-								<h5 class="service-card-name">Cataract Treatment</h5>
-								<p>Cataract diagnosis and treatment</p>
-								<div class="mt-2 mt-md-4"></div>
-								<a href="#" class="btn-link" data-toggle="modal" data-target="#modalBookingForm">booking
-									now<i class="icon-right-arrow"></i></a>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg-4">
-							<div class="service-card-style3">
-								<div class="service-card-icon">
-									<i class="icon-eye-4"></i>
-								</div>
-								<h5 class="service-card-name">Laser Eye Surgery</h5>
-								<p>Laser eye surgery and lens surgery</p>
-								<div class="mt-2 mt-md-4"></div>
-								<a href="#" class="btn-link" data-toggle="modal" data-target="#modalBookingForm">booking
-									now<i class="icon-right-arrow"></i></a>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg-4">
-							<div class="service-card-style3">
-								<div class="service-card-icon">
-									<i class="icon-eye-5"></i>
-								</div>
-								<h5 class="service-card-name">Diagnostics and consultation</h5>
-								<p>Pediatric ophthalmology and pediatric optometry</p>
-								<div class="mt-2 mt-md-4"></div>
-								<a href="#" class="btn-link" data-toggle="modal" data-target="#modalBookingForm">booking
-									now<i class="icon-right-arrow"></i></a>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg-4">
-							<div class="service-card-style3">
-								<div class="service-card-icon">
-									<i class="icon-eye-6"></i>
-								</div>
-								<h5 class="service-card-name">Contact lenses</h5>
-								<p>Cataract diagnosis and treatment</p>
-								<div class="mt-2 mt-md-4"></div>
-								<a href="#" class="btn-link" data-toggle="modal" data-target="#modalBookingForm">booking
-									now<i class="icon-right-arrow"></i></a>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg-4">
-							<div class="service-card-style3">
-								<div class="service-card-icon">
-									<i class="icon-glasses"></i>
-								</div>
-								<h5 class="service-card-name">Glasses</h5>
-								<p>Laser eye surgery and lens surgery</p>
-								<div class="mt-2 mt-md-4"></div>
-								<a href="#" class="btn-link" data-toggle="modal" data-target="#modalBookingForm">booking
-									now<i class="icon-right-arrow"></i></a>
-							</div>
-						</div>-->
 					</div>
 				</div>
+
 				<?php $query = $db->query("select count(*) as total from t_clientes_empresas where status=1");
 					$row = $query->getRow();
 					if (isset($row)) {
@@ -855,27 +785,6 @@ En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
 							<p><?php echo $xx->description;?></p>
 						</div>
 						<?php } ?>
-						<!--
-						<div class="service-info">
-							<div class="service-info-num"><span>2</span>/6</div>
-							<p>The optometrists our practice provide eyewear prescriptions and offer corrective laser eye surgery co-management as well.</p>
-						</div>
-						<div class="service-info">
-							<div class="service-info-num"><span>3</span>/6</div>
-							<p>Eye problems can range from mild to severe; some are chronic, while others may resolve on their own.</p>
-						</div>
-						<div class="service-info">
-							<div class="service-info-num"><span>4</span>/6</div>
-							<p>We diagnose and manage ocular diseases such as Glaucoma, Macular Degeneration, Diabetic Retinopathy and Cataracts.</p>
-						</div>
-						<div class="service-info">
-							<div class="service-info-num"><span>5</span>/6</div>
-							<p>If you're ready for an alternative to glasses and/or contacts look to us for co-management of LASIK, cataract, and other ocular surgery.</p>
-						</div>
-						<div class="service-info">
-							<div class="service-info-num"><span>6</span>/6</div>
-							<p>Our eye doctors have the latest technology and lots of experience with eye infections, scratched eye, something stuck in your eye.</p>
-						</div>-->
 					</div>
 				</div>
 			</div>
@@ -892,24 +801,6 @@ En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
 			<div class="title-wrap text-center">
 				<h2 class="h1">Eventos Clínicos</h2>
 				<div class="h-decor"></div>
-			</div>
-			<div class="row blog-grid-full blog-grid-carousel-full js-blog-grid-carousel-full mt-lg-3">
-				<?php
-					$query= $db->query("SET lc_time_names = 'es_PE'");
-				    $query = $db->query("select *, DATE_FORMAT(date,'%d %M  %Y') AS mes from t_eventos where status=1 order by Id asc");
-				    foreach ($query->getResult() as $date) {?>
-				    	<div class="col-md-6 col-lg-4">
-								<div class="blog-post blog-post-style2">
-									<div class="post-image">
-										<img src="<?php echo base_url('public/assets/images/content/'.$date->img)?>" alt="">
-									</div>
-									<h2 class="post-title"><a href="<?php echo base_url('Inicio/detalles_blog/');?>"><?= $date->title;?></a></h2>
-									<div class="post-teaser"><?= $date->description;?></div>
-									<div class="post-date-inline"><?= $date->mes;?></div>
-								</div>
-							</div>
-				    <?php }
-				?>
 			</div>
 		</div>
 	</div>
@@ -950,34 +841,34 @@ En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
 
 
 	<?php
-				  # Iniciando la variable de control que permitirá mostrar o no el modal
-		  $exibirModal = false;
-		  # Verificando si existe o no la cookie
-		  if(!isset($_COOKIE["mostrarModal"]))
-		  {
-		    # Caso no exista la cookie entra aquí
-		    # Creamos la cookie con la duración que queramos
-		     
-		    $expirar = 3600; // muestra cada 1 hora
-		    //$expirar = 10800; // muestra cada 3 horas
-		    //$expirar = 21600; //muestra cada 6 horas
-		    //$expirar = 43200; //muestra cada 12 horas
-		    //$expirar = 86400;  // muestra cada 24 horas
-		    setcookie('mostrarModal', 'SI', (time() + $expirar)); // mostrará cada 12 horas.
-		    # Ahora nuestra variable de control pasará a tener el valor TRUE (Verdadero)
-		    $exibirModal = true;
-		  }
-		?>
+		# Iniciando la variable de control que permitirá mostrar o no el modal
+		$exibirModal = false;
+		# Verificando si existe o no la cookie
+		if(!isset($_COOKIE["mostrarModal"]))
+		{
+		# Caso no exista la cookie entra aquí
+		# Creamos la cookie con la duración que queramos
+			
+		$expirar = 3600; // Muestra cada 1 hora
+		
+		setcookie('mostrarModal', 'SI', (time() + $expirar)); // mostrará cada 12 horas.
+		# Ahora nuestra variable de control pasará a tener el valor TRUE (Verdadero)
+		$exibirModal = false;   // Esta es la ultima linea de codigo para mostrar el modal. Si es falso no se muestar nunca. Si es verdadero se mostrara segun la logica previa
+		}
+	?>
 
-		<?php if($exibirModal === true) : // Si nuestra variable de control "$exibirModal" es igual a TRUE activa nuestro modal y será visible a nuestro usuario.// ?>
-		  <script>
-		  $(document).ready(function()
-		  {
-		    // id de nuestro modal
-		    $('.grgergrvgveg').modal("show");
-		   // $('#modalBookingForm').modal('toggle')
-		  });
+	<?php 
+		if($exibirModal === true) : // Si nuestra variable de control "$exibirModal" es igual a TRUE activa nuestro modal y será visible a nuestro usuario.// 
+	?>
+	
+	<script>
+		$(document).ready(function() {
+		// id de nuestro modal
+		$('.grgergrvgveg').modal("show");
+		// $('#modalBookingForm').modal('toggle')
+		});
 	</script>
+
 	<?php endif; ?>
 
 	<script>
@@ -1036,6 +927,18 @@ En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
 	</script>
 
 
+
+
+
+
+
+
+
+
+
+	
+
+	<!-- Reservar citas | Personas -->
 	<div class="modal modal-form fade grgergrvgvegqsqsqsqsq" id="modalBookingForm" data-backdrop="static" data-keyboard="false" tabindex="-1">
 		<div class="modal-dialog   modal-xl">
 			<div class="modal-content border_style">
@@ -1043,7 +946,12 @@ En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
 					<i class="icon-error"></i>
 				</button>
 				<div class="modal-body">
+
+
+					<!-- Inicio del Modal -->
 					<div class="modal-form">
+
+						<!-- Encabezado --> 
 						<h1 class="theme-color" style="text-align: center;"><span id="paquete"></span> A SOLICITAR</h1>
 						<div class="text-center">
 							<img src="<?php echo base_url().'/public/assets/';?>images/<?php echo $logox;?>?v=<?php echo rand();?>" alt=""><br><br>
@@ -1051,16 +959,14 @@ En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
 						</div>
 
 						<br>
+
+						<!-- Formulario -->
 						<form class="mt-15" id="Enviamos_los_datos_del_paciente" method="post" >
-							<div class="successform">
-								<p>¡Su mensaje fue enviado exitosamente!</p>
-							</div>
-							<div class="errorform">
-								<p>Algo salió mal, intente actualizar y enviar el formulario nuevamente.</p>
-							</div>
 							<div class="h-sub theme-color">La forma más rápida de reservar tu cita</div>
 							<span id="aplicamos_archivos2"></span>
-						
+
+
+							<!-- Ingreso de DNI -->
 							<div class="row row-xs-space mt-1">
 								<div class="col-sm-8">
 									<div class="input-group">
@@ -1070,7 +976,6 @@ En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
 										<input type="text" class="form-control" id="dni" name="dni" placeholder="Ingrese DNI presione enter" maxlength="8" pattern="([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]|[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])" onkeydown="return soloNumeros(event)">
 									</div>
 								</div>
-
 								<div class="col-sm-4 mt-1 mt-sm-0">
 									<button id="botoncito" class="botoncito btn btn-outline-success">
 			                     	 <span id="id_hiddexx"><i  class="fa fa-search"></i> Buscar</span>
@@ -1080,18 +985,23 @@ En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
 
 							</div>
 
+							<!-- Nombres completos - vista solo -->
 							<div class="input-group">
 								<span>
 									<i class="icon-user"></i>
 								</span>
 								<input type="text" name="nombres_completos" id="nombres_completos" class="form-control" autocomplete="off" readonly="" placeholder="Nombres Completos " />
 							</div>
+
+							<!-- DNI - vista solo -->
 							<div class="input-group">
 								<span>
 									<i class="icon-user"></i>
 								</span>
 								<input type="text" name="dni_mostrar_dni" id="dni_mostrar_dni" class="form-control" autocomplete="off" readonly="" placeholder="Dni " />
 							</div>
+
+							<!-- Email -->
 							<div class="row row-xs-space mt-1">
 								<div class="col-sm-12">
 									<div class="input-group">
@@ -1102,7 +1012,9 @@ En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
 									</div>
 								</div>
 							</div>
-								<!--telñefono-->
+							
+							
+							<!-- Telefono -->
 							<div class="row row-xs-space mt-1">
 								<div class="col-sm-12 ">
 									<div class="input-group">
@@ -1113,6 +1025,8 @@ En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
 									</div>
 								</div>
 							</div>
+
+							<!-- Cuadro de Ingrese Mensaje  -->
 							<input type="hidden" value="" name="paquete" id="paquete_texto">
 							<textarea name="bookingmessage" class="form-control" placeholder="Mensaje" rows="6"></textarea>
 							<div class="text-center mt-2">
@@ -1124,34 +1038,48 @@ En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
 			</div>
 		</div>
 	</div>
-
+	
+	<!-- Agendar Citas | Script -->
 	<script>
+		/*
+		Esta funcion valida el DNI de la persona y obtiene los nombres y apellidos
+		Posteriormente, llena la informacion en el modal
+		Se activa al dar click
+		*/
 		$(function(){
             $('#botoncito').on('click', function(){
+
+				// Animando el icono de "Buscar" mientras se hace el AJAX request
             	$("#agregar_clase_xx").addClass('preloader');
-        		$("#id_hiddexx").hide();
-                var dni = $('#dni').val();
+				$("#id_hiddexx").hide();
+				
+				//  Obteniendo el valor del DNI
+				var dni = $('#dni').val();
+				
+				// Consultando el DNI con el controlador del servidor
                 var url = '<?php echo base_url('public/reniec/consulta_reniec.php/');?>';
                 $.ajax({
                 type:'POST',
                 url:url,
-                data:'dni='+dni,
+                data:'dni='+ dni,
                 success: function(datos_dni){
+					// Llenando el DNI
                     var datos = eval(datos_dni);
-                       $('#dni_mostrar_dni').val(datos[1]);
-                       // $('#apellido_paterno_x').val(datos[3]);
-                       // $('#apellido_materno').val(datos[4]);
-                       // $('#nombres_completos').val(datos[2]);
-                        var nombre =  datos[2]+" ";
-                        var apellido = datos[3];
-                        var apellido1 = datos[4];
+					$('#dni_mostrar_dni').val(datos[1]);	
 
-                        var nombres_completos_data = nombre.concat(apellido,' ',apellido1);
+					// Guardando nombres y apellidos 
+					var nombre =  datos[2];
+					var apellido_paterno = datos[3];		
+					var apellido_materno = datos[4];
 
-                        $("#nombres_completos").val(nombres_completos_data);
+					// Juntando la informacion
+					var nombres_completos_data = nombre.concat(' ', apellido_paterno,' ',apellido_materno);
+					
 
-                        $("#agregar_clase_xx").removeClass('preloader');
-        	  			$("#id_hiddexx").show();
+					// Llenando la informacion de la persona en el modal
+					$("#nombres_completos").val(nombres_completos_data);
+					$("#agregar_clase_xx").removeClass('preloader');
+					$("#id_hiddexx").show();
                        
                 }
             });
@@ -1159,12 +1087,21 @@ En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
             });
         });
 
+
+		/*
+		Esta parte del codigo valida y obtiene los datos del formulario 
+		No envia la informacion al servidor. Solo la obtiene del HTML y muestra mensajes 
+		*/
         $(document).on('submit', '#Enviamos_los_datos_del_paciente', function(event) {
-        	event.preventDefault();
-        	/* Act on the event */
+			event.preventDefault();
+			
+        	// Mostrando un mensaje mientras se ejecuta el AJAX
         	$("#lista").html(`<i class="fas fa-paper-plane cambiar_texto" > </i>&nbsp;Enviando Cita.......`);
 
-        	var dni = $("#nombres_completos").val();
+			// Obteniendo el DNI del formulario
+			var dni = $("#nombres_completos").val();
+			
+			// Evaluando en caso el DNI no sea valido
         	if (dni == null || dni.length == 0 || /^\s+$/.test(dni) ) {
         		Swal.fire({
                       title: 'Campos Vacios ',
@@ -1183,34 +1120,38 @@ En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
                 return false;
         	}
 
+
+			/* Aqui se envia la informacion al servidor para ser analizada y procesada */
         	$.ajax({
         		url: '<?php echo base_url('Inicio/enviar_correo/');?>',
         		type: 'POST',
         		//dataType: 'json',
         		data: $("#Enviamos_los_datos_del_paciente").serialize(),
         		statusCode:{
-              400: function(xhr){
+					
+					400: function(xhr){
 
-                var json = JSON.parse(xhr.responseText);
-                if (json.error) {
-                  Swal.fire({
-                      title: 'Lo siento mucho ',
-                      text: ""+json.error+"",
-                      icon: 'info',
-                      showCancelButton: false,
-                      confirmButtonColor: '#3085d6',
-                      cancelButtonColor: '#d33',
-                      confirmButtonText: 'OK!'
-                    }).then((result) => {
-                      if (result.value) {
-                        $("#Enviamos_los_datos_del_paciente")[0].reset();
-                         $("#lista").html(`<i class="fas fa-paper-plane cambiar_texto" > </i>&nbsp;Reservar cita`);
-                      }
-                    })
-                 
-                }
+						var json = JSON.parse(xhr.responseText);
+
+						// En caso de error mostrar alerta
+						if (json.error) {
+							Swal.fire({
+								title: 'Lo siento mucho ',
+								text: ""+json.error+"",
+								icon: 'info',
+								showCancelButton: false,
+								confirmButtonColor: '#3085d6',
+								cancelButtonColor: '#d33',
+								confirmButtonText: 'OK!'
+								}).then((result) => {
+								if (result.value) {
+									$("#Enviamos_los_datos_del_paciente")[0].reset();
+									$("#lista").html(`<i class="fas fa-paper-plane cambiar_texto" > </i>&nbsp;Reservar cita`);
+								}
+							}) 
+						}
                 
-              }
+              		}
 
           		}
         	})
@@ -1218,7 +1159,7 @@ En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
         		console.log("success");
                   Swal.fire({
                     title: 'Muy Bien',
-                    text: "Su pitición ha sido enviada con exito",
+                    text: "Su petición ha sido enviada con exito!",
                     icon: 'success',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
@@ -1226,9 +1167,9 @@ En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
                     confirmButtonText: 'Gracias!'
                   }).then((result) => {
                     if (result.value) {
-                    	$("#Enviamos_los_datos_del_paciente")[0].reset();
-                    	$(".grgergrvgvegqsqsqsqsq").modal("hide");
-                    	 $("#lista").html(`<i class="fas fa-paper-plane cambiar_texto" > </i>&nbsp;Reservar cita`);
+                    	$("#Enviamos_los_datos_del_paciente")[0].reset();		// Reseteando el formulario
+                    	$(".grgergrvgvegqsqsqsqsq").modal("hide");				// Ocultando el modal
+						$("#lista").html(`<i class="fas fa-paper-plane cambiar_texto" > </i>&nbsp;Reservar cita`);
                     }
                   })
         	})
@@ -1236,7 +1177,7 @@ En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
         		console.log("error");
         		Swal.fire({
                     title: 'Oposs',
-                    text: "Tu cita no pudo ser enviada, Intente Nuevamente",
+                    text: "Lo sentimos. Tu cita no pudo ser enviada. Intenta nuevamente",
                     icon: 'error',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',

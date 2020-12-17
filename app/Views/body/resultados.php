@@ -1,10 +1,13 @@
 
-<?php 	$request = \Config\Services::request(); ?>
+<?php 	
+	$request = \Config\Services::request(); 
+	$key_word=$_GET["q"]; // Esta es la palabra que el usuario busco
+?>
 <div class="page-content">
 	<div class="section" id="departmentsSection">
 		<div class="container">
 			<div class="title-wrap text-center">
-				<h2 class="h1">Los resultados de la busqueda :<span class="theme-color"><?php echo $request->uri->getSegment(2,0)?></span></h2>
+				<h2 class="h1">Los resultados de la busqueda :<span class="theme-color"><?php echo $key_word?></span></h2>
 				<div class="h-decor"></div>
 			</div>
 			<div class="mt-2 mt-lg-4"></div>

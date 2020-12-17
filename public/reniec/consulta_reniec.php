@@ -14,7 +14,7 @@ $dni = $_POST['dni'];
  
 //OBTENEMOS EL VALOR
 //$consulta = file_get_html('https://portaladminusuarios.reniec.gob.pe/validacionweb/datos.do?dni='.$dni);
-$consulta = file_get_html('https://eldni.com/pe/buscar-por-dni?dni='.$dni); //demora poquito
+$consulta = file_get_html('https://eldni.com/pe/buscar-por-dni?dni='.$dni); //demora poquito, pero no tiene todos los dni
 //$consulta = file_get_html('https://dni.optimizeperu.com/?dni='.$dni);
 //
 //$consulta = file_get_html('https://searchpe.herokuapp.com/public/api/essalud/dni/'.$dni);

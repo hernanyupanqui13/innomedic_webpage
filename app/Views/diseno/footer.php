@@ -1,3 +1,5 @@
+<!-- Estart of footer -->
+
 <div class="">
 	<br><br>
 	<div class="container-fluid px-0">	
