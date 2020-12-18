@@ -55,12 +55,16 @@
 	<link href="<?php echo base_url().'/public/';?>assets/css/style-color-5.css" rel="stylesheet">
     <link href="<?php echo base_url().'/public/';?>assets/css/style_.css?v=<?php echo rand(); ?>" rel="stylesheet">
 	<link href="<?php echo base_url().'/public/';?>assets/color/color.css" rel="stylesheet">
+
 	<!--Favicon-->
 	<link rel="icon" href="<?php echo base_url().'/public/';?>assets/images/favicon.png?v=<?php echo rand();?>" type="image/x-icon">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 	<!-- Google Fonts -->
+
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+	
 	<!-- Google map -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiFdr5Z0WRIXKUOqoRRvzRQ5SkzhkUVjk"></script>
 
@@ -85,6 +89,7 @@ foreach ($list_employe as $xx) {
 <body class="shop-page layout-landing">
 
 
+<!-- Barra de ajustes-->
 <div class="settings-panel">
 	<div class="settings-panel-buy-now">
 		<a href="#" data-toggle="modal" data-target="#modalBookingForm" class="settings-panel-btn btn-primary">
@@ -106,20 +111,12 @@ foreach ($list_employe as $xx) {
 			<div class="title">Accesibilidad</div>
 		</div>
 	</div>
-	<!--<div class="settings-panel-layout js-settings-panel-item">
-		<div class="settings-panel-btn btn-primary js-settings-panel-btn">
-			<img src="color/icon-layout.png" alt="">
-		</div>
-		<div class="settings-panel-inside">
-			<a href=""><img src="color/screen-layout-1.png" alt=""></a>
-			<a href=""><img src="color/screen-layout-2.png" alt=""></a>
-			<a href=""><img src="color/screen-layout-3.png" alt=""></a>
-    <a href=""><img src="color/screen-layout-4.png" alt=""></a>
-    <a href="" class="active"><img src="color/screen-layout-5.png" alt=""></a>
-    <a href=""><img src="color/screen-layout-6.png" alt=""></a><a href=""><img src="color/screen-layout-7.png" alt=""></a>
-		</div>
-	</div>-->
 </div>
+
+
+
+
+
 <!--header-->
 <header class="header">
 	<div class="header-quickLinks js-header-quickLinks d-lg-none">
@@ -231,6 +228,7 @@ foreach ($list_employe as $xx) {
 		</div>
 	</div>
 </header>
+
 
 
 

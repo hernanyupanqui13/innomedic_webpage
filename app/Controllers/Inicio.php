@@ -1,13 +1,18 @@
 <?php namespace App\Controllers;
-/**
- * 
- */
+
+
 use App\Models\InicioModel;
 use CodeIgniter\Controller;
 use PHPMailer\PHPMailer\PHPMailer;
+
+
 class Inicio extends BaseController {
-	public function index()
-	{
+
+	/*
+	Esta funcion es llamada cuando se carga la pagina. 
+	Consulta la data y renderiza la vista
+	*/ 
+	public function index() {
 		$model = new InicioModel();
 
 		$data = array(
@@ -35,8 +40,7 @@ class Inicio extends BaseController {
 	Esta funcion cuenta el numero de visitas de la pagina. El numero esta en la parte inferior en el footer. 
 	Es solo para el desarrollador, no deberia salir en la pagina final 
 	*/
-	public function cantidad_registro()
-	{
+	public function cantidad_registro() {
 		if ($this->request->getMethod() === 'post') {
 			$db   = \Config\Database::connect();
 			$query = $db->query("select *,count(*) as total from t_visitas");
@@ -47,8 +51,6 @@ class Inicio extends BaseController {
 		}else{
 			return $this->_cargaError();
 		}
-			
-		
 		
 	}
 
@@ -582,138 +584,127 @@ class Inicio extends BaseController {
 
 	public function enviar_correo()
 	{
-
-		if ($this->request->getMethod() === 'post') {
-			 $reponder = $this->request->getPost('nombres_completos').' - '. $this->request->getPost('dni_mostrar_dni');
-
-			 $mail = new PHPMailer();
-			 $email = $this->request->getPost('bookingemail');
-			 $nombres_completos  =  $this->request->getPost('nombres_completos');
-			 $celular = $this->request->getPost('bookingphone');
-			 $ruc =  $this->request->getPost('dni_mostrar_dni');
-			 $fecha_envio = date('Y-m-d h:i:s');
-			 $mensaje =  $this->request->getPost('bookingmessage');
-			 $nombre_paquete =  $this->request->getPost('paquete');
-
-			/*$mail->isSMTP();
-	 		$mail->Host     = 'smtp-mail.outlook.com';
-	        $mail->SMTPAuth = true;
-	        $mail->SMTPDebug  = 3;
-	        $mail->Username = 'escudero059407@hotmail.com';
-	        $mail->Password = 'Escuderohh';
-	        $mail->SMTPSecure = 'tls';
-	        $mail->Port     = 587;
-	        $mail->CharSet = 'UTF-8';
-	       // $mail->Host = 'localhost';
-	        //$mail->SMTPAuth = false;
-	        $mail->SMTPAutoTLS = false; 
-	        $mail->CharSet = 'UTF-8';
-	        $mail->AllowEmpty = true;*/
-	        $mail->isSMTP();
-	        $mail->Host     = 'ssl://ssmtp.innomedic.pe';
-	        $mail->SMTPSecure = false;
-	      //  $mail->SMTPAuth = true;
-	        $mail->SMTPDebug  = 3;
-	        $mail->Username = 'reenviadores@innomedic.pe';
-	        $mail->Password = 'Sistemas20**';
-	        $mail->Host = 'localhost';
-	        $mail->SMTPAuth = false;
-	        $mail->SMTPAutoTLS = false; 
-	       // $mail->Port = 465; 
-	       // $mail->SMTPSecure = 'ssl';
-	        $mail->Port     = 25;
-	        $mail->CharSet = 'UTF-8';
-
-	        //$mail->setFrom('escudero059407@hotmail.com', $empresa.'-'.$ruc);
-
-	      	 $mail->setFrom('reenviadores@innomedic.pe',  $nombres_completos.'-'.$ruc);
-	       // $mail->setFrom('soportepb@netaxxes.com', 'Pedido de Cotizacion - Pagina web  Web NetAxxes');
-	       // $mail->addReplyTo($email,'hola');
-	         $mail->addReplyTo($email, 'Pedido de Cotizacion - Pagina web  Web innomedic');
-	        
-	        // Add a recipient
-	        $mail->addAddress('eescudero@innomedic.pe');
-	        $mail->addAddress('reenviadores@innomedic.pe');
-	       // $mail->addAddress('avera@innomedic.pe');
-	        //$mail->addAddress('eestrada@innomedic.pe');
-	        $mail->addAddress('escudero0594@hotmail.com');
-
-	        
-	        // Add cc or bcc 
-	        $mail->addCC('ventas@innomedic.pe');
-	        $mail->addBCC('ventas.in@innomedic.pe');
-	        
-	        // Email subject
-	        $mail->Subject = 'Realizar cotizacion para '.$nombres_completos.' - Paquetes Preventivos';
-	        
-	        // Set email format to HTML
-	        $mail->isHTML(true);
-	        //$mailContent = 'Esto es una prueba si esta mandando o no';
-			$mailContent_view = '<div style="width: 100%; font-size: 1rem;" class="container ">
-			<div>
-		       <p class="display-4 text-justify">No dejar de pasar una opotunidad, el cliente espera que lo respondas mas rapido de lo que puedas, suerte en todo</p>
-		     </div>
-
-		     <div>
-		       <h2 class="display-4 text-justify">PAQUETES PREVENTIVOS</h2>
-		     </div>
-		     <div>
-		       <h2 class="display-4 text-justify " style="color:red;">'.$nombre_paquete.'</h2>
-		     </div>
-
-		     <div class="text-center">
-		    <p class="h1 text-danger">Empresa a responder es : '.$reponder.'</p>
-		     </div>
-			<div class="row">
-	        <div class="col-md-4">
-	          <label for="" class="font-weight-bold ">Nombres:</label>
-	          <span>'.$nombres_completos.' </span>
-	        </div>
-	        <div class="col-md-4">
-	          <label for="" class="font-weight-bold">DNI:</label>
-	          <span>'.$ruc.'</span>
-	        </div>
-	        <div class="col-md-4">
-	          <label for="" class="font-weight-bold">Fecha de Envio:</label>
-	          <span>'.$fecha_envio.'</span>
-	        </div>
-	        <div class="col-md-4">
-	          <label for="" class="font-weight-bold">Celular:</label>
-	          <span>'.$celular.'</span>
-	        </div>
-	        <div class="col-md-4">
-	          <label for="" class="font-weight-bold">Email:</label>
-	          <span>'.$email.'</span>
-	        </div>
-	         <div class="col-md-12">
-	          <label for="" class="font-weight-bold">Mensaje: </label>
-	          <span>'.$mensaje.'</span>
-	        </div>
-	       
-
-		</div>
 		
-		</div>';
-		$mailContent = view('email/header').$mailContent_view.view('email/footer');
+		if ($this->request->getMethod() === 'post') {
+
+			$reponder = $this->request->getPost('nombres_completos').' - '. $this->request->getPost('dni_mostrar_dni');
+
+			$mail = new PHPMailer();
+			$email = $this->request->getPost('bookingemail');
+			$nombres_completos  =  $this->request->getPost('nombres_completos');
+			$celular = $this->request->getPost('bookingphone');
+			$ruc =  $this->request->getPost('dni_mostrar_dni');
+			$fecha_envio = date('Y-m-d h:i:s');
+			$mensaje =  $this->request->getPost('bookingmessage');
+			$nombre_paquete =  $this->request->getPost('paquete');
+
+			/*
+			$mail->Username = 'escudero059407@hotmail.com';
+			$mail->Password = 'Escuderohh';*/
+		   
+			$mail->isSMTP();
+			$mail->Host     = 'ssl://p3plzcpnl434616.prod.phx3.secureserver.net';
+			$mail->SMTPSecure = false;
+			$mail->SMTPDebug  = 3;
+			$mail->Username = 'reenviadores@innomedic.pe';
+			$mail->Password = 'Sistemas20**';
+			$mail->SMTPAuth = true;
+			$mail->SMTPAutoTLS = false; 
+			$mail->SMTPSecure = 'ssl';
+			$mail->Port     = 465;
+			$mail->CharSet = 'UTF-8';
+			$mail->AllowEmpty = true;
+
+			// De: 
+			$mail->setFrom('reenviadores@innomedic.pe',  $nombres_completos.'-'.$ruc);		
+			
+			// Esto configura el boton de "responder a este email" en el correo
+			$mail->addReplyTo($email, 'Pedido de Cotizacion - Pagina web  Web innomedic');
+		   
+			// Add a recipient
+			$mail->addAddress('prueba@innomedic.pe');
+			$mail->addAddress('reenviadores@innomedic.pe');
 
 
+			// Add cc or bcc 
+			$mail->addCC('ventas@innomedic.pe');
+			$mail->addBCC('ventas.in@innomedic.pe');
+			
+			// Email subject
+			$mail->Subject = 'Realizar cotizacion para '.$nombres_completos.' - Paquetes Preventivos';
+			
+			// Set email format to HTML
+			$mail->isHTML(true);
 
-        $mail->Body = $mailContent;
-        
-        // Send email
-        if(!$mail->send()){
-            echo json_encode(array("error"=>"Su petición no ha sido enviada"));
-            $this->output->set_status_header(400);
-            //echo 'Mailer Error: ' . $mail->ErrorInfo;
-        }else{
-            echo json_encode(array("sms"=>"Su petición ha sido enviada"));
-        }
-	   	 }else{
-	      echo "Que haces Mongol";
-	    }
+			$mailContent_view = '<div style="width: 100%; font-size: 1rem;" class="container ">
+		   <div>
+			  <p class="display-4 text-justify">No dejar de pasar una opotunidad, el cliente espera que lo respondas mas rapido de lo que puedas, suerte en todo</p>
+			</div>
+
+			<div>
+			  <h2 class="display-4 text-justify">PAQUETES PREVENTIVOS</h2>
+			</div>
+			<div>
+			  <h2 class="display-4 text-justify " style="color:red;">'.$nombre_paquete.'</h2>
+			</div>
+
+			<div class="text-center">
+		   <p class="h1 text-danger">Empresa a responder es : '.$reponder.'</p>
+			</div>
+		   <div class="row">
+		   <div class="col-md-4">
+			 <label for="" class="font-weight-bold ">Nombres:</label>
+			 <span>'.$nombres_completos.' </span>
+		   </div>
+		   <div class="col-md-4">
+			 <label for="" class="font-weight-bold">DNI:</label>
+			 <span>'.$ruc.'</span>
+		   </div>
+		   <div class="col-md-4">
+			 <label for="" class="font-weight-bold">Fecha de Envio:</label>
+			 <span>'.$fecha_envio.'</span>
+		   </div>
+		   <div class="col-md-4">
+			 <label for="" class="font-weight-bold">Celular:</label>
+			 <span>'.$celular.'</span>
+		   </div>
+		   <div class="col-md-4">
+			 <label for="" class="font-weight-bold">Email:</label>
+			 <span>'.$email.'</span>
+		   </div>
+			<div class="col-md-12">
+			 <label for="" class="font-weight-bold">Mensaje: </label>
+			 <span>'.$mensaje.'</span>
+		   </div>
+		  
+
+			</div>
+			
+			</div>';
+			   
+			// Juntando todo el contenido del correo
+			$mailContent = view('email/header').$mailContent_view.view('email/footer');
+
+			// Defiendo el cuerpo del correo como el contenido previamente configurado
+	   		$mail->Body = $mailContent;
+			
+
+			// Enviando email. Notese que send() devuelve true ó false a parte de enviar el correo
+			if(!$mail->send()){
+				echo json_encode(array("error"=>"Su petición no ha sido enviada"));
+				$this->output->set_status_header(400);
+			} else {
+				echo json_encode(array("sms"=>"Su petición ha sido enviada"));
+			}
+
+			
+
+		} else {
+		 	echo "Mala sintaxis en el pedido";
+	   	}
 
 
-	}
+   }
 
 
 

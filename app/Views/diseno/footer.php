@@ -1,4 +1,4 @@
-<!-- Estart of footer -->
+<!-- Start of footer -->
 
 <div class="">
 	<br><br>

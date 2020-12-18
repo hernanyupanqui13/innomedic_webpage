@@ -31,7 +31,7 @@ $query_ss = $db->query("select * from th_employe");
      	$img_aboutx4 = $galy->img_about4;
      } ?>
 
-
+<h1 id="test_h"></h1>
 <!--//header-->
 <div class="page-content">
 	<!--section slider-->
@@ -977,7 +977,7 @@ En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
 									</div>
 								</div>
 								<div class="col-sm-4 mt-1 mt-sm-0">
-									<button id="botoncito" class="botoncito btn btn-outline-success">
+									<button id="botoncito" class="botoncito btn btn-outline-success" onclick="test2()">
 			                     	 <span id="id_hiddexx"><i  class="fa fa-search"></i> Buscar</span>
 			                     	 <div id="agregar_clase_xx" class=""></span>
 			                      </button>
@@ -1041,45 +1041,31 @@ En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
 	
 	<!-- Agendar Citas | Script -->
 	<script>
-		/*
-		Esta funcion valida el DNI de la persona y obtiene los nombres y apellidos
-		Posteriormente, llena la informacion en el modal
-		Se activa al dar click
-		*/
+
 		$(function(){
             $('#botoncito').on('click', function(){
-
-				// Animando el icono de "Buscar" mientras se hace el AJAX request
             	$("#agregar_clase_xx").addClass('preloader');
-				$("#id_hiddexx").hide();
-				
-				//  Obteniendo el valor del DNI
-				var dni = $('#dni').val();
-				
-				// Consultando el DNI con el controlador del servidor
+        		$("#id_hiddexx").hide();
+                var dni = $('#dni').val();
                 var url = '<?php echo base_url('public/reniec/consulta_reniec.php/');?>';
                 $.ajax({
                 type:'POST',
                 url:url,
-                data:'dni='+ dni,
+                data:'dni='+dni,
                 success: function(datos_dni){
-					// Llenando el DNI
                     var datos = eval(datos_dni);
-					$('#dni_mostrar_dni').val(datos[1]);	
+                       $('#dni_mostrar_dni').val(datos[1]);
 
-					// Guardando nombres y apellidos 
-					var nombre =  datos[2];
-					var apellido_paterno = datos[3];		
-					var apellido_materno = datos[4];
+                        var nombre =  datos[2]+" ";
+                        var apellido = datos[3];
+                        var apellido1 = datos[4];
 
-					// Juntando la informacion
-					var nombres_completos_data = nombre.concat(' ', apellido_paterno,' ',apellido_materno);
-					
+                        var nombres_completos_data = nombre.concat(apellido,' ',apellido1);
 
-					// Llenando la informacion de la persona en el modal
-					$("#nombres_completos").val(nombres_completos_data);
-					$("#agregar_clase_xx").removeClass('preloader');
-					$("#id_hiddexx").show();
+                        $("#nombres_completos").val(nombres_completos_data);
+
+                        $("#agregar_clase_xx").removeClass('preloader');
+        	  			$("#id_hiddexx").show();
                        
                 }
             });
@@ -1087,21 +1073,12 @@ En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
             });
         });
 
-
-		/*
-		Esta parte del codigo valida y obtiene los datos del formulario 
-		No envia la informacion al servidor. Solo la obtiene del HTML y muestra mensajes 
-		*/
         $(document).on('submit', '#Enviamos_los_datos_del_paciente', function(event) {
-			event.preventDefault();
-			
-        	// Mostrando un mensaje mientras se ejecuta el AJAX
+        	event.preventDefault();
+        	/* Act on the event */
         	$("#lista").html(`<i class="fas fa-paper-plane cambiar_texto" > </i>&nbsp;Enviando Cita.......`);
 
-			// Obteniendo el DNI del formulario
-			var dni = $("#nombres_completos").val();
-			
-			// Evaluando en caso el DNI no sea valido
+        	var dni = $("#nombres_completos").val();
         	if (dni == null || dni.length == 0 || /^\s+$/.test(dni) ) {
         		Swal.fire({
                       title: 'Campos Vacios ',
@@ -1120,64 +1097,63 @@ En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
                 return false;
         	}
 
-
-			/* Aqui se envia la informacion al servidor para ser analizada y procesada */
         	$.ajax({
         		url: '<?php echo base_url('Inicio/enviar_correo/');?>',
         		type: 'POST',
-        		//dataType: 'json',
         		data: $("#Enviamos_los_datos_del_paciente").serialize(),
         		statusCode:{
-					
-					400: function(xhr){
+              	400: function(xhr){
 
-						var json = JSON.parse(xhr.responseText);
-
-						// En caso de error mostrar alerta
-						if (json.error) {
-							Swal.fire({
-								title: 'Lo siento mucho ',
-								text: ""+json.error+"",
-								icon: 'info',
-								showCancelButton: false,
-								confirmButtonColor: '#3085d6',
-								cancelButtonColor: '#d33',
-								confirmButtonText: 'OK!'
-								}).then((result) => {
-								if (result.value) {
-									$("#Enviamos_los_datos_del_paciente")[0].reset();
-									$("#lista").html(`<i class="fas fa-paper-plane cambiar_texto" > </i>&nbsp;Reservar cita`);
-								}
-							}) 
-						}
+                var json = JSON.parse(xhr.responseText);
+				console.log("falla");
+                if (json.error) {
+                  Swal.fire({
+                      title: 'Lo siento mucho ',
+                      text: ""+json.error+"",
+                      icon: 'info',
+                      showCancelButton: false,
+                      confirmButtonColor: '#3085d6',
+                      cancelButtonColor: '#d33',
+                      confirmButtonText: 'OK!'
+                    }).then((result) => {
+                      if (result.value) {
+                        $("#Enviamos_los_datos_del_paciente")[0].reset();
+                         $("#lista").html(`<i class="fas fa-paper-plane cambiar_texto" > </i>&nbsp;Reservar cita`);
+                      }
+                    }) 
+                }
                 
-              		}
+              }
 
           		}
         	})
-        	.done(function() {
+        	.done(function(data) {
+
         		console.log("success");
-                  Swal.fire({
-                    title: 'Muy Bien',
-                    text: "Su petición ha sido enviada con exito!",
-                    icon: 'success',
-                    showCancelButton: false,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Gracias!'
-                  }).then((result) => {
-                    if (result.value) {
-                    	$("#Enviamos_los_datos_del_paciente")[0].reset();		// Reseteando el formulario
-                    	$(".grgergrvgvegqsqsqsqsq").modal("hide");				// Ocultando el modal
+				console.log(data);
+
+				Swal.fire({
+				title: 'Muy Bien',
+				text: "Su petición ha sido enviada con exito!",
+				icon: 'success',
+				showCancelButton: false,
+				confirmButtonColor: '#3085d6',
+				cancelButtonColor: '#d33',
+				confirmButtonText: 'Gracias!'
+				}).then((result) => {
+				if (result.value) {
+					$("#Enviamos_los_datos_del_paciente")[0].reset();
+					$(".grgergrvgvegqsqsqsqsq").modal("hide");
 						$("#lista").html(`<i class="fas fa-paper-plane cambiar_texto" > </i>&nbsp;Reservar cita`);
-                    }
-                  })
+				}
+				})
         	})
-        	.fail(function() {
+        	.fail(function(data) {
         		console.log("error");
+				console.log(data);
         		Swal.fire({
                     title: 'Oposs',
-                    text: "Lo sentimos. Tu cita no pudo ser enviada. Intenta nuevamente",
+                    text: "Tu cita no pudo ser enviada, Intente Nuevamente",
                     icon: 'error',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
