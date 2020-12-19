@@ -1,6 +1,6 @@
 <!-- Start of footer -->
 
-<div class="">
+<div>
 	<br><br>
 	<div class="container-fluid px-0">	
 		<div class="title-wrap text-center">

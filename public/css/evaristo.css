@@ -23,8 +23,7 @@
 .pricing-one__single .circle .count h4 {
     color: #ffffff;
     font-size: 30px;
-    font-family: "Prata";
-        margin-top: 20px;
+    margin-top: 20px;
 }
 
 
@@ -107,7 +106,7 @@ a:active, a:hover, a:focus, a:visited {
     color: #000000;
     font-size: 45px;
     font-weight: 400;
-    font-family:"Prata";
+    margin-top: 15px;
 }
 .block-title {
     padding-bottom: 43px;

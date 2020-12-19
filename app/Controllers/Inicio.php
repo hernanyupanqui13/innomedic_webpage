@@ -120,9 +120,12 @@ class Inicio extends BaseController {
 
 
 
+	/* 
+	Esta funcion recopge los datos del View y los envia al Model para que se cargen en la base de datos
+	Se espera implementar mas funciones que solo guardar la informacion en la base de datos (POR IMPLEMENTAR)
+	*/
+	public function process_contactform	() {
 
-	public function process_contactform	()
-	{
 		$model = new InicioModel();
 
 		if ($this->request->getMethod() === 'post') {
@@ -136,11 +139,9 @@ class Inicio extends BaseController {
 				'message' =>  $this->request->getPost('message'),
 			);
 			$model->process_contactform($data);
-		}else{
+		} else {
 			return $this->_cargaError();
 		}
-
-		
 	}
 
 	//registrar preguntas frecuentes

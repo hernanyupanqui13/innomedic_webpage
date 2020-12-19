@@ -263,7 +263,7 @@
 								</div>
 							</div>
 							<div class="col-sm-4 mt-1 mt-sm-0">
-								<button type="button"  class="btn btn-outline-success btn-rounded btn-sm" name="btn-submit" id="btn-submitx">
+								<button type="button" id="btn-submitx" class="btn btn-outline-success btn-rounded btn-sm" name="btn-submit" >
 		                     	 <i class="fa fa-search"></i> Buscar
 		                       </button>
 								
@@ -599,457 +599,400 @@
 </script>
 
 <script>
-			(function ($) {
+		(function ($) {
 
-			"use strict";
+		"use strict";
 
-			var $document = $(document),
-				$window = $(window),
-				forms = {
-				contactForm: $('#contactForm'),
-				questionForm: $('#questionForm'),
-				bookingForm: $('#bookingForm'),
-				requestForm: $('#requestForm')
-			};
+		var $document = $(document),
+			$window = $(window),
+			forms = {
+			contactForm: $('#contactForm'),
+			questionForm: $('#questionForm'),
+			bookingForm: $('#bookingForm'),
+			requestForm: $('#requestForm')
+		};
 
-			$document.ready(function () {
-				
-				// datepicker
-				if ($('.datetimepicker').length) {
-					$('.datetimepicker').datetimepicker({
-						format: 'DD/MM/YYYY',
-						ignoreReadonly: true,
-						icons: {
-							time: 'icon icon-clock',
-							date: 'icon icon-calendar2',
-							up: 'icon icon-top',
-							down: 'icon icon-bottom',
-							previous: 'icon icon-left',
-							next: 'icon icon-right',
-							today: 'icon icon-tick',
-							clear: 'icon icon-close',
-							close: 'icon icon-close'
-						}
-					});
-				}
-				if ($('.timepicker').length) {
-					$('.timepicker').datetimepicker({
-						format: 'LT',
-						ignoreReadonly: true,
-						icons: {
-							time: 'icon icon-clock',
-							up: 'icon icon-top',
-							down: 'icon icon-bottom',
-							previous: 'icon icon-left',
-							next: 'icon icon-right'
-						}
-					});
-				}
-								
-				// contact page form
-				if (forms.contactForm.length) {
-					var $contactform = forms.contactForm;
-					$contactform.validate({
-						rules: {
-							name: {
-								required: true,
-								minlength: 2
-							},
-							
-							phone: {
-								required: true,
-								minlength: 9
-							},
-							usuario: {
-								required: true,
-								minlength: 5
-							},
-							rucx: {
-								required: true,
-								minlength: 11
-							},
-							message: {
-								required: true,
-								minlength: 20
-							},
-							email: {
-								required: true,
-								email: true
-							}
-
-						},
-						messages: {
-							name: {
-								required: "Por favor, escriba su nombre",
-								minlength: "Su nombre debe constar de al menos 2 caracteres."
-							},
-							phone: {
-								required: "Por favor, Ingrese su celular",
-								minlength: "Su celular debe constar de 9 caracteres."
-							},
-							
-							usuario: {
-								required: "Por favor, Ingrese Ruc y presione Enter",
-								
-							},
-							rucx: {
-								required: "Por favor, Ingrese Ruc y presione Enter",
-								
-							},
-							message: {
-								required: "Por favor ingrese el mensaje",
-								minlength: "Su mensaje debe tener al menos 20 caracteres."
-							},
-							email: {
-								required: "Por favor, Ingrese su email"
-							}
-						},
-						submitHandler: function submitHandler(form) {
-
-							//manda a la base de datos
-							$(form).ajaxSubmit({
-								type: "POST",
-								data: $(form).serialize(),
-								url: "<?php echo esc(base_url('Inicio/process_contactform'))?>",
-								success: function success() {
-									$('.successform', $contactform).fadeIn();
-									$contactform.get(0).reset();
-								},
-								error: function error() {
-									$('.errorform', $contactform).fadeIn();
-								}
-							});
-
-
-							/*$(form).ajaxSubmit({
-								type: "POST",
-								data: $(form).serialize(),
-								url: "form/process-contact.php",
-								success: function success() {
-									$('.successform', $contactform).fadeIn();
-									$contactform.get(0).reset();
-								},
-								error: function error() {
-									$('.errorform', $contactform).fadeIn();
-								}
-							});*/
-						}
-					});
-				}
-
-				// question form
-				if (forms.questionForm.length) {
-					var $questionForm = forms.questionForm;
-					$questionForm.validate({
-						rules: {
-							name: {
-								required: true,
-								minlength: 10
-							},
-							messages: {
-								required: true,
-								minlength: 20
-							},
-							email: {
-								required: true,
-								email: true
-							}
-						},
-						messages: {
-							name: {
-								required: "Por favor, escriba su nombre",
-								minlength: "Su nombre debe constar de al menos 10 caracteres."
-							},
-							message: {
-								required: "Por favor ingrese el mensaje",
-								minlength: "Su mensaje debe tener al menos 20 caracteres."
-							},
-							email: {
-								required: "Por favor introduzca su correo electrónico"
-							}
-						},
-						submitHandler: function submitHandler(form) {
-
-							//realizar mediante a la base de datos
-							//
-							$(form).ajaxSubmit({
-								type: "POST",
-								data: $(form).serialize(),
-								url: "<?php echo base_url('Inicio/process_question')?>",
-								success: function success() {
-									$('.successform', $questionForm).fadeIn();
-									$questionForm.get(0).reset();
-								},
-								error: function error() {
-									$('.errorform', $questionForm).fadeIn();
-								}
-							});
-							//
-							//end fin
-							/*$(form).ajaxSubmit({
-								type: "POST",
-								data: $(form).serialize(),
-								url: "form/process-question.php",
-								success: function success() {
-									$('.successform', $questionForm).fadeIn();
-									$questionForm.get(0).reset();
-								},
-								error: function error() {
-									$('.errorform', $questionForm).fadeIn();
-								}
-							});*/
-						}
-					});
-				}
-				
-				// booking form
-				if (forms.bookingForm.length) {
-					var $bookingForm = forms.bookingForm;
-					$bookingForm.validate({
-						rules: {
-							bookingname: {
-								required: true,
-								minlength: 2
-							},
-							bookingruc: {
-								required: true,
-								minlength: 11
-							},
-							
-							bookingemploye: {
-								required: true,
-								minlength: 5
-							},
-							
-							bookingphone: {
-								required: true,
-								minlength: 9
-							},
-
-							bookingmessage: {
-								required: true,
-								minlength: 20
-							},
-							bookingemail: {
-								required: true,
-								email: true
-							}
-
-						},
-						messages: {
-							bookingname: {
-								required: "Por favor, escriba sus nombres completos",
-								minlength: "Sus nombres completos debe constar de al menos 10 caracteres."
-							},
-							bookingruc: {
-								required: "Por favor, Ingrese Ruc y presione Enter",
-							},
-							bookingemploye: {
-								required: "Por favor, Ingrese Ruc y presione Enter",
-								
-							},
-							bookingphone: {
-								required: "Por favor, Ingrese su celular",
-								minlength: "Su celular debe constar de 9 caracteres."
-							},
-							bookingmessage: {
-								required: "Por favor ingrese su mensaje",
-								minlength: "e tener al menos 20 caracteres."
-							},
-							bookingemail: {
-								required: "Por favor introduzca su correo electrónico"
-							}
-						},
-						submitHandler: function submitHandler(form) {
-							//esto manda a la base de datos
-							$(form).ajaxSubmit({
-								type: "POST",
-								data: $(form).serialize(),
-								url: "<?php echo esc(base_url('Inicio/process_booking'))?>",
-								success: function success() {
-									$('.successform', $bookingForm).fadeIn();
-									$bookingForm.get(0).reset();
-								},
-								error: function error() {
-									$('.errorform', $bookingForm).fadeIn();
-								}
-							});
-
-							/*$(form).ajaxSubmit({
-								type: "POST",
-								data: $(form).serialize(),
-								url: "public/assets/form/process-booking.php",
-								success: function success() {
-									$('.successform', $bookingForm).fadeIn();
-									$bookingForm.get(0).reset();
-								},
-								error: function error() {
-									$('.errorform', $bookingForm).fadeIn();
-								}
-							});*/
-
-						}
-					});
-				}
-				
-				// request form
-				if (forms.requestForm.length) {
-					var $requestForm = forms.requestForm;
-					$requestForm.validate({
-						rules: {
-							requestname: {
-								required: true,
-								minlength: 2
-							},
-							requestmessages: {
-								required: true,
-								minlength: 20
-							},
-							requestemail: {
-								required: true,
-								email: true
-							}
-
-						},
-						messages: {
-							requestname: {
-								required: "Please enter your name",
-								minlength: "Your name must consist of at least 2 characters"
-							},
-							requestmessage: {
-								required: "Please enter message",
-								minlength: "Your message must consist of at least 20 characters"
-							},
-							requestemail: {
-								required: "Please enter your email"
-							}
-						},
-						submitHandler: function submitHandler(form) {
-							$(form).ajaxSubmit({
-								type: "POST",
-								data: $(form).serialize(),
-								url: "form/process-request.php",
-								success: function success() {
-									$('.successform', $requestForm).fadeIn();
-									$requestForm.get(0).reset();
-								},
-								error: function error() {
-									$('.errorform', $requestForm).fadeIn();
-								}
-							});
-						}
-					});
-				}
-
+		$document.ready(function () {
 			
-			});
+			// datepicker
+			if ($('.datetimepicker').length) {
+				$('.datetimepicker').datetimepicker({
+					format: 'DD/MM/YYYY',
+					ignoreReadonly: true,
+					icons: {
+						time: 'icon icon-clock',
+						date: 'icon icon-calendar2',
+						up: 'icon icon-top',
+						down: 'icon icon-bottom',
+						previous: 'icon icon-left',
+						next: 'icon icon-right',
+						today: 'icon icon-tick',
+						clear: 'icon icon-close',
+						close: 'icon icon-close'
+					}
+				});
+			}
+			if ($('.timepicker').length) {
+				$('.timepicker').datetimepicker({
+					format: 'LT',
+					ignoreReadonly: true,
+					icons: {
+						time: 'icon icon-clock',
+						up: 'icon icon-top',
+						down: 'icon icon-bottom',
+						previous: 'icon icon-left',
+						next: 'icon icon-right'
+					}
+				});
+			}
+							
+			// Contact page form
+			if (forms.contactForm.length) {
+
+				var $contactform = forms.contactForm;
+				$contactform.validate({
+					rules: {
+						name: {
+							required: true,
+							minlength: 2
+						},
+						
+						phone: {
+							required: true,
+							minlength: 9
+						},
+						usuario: {
+							required: true,
+							minlength: 5
+						},
+						rucx: {
+							required: true,
+							minlength: 11
+						},
+						message: {
+							required: true,
+							minlength: 20
+						},
+						email: {
+							required: true,
+							email: true
+						}
+
+					},
+					messages: {
+						name: {
+							required: "Por favor, escriba su nombre",
+							minlength: "Su nombre debe constar de al menos 2 caracteres."
+						},
+						phone: {
+							required: "Por favor, Ingrese su celular",
+							minlength: "Su celular debe constar de 9 caracteres."
+						},
+						
+						usuario: {
+							required: "Por favor, Ingrese Ruc y presione Enter",
+							
+						},
+						rucx: {
+							required: "Por favor, Ingrese Ruc y presione Enter",
+							
+						},
+						message: {
+							required: "Por favor ingrese el mensaje",
+							minlength: "Su mensaje debe tener al menos 20 caracteres."
+						},
+						email: {
+							required: "Por favor, Ingrese su email"
+						}
+					},
+					submitHandler: function submitHandler(form) {
+
+						// Manda a la base de datos
+						$(form).ajaxSubmit({
+							type: "POST",
+							data: $(form).serialize(),
+							url: "<?php echo esc(base_url('Inicio/process_contactform'))?>",
+							success: function success() {
+								$('.successform', $contactform).fadeIn();
+								$contactform.get(0).reset();
+							},
+							error: function error() {
+								$('.errorform', $contactform).fadeIn();
+							}
+						});
+					}
+				});
+			}
+
+			// Question form
+			if (forms.questionForm.length) {
+				var $questionForm = forms.questionForm;
+				$questionForm.validate({
+					rules: {
+						name: {
+							required: true,
+							minlength: 10
+						},
+						messages: {
+							required: true,
+							minlength: 20
+						},
+						email: {
+							required: true,
+							email: true
+						}
+					},
+					messages: {
+						name: {
+							required: "Por favor, escriba su nombre",
+							minlength: "Su nombre debe constar de al menos 10 caracteres."
+						},
+						message: {
+							required: "Por favor ingrese el mensaje",
+							minlength: "Su mensaje debe tener al menos 20 caracteres."
+						},
+						email: {
+							required: "Por favor introduzca su correo electrónico"
+						}
+					},
+					submitHandler: function submitHandler(form) {
+
+						//realizar mediante a la base de datos
+						//
+						$(form).ajaxSubmit({
+							type: "POST",
+							data: $(form).serialize(),
+							url: "<?php echo base_url('Inicio/process_question')?>",
+							success: function success() {
+								$('.successform', $questionForm).fadeIn();
+								$questionForm.get(0).reset();
+							},
+							error: function error() {
+								$('.errorform', $questionForm).fadeIn();
+							}
+						});
+						//
+						//end fin
+						/*$(form).ajaxSubmit({
+							type: "POST",
+							data: $(form).serialize(),
+							url: "form/process-question.php",
+							success: function success() {
+								$('.successform', $questionForm).fadeIn();
+								$questionForm.get(0).reset();
+							},
+							error: function error() {
+								$('.errorform', $questionForm).fadeIn();
+							}
+						});*/
+					}
+				});
+			}
 			
-		})(jQuery);
+			// booking form
+			if (forms.bookingForm.length) {
+				var $bookingForm = forms.bookingForm;
+				$bookingForm.validate({
+					rules: {
+						bookingname: {
+							required: true,
+							minlength: 2
+						},
+						bookingruc: {
+							required: true,
+							minlength: 11
+						},
+						
+						bookingemploye: {
+							required: true,
+							minlength: 5
+						},
+						
+						bookingphone: {
+							required: true,
+							minlength: 9
+						},
+
+						bookingmessage: {
+							required: true,
+							minlength: 20
+						},
+						bookingemail: {
+							required: true,
+							email: true
+						}
+
+					},
+					messages: {
+						bookingname: {
+							required: "Por favor, escriba sus nombres completos",
+							minlength: "Sus nombres completos debe constar de al menos 10 caracteres."
+						},
+						bookingruc: {
+							required: "Por favor, Ingrese Ruc y presione Enter",
+						},
+						bookingemploye: {
+							required: "Por favor, Ingrese Ruc y presione Enter",
+							
+						},
+						bookingphone: {
+							required: "Por favor, Ingrese su celular",
+							minlength: "Su celular debe constar de 9 caracteres."
+						},
+						bookingmessage: {
+							required: "Por favor ingrese su mensaje",
+							minlength: "e tener al menos 20 caracteres."
+						},
+						bookingemail: {
+							required: "Por favor introduzca su correo electrónico"
+						}
+					},
+					submitHandler: function submitHandler(form) {
+						//esto manda a la base de datos
+						$(form).ajaxSubmit({
+							type: "POST",
+							data: $(form).serialize(),
+							url: "<?php echo esc(base_url('Inicio/process_booking'))?>",
+							success: function success() {
+								$('.successform', $bookingForm).fadeIn();
+								$bookingForm.get(0).reset();
+							},
+							error: function error() {
+								$('.errorform', $bookingForm).fadeIn();
+							}
+						});
+
+						/*$(form).ajaxSubmit({
+							type: "POST",
+							data: $(form).serialize(),
+							url: "public/assets/form/process-booking.php",
+							success: function success() {
+								$('.successform', $bookingForm).fadeIn();
+								$bookingForm.get(0).reset();
+							},
+							error: function error() {
+								$('.errorform', $bookingForm).fadeIn();
+							}
+						});*/
+
+					}
+				});
+			}
+			
+			// request form
+			if (forms.requestForm.length) {
+				var $requestForm = forms.requestForm;
+				$requestForm.validate({
+					rules: {
+						requestname: {
+							required: true,
+							minlength: 2
+						},
+						requestmessages: {
+							required: true,
+							minlength: 20
+						},
+						requestemail: {
+							required: true,
+							email: true
+						}
+
+					},
+					messages: {
+						requestname: {
+							required: "Please enter your name",
+							minlength: "Your name must consist of at least 2 characters"
+						},
+						requestmessage: {
+							required: "Please enter message",
+							minlength: "Your message must consist of at least 20 characters"
+						},
+						requestemail: {
+							required: "Please enter your email"
+						}
+					},
+					submitHandler: function submitHandler(form) {
+						$(form).ajaxSubmit({
+							type: "POST",
+							data: $(form).serialize(),
+							url: "form/process-request.php",
+							success: function success() {
+								$('.successform', $requestForm).fadeIn();
+								$requestForm.get(0).reset();
+							},
+							error: function error() {
+								$('.errorform', $requestForm).fadeIn();
+							}
+						});
+					}
+				});
+			}
+
+		
+		});
+		
+	})(jQuery);
 </script>
 
 <script src="<?php echo base_url().'/public/sunatphp-master/';?>example/js/ajaxview.js?v=<?php echo rand();?>"></script>
-    <script>
-      $(document).ready(function(){
-        $("#btn-submit").click(function(e){
-        //$('#btn-submit').on('click', function(){
-          var $this = $(this);
-          e.preventDefault();
-          //$this.button('loading');
-          //$.ajaxblock(); con esto carga el loading, al quitar esto ya elimina el loading de la pagina web
-          $.ajax({
-            data: { "nruc" : $("#nruc").val() },
-            type: "POST",
-            dataType: "json",
-            url: "<?php echo base_url('public/sunatphp-master/example/consulta.php/');?>",
-          }).done(function( data, textStatus, jqXHR ){
-            if(data['success']!="false" && data['success']!=false)
-            {
-              $("#json_code").text(JSON.stringify(data, null, '\t'));
-              if(typeof(data['result'])!='undefined')
-              {
-                $("#tbody").html("");
-                $.each(data['result'], function(i, v)
-                {
-                  $("#usuario").val(data['result']['razon_social']);
-                  $("#rucx").val(data['result']['ruc']);
-                  $("#direccionx").val(data['result']['direccion']);
-                  
-                });
-              }
-              //$this.button('reset');
-              $("#error").hide();
-              $(".result").show();
-              $.ajaxunblock();
-            }
-            else
-            {
-              if(typeof(data['msg'])!='undefined')
-              {
-                alert( data['msg'] );
-              }
-              //$this.button('reset');
-              $.ajaxunblock();
-            }
-          }).fail(function( jqXHR, textStatus, errorThrown ){
-            alert( "Solicitud fallida:" + textStatus );
-            $this.button('reset');
-            $.ajaxunblock();
-          });
-        });
-      });
-    </script>
 
-    <!--esto lo que esta haciendo es repetir el codigo-->
-        <script>
-      $(document).ready(function(){
-        $("#btn-submitx").click(function(e){
-        //$('#btn-submit').on('click', function(){
-          var $this = $(this);
-          e.preventDefault();
-          //$this.button('loading');
-          //$.ajaxblock(); con esto carga el loading, al quitar esto ya elimina el loading de la pagina web
-          $.ajax({
-            data: { "nruc" : $("#nrucx").val() },
-            type: "POST",
-            dataType: "json",
-            url: "<?php echo base_url('public/sunatphp-master/example/consulta.php/');?>",
-          }).done(function( data, textStatus, jqXHR ){
-            if(data['success']!="false" && data['success']!=false)
-            {
-              $("#json_code").text(JSON.stringify(data, null, '\t'));
-              if(typeof(data['result'])!='undefined')
-              {
-                $("#tbody").html("");
-                $.each(data['result'], function(i, v)
-                {
-                  $("#usuariox").val(data['result']['razon_social']);
-                  $("#rucxx").val(data['result']['ruc']);
-                  $("#direccionx").val(data['result']['direccion']);
-                  
-                });
-              }
-              //$this.button('reset');
-              $("#error").hide();
-              $(".result").show();
-              $.ajaxunblock();
-            }
-            else
-            {
-              if(typeof(data['msg'])!='undefined')
-              {
-                alert( data['msg'] );
-              }
-              //$this.button('reset');
-              $.ajaxunblock();
-            }
-          }).fail(function( jqXHR, textStatus, errorThrown ){
-            alert( "Solicitud fallida:" + textStatus );
-            $this.button('reset');
-            $.ajaxunblock();
-          });
-        });
-      });
-    </script>
+<!-- Buscar RUC | Script -->
+<script>
+
+	$(document).ready(function(){
+		
+		$("#btn-submitx").click(function(e){
+
+			var $this = $(this);
+			e.preventDefault();
+
+			$.ajax({
+
+				data: { "nruc" : $("#nrucx").val() },
+				type: "POST",
+				dataType: "json",
+				url: "<?php echo base_url('public/sunatphp-master/example/consulta.php/');?>",
+
+			}).done(function( data, textStatus, jqXHR ) {
+
+				if(data['success']!="false" && data['success']!=false) {
+
+					$("#json_code").text(JSON.stringify(data, null, '\t'));
+					
+					if(typeof(data['result'])!='undefined') {
+						$("#tbody").html("");
+						$.each(data['result'], function(i, v) {
+
+							$("#usuariox").val(data['result']['razon_social']);
+							$("#rucxx").val(data['result']['ruc']);
+							$("#direccionx").val(data['result']['direccion']);
+							
+						});
+					}
+
+					$("#error").hide();
+					$(".result").show();
+					$.ajaxunblock();
+
+				} else {
+
+					if(typeof(data['msg'])!='undefined') {
+						alert( data['msg'] );
+					}
+
+					$.ajaxunblock();
+				}
+
+			}).fail(function( jqXHR, textStatus, errorThrown ) {
+
+				alert( "Solicitud fallida:" + textStatus );
+				$this.button('reset');
+				$.ajaxunblock();
+			});
+		});
+	});
+	
+</script>
 
 
 </body>
