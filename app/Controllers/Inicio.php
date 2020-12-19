@@ -582,13 +582,18 @@ class Inicio extends BaseController {
 		echo json_encode($data);
 	}
 
-	public function enviar_correo()
-	{
+
+	/*
+	Esta funcion es llamada cuando el usuario desde el cliente envia el formulario para solicitar cotizacion.
+	Se toman los datos del cliente, se configura un email, y se envia un email automatico a las direcciones interezadas
+	*/
+	public function enviar_correo() {
 		
-		if ($this->request->getMethod() === 'post') {
+		if ($this->request->getMethod() === 'post') {	
 
 			$reponder = $this->request->getPost('nombres_completos').' - '. $this->request->getPost('dni_mostrar_dni');
 
+			// Obteniendo variables
 			$mail = new PHPMailer();
 			$email = $this->request->getPost('bookingemail');
 			$nombres_completos  =  $this->request->getPost('nombres_completos');
@@ -598,10 +603,19 @@ class Inicio extends BaseController {
 			$mensaje =  $this->request->getPost('bookingmessage');
 			$nombre_paquete =  $this->request->getPost('paquete');
 
-			/*
-			$mail->Username = 'escudero059407@hotmail.com';
-			$mail->Password = 'Escuderohh';*/
+			// Pasando las variables a un array para pasarlas al View
+			$data = array(
+				'nombre_paquete' => $nombre_paquete,
+				'reponder' => $reponder,
+				'nombres_completos' => $nombres_completos,
+				'ruc' => $ruc,
+				'fecha_envio' => $fecha_envio,
+				'celular' => $celular,
+				'email' => $email,
+				'mensaje' => $mensaje,
+			);
 		   
+			// Creando la configuracion del correo
 			$mail->isSMTP();
 			$mail->Host     = 'ssl://p3plzcpnl434616.prod.phx3.secureserver.net';
 			$mail->SMTPSecure = false;
@@ -621,7 +635,7 @@ class Inicio extends BaseController {
 			// Esto configura el boton de "responder a este email" en el correo
 			$mail->addReplyTo($email, 'Pedido de Cotizacion - Pagina web  Web innomedic');
 		   
-			// Add a recipient
+			// Para: 
 			$mail->addAddress('prueba@innomedic.pe');
 			$mail->addAddress('reenviadores@innomedic.pe');
 
@@ -636,56 +650,12 @@ class Inicio extends BaseController {
 			// Set email format to HTML
 			$mail->isHTML(true);
 
-			$mailContent_view = '<div style="width: 100%; font-size: 1rem;" class="container ">
-		   <div>
-			  <p class="display-4 text-justify">No dejar de pasar una opotunidad, el cliente espera que lo respondas mas rapido de lo que puedas, suerte en todo</p>
-			</div>
-
-			<div>
-			  <h2 class="display-4 text-justify">PAQUETES PREVENTIVOS</h2>
-			</div>
-			<div>
-			  <h2 class="display-4 text-justify " style="color:red;">'.$nombre_paquete.'</h2>
-			</div>
-
-			<div class="text-center">
-		   <p class="h1 text-danger">Empresa a responder es : '.$reponder.'</p>
-			</div>
-		   <div class="row">
-		   <div class="col-md-4">
-			 <label for="" class="font-weight-bold ">Nombres:</label>
-			 <span>'.$nombres_completos.' </span>
-		   </div>
-		   <div class="col-md-4">
-			 <label for="" class="font-weight-bold">DNI:</label>
-			 <span>'.$ruc.'</span>
-		   </div>
-		   <div class="col-md-4">
-			 <label for="" class="font-weight-bold">Fecha de Envio:</label>
-			 <span>'.$fecha_envio.'</span>
-		   </div>
-		   <div class="col-md-4">
-			 <label for="" class="font-weight-bold">Celular:</label>
-			 <span>'.$celular.'</span>
-		   </div>
-		   <div class="col-md-4">
-			 <label for="" class="font-weight-bold">Email:</label>
-			 <span>'.$email.'</span>
-		   </div>
-			<div class="col-md-12">
-			 <label for="" class="font-weight-bold">Mensaje: </label>
-			 <span>'.$mensaje.'</span>
-		   </div>
-		  
-
-			</div>
 			
-			</div>';
 			   
-			// Juntando todo el contenido del correo
-			$mailContent = view('email/header').$mailContent_view.view('email/footer');
+			// Juntando todo el contenido del correo. Renderizando el HTML del email
+			$mailContent = view('email/header').view('email/body', $data).view('email/footer');
 
-			// Defiendo el cuerpo del correo como el contenido previamente configurado
+			// Definiendo el cuerpo del correo como el contenido previamente configurado
 	   		$mail->Body = $mailContent;
 			
 
@@ -703,13 +673,7 @@ class Inicio extends BaseController {
 		 	echo "Mala sintaxis en el pedido";
 	   	}
 
-
-   }
-
-
-
-
-
+	}
 
 
 
