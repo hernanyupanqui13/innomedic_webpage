@@ -477,7 +477,7 @@
             }  
 
           $.ajax({  
-               url:"<?php echo base_url('Inicio/SendMail/');?>",  
+               url:"<?php echo base_url('Inicio/enviarSuscriptor/');?>",  
                method:'POST',  
                data:new FormData(this),  
                contentType:false,  

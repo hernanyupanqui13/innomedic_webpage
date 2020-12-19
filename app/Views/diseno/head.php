@@ -234,7 +234,7 @@ foreach ($list_employe as $xx) {
 
 <script>
 
-	/* Esta funcion envia se ejecuta en el cliente. Recibe la informaicon del la barra de busqueda y la envia al servideor donde solicita los resultados.
+	/* Esta funcion envia se ejecuta en el cliente. Recibe la informacion del la barra de busqueda y la envia al servideor donde solicita los resultados.
 	Los resultados reenviaods al cliente en una nueva direccion URL donde se ejecuta el controlador Resultados.php  */
 	function mensaje() {
 

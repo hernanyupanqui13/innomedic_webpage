@@ -432,38 +432,6 @@
         
      ?>
 
-<!-- Load Facebook SDK for JavaScript -->
-      <div id="fb-root"></div>
-      <script>
-        window.fbAsyncInit = function() {
-          FB.init({
-            xfbml            : true,
-            version          : 'v7.0'
-          });
-        };
-
-        (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
-
-      <!-- Your Chat Plugin code -->
-      <div class="fb-customerchat"
-        attribution=setup_tool
-        page_id="413978685311343"
-  		theme_color="#0084ff"
-  		logged_in_greeting=" ¡Hola! como podemos ayudarte?"
-  		logged_out_greeting=" ¡Hola! como podemos ayudarte?"
-  		greeting_dialog_display="show"
-  		>
-      </div>
-
-
-
-
 <!-- Vendors -->
 <script src="<?= esc(base_url()).'/public/';?>assets/vendor/jquery/jquery-3.2.1.min.js"></script>
 <script src="<?= esc(base_url()).'/public/';?>assets/vendor/jquery-migrate/jquery-migrate-3.0.1.min.js"></script>
@@ -504,131 +472,126 @@
 <!--Floating WhatsApp javascript-->
 <script type="text/javascript" src="https://rawcdn.githack.com/rafaelbotazini/floating-whatsapp/3d18b26d5c7d430a1ab0b664f8ca6b69014aed68/floating-wpp.min.js"></script>
 <script>
-	    $('#email').on('keypress', function() {
-	    var re = /([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test(this.value);
-	    if(!re) {
-	        $('#error').show();
-	    } else {
-	        $('#error').hide();
-	    }
+
+	$('#email').on('keypress', function() {
+	var re = /([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test(this.value);
+		if(!re) {
+			$('#error').show();
+		} else {
+			$('#error').hide();
+		}
 	})
-	</script>
-<script>  
-            //nuevo registro
-        $(document).on('submit', '#enviararchivos', function(event){  
-             event.preventDefault();  
-             var email = $("#email").val();
-           
 
-             //validacion de nombre;
+</script>
 
-            if (email.length=="") {
-                Swal.fire({
-                  position: 'top-end',
-                  type: 'error',
-                  text: 'El campo link esta vacio',
-                  showConfirmButton: false,
-                  timer: 1500
-                })
-                return false;
-            }else{
-
-            }  
-
-          $.ajax({  
-               url:"<?php echo base_url('Inicio/SendMail/');?>",  
-               method:'POST',  
-               data:new FormData(this),  
-               contentType:false,  
-               processData:false,  
-               success:function(data)  
-               {  
-                var json =JSON.parse(data);
-                  Swal.fire({
-                    title: 'Muy Bien',
-                    text: ""+json.msg+"",
-                    icon: 'success',
-                    showCancelButton: false,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Gracias!'
-                  }).then((result) => {
-                    if (result.value) {
-
-                        $("#email").val("");
-                    }
-                  })
-                 
-                //$('#div_load').load(location.href+" #div_load>*","");
-                
-                 
-               },statusCode:{
-              400: function(xhr){
-
-                var json = JSON.parse(xhr.responseText);
-                if (json.alerta) {
-                  Swal.fire({
-                      title: 'Lo siento mucho ',
-                      text: ""+json.alerta+"",
-                      icon: 'info',
-                      showCancelButton: false,
-                      confirmButtonColor: '#3085d6',
-                      cancelButtonColor: '#d33',
-                      confirmButtonText: 'OK!'
-                    }).then((result) => {
-                      if (result.value) {
-                        
-                      }
-                    })
-                 /* $("#alert").html('<div class="alert alert-success text-center" id="alerta" role="alert">'+json.alerta+'</div>'); */
-                }
-                
-              },401: function(xhr){
-            var json = JSON.parse(xhr.responseText);
-            if (json.error) {
-                  Swal.fire({
-                      title: 'Lo siento mucho',
-                      text: ""+json.error+"",
-                      icon: 'info',
-                      showCancelButton: false,
-                      confirmButtonColor: '#3085d6',
-                      cancelButtonColor: '#d33',
-                      confirmButtonText: 'Ok!'
-                    }).then((result) => {
-                      if (result.value) {
-                        
-                      }
-                    })
-                
-                }
-        },
-            error: function()
-                                 {
-                       Swal.fire({
-                        title: 'Lo siento mucho',
-                        text: "Algo paso con el sistema Vuelva a intentar una vez mas",
-                        icon: 'error',
-                        showCancelButton: false,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        confirmButtonText: 'Ok!'
-                      }).then((result) => {
-                        if (result.value) {
-                         
-                        }
-                      })
-                  }
-              }
-            
-
-          });  
-          
-             
-
-        });  
-    </script>
+<!-- Enviar suscriptores | Script-->
 <script>
-    function sendRequest(){
+	/*
+	Esta parte del codigo recoge la informacion del formulario del footer, valida
+	los datos y los envia a la base de datos del servidor
+	*/
+	$(document).on('submit', '#enviararchivos', function(event){
+
+		event.preventDefault();  
+		var email = $("#email").val();
+		
+
+		// Validación de nombre
+		if (email.length=="") {
+			Swal.fire({
+				position: 'top-end',
+				type: 'error',
+				text: 'El campo link esta vacio',
+				showConfirmButton: false,
+				timer: 1500
+			})
+			return false;
+		}
+
+		// Enviando Ajax al servidor para suscribir el email
+		$.ajax({
+			url:"<?php echo base_url('Inicio/enviarSuscriptor/');?>",  
+			method:'POST',  
+			data:new FormData(this),  
+			contentType:false,  
+			processData:false,  
+			success:function(data)  {
+				var json =JSON.parse(data);
+
+				Swal.fire({
+				title: 'Muy Bien',
+				text: ""+json.msg+"",
+				icon: 'success',
+				showCancelButton: false,
+				confirmButtonColor: '#3085d6',
+				cancelButtonColor: '#d33',
+				confirmButtonText: 'Gracias!'
+				}).then((result) => {
+				if (result.value) {
+
+					$("#email").val("");
+				}
+				})			
+				
+			},statusCode:{
+				400: function(xhr){
+					
+					var json = JSON.parse(xhr.responseText);
+
+					if (json.alerta) {
+						Swal.fire({
+							title: 'Lo siento mucho ',
+							text: ""+json.alerta+"",
+							icon: 'info',
+							showCancelButton: false,
+							confirmButtonColor: '#3085d6',
+							cancelButtonColor: '#d33',
+							confirmButtonText: 'OK!'
+						}).then((result) => {
+							if (result.value) {
+							}
+						})
+					}
+				},401: function(xhr){
+
+					var json = JSON.parse(xhr.responseText);
+					if (json.error) {
+						Swal.fire({
+							title: 'Lo siento mucho',
+							text: ""+json.error+"",
+							icon: 'info',
+							showCancelButton: false,
+							confirmButtonColor: '#3085d6',
+							cancelButtonColor: '#d33',
+							confirmButtonText: 'Ok!'
+						}).then((result) => {
+							if (result.value) {
+							
+							}
+						})
+					}
+				}, error: function() {
+					Swal.fire({
+						title: 'Lo siento mucho',
+						text: "Algo paso con el sistema Vuelva a intentar una vez mas",
+						icon: 'error',
+						showCancelButton: false,
+						confirmButtonColor: '#3085d6',
+						cancelButtonColor: '#d33',
+						confirmButtonText: 'Ok!'
+					}).then((result) => {
+						if (result.value) {
+						}
+					})
+				}
+			}
+		});  
+	});  
+
+</script>
+<script>
+    function sendRequest() {
+
     
       $.ajax({
         url: "<?php echo base_url('Inicio/cantidad_registro/');?>",

@@ -81,48 +81,45 @@ class Inicio extends BaseController {
 		
 	}
 
-	//enviamos el correo mediante ajax
-	//
-	//enviar correo 
-	
-	public function SendMail()
-	{
+	/*
+	Esta funcion enviar el correo de las personas que desean suscribirse a noticias
+	Toma los datos, se conecta con la base de datos e inserta los nuevos emails si no
+	han sido añadidos antes
+	*/
+	public function enviarSuscriptor() {
 		if ($this->request->getMethod() === 'post') {
 
 			$db = \Config\Database::connect();
 			$model = new InicioModel();
-			// preguntamos si existe inscripcion por email
+
+			// Preguntamos si existe la inscripcion por email
 	        $query = $db->query("select * from t_suscriptor where email='".$this->request->getPost('email')."'");
 	        $row = $query->getRow();
-	        if(isset($row)){ // cuando es mayor que vacio o cero
+			
+			// Cuando es mayor que vacio o cero, ya esta registrado
+			if(isset($row)){ 
 	           echo json_encode(array('alerta'=>'Verificamos en el sistema que usted ya se registro'));
 	           $this->response->setStatusCode(400);
-	        }else{
+	        } else {
 	        	$data = array(
-				'email' =>$this->request->getPost('email'),
-				'fecha' =>date('Y-m-d h:i:s')
-			);
+					'email' =>$this->request->getPost('email'),
+					'fecha' =>date('Y-m-d h:i:s')
+				);
 
-			$model->SendMail($data);
+				$model->enviarSuscriptorDb($data);
 
-			echo json_encode(array("msg"=>"Se registro Correctamente"));
-
+				echo json_encode(array("msg"=>"Se registro correctamente"));
 	        }
-		
 			
-		}else{
-
-			//return redirect()->to(base_url('Inicio/Zona_roja/'));
+		} else {
 			return $this->_cargaError();
 		}
 		
-
-
 	}
-	//
-	//end
-	//
-	//
+	
+
+
+
 
 	public function process_contactform	()
 	{
@@ -641,8 +638,8 @@ class Inicio extends BaseController {
 
 
 			// Add cc or bcc 
-			$mail->addCC('ventas@innomedic.pe');
-			$mail->addBCC('ventas.in@innomedic.pe');
+			//$mail->addCC('ventas@innomedic.pe');
+			//$mail->addBCC('ventas.in@innomedic.pe');
 			
 			// Email subject
 			$mail->Subject = 'Realizar cotizacion para '.$nombres_completos.' - Paquetes Preventivos';
@@ -653,7 +650,7 @@ class Inicio extends BaseController {
 			
 			   
 			// Juntando todo el contenido del correo. Renderizando el HTML del email
-			$mailContent = view('email/header').view('email/body', $data).view('email/footer');
+			$mailContent = view('email/body', $data);
 
 			// Definiendo el cuerpo del correo como el contenido previamente configurado
 	   		$mail->Body = $mailContent;

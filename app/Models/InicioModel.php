@@ -92,7 +92,7 @@ class InicioModel extends Model
 		$builder->insert();  
 	}
 
-	public function SendMail($data)
+	public function enviarSuscriptorDb($data)
 	{
 		$db   = \Config\Database::connect();
 		$builder = $db->table('t_suscriptor');
