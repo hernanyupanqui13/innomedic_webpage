@@ -145,29 +145,6 @@ foreach ($list_employe as $xx) {
 			</div>
 		</div>
 	</div>
-	<!--<script>
-		function alerta_users() {
-			Swal.fire({
-			  title: '<strong>Accesso a Intranet</u></strong>',
-			  icon: 'info',
-			  html:
-			    'Deseas Ingresar <b>a Intranet</b>, ' +
-			    '<a target="_blank" style="color:#15D8E8" href="http://localhost:100/innomedic/">Click aqui!</a> ' +
-			    'o <b> Resultados en Linea</b> '+
-			    '<a target="_blank" style="color:#15D8E8" href="http://200.4.213.137:8021/">Click aqui!</a> ',
-			  showCloseButton: true,
-			  showCancelButton: true,
-			  focusConfirm: false,
-			  allowOutsideClick: false,
-			  confirmButtonText:
-			    '<i class="fa fa-thumbs-up"></i> ¡Excelente!',
-			  confirmButtonAriaLabel: 'Thumbs up, great!',
-			  cancelButtonText:
-			    '<i class="fa fa-thumbs-down"></i>',
-			  cancelButtonAriaLabel: 'Thumbs down'
-			})
-		}
-	</script>-->
 	<div class="header-content">
 		<div class="container">
 			<div class="row align-items-lg-center">
@@ -197,9 +174,6 @@ foreach ($list_employe as $xx) {
 									<li class="nav-item">
 										<a class="nav-link link-inside" href="#specialistsSection">Staff</a>
 									</li>
-									<!--<li class="nav-item">
-										<a class="nav-link link-inside" href="#testimonialsSection">Customers</a>
-									</li>-->
 									<li class="nav-item">
 										<a class="nav-link link-inside" href="#eventsSection" onclick="return validate_xxx();">Eventos</a>
 									</li>
@@ -234,8 +208,10 @@ foreach ($list_employe as $xx) {
 
 <script>
 
-	/* Esta funcion envia se ejecuta en el cliente. Recibe la informacion del la barra de busqueda y la envia al servideor donde solicita los resultados.
-	Los resultados reenviaods al cliente en una nueva direccion URL donde se ejecuta el controlador Resultados.php  */
+	/* 
+	Esta funcion envia se ejecuta en el cliente. Recibe la informacion del la barra de busqueda y la envia al servidor donde solicita los resultados.
+	Los resultados reenviados al cliente en una nueva direccion URL donde se ejecuta el controlador Resultados.php  
+	*/
 	function mensaje() {
 
 
@@ -296,6 +272,7 @@ foreach ($list_employe as $xx) {
 
 
 <script>
+	// This functions need correction
 	function validate_xxx() {
 		window.location = "<?php echo base_url('Inicio/Blog/');?>";
 	}
