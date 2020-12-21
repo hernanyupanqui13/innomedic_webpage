@@ -560,26 +560,20 @@ class Inicio extends BaseController {
 		echo view("diseno/footer",$data);
 	}
 
-	public function recoger_informacion()
-	{
+
+	/* 
+	Esta funcion recoge la informacion se conecta con el modelo para pedir la informacion de los paquetes
+	Devuelve un unico paquete con el ID que se solicita
+	*/
+	public function recoger_informacion() {
 		
 		$model = new InicioModel();
 		$id_paquete = $this->request->getPost('id_paquete');
 
-		$data = $model->mostrmos_data_recopilado($id_paquete);
+		$data = $model->mostramos_data_recopilada($id_paquete);
+
 		echo json_encode($data);
 	}
-
-	public function recoger_informacion1()
-	{
-		$id_paquete = $this->request->getPost('id_paciente');
-		$model = new InicioModel();
-		
-
-		$data = $model->asObject()->mostrmos_data_recopilado1($id_paquete);
-		echo json_encode($data);
-	}
-
 
 	/*
 	Esta funcion es llamada cuando el usuario desde el cliente envia el formulario para solicitar cotizacion.

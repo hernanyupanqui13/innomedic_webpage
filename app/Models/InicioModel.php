@@ -118,20 +118,13 @@ class InicioModel extends Model
 		$builder->insert();  
 	}
 
-	public function mostrmos_data_recopilado($id)
+	public function mostramos_data_recopilada($id)
 	{
 		$db   = \Config\Database::connect();
 		$builder = $db->query('select * from t_paquetes where Id="'.$id.'"');
 		return $builder->getRow();
 	}
 
-	public function mostrmos_data_recopilado1($id)
-	{
-		$db   = \Config\Database::connect();
-		$builder = $db->query('select * from t_paquetes where Id="'.$id.'"');
-		return $builder->getResult();
-	}
-	
 
 	
 

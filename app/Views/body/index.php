@@ -169,7 +169,7 @@ $query_ss = $db->query("select * from th_employe");
 										<?php echo $xx->text; ?>
 									</ul>
 									<!-- Boton de paquetes -->
-									<a href="<?php echo $xx->url; ?>" onclick="return mesnaje('<?php echo $xx->Id; ?>')" class="thm-btn pricing-one__btn"><span><?php echo $xx->btn; ?></span></a>
+									<a href="<?php echo $xx->url; ?>" onclick="return mostrarPaquetes('<?php echo $xx->Id; ?>')" class="thm-btn pricing-one__btn"><span><?php echo $xx->btn; ?></span></a>
 								</div>
 								</div>
 							<?php }
@@ -331,7 +331,7 @@ $query_ss = $db->query("select * from th_employe");
 	<div class="section" id="departmentsSection" >
 		<div class="container">
 			<div class="title-wrap text-center">
-				<h2 class="h1">Nuestras Areas</h2>
+				<h2 class="h1">Nuestros Departamentos</h2>
 				<div class="h-decor"></div>
 			</div>
 			<p class="text-center max-500">Innomedic International se especializa en diferentes servicios médicos.</p>
@@ -773,58 +773,41 @@ $query_ss = $db->query("select * from th_employe");
 <?php endif; ?>
 
 <script>
-	function mesnaje(id) {
-		var id_paciente = id;
-		// body...
+
+	function mostrarPaquetes(id) {
+
 		$.ajax({
 			url: '<?php echo base_url('Inicio/recoger_informacion/');?>',
 			type: 'POST',
 			dataType: 'json',
 			data: {id_paquete: id},
 		})
+
 		.done(function(data) {
 			console.log("success");
-			$(".grgergrvgvegqsqsqsqsq").modal("show");
+
+			$(".solicitar-info-modal").modal("show");
+			
+
+			// Armando el contenido para el HTML
+			var contenido = '<ul class="list-unstyled pricing-one__list">' + data.text + '</ul>';            
+			
+			// Insertando el contenido al HTML
+			$("#aplicamos_archivos2").html(contenido);
 			$("#paquete").text(data.title);
-			$("#paquete_texto").val(data.title)
+			$("#paquete_texto").val(data.title) 		// Este elemento esta oculto en el HTML
 		})
+
 		.fail(function() {
 			console.log("error");
 		})
+
 		.always(function() {
 			console.log("complete");
 		});
 
-
-		$.ajax({
-			url: '<?php echo base_url('Inicio/recoger_informacion1/');?>',
-				method: 'POST',
-				//dataType: 'json',
-				data: {id_paciente: id_paciente},
-			})
-			.done(function(datas) {
-				console.log("success");
-				var resultado = JSON.parse(datas);
-				var contenido = '';                
-				$.each(resultado, function(index, value) {
-					contenido += `
-					<ul class="list-unstyled pricing-one__list">
-							`+value.text+`
-					</ul>`;
-
-				});
-
-
-				$("#aplicamos_archivos2").html(contenido);
-			})
-			.fail(function() {
-				console.log("error");
-			})
-			.always(function() {
-				console.log("complete");
-			});
-		
 	}
+
 </script>
 
 
@@ -836,7 +819,7 @@ $query_ss = $db->query("select * from th_employe");
 
 
 <!-- Reservar citas | Personas -->
-<div class="modal modal-form fade grgergrvgvegqsqsqsqsq" id="modalBookingForm" data-backdrop="static" data-keyboard="false" tabindex="-1">
+<div class="modal modal-form fade solicitar-info-modal" id="modalBookingForm" data-backdrop="static" data-keyboard="false" tabindex="-1">
 	<div class="modal-dialog   modal-xl">
 		<div class="modal-content border_style">
 			<button aria-label='Close' class='close' data-dismiss='modal'>
@@ -1045,7 +1028,7 @@ $query_ss = $db->query("select * from th_employe");
 			}).then((result) => {
 			if (result.value) {
 				$("#Enviamos_los_datos_del_paciente")[0].reset();
-				$(".grgergrvgvegqsqsqsqsq").modal("hide");
+				$(".solicitar-info-modal").modal("hide");
 					$("#lista").html(`<i class="fas fa-paper-plane cambiar_texto" > </i>&nbsp;Reservar cita`);
 			}
 			})
