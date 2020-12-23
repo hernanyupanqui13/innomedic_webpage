@@ -224,7 +224,7 @@
 		</div>
 	</div>
 </div>
-<div class="modal modal-form fade grgergrvgveg" id="modalBookingForm" data-backdrop="static" data-keyboard="false" tabindex="-1">
+<div class="modal modal-form fade empresa-cotizacion-modal" id="modalBookingForm" data-backdrop="static" data-keyboard="false" tabindex="-1">
 	<div class="modal-dialog">
 		<div class="modal-content border_style">
 			<button aria-label='Close' class='close' data-dismiss='modal'>
@@ -758,7 +758,6 @@
 					submitHandler: function submitHandler(form) {
 
 						//realizar mediante a la base de datos
-						//
 						$(form).ajaxSubmit({
 							type: "POST",
 							data: $(form).serialize(),
@@ -768,23 +767,9 @@
 								$questionForm.get(0).reset();
 							},
 							error: function error() {
-								$('.errorform', $questionForm).fadeIn();
+								//$('.errorform', $questionForm).fadeIn();
 							}
 						});
-						//
-						//end fin
-						/*$(form).ajaxSubmit({
-							type: "POST",
-							data: $(form).serialize(),
-							url: "form/process-question.php",
-							success: function success() {
-								$('.successform', $questionForm).fadeIn();
-								$questionForm.get(0).reset();
-							},
-							error: function error() {
-								$('.errorform', $questionForm).fadeIn();
-							}
-						});*/
 					}
 				});
 			}

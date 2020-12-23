@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -17,62 +16,60 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+        <style type="test/css">
+            label {
+                font-weight: bold;
+            }
+
+            p {
+                text-align:center;
+            }
+        </style>
     </head>
-
+    
     <body>
-        <div class="img-container" style="display: flex; justify-content: center;">
-            <img src="http://innomedic.metjetsac.com/public/assets/images/logo.png?v=<?php echo rand();?>" alt="Logo Innomedic">
-        </div>
-
-
-        <div class="body-container" style="width: 100%; font-size: 1rem; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-            <div>
-                <div class="first-message" style="text-align: center; margin: 10px;">No dejar de pasar una opotunidad, el cliente espera que lo respondas más rápido de lo que puedas, suerte en todo</div>
-            </div>
-
-            <div>
-                <h2 class="display-4 text-justify">PAQUETES PREVENTIVOS</h2>
-            </div>
-
-            <div>
-                <h2 class="display-4 text-justify " style="color:red;"><?php echo $nombre_paquete; ?></h2>
-            </div>
-
-            <div class="text-center">
-                <div class="h1 text-danger">Empresa a responder es : <?php echo $reponder; ?></p>
-            </div>
-
-            <div class="datos-cliente" style="text-align: center;">
-                <div>
-                    <label for="" class="font-weight-bold ">Nombres:</label>
-                    <span><?php echo $nombres_completos;?></span>
+        <div style="width: 100%; font-size: 1rem;" class="container ">
+			<div>
+			    <p class="display-4 text-justify">No dejar de pasar una opotunidad, el cliente espera que lo respondas mas rapido de lo que puedas, suerte en todo</p>
+			</div>
+			<div class="text-center">
+			    <p class="h1 text-danger" style="font-size: 15px;">Empresa a responder es : <?php echo $reponder; ?></p>
+			</div>
+			<div class="row" style="text-align:center;">
+			    <div class="col-md-4" style="text-align:center;">
+			        <label for="" class="font-weight-bold ">Nombres:</label>
+			        <span><?php echo $nombres_completos; ?></span>
+			    </div>
+			    <div class="col-md-4" style="text-align:center;">
+			        <label for="" class="font-weight-bold">Empresa:</label>
+			        <span><?php echo $empresa; ?></span>
+			    </div>
+                <div class="col-md-4" style="text-align:center;">
+                    <label for="" class="font-weight-bold">RUC:</label>
+                    <span><?php echo $ruc; ?></span>
                 </div>
-                <div class="">
-                    <label for="" class="font-weight-bold">DNI:</label>
-                    <span><?php echo $ruc;?></span>
-                </div>
-                <div class="">
+                <div class="col-md-4" style="text-align:center;">
                     <label for="" class="font-weight-bold">Fecha de Envio:</label>
-                    <span><?php echo $fecha_envio;?></span>
+                    <span><?php echo $fecha_envio; ?></span>
                 </div>
-                <div class="">
+                <div class="col-md-4" style="text-align:center;">
                     <label for="" class="font-weight-bold">Celular:</label>
-                    <span><?php echo $celular;?></span>
+                    <span><?php echo $celular; ?></span>
                 </div>
-                <div class="">
+                <div class="col-md-4" style="text-align:center;">
                     <label for="" class="font-weight-bold">Email:</label>
-                    <span><?php echo $email;?></span>
+                    <span><?php echo $email; ?></span>
                 </div>
-                <div class="">
+                <div class="col-md-12" style="text-align:center;">
                     <label for="" class="font-weight-bold">Mensaje: </label>
-                    <span><?php echo $mensaje;?></span>
-                </div>
-            </div>
+                    <span><?php echo $mensaje; ?></span>
+			    </div>
+			</div>
         </div>
+    </body> 
 
-    </body>
-
-    <!-- Footer -->
+    
+     <!-- Footer -->
     <footer>
         <div class="footer" style="bottom: 0; z-index: -1; width: 100%; color: #fff; font-size: 1rem; background: #46C0EE;">
             <div class="wrapper" style="margin: auto; width: 100%;">
@@ -86,7 +83,6 @@
         </div>
         
 
-        <p class="final-message" style="text-align: center;">Realizado por: <a target="_blank">Area de Sistemas - Innomedic</a></p>
+        <p class="final-message" style="text-align: center;">Realizado por: <a target="_blank" href="https://www.facebook.com/profile.php?id=100016165057925">Area de Sistemas - Innomedic</a></p>
     </footer>    
-</html>
-        
+</html>        

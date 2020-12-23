@@ -761,17 +761,20 @@ $query_ss = $db->query("select * from th_employe");
 ?>
 
 <?php 
-	if($exibirModal === true) : // Si nuestra variable de control "$exibirModal" es igual a TRUE activa nuestro modal y será visible a nuestro usuario.// 
+	// if($exibirModal === true) : // Si nuestra variable de control "$exibirModal" es igual a TRUE activa nuestro modal y será visible a nuestro usuario.// 
+	if(true) :
 ?>
 
 <script>
 	$(document).ready(function() {
 		// id de nuestro modal
-		$('.grgergrvgveg').modal("show");
+		$('.empresa-cotizacion-modal').modal("show");
+		console.log("modal cargado h");
 	});
 </script>
 <?php endif; ?>
 
+<!-- Solicitar Info con Paquetes | Script-->
 <script>
 
 	function mostrarPaquetes(id) {

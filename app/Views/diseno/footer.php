@@ -125,21 +125,21 @@
 			<div class="col-sm-6 col-lg-4">
 				<h3>Blog Posts</h3>
 				<div class="h-decor"></div>
-				
-					<?php 
-						$db   = \Config\Database::connect();
-						$query_blog= $db->query("SET lc_time_names = 'es_PE'");
-		    			$query_blog = $db->query("select *, DATE_FORMAT(created,'%d %M  %Y') AS mes from t_blog where estado=1 order by Id desc limit 3");
-		    			
-	    				 foreach ($query_blog->getResult() as $blog) {?>
-	    					<div class="footer-post d-flex">
-								<div class="footer-post-photo"><img src="<?php echo base_url().'/public/assets/'; ?>images/content/<?php echo $blog->img;?>?=<?php echo rand();?>" alt="" class="img-fluid"></div>
-								<div class="footer-post-text">
-									<div class="footer-post-title"><a href="javascript:void(0)"><?php echo $blog->title;?></a>&nbsp;<i class="icon-right-arrow"></i></div>
-									<p><?php echo $blog->mes; ?></p>
-								</div>
+			
+				<?php 
+					$db   = \Config\Database::connect();
+					$query_blog= $db->query("SET lc_time_names = 'es_PE'");
+					$query_blog = $db->query("select *, DATE_FORMAT(created,'%d %M  %Y') AS mes from t_blog where estado=1 order by Id desc limit 3");
+					
+						foreach ($query_blog->getResult() as $blog) {?>
+						<div class="footer-post d-flex">
+							<div class="footer-post-photo"><img src="<?php echo base_url().'/public/assets/'; ?>images/content/<?php echo $blog->img;?>?=<?php echo rand();?>" alt="" class="img-fluid"></div>
+							<div class="footer-post-text">
+								<div class="footer-post-title"><a href="javascript:void(0)"><?php echo $blog->title;?></a>&nbsp;<i class="icon-right-arrow"></i></div>
+								<p><?php echo $blog->mes; ?></p>
 							</div>
-	    				<?php } ?>
+						</div>
+				<?php } ?>
 				 
 								
 			</div>
@@ -162,8 +162,6 @@
 					<li><i class="icon-black-envelope"></i><a href="mailto:<?php echo $emailx; ?>"><?php echo $emailx; ?></a></li>
 					<li><i class="icon-black-envelope"></i><a href="mailto:ventas.in@innomedic.pe"><?php echo "ventas.in@innomedic.pe" ?></a></li>
 				</ul>
-
-				
 			</div>
 		</div>
 	</div>
@@ -177,10 +175,13 @@
 		</div>
 	</div>
 </div>
-<!--//footer-->
+
+<!-- footer -->
 <div class="backToTop js-backToTop">
 	<i class="icon icon-up-arrow"></i>
 </div>
+
+<!-- Hacer Preguntas Modal -->
 <div class="modal modal-form  fade" id="modalQuestionForm" data-backdrop="static" data-keyboard="false" tabindex="-1">
 	<div class="modal-dialog">
 		<div class="modal-content border_style">
@@ -191,6 +192,8 @@
 				<div class="modal-form">
 					<h3 class="text-center">Hacer una pregunta</h3>
 					<p class="text-center">Ponte en contacto con nuestro asesor<a target="_blank" href="https://wa.me/51966392469" class=""> CLIK AQUI!</a></p>
+
+					<!-- Inicio del formulario -->
 					<form class="mt-15" id="questionForm" method="post" novalidate>
 						<div class="successform">
 							<p>¡Su mensaje fue enviado exitosamente!</p>
@@ -198,25 +201,31 @@
 						<div class="errorform">
 							<p>Algo salió mal, intente actualizar y enviar el formulario nuevamente.</p>
 						</div>
+						<!-- Nombres -->
 						<div class="input-group">
 								<span>
 								<i class="icon-user"></i>
 							</span>
 							<input type="text" name="name" class="form-control" autocomplete="off" placeholder="Nombres*"/>
 						</div>
+						<!-- Email -->
 						<div class="input-group">
 								<span>
 									<i class="icon-email2"></i>
 								</span>
 							<input type="text" name="email" class="form-control" autocomplete="off" placeholder="E-mail*"/>
 						</div>
+						<!-- Celular -->
 						<div class="input-group">
 								<span>
 									<i class="icon-smartphone"></i>
 								</span>
 							<input type="text" name="phone" class="form-control" autocomplete="off" placeholder="Celular"/>
 						</div>
+						<!-- Pregunta -->
 						<textarea name="message" class="form-control" placeholder="Tu comentario*"></textarea>
+						
+						<!-- Boton Preguntar -->
 						<div class="text-right mt-2">
 							<button type="submit" class="btn btn-sm btn-hover-fill"> <i class="fas fa-paper-plane"></i>&nbsp;Preguntar</button>
 						</div>
@@ -226,7 +235,9 @@
 		</div>
 	</div>
 </div>
-<div class="modal modal-form fade grgergrvgveg" id="modalBookingForm" data-backdrop="static" data-keyboard="false" tabindex="-1">
+
+<!-- Empresas Cotizacion - Modal -->
+<div class="modal modal-form fade empresa-cotizacion-modal" id="modalBookingForm" data-backdrop="static" data-keyboard="false" tabindex="-1">
 	<div class="modal-dialog">
 		<div class="modal-content border_style">
 			<button aria-label='Close' class='close' data-dismiss='modal'>
@@ -240,6 +251,7 @@
 						<span>Nuestro equipo se contactará inmediatamente contigo. Cuidamos de ti, de tu equipo y empresa</span>
 					</div>
 					<br>
+					<!-- Inicio del formulario --> 
 					<form class="mt-15" id="bookingForm" method="post" novalidate="">
 						<div class="successform">
 							<p>¡Su mensaje fue enviado exitosamente!</p>
@@ -247,14 +259,15 @@
 						<div class="errorform">
 							<p>Algo salió mal, intente actualizar y enviar el formulario nuevamente.</p>
 						</div>
-						
+						<!-- Nombres y Apellidos -->
 						<div class="input-group">
 							<span>
 								<i class="icon-user"></i>
 							</span>
 							<input type="text" name="bookingname" class="form-control" autocomplete="off" placeholder="Nombres y apellidos " value="<?= old('lima') ?>" />
 						</div>
-
+						
+						<!-- RUC -->
 						<div class="row row-xs-space mt-1">
 							<div class="col-sm-8">
 								<div class="input-group">
@@ -269,26 +282,26 @@
 		                     	 <span id="id_hidde"><i  class="fa fa-search"></i> Buscar</span>
 		                     	 <div id="agregar_clase" class=""></span>
 		                       </button>
-
-
-		                       
-								
 							</div>
-
 						</div>
-
+						
+						<!-- Empresa - Solo visuzlizacion -->
 						<div class="input-group">
 							<span>
 								<i class="icon-user"></i>
 							</span>
 							<input type="text" name="bookingruc" id="rucxx" class="form-control" autocomplete="off" readonly="" placeholder="Empresa " />
 						</div>
+						
+						<!-- RUC - Solo visualizacion -->
 						<div class="input-group">
 							<span>
 								<i class="icon-user"></i>
 							</span>
 							<input type="text" name="bookingemploye" id="usuariox" class="form-control" autocomplete="off" readonly="" placeholder="Ruc " />
 						</div>
+						
+						<!-- Email -->
 						<div class="row row-xs-space mt-1">
 							<div class="col-sm-12">
 								<div class="input-group">
@@ -299,7 +312,8 @@
 								</div>
 							</div>
 						</div>
-							<!--telñefono-->
+
+						<!-- Telefono -->
 						<div class="row row-xs-space mt-1">
 							<div class="col-sm-12 ">
 								<div class="input-group">
@@ -310,7 +324,11 @@
 								</div>
 							</div>
 						</div>
+
+						<!-- Mensaje -->
 						<textarea name="bookingmessage" class="form-control" placeholder="Mensaje" rows="6"></textarea>
+
+						<!-- Boton de Enviar -->
 						<div class="text-center mt-2">
 							<button type="submit" class="btn btn-sm btn-hover-fill "><i class="fas fa-paper-plane cambiar_texto"></i>&nbsp;Enviar cotización</button>
 						</div>
@@ -895,9 +913,8 @@
 								data: $(form).serialize(),
 								url: "<?php echo esc(base_url('Inicio/process_booking'))?>",
 								success: function success() {
-									$('.successform', $bookingForm).fadeIn();
+									$('.successform').fadeIn();
 									$bookingForm.get(0).reset();
-									//$('.cambiar_texto').text('Enviar cotización');
 								},
 								error: function error() {
 									$('.errorform', $bookingForm).fadeIn();
@@ -908,13 +925,16 @@
 								type: "POST",
 								data: $(form).serialize(),
 								url: "<?php echo base_url('Inicio/enviar_process_boquin_email/');?>",
-								success: function success() {
+								success: function success(data) {
 									$('.successform', $bookingForm).fadeIn();
 									$bookingForm.get(0).reset();
+									
 
 								},
-								error: function error() {
+								error: function error(data) {
 									$('.errorform', $bookingForm).fadeIn();
+									console.log("error en forma");
+									console.log(data);
 								}
 							});
 
