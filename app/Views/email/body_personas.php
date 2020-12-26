@@ -35,21 +35,21 @@
             </div>
 
             <div>
-                <h2 class="display-4 text-justify " style="color:red;"><?php echo $nombre_paquete; ?></h2>
+                <h2 class="display-4 text-justify " style="color:red;"><?php echo $paquete; ?></h2>
             </div>
 
             <div class="text-center">
-                <div class="h1 text-danger">Empresa a responder es : <?php echo $reponder; ?></p>
+                <div class="h1 text-danger">El usuario a responder es : <?php echo $name.' - '. $identification_number; ?></p>
             </div>
 
             <div class="datos-cliente" style="text-align: center;">
                 <div>
                     <label for="" class="font-weight-bold ">Nombres:</label>
-                    <span><?php echo $nombres_completos;?></span>
+                    <span><?php echo $name;?></span>
                 </div>
                 <div class="">
                     <label for="" class="font-weight-bold">DNI:</label>
-                    <span><?php echo $ruc;?></span>
+                    <span><?php echo $identification_number;?></span>
                 </div>
                 <div class="">
                     <label for="" class="font-weight-bold">Fecha de Envio:</label>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="">
                     <label for="" class="font-weight-bold">Celular:</label>
-                    <span><?php echo $celular;?></span>
+                    <span><?php echo $phone;?></span>
                 </div>
                 <div class="">
                     <label for="" class="font-weight-bold">Email:</label>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="">
                     <label for="" class="font-weight-bold">Mensaje: </label>
-                    <span><?php echo $mensaje;?></span>
+                    <span><?php echo $message;?></span>
                 </div>
             </div>
         </div>

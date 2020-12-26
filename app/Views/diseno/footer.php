@@ -264,7 +264,7 @@
 							<span>
 								<i class="icon-user"></i>
 							</span>
-							<input type="text" name="bookingname" class="form-control" autocomplete="off" placeholder="Nombres y apellidos " value="<?= old('lima') ?>" />
+							<input type="text" name="name" class="form-control" autocomplete="off" placeholder="Nombres y apellidos " value="<?= old('lima') ?>" />
 						</div>
 						
 						<!-- RUC -->
@@ -290,7 +290,7 @@
 							<span>
 								<i class="icon-user"></i>
 							</span>
-							<input type="text" name="bookingruc" id="rucxx" class="form-control" autocomplete="off" readonly="" placeholder="Empresa " />
+							<input type="text" name="identification_number" id="rucxx" class="form-control" autocomplete="off" readonly="" placeholder="Empresa " />
 						</div>
 						
 						<!-- RUC - Solo visualizacion -->
@@ -298,7 +298,7 @@
 							<span>
 								<i class="icon-user"></i>
 							</span>
-							<input type="text" name="bookingemploye" id="usuariox" class="form-control" autocomplete="off" readonly="" placeholder="Ruc " />
+							<input type="text" name="usuario" id="usuariox" class="form-control" autocomplete="off" readonly="" placeholder="Ruc " />
 						</div>
 						
 						<!-- Email -->
@@ -308,7 +308,7 @@
 									<span>
 										<i class="icon-email2"></i>
 									</span>
-									<input type="text" name="bookingemail" class="form-control" autocomplete="off" placeholder="Ingrese su e-mail" />
+									<input type="text" name="email" class="form-control" autocomplete="off" placeholder="Ingrese su e-mail" />
 								</div>
 							</div>
 						</div>
@@ -320,13 +320,13 @@
 									<span>
 										<i class="icon-smartphone"></i>
 									</span>
-									<input type="number" name="bookingphone" class="form-control" autocomplete="off" placeholder="Ingrese su teléfono" />
+									<input type="number" name="phone" class="form-control" autocomplete="off" placeholder="Ingrese su teléfono" />
 								</div>
 							</div>
 						</div>
 
 						<!-- Mensaje -->
-						<textarea name="bookingmessage" class="form-control" placeholder="Mensaje" rows="6"></textarea>
+						<textarea name="message" class="form-control" placeholder="Mensaje" rows="6"></textarea>
 
 						<!-- Boton de Enviar -->
 						<div class="text-center mt-2">
@@ -709,7 +709,7 @@
 								required: true,
 								minlength: 5
 							},
-							rucx: {
+							identification_number: {
 								required: true,
 								minlength: 11
 							},
@@ -737,7 +737,7 @@
 								required: "Por favor, Ingrese Ruc y presione Enter",
 								
 							},
-							rucx: {
+							identification_number: {
 								required: "Por favor, Ingrese Ruc y presione Enter",
 								
 							},
@@ -769,7 +769,7 @@
 							$(form).ajaxSubmit({
 								type: "POST",
 								data: $(form).serialize(),
-								url: "<?php echo base_url('Inicio/enviar_datos_mailer_phone/');?>",
+								url: "<?php echo base_url('Inicio/enviarCorreo/');?>",
 								success: function success() {
 									$('.successform', $contactform).fadeIn();
 									$contactform.get(0).reset();
@@ -789,7 +789,7 @@
 						rules: {
 							name: {
 								required: true,
-								minlength: 10
+								minlength: 3
 							},
 							messages: {
 								required: true,
@@ -803,7 +803,7 @@
 						messages: {
 							name: {
 								required: "Por favor, escriba su nombre",
-								minlength: "Su nombre debe constar de al menos 10 caracteres."
+								minlength: "Su nombre debe constar de al menos 3 caracteres."
 							},
 							message: {
 								required: "Por favor ingrese el mensaje",
@@ -834,7 +834,7 @@
 							$(form).ajaxSubmit({
 								type: "POST",
 								data: $(form).serialize(),
-								url: "<?php echo base_url('Inicio/enviar_datos_mailer_phone/');?>",
+								url: "<?php echo base_url('Inicio/enviarCorreo/');?>",
 								success: function success() {
 									$('.successform', $questionForm).fadeIn();
 									$questionForm.get(0).reset();
@@ -852,56 +852,56 @@
 					var $bookingForm = forms.bookingForm;
 					$bookingForm.validate({
 						rules: {
-							bookingname: {
+							name: {
 								required: true,
 								minlength: 2
 							},
-							bookingruc: {
+							identification_number: {
 								required: true,
 								minlength: 11
 							},
 							
-							bookingemploye: {
+							usuario: {
 								required: true,
 								minlength: 5
 							},
 							
-							bookingphone: {
+							phone: {
 								required: true,
 								minlength: 9
 							},
 
-							bookingmessage: {
+							message: {
 								required: true,
 								minlength: 20
 							},
-							bookingemail: {
+							email: {
 								required: true,
 								email: true
 							}
 
 						},
 						messages: {
-							bookingname: {
+							name: {
 								required: "Por favor, escriba sus nombres completos",
 								minlength: "Sus nombres completos debe constar de al menos 10 caracteres."
 							},
-							bookingruc: {
+							identification_number: {
 								required: "Por favor, Ingrese Ruc y presione Enter",
 							},
-							bookingemploye: {
+							usuario: {
 								required: "Por favor, Ingrese Ruc y presione Enter",
 								
 							},
-							bookingphone: {
+							phone: {
 								required: "Por favor, Ingrese su celular",
 								minlength: "Su celular debe constar de 9 caracteres."
 							},
-							bookingmessage: {
+							message: {
 								required: "Por favor ingrese su mensaje",
 								minlength: "e tener al menos 20 caracteres."
 							},
-							bookingemail: {
+							email: {
 								required: "Por favor introduzca su correo electrónico"
 							}
 						},
@@ -924,7 +924,7 @@
 							$(form).ajaxSubmit({
 								type: "POST",
 								data: $(form).serialize(),
-								url: "<?php echo base_url('Inicio/enviar_process_boquin_email/');?>",
+								url: "<?php echo base_url('Inicio/enviarCorreo/');?>",
 								success: function success(data) {
 									$('.successform', $bookingForm).fadeIn();
 									$bookingForm.get(0).reset();

@@ -33,20 +33,20 @@
 			    <p class="display-4 text-justify">No dejar de pasar una opotunidad, el cliente espera que lo respondas mas rapido de lo que puedas, suerte en todo</p>
 			</div>
 			<div class="text-center">
-			    <p class="h1 text-danger" style="font-size: 15px;">Empresa a responder es : <?php echo $reponder; ?></p>
+			    <p class="h1 text-danger" style="font-size: 15px;">Empresa a responder es : <?php echo $usuario.' - '. $identification_number; ?></p>
 			</div>
 			<div class="row" style="text-align:center;">
 			    <div class="col-md-4" style="text-align:center;">
 			        <label for="" class="font-weight-bold ">Nombres:</label>
-			        <span><?php echo $nombres_completos; ?></span>
+			        <span><?php echo $name; ?></span>
 			    </div>
 			    <div class="col-md-4" style="text-align:center;">
 			        <label for="" class="font-weight-bold">Empresa:</label>
-			        <span><?php echo $empresa; ?></span>
+			        <span><?php echo $usuario; ?></span>
 			    </div>
                 <div class="col-md-4" style="text-align:center;">
                     <label for="" class="font-weight-bold">RUC:</label>
-                    <span><?php echo $ruc; ?></span>
+                    <span><?php echo $identification_number; ?></span>
                 </div>
                 <div class="col-md-4" style="text-align:center;">
                     <label for="" class="font-weight-bold">Fecha de Envio:</label>
@@ -54,7 +54,7 @@
                 </div>
                 <div class="col-md-4" style="text-align:center;">
                     <label for="" class="font-weight-bold">Celular:</label>
-                    <span><?php echo $celular; ?></span>
+                    <span><?php echo $phone; ?></span>
                 </div>
                 <div class="col-md-4" style="text-align:center;">
                     <label for="" class="font-weight-bold">Email:</label>
@@ -62,7 +62,7 @@
                 </div>
                 <div class="col-md-12" style="text-align:center;">
                     <label for="" class="font-weight-bold">Mensaje: </label>
-                    <span><?php echo $mensaje; ?></span>
+                    <span><?php echo $message; ?></span>
 			    </div>
 			</div>
         </div>

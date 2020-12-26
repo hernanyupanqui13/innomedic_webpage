@@ -34,7 +34,7 @@ $routes->get('/', 'Inicio::index');
 $routes->post('/process_booking(:any)', 'Inicio::process_booking');
 $routes->get('/Resultados(:any)', 'Inicio::Resultados');
 
-$routes->post('/', 'Inicio::enviar_datos_mailer_phone');
+$routes->post('/', 'Inicio::enviarCorreo');
 
 $routes->get('/detalles_blog', 'Inicio::detalles_blog');
 

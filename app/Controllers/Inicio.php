@@ -54,32 +54,6 @@ class Inicio extends BaseController {
 		
 	}
 
-	//mandar a registrar de formulario de cotizacion
-	//
-	
-	public function process_booking	()
-	{
-		$model = new InicioModel();
-
-		if ($this->request->getMethod() === 'post') {
-			$data = array(
-				'email' => $this->request->getPost('bookingemail'),
-				'name' =>  $this->request->getPost('bookingname'),
-				'phone' => $this->request->getPost('bookingphone'),
-				'ruc'=>  $this->request->getPost('bookingruc'),
-				'date' => date('Y-m-d h:i:s'),
-				'time' =>  $this->request->getPost('bookingtime'),
-				'service'=>  $this->request->getPost('bookingservice'),
-				'age'=>  $this->request->getPost('bookingage'),
-				'message' =>  $this->request->getPost('bookingmessage'),
-				'employe' =>  $this->request->getPost('bookingemploye'),
-			);
-			$model->process_booking($data);
-		}else{
-			return $this->_cargaError();
-		}
-		
-	}
 
 	/*
 	Esta funcion enviar el correo de las personas que desean suscribirse a noticias
@@ -120,30 +94,7 @@ class Inicio extends BaseController {
 
 
 
-	/* 
-	Esta funcion recopge los datos del View y los envia al Model para que se cargen en la base de datos
-	Se espera implementar mas funciones que solo guardar la informacion en la base de datos (POR IMPLEMENTAR)
-	*/
-	public function process_contactform	() {
-
-		$model = new InicioModel();
-
-		if ($this->request->getMethod() === 'post') {
-			$data = array(
-				'name' => $this->request->getPost('name'),
-				'phone' =>  $this->request->getPost('phone'),
-				'email' => $this->request->getPost('email'),
-				'date' => date('Y-m-d h:i:s'),
-				'employe' =>  $this->request->getPost('usuario'),
-				'ruc'=>  $this->request->getPost('rucx'),
-				'message' =>  $this->request->getPost('message'),
-			);
-			$model->process_contactform($data);
-		} else {
-			return $this->_cargaError();
-		}
-	}
-
+	
 
 
 
@@ -256,282 +207,38 @@ class Inicio extends BaseController {
 		echo json_encode($data);
 	}
 
-	/*
-	Esta funcion es llamada cuando el usuario desde el cliente envia el formulario para solicitar cotizacion.
-	Se toman los datos del cliente, se configura un email, y se envia un email automatico a las direcciones interezadas
 	
-	Responde al formualrio Enviamos_los_datos_del_paciente del View
+
+
+	/* 
+	Esta funcion recoge los datos del View y los envia al Model para que se cargen en la base de datos
+	Se espera implementar mas funciones que solo guardar la informacion en la base de datos (POR IMPLEMENTAR)
 	*/
-	public function enviar_correo() {
-		
-		if ($this->request->getMethod() === 'post') {	
+	public function process_contactform	() {
 
-			$reponder = $this->request->getPost('nombres_completos').' - '. $this->request->getPost('dni_mostrar_dni');
+		$model = new InicioModel();
 
-			// Obteniendo variables
-			$mail = new PHPMailer();
-			$email = $this->request->getPost('bookingemail');
-			$nombres_completos  =  $this->request->getPost('nombres_completos');
-			$celular = $this->request->getPost('bookingphone');
-			$ruc =  $this->request->getPost('dni_mostrar_dni');
-			$fecha_envio = date('Y-m-d h:i:s');
-			$mensaje =  $this->request->getPost('bookingmessage');
-			$nombre_paquete =  $this->request->getPost('paquete');
-
-			// Pasando las variables a un array para pasarlas al View
-			$data = array(
-				'nombre_paquete' => $nombre_paquete,
-				'reponder' => $reponder,
-				'nombres_completos' => $nombres_completos,
-				'ruc' => $ruc,
-				'fecha_envio' => $fecha_envio,
-				'celular' => $celular,
-				'email' => $email,
-				'mensaje' => $mensaje,
-			);
-		   
-			// Creando la configuracion del correo
-			$mail->isSMTP();
-			$mail->Host     = 'ssl://p3plzcpnl434616.prod.phx3.secureserver.net';
-			$mail->SMTPSecure = false;
-			$mail->SMTPDebug  = 3;
-			$mail->Username = 'reenviadores@innomedic.pe';
-			$mail->Password = 'Sistemas20**';
-			$mail->SMTPAuth = true;
-			$mail->SMTPAutoTLS = false; 
-			$mail->SMTPSecure = 'ssl';
-			$mail->Port     = 465;
-			$mail->CharSet = 'UTF-8';
-			$mail->AllowEmpty = true;
-
-			// De: 
-			$mail->setFrom('reenviadores@innomedic.pe',  $nombres_completos.'-'.$ruc);		
-			
-			// Esto configura el boton de "responder a este email" en el correo
-			$mail->addReplyTo($email, 'Pedido de Cotizacion - Pagina web  Web innomedic');
-		   
-			// Para: 
-			$mail->addAddress('prueba@innomedic.pe');
-			$mail->addAddress('reenviadores@innomedic.pe');
-
-
-			// Add cc or bcc 
-			//$mail->addCC('ventas@innomedic.pe');
-			//$mail->addBCC('ventas.in@innomedic.pe');
-			
-			// Email subject
-			$mail->Subject = 'Realizar cotizacion para '.$nombres_completos.' - Paquetes Preventivos';
-			
-			// Set email format to HTML
-			$mail->isHTML(true);
-
-			
-			   
-			// Juntando todo el contenido del correo. Renderizando el HTML del email
-			$mailContent = view('email/body', $data);
-
-			// Definiendo el cuerpo del correo como el contenido previamente configurado
-	   		$mail->Body = $mailContent;
-			
-
-			// Enviando email. Notese que send() devuelve true ó false a parte de enviar el correo
-			if(!$mail->send()){
-				echo json_encode(array("error"=>"Su petición no ha sido enviada"));
-				$this->output->set_status_header(400);
-			} else {
-				echo json_encode(array("sms"=>"Su petición ha sido enviada"));
-			}
-
-			
-
-		} else {
-		 	echo "Mala sintaxis en el pedido";
-	   	}
-
-	}
-
-
-	// Funcion que responde al bookingForm de view
-	public function enviar_process_boquin_email() {
-		
 		if ($this->request->getMethod() === 'post') {
-			
-			$mail = new PHPMailer();
-
-			$reponder = $this->request->getPost('bookingemploye').' - '. $this->request->getPost('bookingruc');
-			$email = $this->request->getPost('bookingemail');
-			$nombres_completos  =  $this->request->getPost('bookingname');
-			$celular = $this->request->getPost('bookingphone');
-			$ruc =  $this->request->getPost('bookingruc');
-			$fecha_envio = date('Y-m-d h:i:s');
-			$mensaje =  $this->request->getPost('bookingmessage');
-			$empresa = $this->request->getPost('bookingemploye');
-
-			// Pasando las variables a un array para pasarlas al View
 			$data = array(
-				'reponder' => $reponder,
-				'email' => $email,
-				'nombres_completos' => $nombres_completos,
-				'ruc' => $ruc,
-				'fecha_envio' => $fecha_envio,
-				'celular' => $celular,
-				'empresa' => $empresa,
-				'mensaje' => $mensaje,
+				'name' => $this->request->getPost('name'),
+				'phone' =>  $this->request->getPost('phone'),
+				'email' => $this->request->getPost('email'),
+				'date' => date('Y-m-d h:i:s'),
+				'employe' =>  $this->request->getPost('usuario'),
+				'ruc'=>  $this->request->getPost('identification_number'),
+				'message' =>  $this->request->getPost('message'),
 			);
-			
-
-			// Creando la configuracion del correo
-			$mail->isSMTP();
-			$mail->Host     = 'ssl://p3plzcpnl434616.prod.phx3.secureserver.net';
-			$mail->SMTPSecure = false;
-			$mail->SMTPDebug  = 3;
-			$mail->Username = 'reenviadores@innomedic.pe';
-			$mail->Password = 'Sistemas20**';
-			$mail->SMTPAuth = true;
-			$mail->SMTPAutoTLS = false; 
-			$mail->SMTPSecure = 'ssl';
-			$mail->Port     = 465;
-			$mail->CharSet = 'UTF-8';
-			$mail->AllowEmpty = true;
-
-
-
-			// De: 
-       		$mail->setFrom('reenviadores@innomedic.pe',  $empresa.'-'.$ruc);
-  
-			// Esto configura el boton de "responder a este email" en el correo
-			$mail->addReplyTo($email, 'Pedido de Cotizacion - Pagina web  Web innomedic');
-			
-			// Add a recipient
-			$mail->addAddress('reenviadores@innomedic.pe');
-			//$mail->addAddress('avera@innomedic.pe');
-			//$mail->addAddress('eestrada@innomedic.pe');
-
-        
-			// Add cc or bcc 
-			//$mail->addCC('ventas@innomedic.pe');
-			//$mail->addBCC('ventas.in@innomedic.pe');
-			
-			// Email subject
-			$mail->Subject = 'Realizar cotizacion para '.$empresa.' - Pagina web Innomedic.pe';
-			
-			// Set email format to HTML
-			$mail->isHTML(true);
-
-			// Jalando la pantilla de email del view
-			$mailContent = view('email/body_empresas', $data);
-			$mail->Body = $mailContent;
-			
-			// Enviando email. Notese que send() devuelve true ó false a parte de enviar el correo
-			if(!$mail->send()){
-				echo json_encode(array("error"=>"Su petición no ha sido enviada"));
-				$this->output->set_status_header(400);
-			} else {
-				echo json_encode(array("sms"=>"Su petición ha sido enviada"));
-			}
-
-			
-
+			$model->process_contactform($data);
 		} else {
-		 	echo "Mala sintaxis en el pedido";
-	   	}
+			return $this->_cargaError();
+		}
 	}
 
-
-
-	// Responder al questionForm del View y envia email 
-	public function enviar_datos_mailer_phone() {
 		
-		//$mensaje = "HOLA ESTA ESTA UNA PRUEBA";
-		if ($this->request->getMethod() === 'post') {
-			
-			$mail = new PHPMailer();
-			$reponder = $this->request->getPost('usuario').' - '. $this->request->getPost('rucx');
-			$nombres_completos = $this->request->getPost('name');
-			$celular = $this->request->getPost('phone');
-			$email = $this->request->getPost('email');
-			$fecha_envio = date('Y-m-d h:i:s');
-			$empresa =  $this->request->getPost('usuario');
-			$ruc =  $this->request->getPost('rucx');
-			$mensaje = $this->request->getPost('message');
-
-			// Pasando las variables a un array para pasarlas al View
-			$data = array(
-				'reponder' => $reponder,
-				'nombres_completos' => $nombres_completos,
-				'celular' => $celular,
-				'email' => $email,
-				'fecha_envio' => $fecha_envio,
-				'empresa' => $empresa,
-				'ruc' => $ruc,
-				'mensaje' => $mensaje,
-			);
-
-
-			// Creando la configuracion del correo
-			$mail->isSMTP();
-			$mail->Host     = 'ssl://p3plzcpnl434616.prod.phx3.secureserver.net';
-			$mail->SMTPSecure = false;
-			$mail->SMTPDebug  = 3;
-			$mail->Username = 'reenviadores@innomedic.pe';
-			$mail->Password = 'Sistemas20**';
-			$mail->SMTPAuth = true;
-			$mail->SMTPAutoTLS = false; 
-			$mail->SMTPSecure = 'ssl';
-			$mail->Port     = 465;
-			$mail->CharSet = 'UTF-8';
-			$mail->AllowEmpty = true;
-
-
-
-			$mail->setFrom('reenviadores@innomedic.pe',  $empresa.'-'.$ruc);
-
-	
-			$mail->addReplyTo($email, 'Pedido de Cotizacion - Pagina web  Web innomedic');
-			
-			
-			// Add a recipient
-			$mail->addAddress('reenviadores@innomedic.pe');
-			//$mail->addAddress('avera@innomedic.pe');
-			//$mail->addAddress('eestrada@innomedic.pe');
-			//$mail->addAddress('escudero0594@hotmail.com');
-		
-
-			
-			// Add cc or bcc 
-			//$mail->addCC('ventas@innomedic.pe');
-			//$mail->addBCC('ventas.in@innomedic.pe');
-			
-			// Email subject
-			$mail->Subject = 'Realizar cotizacion para '.$empresa.' - Pagina web Innomedic.pe';
-			
-			// Set email format to HTML
-			$mail->isHTML(true);
-
-			$mailContent = view('email/body_empresas', $data);
-
-
-
-			$mail->Body = $mailContent;
-        
-        // Enviando email. Notese que send() devuelve true ó false a parte de enviar el correo
-			if(!$mail->send()){
-				echo json_encode(array("error"=>"Su petición no ha sido enviada"));
-				$this->output->set_status_header(400);
-			} else {
-				echo json_encode(array("sms"=>"Su petición ha sido enviada"));
-			}
-
-			
-
-		} else {
-		 	echo "Mala sintaxis en el pedido";
-	   	}
-	}
-
-
-	
-	// Responde al questionForm 
+	/* 
+	Responde al questionForm 
+	Guarda la informacion del interesado en la base de datos 
+	*/
 	public function process_question() {
 		$model = new InicioModel();
 		if ($this->request->getMethod() === 'post') {
@@ -546,11 +253,129 @@ class Inicio extends BaseController {
 
 		} else {
 			return $this->_cargaError();
-		}
-		
+		}	
 	}
 
 
+	// Mandar a registrar de formulario de cotizacion
+	public function process_booking	() {
+
+		$model = new InicioModel();
+
+		if ($this->request->getMethod() === 'post') {
+			$data = array(
+				'email' => $this->request->getPost('email'),
+				'name' =>  $this->request->getPost('name'),
+				'phone' => $this->request->getPost('phone'),
+				'ruc'=>  $this->request->getPost('identification_number'),
+				'date' => date('Y-m-d h:i:s'),
+				'time' =>  $this->request->getPost('bookingtime'), // para eliminar, es nulo en la tabla y en todo lo demas
+				'service'=>  $this->request->getPost('bookingservice'), // para eliminar, es nulo en la tabla y en todo lo demas
+				'age'=>  $this->request->getPost('bookingage'), // para eliminar, es nulo en la tabla y en todo lo demas
+				'message' =>  $this->request->getPost('message'),
+				'employe' =>  $this->request->getPost('usuario'),
+			);
+			$model->process_booking($data);
+		} else {
+			return $this->_cargaError();
+		}
+	}
+
+	/*
+	Esta funcion envia correos a personas de ventas y otros interesados quienes responden
+	de manera personalizada al usuario
+	Tiene un argumento que se pasa desde el lado del cliente por medio del URL
+	*/
+	public function enviarCorreo($tipo_correo="empresas") {
 
 
-} ?>
+		if ($this->request->getMethod() === 'post') {
+
+			// Deifniendo los tipos de correo con sus plantillas
+			$tipos_de_correo = array("personas"=>"body_personas", "empresas"=>"body_empresas");
+
+			
+			$mail = new PHPMailer();
+
+			// Obteniendo la informacion del Post method
+			$name = $this->request->getPost('name');
+			$phone = $this->request->getPost('phone');
+			$email = $this->request->getPost('email');
+			$fecha_envio = date('Y-m-d h:i:s');
+			$usuario =  $this->request->getPost('usuario');
+			$identification_number =  $this->request->getPost('identification_number');
+
+			if($tipo_correo=="personas" || $identification_number == "" ) {$usuario = $name;}	// En caso de personas el encabezado cambia 
+			$mensaje = $this->request->getPost('message');
+			$paquete =  $this->request->getPost('paquete');
+
+			// Pasando las variables a un array para pasarlas al View
+			$data = array(
+				'name' => $name,
+				'phone' => $phone,
+				'email' => $email,
+				'fecha_envio' => $fecha_envio,
+				'usuario' => $usuario,
+				'identification_number' => $identification_number,
+				'message' => $mensaje,
+				'paquete' => $paquete
+			);
+
+
+			// Creando la configuracion del correo
+			$mail->isSMTP();
+			$mail->Host     = 'ssl://p3plzcpnl434616.prod.phx3.secureserver.net';
+			$mail->SMTPSecure = false;
+			$mail->SMTPDebug  = 3;
+			$mail->Username = 'reenviadores@innomedic.pe';
+			$mail->Password = 'Sistemas20**';
+			$mail->SMTPAuth = true;
+			$mail->SMTPAutoTLS = false; 
+			$mail->SMTPSecure = 'ssl';   
+			$mail->Port     = 465;
+			$mail->CharSet = 'UTF-8';
+			$mail->AllowEmpty = true;
+
+			// De: 
+			$mail->setFrom('reenviadores@innomedic.pe',  $usuario.'-'.$identification_number);
+
+			// Configurando el boton de responder
+			$mail->addReplyTo($email, 'Pedido de Cotizacion - Pagina web  Web innomedic');
+			
+			
+			// Add a recipient
+			$mail->addAddress('reenviadores@innomedic.pe');
+			//$mail->addAddress('avera@innomedic.pe');
+			//$mail->addAddress('eestrada@innomedic.pe');
+		
+
+			// Add cc or bcc 
+			//$mail->addCC('ventas@innomedic.pe');
+			//$mail->addBCC('ventas.in@innomedic.pe');
+			
+			// Email subject
+			$mail->Subject = 'Realizar cotizacion para '.$name.' - Pagina web Innomedic.pe';
+			
+			// Set email format to HTML
+			$mail->isHTML(true);
+
+			$mailContent = view('email/'.$tipos_de_correo[$tipo_correo], $data);
+
+			$mail->Body = $mailContent;
+
+			// Enviando email. Notese que send() devuelve true ó false a parte de enviar el correo
+			if(!$mail->send()){
+				echo json_encode(array("error"=>"Su petición no ha sido enviada"));
+				$this->output->set_status_header(400);
+			} else {
+				echo json_encode(array("sms"=>"Su petición ha sido enviada"));
+			}
+
+		} else {
+		 	echo "Mala sintaxis en el pedido";
+	   	}
+	}
+
+}
+
+?>

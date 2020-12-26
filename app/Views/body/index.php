@@ -187,7 +187,7 @@ $query_ss = $db->query("select * from th_employe");
 
 
 
-	<!-- Seccion Contactanos | View-->
+	<!-- Seccion Informes Aqui | View-->
 	<div class="section" id="contactSection">
 		<div class="banner-contact-us" style="background-image: url('<?= esc(base_url('public/assets/images/content/contact-bg.png')) ?>?v=<?= rand();?>')">
 			<div class="container">
@@ -205,31 +205,42 @@ $query_ss = $db->query("select * from th_employe");
 								<div class="successform">
 									<p>¡Su mensaje fue enviado exitosamente!</p>
 								</div>
+								<div class="errorform">
+									<p>Algo salió mal, intente actualizar y enviar el formulario nuevamente.</p>
+								</div>
+								<!-- Nombre -->
 								<div>
-									<input type="text" class="form-control" name="name" placeholder="Nombre*">
+									<input type="text" class="form-control" name="name" placeholder="Nombre">
 								</div>
 								<div class="row row-sm-space mt-15">
+									<!-- Celular -->
 									<div class="col-sm-6"><input type="text" class="form-control" name="phone" placeholder="Celular"></div>
-									<div class="col-sm-6 mt-15 mt-sm-0"><input type="text" class="form-control" name="email" placeholder="Email*"></div>
+									<!--Email-->
+									<div class="col-sm-6 mt-15 mt-sm-0"><input type="text" class="form-control" name="email" placeholder="Email"></div>
 								</div>
+
+								<!-- Buscador de RUC -->
 								<div class="row row-sm-space mt-15"> 
 									<div class="col-sm-8">
-										<input type="text" class="form-control" name="nruc" id="nruc" placeholder="Ingrese Ruc y presione la tecla 'enter' " maxlength="11" pattern="([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]|[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])" onkeydown="return soloNumeros(event)">
+										<input type="text" class="form-control" name="nruc" id="nruc" placeholder="Ingrese Ruc y de click en 'Buscar'" maxlength="11" pattern="([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]|[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])" onkeydown="return soloNumeros(event)">
 									</div>
 									<div class="col-sm-4">
 				                    	<button type="submit" class="btn btn-outline-success btn-rounded btn-sm" name="btn-submit" id="btn-submit">
-				                        <span id="id_hidde_x"><i  class="fa fa-search"></i> Buscar</span>
-		                     	 		<div id="agregar_clase_x" class=""></span>
-				                   		 </button>
+											<span id="id_hidde_x"><i  class="fa fa-search"></i> Buscar</span>
+											<div id="agregar_clase_x" class=""></span>
+				                   		</button>
 									</div>
 								</div>
+								<!-- Empresa y RUC - View Only -->
 								<div class="row row-sm-space mt-15">
 									<div class="col-sm-6 mt-15 mt-sm-0"><input type="text" class="form-control" name="usuario" id="usuario" placeholder="Empresa" readonly=""></div>
-									<div class="col-sm-6 mt-15 mt-sm-0"><input type="text" class="form-control" name="rucx" id="rucx" placeholder="Ruc" readonly=""></div>
+									<div class="col-sm-6 mt-15 mt-sm-0"><input type="text" class="form-control" name="identification_number" id="rucx" placeholder="Ruc" readonly=""></div>
 								</div>
+								<!-- Mensaje -->
 								<div class="mt-15">
 									<textarea class="form-control" name="message" placeholder="Message"></textarea>
 								</div>
+								<!-- Cotizar ahora - Boton -->
 								<div class="mt-2 mt-lg-4 text-center text-md-left">
 									<button type="submit" class="btn"><i class="icon-right-arrow"></i><span>Cotizar Ahora</span><i class="icon-right-arrow"></i></button>
 								</div>
@@ -873,7 +884,7 @@ $query_ss = $db->query("select * from th_employe");
 							<span>
 								<i class="icon-user"></i>
 							</span>
-							<input type="text" name="nombres_completos" id="nombres_completos" class="form-control" autocomplete="off" readonly="" placeholder="Nombres Completos " />
+							<input type="text" name="name" id="nombres_completos" class="form-control" autocomplete="off" readonly="" placeholder="Nombres Completos " />
 						</div>
 
 						<!-- DNI - vista solo -->
@@ -881,7 +892,7 @@ $query_ss = $db->query("select * from th_employe");
 							<span>
 								<i class="icon-user"></i>
 							</span>
-							<input type="text" name="dni_mostrar_dni" id="dni_mostrar_dni" class="form-control" autocomplete="off" readonly="" placeholder="Dni " />
+							<input type="text" name="identification_number" id="dni_mostrar_dni" class="form-control" autocomplete="off" readonly="" placeholder="Dni " />
 						</div>
 
 						<!-- Email -->
@@ -891,7 +902,7 @@ $query_ss = $db->query("select * from th_employe");
 									<span>
 										<i class="icon-email2"></i>
 									</span>
-									<input type="text" name="bookingemail" class="form-control" autocomplete="off" placeholder="Ingrese su e-mail"  required="" />
+									<input type="text" name="email" class="form-control" autocomplete="off" placeholder="Ingrese su e-mail"  required="" />
 								</div>
 							</div>
 						</div>
@@ -904,14 +915,16 @@ $query_ss = $db->query("select * from th_employe");
 									<span>
 										<i class="icon-smartphone"></i>
 									</span>
-									<input type="number" name="bookingphone" class="form-control" autocomplete="off" placeholder="Ingrese su teléfono"  required="" />
+									<input type="number" name="phone" class="form-control" autocomplete="off" placeholder="Ingrese su teléfono"  required="" />
 								</div>
 							</div>
 						</div>
 
-						<!-- Cuadro de Ingrese Mensaje  -->
+						<!-- Paquete | No visible  -->
 						<input type="hidden" value="" name="paquete" id="paquete_texto">
-						<textarea name="bookingmessage" class="form-control" placeholder="Mensaje" rows="6"></textarea>
+						<!-- Mensaje -->
+						<textarea name="message" class="form-control" placeholder="Mensaje" rows="6"></textarea>
+						<!-- Boton enviar -->
 						<div class="text-center mt-2">
 							<button type="submit" class="btn btn-sm btn-hover-fill " id="lista"><i class="fas fa-paper-plane cambiar_texto" > </i>&nbsp;Reserva tu cita</button>
 						</div>
@@ -986,7 +999,7 @@ $query_ss = $db->query("select * from th_employe");
 		}
 
 		$.ajax({
-			url: '<?php echo base_url('Inicio/enviar_correo/');?>',
+			url: '<?php echo base_url('Inicio/enviarCorreo/personas');?>',
 			type: 'POST',
 			data: $("#Enviamos_los_datos_del_paciente").serialize(),
 			statusCode:{
