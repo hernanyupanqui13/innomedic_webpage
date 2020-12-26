@@ -75,7 +75,7 @@
 
 <?php
 $request = \Config\Services::request(); 
-//funcion para ejecutar las lista de la pagina web 
+// Funcion para ejecutar las lista de la pagina web 
 foreach ($list_employe as $xx) {
 	$emailx = $xx->email;
 	$adress1 = $xx->name;
@@ -117,7 +117,7 @@ foreach ($list_employe as $xx) {
 
 
 
-<!--header-->
+<!-- Header -->
 <header class="header">
 	<div class="header-quickLinks js-header-quickLinks d-lg-none">
 		<div class="quickLinks-top js-quickLinks-top"></div>
@@ -175,7 +175,7 @@ foreach ($list_employe as $xx) {
 										<a class="nav-link link-inside" href="#specialistsSection">Staff</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link link-inside" href="#eventsSection" onclick="return validate_xxx();">Eventos</a>
+										<a class="nav-link link-inside" href="#eventsSection">Eventos</a>
 									</li>
 									<li class="nav-item">
 										<a class="nav-link link-inside" href="#contactSection">Contacto</a>
@@ -240,8 +240,7 @@ foreach ($list_employe as $xx) {
 			  }
 		})
 
-		}
-		else{
+		} else {
 			Swal.fire({
 			  title: '<strong>Muy <u>bien.</u></strong>',
 			  icon: 'success',
@@ -259,22 +258,15 @@ foreach ($list_employe as $xx) {
 			    '<i class="fa fa-thumbs-down"></i>',
 			  cancelButtonAriaLabel: 'Thumbs down'
 			}).then((result) => {
-			  if (result.value) {
-			  	window.location = "<?php echo base_url('Inicio/Resultados/')?>?q="+data;
-			    
-			  }
-		})
+
+				if (result.value) {
+				window.location = "<?php echo base_url('Inicio/Resultados/')?>?q="+data;
+				
+				}
+			})
 
 		}
 		
-	}
-</script>
-
-
-<script>
-	// This functions need correction
-	function validate_xxx() {
-		window.location = "<?php echo base_url('Inicio/Blog/');?>";
 	}
 </script>
 

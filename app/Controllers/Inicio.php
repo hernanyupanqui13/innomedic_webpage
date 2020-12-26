@@ -20,13 +20,19 @@ class Inicio extends BaseController {
 			'list_employe' => $model->lisatemploye(),
 			'news_slider' => $model->getNews(),
 			'lista_servicios' => $model->lista_servicios(),
-			'static_view_one' => $model->static_view_one(),
+			'static_one' => $model->static_view_one(),
 			'lista_consultorios' => $model->lista_consultorios(),
 			'lista_t_view_service' => $model->lista_t_view_service(),
 			'lista_empleado' => $model->lista_empleado(),
 			'lista_empleado_categoria' => $model->lista_empleado_categoria(),
 			'lista_employes_data' => $model->lista_employes_data(),
 			'lista_preguntas' => $model->lista_preguntas(),
+			'lista_empresas_clientes' => $model->lista_empresas_clientes(),
+			'time_table' => $model->obtenerTablaDeTiempo(),
+			'consultoriasname' => $model->obtenerListaConsultorias(),
+			'lista_ventajas_a' => $model->obtenerListaVentajas(0,7),
+			'lista_ventajas_b' => $model->obtenerListaVentajas(7,14)
+
 
 		);
 

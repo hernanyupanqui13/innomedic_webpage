@@ -37,7 +37,7 @@ class InicioModel extends Model
 	{
 	   $db   = \Config\Database::connect();
 	   $query = $db->query("select * from t_static_one");
-	   return $query->getResult();
+	   return $query->getRow();
 	}
 	public function lista_consultorios()
 	{
@@ -78,6 +78,13 @@ class InicioModel extends Model
 	   $db   = \Config\Database::connect();
 	   $query = $db->query("select * from t_preguntas_frecuentes limit 5");
 	   return $query->getResult();
+	}
+
+	public function lista_empresas_clientes() {
+		$db = \Config\Database::connect();
+		$query = $db->query("select * from t_clientes_empresas where status=1 order by Id desc");
+		return $query->getResult();
+
 	}
 
 	/* Este metodo sube la informacion a la tabla t_cita en la base de datos del servidor
@@ -123,6 +130,25 @@ class InicioModel extends Model
 		$db   = \Config\Database::connect();
 		$builder = $db->query('select * from t_paquetes where Id="'.$id.'"');
 		return $builder->getRow();
+	}
+	// Obtiene las horas de apertura y cierre por dia (se espera que sea de cada local en un futuro)
+	public function obtenerTablaDeTiempo() {
+		$db   = \Config\Database::connect();
+		$query = $db->query("select * from t_time_job");
+		return $query->getResult();
+
+	}
+
+	public function obtenerListaConsultorias() {
+		$db = \Config\Database::connect();
+		$query = $db->query("select * from  t_consultorias order by Id asc");
+		return $query->getResult();
+	}
+
+	public function obtenerListaVentajas($from=0, $to=7) {
+		$db = \Config\Database::connect();
+		$query = $db->query("select * from  t_ventajas order by Id asc limit $from, $to");
+		return $query->getResult();
 	}
 
 

@@ -1,47 +1,37 @@
 <?php 
 $db = \Config\Database::connect();
 
-$query_ss = $db->query("select * from th_employe");
-    foreach ($query_ss->getResult() as $datas) {
-     	$namex = $datas->name;
-     	$emailx = $datas->email;
-     	$addressx = $datas->address;
-     	$telephonex  = $datas->telephone;
-     	$phone_onex = $datas->phone_one;
-     	$sms_mailx = $datas->sms_mail;
-     	$facebookx = $datas->facebook;
-		$twiterx = $datas->twiter;
-		$googlex = $datas->google;
-		$instagramx = $datas->instagram; 
-		$addressx = $datas->address;
-		$address_onex = $datas->address_one;
-		$logox = $datas->logo;
-		$aboutx = $datas->about;
-		$viewsx = $datas->views;
-	} 
+foreach ($list_employe as $datas) {
+	$namex = $datas->name;
+	$emailx = $datas->email;
+	$addressx = $datas->address;
+	$telephonex  = $datas->telephone;
+	$phone_onex = $datas->phone_one;
+	$sms_mailx = $datas->sms_mail;
+	$facebookx = $datas->facebook;
+	$twiterx = $datas->twiter;
+	$googlex = $datas->google;
+	$instagramx = $datas->instagram; 
+	$addressx = $datas->address;
+	$address_onex = $datas->address_one;
+	$logox = $datas->logo;
+	$aboutx = $datas->about;
+	$viewsx = $datas->views;
+} 
 ?>	
-
-
-<?php $gallery = $db->query("select * from t_gallery");
-	foreach ($gallery->getResult() as $galy) {
-     	$img_aboutx = $galy->img_about;
-     	$img_about1x = $galy->img_about1;
-     	$img_about2x = $galy->img_about2;
-     	$img_aboutx3 = $galy->img_about3;
-     	$img_aboutx4 = $galy->img_about4;
-	} 
-?>
 
 
 
 <div class="page-content">
 
 	<!-- Seccion Slider -->
-	<div class="section mt-0">
+	<section class="section mt-0">
+		<!-- Links Rapidos -->
 		<div class="quickLinks-wrap js-quickLinks-wrap-d d-none d-lg-flex">
 			<div class="quickLinks js-quickLinks closed">
 				<div class="container">
 					<div class="row no-gutters">
+						<!-- Ubicacion -->
 						<div class="col">
 							<a href="#" class="link">
 								<i class="icon-placeholder"></i><span>Ubicación</span></a>
@@ -49,6 +39,7 @@ $query_ss = $db->query("select * from th_employe");
 								<div id="googleMapDrop" class="google-map"></div>
 							</div>
 						</div>
+						<!-- Tiempo de Trabajo -->
 						<div class="col">
 							<a href="#" class="link">
 								<i class="icon-clock"></i><span>Tiempo de Trabajo</span>
@@ -59,17 +50,18 @@ $query_ss = $db->query("select * from th_employe");
 								<table class="row-table">
 
 	 								<!-- to review-->
-									<?php
-								   $time_jobs = $db->query("select * from t_time_job");
-								 foreach ($time_jobs->getResult() as $xx) {?>
-								<tr>
-									<td><i><?php echo $xx->dia;?></i></td>
-									<td><?php echo $xx->hours;?></td>
-								</tr>
-								<?php } ?>
+									<?php foreach ($time_table as $item) {?>
+
+									<tr>
+										<td><?php echo $item->dia;?></td>
+										<td><?php echo $item->hours;?></td>
+									</tr>
+
+									<?php } ?>
 								</table>
 							</div>
 						</div>
+						<!-- Contacto -->
 						<div class="col">
 							<a href="#" class="link">
 								<i class="icon-pencil-writing"></i><span>Contacto</span>
@@ -80,7 +72,7 @@ $query_ss = $db->query("select * from th_employe");
 								<p class="text-right mt-2"><a  href="#" data-toggle="modal" data-target="#modalBookingForm" class="btn btn-sm btn-hover-fill link-inside">Ponte en contacto</a></p>
 							</div>
 						</div>
-						
+						<!-- Comunicate con nosotros -->
 						<div class="col">
 							<a href="#" class="link">
 								<i class="icon-emergency-call"></i><span>Comunicate con nosotros</span></a>
@@ -96,46 +88,51 @@ $query_ss = $db->query("select * from th_employe");
 								<p class="text-right mt-2"><a href="#contactForm" class="btn btn-sm btn-hover-fill link-inside">Ponte en contacto</a></p>
 							</div>
 						</div>
+
 						<div class="col col-close"><a href="#" class="js-quickLinks-close"><i class="icon-top" data-toggle="tooltip" data-placement="top" title="Close panel"></i></a></div>
 					</div>
 				</div>
 				<div class="quickLinks-open js-quickLinks-open"><span data-toggle="tooltip" data-placement="left" title="Open panel">+</span></div>
 			</div>
 		</div>
+
+		<!-- Slides -->
 		<div id="mainSliderWrapper">
 			<div class="loading-content">
 				<div class="inner-circles-loader"></div>
 			</div>
 			<div class="main-slider mb-0 arrows-white arrows-bottom" id="mainSlider" data-slick='{"arrows": false, "dots": true}'>
 
-				<?php foreach ($news_slider as $xx) {?>
+				<?php foreach ($news_slider as $slide_item) {?>
+
 				<div class="slide">
-					<div class="img--holder" data-bg="<?= esc(base_url('public/assets/images/content/slider/'.$xx->img));?>?v=<?php echo time(); ?>"></div>
+					<div class="img--holder" data-bg="<?= esc(base_url('public/assets/images/content/slider/'.$slide_item->img));?>"></div>
 					<div class="slide-content center">
 						<div class="vert-wrap container">
 							<div class="vert">
 								<div class="container">
 									<div class="slide-txt1 text-right" data-animation="fadeInDown" data-animation-delay="1s"><!--Quality Healthcare.<br>-->
-										<b><?= $xx->title;?></b></div>
-									<div style="margin-left: 270px;" class="slide-txt2 text-right" data-animation="fadeInUp" data-animation-delay="1.5s"><?= esc($xx->description) ?></div>
-									<div class="slide-btn text-right"><a href="<?php echo $xx->url; ?>" class="btn link-inside" data-animation="fadeInUp" data-animation-delay="2s"><i class="icon-right-arrow"></i><span><?= esc($xx->btn);?></span><i class="icon-right-arrow"></i></a></div>
+										<b><?= $slide_item->title;?></b></div>
+									<div style="margin-left: 270px;" class="slide-txt2 text-right" data-animation="fadeInUp" data-animation-delay="1.5s"><?= esc($slide_item->description) ?></div>
+									<div class="slide-btn text-right"><a href="<?php echo $slide_item->url; ?>" class="btn link-inside" data-animation="fadeInUp" data-animation-delay="2s"><i class="icon-right-arrow"></i><span><?= esc($slide_item->btn);?></span><i class="icon-right-arrow"></i></a></div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+
 				<?php } ?>
 			</div>
 		</div>
-	</div>
+	</section>
 
 
 	<!-- Seccion Nuestros Planes -->
-	<section id="paquetes_preventivos_view" style="background-image: url('<?= esc(base_url('public/assets/images/content/slider/testimonials-1-shape-4.png'))?>?v=<?= rand();?>'); background-repeat: no-repeat; background-size: cover;">
+	<section id="paquetes_preventivos_view" style="background-image: url('<?= esc(base_url('public/assets/images/content/slider/testimonials-1-shape-4.png'))?>'); background-repeat: no-repeat; background-size: cover;">
 		<div class="container  p-3">
 			<div class="block-title text-center">
 				<div class="h-sub theme-color">Elija nuestro precio</div>
-				<h2 data-title="¡Nuestros Planes!"><span>Nuestros planes  <br class="d-lg-none">  <span class="theme-color">de precios</span></span></h2>
+				<h2 data-title="¡Nuestros Planes!"><span>Nuestros planes  <br class="d-lg-none">  <span class="theme-color">y precios</span></span></h2>
 				
 				<span>Es importante realizar chequeos preventivos para detectar a tiempo enfermedades y posibles factores de riesgo. <br>
 				En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
@@ -188,7 +185,7 @@ $query_ss = $db->query("select * from th_employe");
 
 
 	<!-- Seccion Informes Aqui | View-->
-	<div class="section" id="contactSection">
+	<section class="section" id="contactSection">
 		<div class="banner-contact-us" style="background-image: url('<?= esc(base_url('public/assets/images/content/contact-bg.png')) ?>?v=<?= rand();?>')">
 			<div class="container">
 				<div class="row no-gutters">
@@ -250,7 +247,7 @@ $query_ss = $db->query("select * from th_employe");
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
 
 
@@ -258,7 +255,7 @@ $query_ss = $db->query("select * from th_employe");
 
 
 	<!-- Seccion Calidad de Servicios -->
-	<div class="section mt-0 shadow-bot pt-2 pb-0 py-sm-4 mb-2">
+	<section class="section mt-0 shadow-bot pt-2 pb-0 py-sm-4 mb-2">
 		<div class="container">
 			<div class="row js-icn-text-alt-carousel">
 				<?php foreach ($lista_servicios as $xx) {?>
@@ -274,37 +271,29 @@ $query_ss = $db->query("select * from th_employe");
 				<?php } ?>
 			</div>
 		</div>
-	</div> 
-	<!--Ordenando la informacion de la base de datos-->
-	<?php foreach ($static_view_one as $static_one) {
-		$titlexx = $static_one->title;
-		$subtitlexx = $static_one->subtitle;
-		$descriptionxx = $static_one->description;
-		$subtitle_reserxx = $static_one->subtitle_reser;
-		$videoxx = $static_one->video;
-	} ?>
-
-
-
+	</section> 
 
 
 	<!-- Sección - Acerca de nosotros -->
-	<div class="section" id="aboutSection" >
+	<section class="section" id="aboutSection" >
 		<div class="container pt-lg-2">
 			<div class="row mt-2 mt-md-3 mt-lg-0">
+				<!-- Texto -->
 				<div class="col-md-6">
 					<div class="title-wrap text-center text-md-left">
-						<div class="h-sub"><?= esc($subtitlexx);?></div>
-						<h2 class="h1">Bienvenido <span class="theme-color"><?=	esc($titlexx);?></span></h2>
+						<div class="h-sub"><?= esc($static_one->subtitle);?></div>
+						<h2 class="h1">Bienvenido <span class="theme-color"><?=	esc($static_one->title);?></span></h2>
 					</div>
 					<div class="pr-xl-1">
-						<p><?= $descriptionxx;?></p>
+						<p><?= $static_one->description;?></p>
 					</div>
 					<div class="text-center text-md-left mt-2 mt-md-3">
 						<a href="#" class="btn-link" data-toggle="modal" data-target="#modalBookingForm">Ver mas sobre nosotros<i class="icon-right-arrow"></i></a>
 					</div>
 				</div>
+				<!-- Video -->
 				<div class="col-md-6 mt-4 mt-md-0">
+					<!-- Static -->
 					<div class="video-box">
 						<div class="video-box-poster">
 							<img src="<?= esc(base_url('public/assets/images/content/video-poster.jpg')) ?>?v=<?php echo time();?>" alt="" class="img-fluid">
@@ -316,7 +305,7 @@ $query_ss = $db->query("select * from th_employe");
 						<div class="video-box-bg"><img src="images/content/video-poster-bg.png" alt=""></div>
 					</div>
 
-					<!-- Video Modal -->
+					<!-- Modal -->
 					<div class="modal fade" id="videoModal">
 						<div class="modal-dialog">
 							<div class="modal-content">
@@ -331,7 +320,7 @@ $query_ss = $db->query("select * from th_employe");
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
 
 
@@ -339,7 +328,7 @@ $query_ss = $db->query("select * from th_employe");
 
 
 	<!--Sección - Nuestras especialidades-->
-	<div class="section" id="departmentsSection" >
+	<section class="section" id="departmentsSection" >
 		<div class="container">
 			<div class="title-wrap text-center">
 				<h2 class="h1">Nuestros Departamentos</h2>
@@ -351,15 +340,15 @@ $query_ss = $db->query("select * from th_employe");
 					<div class="department-tabs js-department-tabs d-none d-sm-flex">
 						
 
-						<?php foreach ($lista_consultorios as $xx) {?>
-							<?php if ($xx->Id == 1) {
-								$active = "active";
-							}else{
-								$active = "";
-							} ?>
-							<div class="department-tab <?= esc($active);?>">
-								<div class="department-tab-icon"><i class="<?= esc($xx->icon);?>"></i></div>
-								<div class="department-tab-text"><?= esc($xx->name);?></div>
+						<?php foreach ($lista_consultorios as $consultorio) {?>
+							<?php if ($consultorio->Id == 1) {
+								$state = "active";
+								} else {
+									$state = "";
+								} ?>
+							<div class="department-tab <?= esc($state);?>">
+								<div class="department-tab-icon"><i class="<?= esc($consultorio->icon);?>"></i></div>
+								<div class="department-tab-text"><?= esc($consultorio->name);?></div>
 							</div>
 						<?php } ?>
 						
@@ -367,27 +356,24 @@ $query_ss = $db->query("select * from th_employe");
 				</div>
 				<div class="col-lg-4 col-xl-3">
 					<div class="department-carousel js-department-carousel">
-						<?php foreach ($lista_consultorios as $xx) {?>
-							<?php if ($xx->Id == 1) {
-								$active = "active";
-							}else{
-								$active = "";
-							} ?>
+						<?php foreach ($lista_consultorios as $consultorio) {?>
+
 							<div class="department-item">
-								<h3 data-title="<?= esc($xx->name);?>"><span><?= esc($xx->name);?></span></h3>
+								<h3 data-title="<?= esc($consultorio->name);?>"><span><?= esc($consultorio->name);?></span></h3>
 								<div class="department-tab">
-									<div class="department-tab-icon"><i class="<?= esc($xx->icon);?>"></i></div>
-									<div class="department-tab-text"><?= esc($xx->name);?></div>
+									<div class="department-tab-icon"><i class="<?= esc($consultorio->icon);?>"></i></div>
+									<div class="department-tab-text"><?= esc($consultorio->name);?></div>
 								</div>
-								<p><?= esc($xx->description);?></p>
+								<p><?= esc($consultorio->description);?></p>
 							</div>
+
 						<?php } ?>
 						
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
 	
 
@@ -395,45 +381,44 @@ $query_ss = $db->query("select * from th_employe");
 
 
 	<!-- Nuestras areas -->
-	<div class="section" >
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-4">
-						<div class="title-wrap">
-							<h2 class="h1" style="font-size: 2.5em;">Nuestras <span class="theme-color">Áreas</span></h2>
-							<div class="h-decor"></div>
-						</div>
-						<p><?php echo "" ?></p>
-						<div class="mt-4"></div>
-						<div class="mt-lg-4"></div>
-						<ul class="marker-list-md">
-							<?php $consultoriasname = $db->query("select * from  t_consultorias order by Id asc");
-							foreach ($consultoriasname->getResult() as $xx) {?>
-								<li><?php echo $xx->name;?></li>
+	<section class="section" >
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="title-wrap">
+						<h2 class="h1" style="font-size: 2.5em;">Nuestras <span class="theme-color">Áreas</span></h2>
+						<div class="h-decor"></div>
+					</div>
+					<div class="mt-4"></div>
+					<div class="mt-lg-4"></div>
+					<ul class="marker-list-md">
+						<?php
+						foreach ($consultoriasname as $area) {?>
+							<li><?php echo $area->name;?></li>
+						<?php } ?>
+					</ul>
+				</div>
+				<div class="col-lg-8 mt-4 mt-lg-0">
+					<div class="slider-gallery">
+
+						<!-- Obteniendo las imagenes de la base de datos -->
+						<ul class="slider-gallery-main list-unstyled js-slider-gallery-main">
+							<?php
+							foreach ($consultoriasname as $area) {?>
+								<li><img src="<?php echo base_url().'/public/assets/';?>images/content/<?php echo $area->img;?>" alt="Area Img Large"></li>
 							<?php } ?>
 						</ul>
-					</div>
-					<div class="col-lg-8 mt-4 mt-lg-0">
-						<div class="slider-gallery">
-
-							<!-- Obteniendo las imagenes de la base de datos -->
-							<ul class="slider-gallery-main list-unstyled js-slider-gallery-main">
-								<?php $query = $db->query("select * from  t_consultorias order by Id asc");
-								foreach ($query->getResult() as $evaristo) {?>
-								 	<li><img src="<?php echo base_url().'/public/assets/';?>images/content/<?php echo $evaristo->img;?>?v=<?php echo rand();?>" alt=""></li>
-								 <?php } ?>
-							</ul>
-							<ul class="slider-gallery-thumbs list-unstyled js-slider-gallery-thumbs">
-								<?php $query = $db->query("select * from  t_consultorias order by Id asc");
-								foreach ($query->getResult() as $eva) {?>
-									<li><img src="<?php echo base_url().'/public/assets/';?>images/content/<?php echo $eva->img_small;?>?v=<?php echo rand();?>" alt=""></li>
-								<?php } ?>
-							</ul>
-						</div>
+						<ul class="slider-gallery-thumbs list-unstyled js-slider-gallery-thumbs">
+							<?php $query = $db->query("select * from  t_consultorias order by Id asc");
+							foreach ($consultoriasname as $area) {?>
+								<li><img src="<?php echo base_url().'/public/assets/';?>images/content/<?php echo $area->img_small;?>" alt="Area Img Small"></li>
+							<?php } ?>
+						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
+	</section>
 
 
 
@@ -441,10 +426,10 @@ $query_ss = $db->query("select * from th_employe");
 	
 
 	<!-- Sección ¿Por que elegirnos? -->
-	<div class="section">
+	<section class="section">
 		<div class="container-fluid px-0 text-image-block">
 			<div class="row no-gutters">
-				<div class="col-md-6 image-col"><img src="<?php echo base_url('public/assets/images/content/why-choose-us.png');?>?v=<?php  echo rand();?>" alt=""></div>
+				<div class="col-md-6 image-col"><img src="<?php echo base_url('public/assets/images/content/why-choose-us.png');?>" alt="Medicos y Doctores"></div>
 				<div class="col-md-6 text-col">
 					<div class="title-wrap">
 						<div class="h-sub theme-color">Ver la diferencia</div>
@@ -468,7 +453,7 @@ $query_ss = $db->query("select * from th_employe");
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
 
 
@@ -476,27 +461,27 @@ $query_ss = $db->query("select * from th_employe");
 
 
 	<!-- Seccion Nuestros Servicios -->
-	<div class="section" id="servicesSection">
+	<section class="section" id="servicesSection">
 		<div class="container">
 			<div class="title-wrap text-center">
 				<h2 class="h1">Nuestros <span class="theme-color">Servicios</span></h2>
 				<div class="h-decor"></div>
 			</div>
 			<div class="row js-service-card-style2-carousel">
-				<?php foreach ($lista_t_view_service as $xx) {?>
+				<?php foreach ($lista_t_view_service as $service) {?>
 					<div class="col-md-6 col-lg-4">
 						<div class="service-card-style2">
 							<div class="service-card-icon">
-								<i class="<?php echo esc($xx->icon);?>"></i>
+								<i class="<?php echo esc($service->icon);?>"></i>
 							</div>
-							<h5 class="service-card-name"><?php echo esc($xx->title);?></h5>
-							<p><?php echo $xx->desc;?></p>
+							<h5 class="service-card-name"><?php echo esc($service->title);?></h5>
+							<p><?php echo $service->desc;?></p>
 						</div>
 					</div>
 				<?php } ?>	
 			</div>
 		</div>
-	</div>
+	</section>
 
 
 
@@ -504,7 +489,7 @@ $query_ss = $db->query("select * from th_employe");
 
 
 	<!-- Seccion Nuestras ventajas -->
-	<div class="">
+	<section class="">
 		<div class="container-fluid p-5">
 			<div class="row no-gutters">
 				<div class="col-sm-12 col-xl-7  ">
@@ -516,17 +501,17 @@ $query_ss = $db->query("select * from th_employe");
 						<div class="row">
 							<div class="col-sm-6">
 								<ul class="marker-list-md">
-									<?php $lista7_areas = $db->query("select * from  t_ventajas order by Id asc  limit 0,7");
-										foreach ($lista7_areas->getResult() as $xx) {?>
-										<li><?php echo $xx->name;?></li>
+									<?php
+										foreach ($lista_ventajas_a as $ventaja_item) {?>
+										<li><?php echo $ventaja_item->name;?></li>
 									<?php } ?>
 								</ul>
 							</div>
 							<div class="col-sm-6 mt-1 mt-sm-0">
 								<ul class="marker-list-md">
-									<?php $lista_ventajas_mas = $db->query("select * from  t_ventajas order by Id asc limit 7,50 ");
-										foreach ($lista_ventajas_mas->getResult() as $xxx) {?>
-										<li><?php echo $xxx->name;?></li>
+									<?php
+										foreach ($lista_ventajas_b as $ventaja_item) {?>
+										<li><?php echo $ventaja_item->name;?></li>
 									<?php } ?>
 								</ul>
 							</div>
@@ -534,10 +519,11 @@ $query_ss = $db->query("select * from th_employe");
 					</div>
 				</div>
 				<div class="col-sm-12 col-xl-5  banner-left bg-full" 
-				style="background-image: url('<?php  echo base_url().'/public/assets/';?>images/content/<?php echo $img_aboutx4;?>?v=<?php echo rand();?>')"></div>
+					style="background-image: url(<?php  echo base_url().'/public/assets/images/content/banner-right.jpg'?>)">
+				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
 
 
@@ -545,34 +531,38 @@ $query_ss = $db->query("select * from th_employe");
 
 
 	<!-- Seccion FAQ -->
-	<div class="section bg-grey py-0" id="faqSection">
+	<section class="section bg-grey py-0" id="faqSection">
 		<div class="container-fluid px-0">
 			<div class="row no-gutters">
 				<div class="col-xl-6 order-2 order-xl-1">
 					<div class="faq-wrap px-15 px-lg-8">
 						<div class="title-wrap">
-							<h2 class="h1">Preguntas mas frecuentes</h2>
+							<h2 class="h1">Preguntas más frecuentes</h2>
 						</div>
 						<div class="mt-2 mt-lg-4"></div>
 						<?php
 						$count =0;
-						 foreach ($lista_preguntas as $xx) {
-						 	$count +=1;
-						 	?>
-							<?php if ($xx->Id==1) {
-								$active = "show";
-							}else{
-								$active = "";
+						foreach ($lista_preguntas as $pregunta_item) {
+							$count +=1;
+								
+							if ($pregunta_item->Id==1) {
+								$state = "show";
+							} else {
+								$state = "";
 							} ?>
+
 							<div class="faq-item">
-								<a data-toggle="collapse" data-parent="#faqAccordion1" href="#<?php echo $xx->identificador;?>" aria-expanded="true"><span><?php echo $count; ?>.</span><span><?php  echo $xx->title; ?></span></a>
-								<div id="<?php 	echo $xx->identificador;?>" class="collapse <?php echo $active;?> faq-item-content" role="tabpanel">
+								<a data-toggle="collapse" data-parent="#faqAccordion1" href="#<?php echo $pregunta_item->identificador;?>" aria-expanded="true"><span><?php echo $count; ?>.</span><span><?php  echo $pregunta_item->title; ?></span></a>
+								<div id="<?php 	echo $pregunta_item->identificador;?>" class="collapse <?php echo $state;?> faq-item-content" role="tabpanel">
 									<div>
-										<?php if ($xx->description =="" or $xx->description==NULL) {?>
+										<?php 
+										if ($pregunta_item->description =="" or $pregunta_item->description==NULL) {?>
 											<p>Estamos agregando la información.</p>
-										<?php }else{?>
-											<?php echo $xx->description;?>
-										<?php } ?>
+										<?php 
+										} else { ?>
+											<?php echo $pregunta_item->description;?>
+										<?php 
+										} ?>
 									</div>
 								</div>
 							</div>
@@ -581,10 +571,10 @@ $query_ss = $db->query("select * from th_employe");
 						<a href="#" class="btn mt-15 mt-sm-3" data-toggle="modal" data-target="#modalQuestionForm"><i class="icon-right-arrow"></i><span>Realizar Pregunta</span><i class="icon-right-arrow"></i></a>
 					</div>
 				</div>
-				<div class="col-xl-6 banner-left bg-cover order-1 order-xl-2" style="background-image: url('<?php echo base_url('public/assets/images/content/banner-left.jpg');?>?v=<?php echo rand(); ?>')"></div>
+				<div class="col-xl-6 banner-left bg-cover order-1 order-xl-2" style="background-image: url('<?php echo base_url('public/assets/images/content/banner-left.jpg');?>')"></div>
 			</div>
 		</div>
-	</div>
+	</section>
 
 
 
@@ -593,7 +583,7 @@ $query_ss = $db->query("select * from th_employe");
 
 
 	<!-- Seccion Nuestros Especialistas -->
-	<div class="section" id="specialistsSection">
+	<section class="section" id="specialistsSection">
 		<div class="container">
 			<div class="title-wrap text-center">
 				<div class="h-sub theme-color">Conocer al equipo</div>
@@ -605,34 +595,34 @@ $query_ss = $db->query("select * from th_employe");
 				<div class="selectWrapper input-group">
 					<select class="form-control">
 						<option value="all">Todos</option>
-						<?php foreach ($lista_empleado as $xx) {?>
-							<option value=".<?php echo esc($xx->categoria_);?>"><?php echo esc($xx->categoria);?></option>
+						<?php foreach ($lista_empleado as $empleado) {?>
+							<option value=".<?php echo esc($empleado->categoria_);?>"><?php echo esc($empleado->categoria);?></option>
 						<?php } ?>
 						
 					</select>
 				</div>
 			</form>
 			<div class="row specialist-carousel js-specialist-carousel">
-				<?php foreach ($lista_empleado_categoria as  $x) {?>
-					<div class="col-sm-6 col-md-4 col-lg-3 <?php echo $x->categoria;?>" >
+				<?php foreach ($lista_empleado_categoria as  $categoria_item) {?>
+					<div class="col-sm-6 col-md-4 col-lg-3 <?php echo $categoria_item->categoria;?>" >
 						<div class="doctor-box doctor-box-style2 text-center">
 							<!--<div class="doctor-box-photo">-->
 							<div class="doctor-box-photo">
-								<div class="d-flex justify-content-center"><img src="<?php echo esc(base_url('public/assets/images/content/'.$x->image));?>" class="img-fluid img-responsive img-circle" alt="" style="width: 124px; height: 121px;"></div>
+								<div class="d-flex justify-content-center"><img src="<?php echo esc(base_url('public/assets/images/content/'.$categoria_item->image));?>" class="img-fluid img-responsive img-circle" alt="Img " style="width: 124px; height: 121px;"></div>
 							</div>
 							<div class="doctor-box-top">
-								<h5 class="doctor-box-name"><?php echo esc($x->name);?></h5>
-								<div class="doctor-box-position"><?php echo esc($x->description);?></div>
+								<h5 class="doctor-box-name"><?php echo esc($categoria_item->name);?></h5>
+								<div class="doctor-box-position"><?php echo esc($categoria_item->description);?></div>
 							</div>
 							<div class="doctor-box-booking">
-								<a href="javascript:void(0)" onclick="return validate('<?php echo $x->name;?>')">Ver mas<i class="icon-right-arrow"></i></a>
+								<a href="javascript:void(0)" onclick="return validate('<?php echo $categoria_item->name;?>')">Ver mas<i class="icon-right-arrow"></i></a>
 							</div>
 						</div>
 					</div>
 				<?php } ?>
 			</div>
 		</div>
-	</div>
+	</section>
 
 
 
@@ -640,62 +630,56 @@ $query_ss = $db->query("select * from th_employe");
 
 
 	<!-- Seccion Nuestros Clientes -->
-	<div class="section bg-grey mt-0" id="testimonialsSection">
+	<section class="section bg-grey mt-0" id="testimonialsSection">
 		<div class="container">
 			<div class="title-wrap text-center text-md-left">
 				<h2 class="h1 title-with-clone" data-title="Our Clients"><span>Nuestros <span class="theme-color">Clientes</span></span></h2>
 			</div>
+			
 			<div class="row">
+				<!-- Lista clientes -->
 				<div class="col-md-9">
 					<div class="row js-services-tabs-carousel">
-						<?php
-						$query = $db->query("select * from t_clientes_empresas where status=1 order by Id desc");
-			 			foreach ($query->getResult() as $xx) {?>
-			 				<?php if ($xx->Id==1) {
-			 					$active = "active";
-			 				}else{
-			 					$active = "";
-			 				} ?>
+						<?php foreach ($lista_empresas_clientes as $empresa) {?>
+
+							<!-- Cliente - Item -->
 							<div class="col-md-6 col-lg-4">
-								<div class="service-card-style3 <?php echo $active;?>">
+								<div class="service-card-style3">
 									<div class="service-card-icon">
-										<!--<i class="icon-eye-1"></i>-->
-										<img src="<?php echo base_url('public/assets/images/content/'.$xx->img);?>" alt="">
+										<img src="<?php echo base_url('public/assets/images/content/'.$empresa->img);?>" alt="Logo Empresa">
 									</div>
-									<h5 class="service-card-name"><?= $xx->name;?></h5>
-									<p><?php echo $xx->subtitle;?></p>
+									<h5 class="service-card-name"><?= $empresa->name;?></h5>
+									<p><?php echo $empresa->subtitle;?></p>
 									<div class="mt-2 mt-md-4"></div>
-									<a href="<?php echo $xx->url;?>" target="_blank" class="btn-link" >Mas Información<i class="icon-right-arrow"></i></a>
+									<a href="<?php echo $empresa->url;?>" target="_blank" class="btn-link" >Mas Información<i class="icon-right-arrow"></i></a>
 								</div>
 							</div>
+
 						<?php } ?>
 					</div>
 				</div>
-
-				<?php $query = $db->query("select count(*) as total from t_clientes_empresas where status=1");
-					$row = $query->getRow();
-					if (isset($row)) {
-						$data = $row->total;
-					}
-				 ?>
-
+				
+				<!-- Panel lado derecho -->
 				<div class="col-md-3 service-info-carousel-wrap">
 					<div class="service-info-carousel js-services-info">
 						<?php
-						$query = $db->query("select * from t_clientes_empresas where status=1 order by Id desc");
+
 						$count =0;
-			 			foreach ($query->getResult() as $xx) {
+			 			foreach ($lista_empresas_clientes as $empresa) {
+
 			 				$count +=1;?>
-						<div class="service-info">
-							<div class="service-info-num"><span><?php echo $count; ?></span>/ <?php echo $data; ?></div>
-							<p><?php echo $xx->description;?></p>
-						</div>
+
+							<div class="service-info">
+								<div class="service-info-num"><span><?php echo $count; ?></span>/ <?php echo count($lista_empresas_clientes); ?></div>
+								<p><?php echo $empresa->description;?></p>
+							</div>
+
 						<?php } ?>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
 
 
@@ -703,42 +687,44 @@ $query_ss = $db->query("select * from th_employe");
 
 
 	<!-- Seccion Eventos Clínicos -->
-	<div class="section" id="eventsSection">
-		<div class="container">
-			<div class="title-wrap text-center">
-				<h2 class="h1">Eventos Clínicos</h2>
-				<div class="h-decor"></div>
+	<section>
+		<div class="section" id="eventsSection">
+			<div class="container">
+				<div class="title-wrap text-center">
+					<h2 class="h1">Eventos Clínicos</h2>
+					<div class="h-decor"></div>
+				</div>
 			</div>
 		</div>
-	</div>
-	<!-- esto continua siendo parte de eventos clinicos -->						
-	<div class="section">
-		<div class="container-fluid px-0">
-			<div class="block-full-appointment bg-cover" style="background-image: url(<?php echo base_url('public/assets/images/content/online-appointment-bg.jpg');?>?v=<?php echo time();?>)">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-6">
-							<div class="box-progress">
-								<div class="box-progress-number">150<sup>K</sup></div>
-								<div class="box-progress-text"><h5>Servicios de alta gama</h5>
-									<p>Durante más de 7 años, hemos deleitado a nuestros clientes y les brindamos los servicios necesarios.</p></div>
+		<!-- esto continua siendo parte de eventos clinicos -->						
+		<div class="section">
+			<div class="container-fluid px-0">
+				<div class="block-full-appointment bg-cover" style="background-image: url(<?php echo base_url('public/assets/images/content/online-appointment-bg.jpg');?>?v=<?php echo time();?>)">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="box-progress">
+									<div class="box-progress-number">150<sup>K</sup></div>
+									<div class="box-progress-text"><h5>Servicios de alta gama</h5>
+										<p>Durante más de 7 años, hemos deleitado a nuestros clientes y les brindamos los servicios necesarios.</p></div>
+								</div>
+								<div class="box-progress">
+									<div class="box-progress-number">100<sup>%</sup></div>
+									<div class="box-progress-text"><h5>Clientes felices</h5>
+										<p>Absolutamente todos nuestros clientes están listos para asegurarle la alta calidad de nuestros servicios.</p></div>
+								</div>
 							</div>
-							<div class="box-progress">
-								<div class="box-progress-number">100<sup>%</sup></div>
-								<div class="box-progress-text"><h5>Clientes felices</h5>
-									<p>Absolutamente todos nuestros clientes están listos para asegurarle la alta calidad de nuestros servicios.</p></div>
+							<div class="col-sm-6 mt-5 mt-md-0 text-center text-md-right">
+								<h2 class="text1">¡Consigue lo que siempre <br>has deseado!</h2>
+								<div class="text2">Ahora puede reservar citas en línea</div>
+								<a href="#" class="btn mt-2 mt-sm-3 mt-lg-4" data-toggle="modal" data-target="#modalBookingForm"><i class="icon-right-arrow"></i><span>Solicitar una cotización</span><i class="icon-right-arrow"></i></a>
 							</div>
-						</div>
-						<div class="col-sm-6 mt-5 mt-md-0 text-center text-md-right">
-							<h2 class="text1">¡Consigue lo que siempre <br>has deseado!</h2>
-							<div class="text2">Ahora puede reservar citas en línea</div>
-							<a href="#" class="btn mt-2 mt-sm-3 mt-lg-4" data-toggle="modal" data-target="#modalBookingForm"><i class="icon-right-arrow"></i><span>Solicitar una cotización</span><i class="icon-right-arrow"></i></a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 	
 </div>
 
@@ -778,7 +764,7 @@ $query_ss = $db->query("select * from th_employe");
 
 <script>
 	$(document).ready(function() {
-		// id de nuestro modal
+		
 		$('.empresa-cotizacion-modal').modal("show");
 		console.log("modal cargado h");
 	});
@@ -977,7 +963,7 @@ $query_ss = $db->query("select * from th_employe");
 	$(document).on('submit', '#Enviamos_los_datos_del_paciente', function(event) {
 		event.preventDefault();
 		/* Act on the event */
-		$("#lista").html(`<i class="fas fa-paper-plane cambiar_texto" > </i>&nbsp;Enviando Cita.......`);
+		$("#lista").html(`<i class="fas fa-paper-plane cambiar_texto" > </i>&nbsp;Enviando Cita...`);
 
 		var dni = $("#nombres_completos").val();
 		if (dni == null || dni.length == 0 || /^\s+$/.test(dni) ) {
@@ -1003,29 +989,27 @@ $query_ss = $db->query("select * from th_employe");
 			type: 'POST',
 			data: $("#Enviamos_los_datos_del_paciente").serialize(),
 			statusCode:{
-			400: function(xhr){
+				400: function(xhr){
 
-			var json = JSON.parse(xhr.responseText);
-			console.log("falla");
-			if (json.error) {
-				Swal.fire({
-					title: 'Lo siento mucho ',
-					text: ""+json.error+"",
-					icon: 'info',
-					showCancelButton: false,
-					confirmButtonColor: '#3085d6',
-					cancelButtonColor: '#d33',
-					confirmButtonText: 'OK!'
-				}).then((result) => {
-					if (result.value) {
-					$("#Enviamos_los_datos_del_paciente")[0].reset();
-						$("#lista").html(`<i class="fas fa-paper-plane cambiar_texto" > </i>&nbsp;Reservar cita`);
+					var json = JSON.parse(xhr.responseText);
+					console.log("falla");
+					if (json.error) {
+						Swal.fire({
+							title: 'Lo siento mucho ',
+							text: ""+json.error+"",
+							icon: 'info',
+							showCancelButton: false,
+							confirmButtonColor: '#3085d6',
+							cancelButtonColor: '#d33',
+							confirmButtonText: 'OK!'
+						}).then((result) => {
+							if (result.value) {
+							$("#Enviamos_los_datos_del_paciente")[0].reset();
+								$("#lista").html(`<i class="fas fa-paper-plane cambiar_texto" > </i>&nbsp;Reservar cita`);
+							}
+						}) 
 					}
-				}) 
-			}
-			
-			}
-
+				}
 			}
 		})
 		.done(function(data) {
