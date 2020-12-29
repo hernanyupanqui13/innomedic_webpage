@@ -18,7 +18,7 @@ foreach ($list_employe as $datas) {
 	$aboutx = $datas->about;
 	$viewsx = $datas->views;
 } 
-?>	
+?>	  
 
 
 
