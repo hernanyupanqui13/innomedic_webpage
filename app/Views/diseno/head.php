@@ -210,7 +210,7 @@ foreach ($list_employe as $xx) {
 
 	/* 
 	Esta funcion envia se ejecuta en el cliente. Recibe la informacion del la barra de busqueda y la envia al servidor donde solicita los resultados.
-	Los resultados reenviados al cliente en una nueva direccion URL donde se ejecuta el controlador Resultados.php  
+	Los resultados reenviados al cliente en una nueva direccion URL
 	*/
 	function mensaje() {
 
