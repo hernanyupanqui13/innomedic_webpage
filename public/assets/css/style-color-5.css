@@ -3375,9 +3375,6 @@ a.bg-primary-alt:focus, a.bg-primary-alt:hover {
   .d-lg-table-cell {
     display: table-cell !important; }
 
-  .d-lg-flex {
-    display: flex !important; }
-
   .d-lg-inline-flex {
     display: inline-flex !important; } }
 @media (min-width: 1230px) {
@@ -17397,3 +17394,9 @@ ul.category-list {
 @media (max-width: 767px) {
   .layout-landing .js-icn-text-alt-carousel .slick-dots {
     margin: 15px 0 25px; } }
+
+@media (min-width: 1350px) {
+  .d-lg-flex {
+    display: flex !important; 
+  }
+}

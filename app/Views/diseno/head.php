@@ -18,8 +18,6 @@
     <meta name="revisit-after" content="1 days">
     <meta name="author" content="Evaristo Escudero Huillcamascco">
     <meta http-equiv="pragma" content="cache" />
-    <META NAME="REPLY-TO" CONTENT="escudero0594@hotmail.com">
-    <link rev="made" href="mailto:escudero0594@hotmail.com">
     <meta http-equiv="content-type" content="text/html;UTF-8">
     <meta name="url" content="http://www.innomedic.pe/">
     <meta name="identifier-URL" content="http://www.innomedic.pe/">

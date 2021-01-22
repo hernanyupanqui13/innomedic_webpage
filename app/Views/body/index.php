@@ -364,7 +364,7 @@ foreach ($list_employe as $datas) {
 									<div class="department-tab-icon"><i class="<?= esc($consultorio->icon);?>"></i></div>
 									<div class="department-tab-text"><?= esc($consultorio->name);?></div>
 								</div>
-								<p><?= esc($consultorio->description);?></p>
+								<p><?= $consultorio->description;?></p>
 							</div>
 
 						<?php } ?>
