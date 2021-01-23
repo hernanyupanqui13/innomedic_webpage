@@ -17400,3 +17400,11 @@ ul.category-list {
     display: flex !important; 
   }
 }
+
+.dinamic-content {
+  justify-content: center;
+}
+
+.paquete_item {
+  margin-bottom: 10px;
+}

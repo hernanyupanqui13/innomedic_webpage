@@ -141,16 +141,16 @@ foreach ($list_employe as $datas) {
 			<!-- Contenido dinamico -->
 			<div class="tabed-content">
 				<div id="month">
-					<div class="row">
+					<div class="row dinamic-content">
 						<?php 
-							$paquetes = $db->query("select * from t_paquetes");
+							$paquetes = $db->query("SELECT * FROM t_paquetes WHERE mostrar = 1 ORDER BY `number`");
 							foreach ($paquetes->getResult() as $xx) { ?>
 								<?php if ($xx->number=="02") {
 									$btn_danger ="";
 								} else {
 									$btn_danger ="";
 								} ?>
-								<div class="col-xl-4 col-lg-4 animated fadeInLeft " >
+								<div class="col-xl-4 col-lg-4 animated fadeInLeft paquete_item" >
 								<div class="pricing-one__single" style="<?php echo $btn_danger; ?>">
 									<div class="circle">
 										<div class="count">
@@ -159,7 +159,7 @@ foreach ($list_employe as $datas) {
 									</div>
 									<div class="price">
 										<h2 class="h2">S/<?php echo $xx->price; ?></h2>
-										<p class="font-weight-bold"><?php echo $xx->title; ?></p>
+										<p class="font-weight-bold theme-color"><?php echo $xx->title; ?></p>
 									</div>
 									<hr>
 									<ul class="list-unstyled pricing-one__list">
@@ -426,7 +426,7 @@ foreach ($list_employe as $datas) {
 	
 
 	<!-- Sección ¿Por que elegirnos? -->
-	<section class="section">
+	<section class="section" id="porQueElegirnos">
 		<div class="container-fluid px-0 text-image-block">
 			<div class="row no-gutters">
 				<div class="col-md-6 image-col"><img src="<?php echo base_url('public/assets/images/content/why-choose-us.png');?>" alt="Medicos y Doctores"></div>
