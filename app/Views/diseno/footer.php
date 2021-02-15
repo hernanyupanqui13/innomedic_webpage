@@ -155,8 +155,11 @@
 					</li>
 					<li><i class="icon-smartphone"></i><b><span class="phone"><a href="tel:<?php echo $phone_onex;?>" class="phone"><span class="text-nowrap"><?php echo $phone_onex; ?></span></a></span></b>
 					</li>
+					<li><i class="icon-smartphone"></i><b><span class="phone"><a href="tel:<?php echo "(+51) 986 007 946";?>" class="phone"><span class="text-nowrap"><?php echo "(+51) 986 007 946"; ?></span></a></span></b>
+					</li>
 					<li><i class="icon-black-envelope"></i><a href="mailto:<?php echo $emailx; ?>"><?php echo $emailx; ?></a></li>
 					<li><i class="icon-black-envelope"></i><a href="mailto:ventas.in@innomedic.pe"><?php echo "ventas.in@innomedic.pe" ?></a></li>
+					<li><i class="icon-black-envelope"></i><a href="mailto:ventas.in@innomedic.pe"><?php echo "ventas.inno@innomedic.pe" ?></a></li>
 				</ul>
 			</div>
 		</div>
@@ -1242,7 +1245,7 @@
 	<script>
 		$(document).ready(function() {
 			
-			$('.empresa-cotizacion-modal').modal("show");
+			//$('.empresa-cotizacion-modal').modal("show"); Quitado temporalmente. changed by hernan
 			console.log("modal cargado h");
 		});
 	</script>
@@ -1258,21 +1261,21 @@
 			var dni = $('#dni').val();
 			var url = '<?php echo base_url('public/reniec/consulta_reniec.php/');?>';
 			$.ajax({
-			type:'POST',
-			url:url,
-			data:'dni='+dni,
+			type:'GET',
+			url:`https://dni.optimizeperu.com/api/persons/${dni}`,
+
+			/*data:'dni='+dni,*/
 			success: function(datos_dni){
 				var datos = eval(datos_dni);
-					$('#dni_mostrar_dni').val(datos[1]);
 
-					var nombre =  datos[2]+" ";
-					var apellido = datos[3];
-					var apellido1 = datos[4];
+					var nombre =  datos_dni.name;
+					var apellido = datos_dni.first_name;
+					var apellido1 = datos_dni.last_name;
 
-					var nombres_completos_data = nombre.concat(apellido,' ',apellido1);
+					var nombres_completos_data = `${nombre} ${apellido} ${apellido1}`;
 
 					$("#nombres_completos").val(nombres_completos_data);
-
+					$('#dni_mostrar_dni').val(datos_dni.dni);
 					$("#agregar_clase_xx").removeClass('preloader');
 					$("#id_hiddexx").show();
 					
@@ -1385,7 +1388,7 @@
 	<script>
 
 	function mostrarPaquetes(id) {
-
+		
 		$.ajax({
 			url: '<?php echo base_url('Inicio/recoger_informacion/');?>',
 			type: 'POST',
@@ -1394,11 +1397,9 @@
 		})
 
 		.done(function(data) {
-			console.log("success");
 
 			$(".solicitar-info-modal").modal("show");
 			
-
 			// Armando el contenido para el HTML
 			var contenido = '<ul class="list-unstyled pricing-one__list">' + data.text + '</ul>';            
 			

@@ -42,7 +42,7 @@ class InicioModel extends Model
 	public function lista_consultorios()
 	{
 	   $db   = \Config\Database::connect();
-	   $query = $db->query("select * from t_areas");
+	   $query = $db->query("SELECT * FROM t_areas ORDER BY orden_visualizacion");
 	   return $query->getResult();
 	}
 

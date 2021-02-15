@@ -87,7 +87,7 @@ foreach ($list_employe as $xx) {
 <body class="shop-page layout-landing">
 
 
-<!-- Barra de ajustes-->
+<!-- Barra de ajustes--><!--
 <div class="settings-panel">
 	<div class="settings-panel-buy-now">
 		<a href="#" data-toggle="modal" data-target="#modalBookingForm" class="settings-panel-btn btn-primary">
@@ -109,7 +109,7 @@ foreach ($list_employe as $xx) {
 			<div class="title">Accesibilidad</div>
 		</div>
 	</div>
-</div>
+</div>-->
 
 
 
@@ -128,8 +128,22 @@ foreach ($list_employe as $xx) {
 				<div class="col-auto col-sm-12 d-flex align-items-center">
 					<div class="header-info"><i class="icon-placeholder2"></i><?php echo esc($adress2);?></div>
 					<div class="header-info"><i class="icon-placeholder2"></i><?php echo esc($adress1);?></div>
-					<div class="header-phone"><i class="icon-telephone"></i><a href="tel:<?php echo esc($telephone); ?>"><?php echo esc($telephone); ?> </a><a href="tel:<?php echo esc($phone_one);?>">- <?php echo esc($phone_one); ?></a></div>
-					<div class="header-info"><i class="icon-black-envelope"></i><a href="mailto:ventasn@innomedic.pe"><?= esc($emailx); ?></a> / <a href="mailto:ventas.in@innomedic.pe"><?= esc("ventas.in@innomedic.pe"); ?></a></div>
+					<div class="header-phone">
+						<i class="icon-telephone"></i>
+						<a href="tel:<?php echo esc($telephone); ?>"><?php echo esc($telephone); ?></a><br>
+						<i class="icon-telephone"></i>
+						<a href="tel:<?php echo esc($phone_one);?>"><?php echo esc($phone_one); ?></a><br>
+						<i class="icon-telephone"></i>
+						<a href="tel:<?php echo esc("(+51) 986 007 946");?>"><?php echo esc("(+51) 986 007 946"); ?><br>
+					</div>
+					<div class="header-info">
+						<i class="icon-black-envelope"></i>
+						<a href="mailto:ventas@innomedic.pe"><?= esc($emailx); ?></a><br>
+						<i class="icon-black-envelope"></i>
+						<a href="mailto:ventas.in@innomedic.pe"><?= esc("ventas.in@innomedic.pe"); ?></a><br>
+						<i class="icon-black-envelope"></i>
+						<a href="mailto:ventas.inno@innomedic.pe"><?= esc("ventas.inno@innomedic.pe"); ?></a>
+					</div>
 				</div>
 				<div class="col-auto ml-auto d-flex align-items-center">
 						<span class="header-social">
@@ -137,7 +151,7 @@ foreach ($list_employe as $xx) {
 							<a target="_blank" href="https://twitter.com/Innomedic_Peru" class="hovicon"><i class="icon-twitter-logo-circle"></i></a>
 							<a target="_blank" href="https://www.instagram.com/innomedic_internacional/" class="hovicon"><i class="icon-instagram-circle"></i></a>
 							<a target="_blank" href="https://www.linkedin.com/in/innomedic-international-300125ba/" class="hovicon"><i  class="icon-linkedin"></i></a>
-							<a href="http://intranet.metjetsac.com/" target="_blank"  class="hovicon" data-toggle="tooltip" data-placement="bottom" title="Ingresar al Sistema"><i  class="icon-user"></i></a>
+							<a href="http://intranet.innomedic.pe/" target="_blank"  class="hovicon" data-toggle="tooltip" data-placement="bottom" title="Ingresar al Sistema"><i  class="icon-user"></i></a>
 						</span>
 				</div>
 			</div>

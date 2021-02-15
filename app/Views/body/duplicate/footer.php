@@ -237,7 +237,7 @@
 						<img src="<?php echo base_url().'/public/assets/';?>images/<?php echo $logox;?>?v=<?php echo rand();?>" alt=""><br><br>
 						<span>Nuestro equipo se contactará inmediatamente contigo. Cuidamos de ti, de tu equipo y empresa</span>
 					</div>
-					<br>
+					<br>   
 					<form class="mt-15" id="bookingForm" method="post" novalidate="">
 						<div class="successform">
 							<p>¡Su mensaje fue enviado exitosamente!</p>

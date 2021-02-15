@@ -328,13 +328,12 @@ class Inicio extends BaseController {
 			);
 
 
-			// Creando la configuracion del correo
 			$mail->isSMTP();
-			$mail->Host     = 'ssl://p3plzcpnl434616.prod.phx3.secureserver.net';
+			$mail->Host     = 'ssl://smtpout.secureserver.net';
 			$mail->SMTPSecure = false;
 			$mail->SMTPDebug  = 3;
 			$mail->Username = 'reenviadores@innomedic.pe';
-			$mail->Password = 'Sistemas20**';
+			$mail->Password = 's1st2n4s2411';
 			$mail->SMTPAuth = true;
 			$mail->SMTPAutoTLS = false; 
 			$mail->SMTPSecure = 'ssl';   
@@ -356,8 +355,8 @@ class Inicio extends BaseController {
 		
 
 			// Add cc or bcc 
-			$mail->addCC('ventas@innomedic.pe');
-			$mail->addBCC('ventas.in@innomedic.pe');
+			//$mail->addCC('ventas@innomedic.pe');
+			//$mail->addBCC('ventas.in@innomedic.pe');
 			
 			// Email subject
 			$mail->Subject = 'Realizar cotizacion para '.$name.' - Pagina web Innomedic.pe';
