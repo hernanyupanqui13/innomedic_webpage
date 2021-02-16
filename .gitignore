@@ -128,6 +128,5 @@ nb-configuration.xml
 
 
 #Other files
-.vscode/
 app/config/app.php
 app/config/database.php
