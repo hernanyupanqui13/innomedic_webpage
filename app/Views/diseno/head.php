@@ -130,29 +130,23 @@ foreach ($list_employe as $xx) {
 					<div class="header-info"><i class="icon-placeholder2"></i><?php echo esc($adress1);?></div>
 					<div class="header-phone">
 						<i class="icon-telephone"></i>
-						<a href="tel:<?php echo esc($telephone); ?>"><?php echo esc($telephone); ?></a><br>
-						<i class="icon-telephone"></i>
-						<a href="tel:<?php echo esc($phone_one);?>"><?php echo esc($phone_one); ?></a><br>
-						<i class="icon-telephone"></i>
-						<a href="tel:<?php echo esc("(+51) 986 007 946");?>"><?php echo esc("(+51) 986 007 946"); ?><br>
+						<a href="tel:<?php echo esc($telephone); ?>"><?php echo esc($telephone); ?> </a>
+						<a href="tel:<?php echo esc($phone_one);?>">- <?php echo esc($phone_one); ?></a>
 					</div>
 					<div class="header-info">
 						<i class="icon-black-envelope"></i>
-						<a href="mailto:ventas@innomedic.pe"><?= esc($emailx); ?></a><br>
-						<i class="icon-black-envelope"></i>
-						<a href="mailto:ventas.in@innomedic.pe"><?= esc("ventas.in@innomedic.pe"); ?></a><br>
-						<i class="icon-black-envelope"></i>
-						<a href="mailto:ventas.inno@innomedic.pe"><?= esc("ventas.inno@innomedic.pe"); ?></a>
+						<a href="mailto:ventasn@innomedic.pe"><?= esc($emailx); ?></a> / 
+						<a href="mailto:ventas.in@innomedic.pe"><?= esc("ventas.in@innomedic.pe"); ?></a>
 					</div>
 				</div>
 				<div class="col-auto ml-auto d-flex align-items-center">
-						<span class="header-social">
-							<a target="_blank" href="https://es-la.facebook.com/InnomedicInternational/" class="hovicon"><i class="icon-facebook-logo-circle"></i></a>
-							<a target="_blank" href="https://twitter.com/Innomedic_Peru" class="hovicon"><i class="icon-twitter-logo-circle"></i></a>
-							<a target="_blank" href="https://www.instagram.com/innomedic_internacional/" class="hovicon"><i class="icon-instagram-circle"></i></a>
-							<a target="_blank" href="https://www.linkedin.com/in/innomedic-international-300125ba/" class="hovicon"><i  class="icon-linkedin"></i></a>
-							<a href="http://intranet.innomedic.pe/" target="_blank"  class="hovicon" data-toggle="tooltip" data-placement="bottom" title="Ingresar al Sistema"><i  class="icon-user"></i></a>
-						</span>
+					<span class="header-social">
+						<a target="_blank" href="https://es-la.facebook.com/InnomedicInternational/" class="hovicon"><i class="icon-facebook-logo-circle"></i></a>
+						<a target="_blank" href="https://twitter.com/Innomedic_Peru" class="hovicon"><i class="icon-twitter-logo-circle"></i></a>
+						<a target="_blank" href="https://www.instagram.com/innomedic_internacional/" class="hovicon"><i class="icon-instagram-circle"></i></a>
+						<a target="_blank" href="https://www.linkedin.com/in/innomedic-international-300125ba/" class="hovicon"><i  class="icon-linkedin"></i></a>
+						<a href="http://intranet.innomedic.pe/" target="_blank"  class="hovicon" data-toggle="tooltip" data-placement="bottom" title="Ingresar al Sistema"><i  class="icon-user"></i></a>
+					</span>
 				</div>
 			</div>
 		</div>
