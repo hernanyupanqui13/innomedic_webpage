@@ -328,18 +328,19 @@ class Inicio extends BaseController {
 			);
 
 
+			// Creando la configuracion del correo
 			$mail->isSMTP();
 			$mail->Host     = 'ssl://smtpout.secureserver.net';
 			$mail->SMTPSecure = false;
 			$mail->SMTPDebug  = 3;
 			$mail->Username = 'reenviadores@innomedic.pe';
-			$mail->Password = 's1st2n4s2411';
+			$mail->Password = 's1st3m4s2411';
 			$mail->SMTPAuth = true;
 			$mail->SMTPAutoTLS = false; 
 			$mail->SMTPSecure = 'ssl';   
 			$mail->Port     = 465;
 			$mail->CharSet = 'UTF-8';
-			$mail->AllowEmpty = true;
+			$mail->AllowEmpty = true;   
 
 			// De: 
 			$mail->setFrom('reenviadores@innomedic.pe',  $usuario.'-'.$identification_number);
