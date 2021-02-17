@@ -1,9 +1,0 @@
-CRITICAL - 2020-09-09 10:12:32 --> Unable to connect to the database.
-#0 C:\AppServ\www\web-innomedic_v1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->initialize()
-#1 C:\AppServ\www\web-innomedic_v1\app\Models\InicioModel.php(16): CodeIgniter\Database\BaseConnection->query('select * from t...')
-#2 C:\AppServ\www\web-innomedic_v1\app\Controllers\Inicio.php(22): App\Models\InicioModel->lisatemploye()
-#3 C:\AppServ\www\web-innomedic_v1\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Inicio->index()
-#4 C:\AppServ\www\web-innomedic_v1\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
-#5 C:\AppServ\www\web-innomedic_v1\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
-#6 C:\AppServ\www\web-innomedic_v1\index.php(45): CodeIgniter\CodeIgniter->run()
-#7 {main}
