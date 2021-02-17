@@ -351,6 +351,11 @@ class Inicio extends BaseController {
 			
 			// Add a recipient
 			$mail->addAddress('reenviadores@innomedic.pe');
+			$mail->addAddress('ventas@innomedic.pe');
+			$mail->addAddress('ventas.in@innomedic.pe');
+			$mail->addAddress('ventas.inno@innomedic.pe');
+
+
 			//$mail->addAddress('avera@innomedic.pe');
 			//$mail->addAddress('eestrada@innomedic.pe');
 		
