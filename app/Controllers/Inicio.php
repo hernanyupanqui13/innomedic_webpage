@@ -330,19 +330,18 @@ class Inicio extends BaseController {
 
 			// Creando la configuracion del correo
 			$mail->isSMTP();
-			$mail->Host     = 'localhost';
-			$mail->SMTPDebug  = 2;
-			$mail->Username = 'reenviadores@innomedic.pe';
+			$mail->Host     = 'smtp.gmail.com';
+			$mail->SMTPDebug  = 3;
+			$mail->Username = 'sistemas.innomedic@gmail.com';
 			$mail->Password = 's1st3m4s2411';
-			$mail->SMTPAuth = false;
-			$mail->SMTPAutoTLS = false; 
-			$mail->SMTPSecure = '';   
-			$mail->Port     = 25;
+			$mail->SMTPAuth = true;
+			$mail->SMTPSecure = 'ssl';   
+			$mail->Port     = 465;
 			$mail->CharSet = 'UTF-8';
 			$mail->AllowEmpty = true;   
 
 			// De: 
-			$mail->setFrom('reenviadores@innomedic.pe',  "Reenviadores Innomedic");
+			$mail->setFrom('sistemas.innomedic@gmail.com',  "Sistemas Sistemas");
 
 			// Configurando el boton de responder
 			$mail->addReplyTo($email, 'Pedido de Cotizacion - Pagina web  Web innomedic');
@@ -358,7 +357,6 @@ class Inicio extends BaseController {
 			$mail->addCC('ventas@innomedic.pe');
 			$mail->addCC('ventas.in@innomedic.pe');
 			$mail->addCC('ventas.inno@innomedic.pe');
-			$mail->addBCC('hernan.yupanqui.prieto@gmail.com');
 
 
 			
@@ -374,10 +372,10 @@ class Inicio extends BaseController {
 
 			// Enviando email. Notese que send() devuelve true ó false a parte de enviar el correo
 			if(!$mail->send()){
-				echo json_encode(array("error"=>"Su petición no ha sido enviada"));
+				echo json_encode(array("error"=>"Su peticion no ha sido enviada"));
 				$this->output->set_status_header(400);
 			} else {
-				echo json_encode(array("sms"=>"Su petición ha sido enviada"));
+				echo json_encode(array("sms"=>"Su peticion ha sido enviada"));
 			}
 
 		} else {
