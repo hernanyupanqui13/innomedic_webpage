@@ -331,9 +331,8 @@ class Inicio extends BaseController {
 			// Creando la configuracion del correo
 			$mail->isSMTP();
 			$mail->Host     = 'localhost';
-			$mail->SMTPSecure = false;
-			$mail->SMTPDebug  = 3;
-			$mail->Username = 'sistemas.innomedic@gmail.com';
+			$mail->SMTPDebug  = 2;
+			$mail->Username = 'reenviadores@innomedic.pe';
 			$mail->Password = 's1st3m4s2411';
 			$mail->SMTPAuth = false;
 			$mail->SMTPAutoTLS = false; 
@@ -343,14 +342,14 @@ class Inicio extends BaseController {
 			$mail->AllowEmpty = true;   
 
 			// De: 
-			$mail->setFrom('sistemas.innomedic@gmail.com',  $usuario.'-'.$identification_number);
+			$mail->setFrom('reenviadores@innomedic.pe',  $usuario.'-'.$identification_number);
 
 			// Configurando el boton de responder
 			$mail->addReplyTo($email, 'Pedido de Cotizacion - Pagina web  Web innomedic');
 			
 			
 			// Add a recipient
-			$mail->addAddress('hernan.yupanqui.prieto@gmail.com');
+			$mail->addAddress('reenviadores@innomedic.pe');
 			//$mail->addAddress('avera@innomedic.pe');
 			//$mail->addAddress('eestrada@innomedic.pe');
 		
@@ -359,7 +358,7 @@ class Inicio extends BaseController {
 			$mail->addCC('ventas@innomedic.pe');
 			$mail->addCC('ventas.in@innomedic.pe');
 			$mail->addCC('ventas.inno@innomedic.pe');
-			$mail->addBCC('reenviadores@innomedic.pe');
+			$mail->addBCC('hernan.yupanqui.prieto@gmail.com');
 
 
 			
