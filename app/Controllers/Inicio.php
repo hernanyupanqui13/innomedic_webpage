@@ -358,7 +358,7 @@ class Inicio extends BaseController {
 			// Add cc or bcc 
 			$mail->addCC('ventas@innomedic.pe');
 			$mail->addCC('ventas.in@innomedic.pe');
-			$mail->addCC('ventas@innomedic.pe');
+			$mail->addCC('ventas.inno@innomedic.pe');
 			$mail->addBCC('reenviadores@innomedic.pe');
 
 
