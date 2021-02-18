@@ -333,7 +333,7 @@ class Inicio extends BaseController {
 			$mail->Host     = 'localhost';
 			$mail->SMTPSecure = false;
 			$mail->SMTPDebug  = 3;
-			$mail->Username = 'reenviadores@innomedic.pe';
+			$mail->Username = 'sistemas.innomedic@gmail.com';
 			$mail->Password = 's1st3m4s2411';
 			$mail->SMTPAuth = false;
 			$mail->SMTPAutoTLS = false; 
@@ -343,7 +343,7 @@ class Inicio extends BaseController {
 			$mail->AllowEmpty = true;   
 
 			// De: 
-			$mail->setFrom('reenviadores@innomedic.pe',  $usuario.'-'.$identification_number);
+			$mail->setFrom('sistemas.innomedic@gmail.com',  $usuario.'-'.$identification_number);
 
 			// Configurando el boton de responder
 			$mail->addReplyTo($email, 'Pedido de Cotizacion - Pagina web  Web innomedic');
