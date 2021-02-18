@@ -335,8 +335,8 @@ class Inicio extends BaseController {
 			$mail->Username = 'sistemas.innomedic@gmail.com';
 			$mail->Password = 's1st3m4s2411';
 			$mail->SMTPAuth = true;
-			$mail->SMTPSecure = 'ssl';   
-			$mail->Port     = 465;
+			$mail->SMTPSecure = 'tls';   
+			$mail->Port     = 587;
 			$mail->CharSet = 'UTF-8';
 			$mail->AllowEmpty = true;   
 
