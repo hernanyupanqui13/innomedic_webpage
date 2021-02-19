@@ -69,7 +69,8 @@ foreach ($list_employe as $datas) {
 							<div class="link-drop">
 								<h5 class="link-drop-title"><i class="icon-pencil-writing"></i>Recibe una atencion personalizada</h5>
 								<p>Nuestro compromiso es ofrecer el mejor servicio al cliente, garantizando: trato amable, ambientes agradables, altísimos tiempos de respuesta, atención personalizada, equipamiento de última generación, historia clínica digital, plataforma online del cliente y diversos recursos tecnológicos que harán de sus servicios con nosotros una experiencia satisfactoria.</p>
-								<p class="text-right mt-2"><a  href="#" data-toggle="modal" data-target="#modalBookingForm" class="btn btn-sm btn-hover-fill link-inside">Ponte en contacto</a></p>
+								<!--<p class="text-right mt-2"><a  href="#" data-toggle="modal" data-target="#modalBookingForm" class="btn btn-sm btn-hover-fill link-inside">Ponte en contacto</a></p>-->
+								<p class="text-right mt-2"><a  href="#" class="btn btn-sm btn-hover-fill link-inside">Ponte en contacto</a></p>
 							</div>
 						</div>
 						<!-- Comunicate con nosotros -->
@@ -81,9 +82,20 @@ foreach ($list_employe as $datas) {
 									<p>Es posible que necesite una atención de uno de nuestros asesores</p>
 								<ul class="icn-list">
 
-									<li><i class="icon-telephone"></i><span class="phone"><a href="tel:<?php echo $telephonex;?>"><?php echo $telephonex;?></a><br><a href="tel:<?php echo $phone_onex; ?>"><?php echo $phone_onex;?></a></span>
+									<li>
+										<i class="icon-telephone"></i>
+										<span class="phone">
+											<a href="tel:<?php echo $telephonex;?>"><?php echo $telephonex;?></a><br>
+											<a href="tel:<?php echo $phone_onex; ?>"><?php echo $phone_onex;?></a><br>
+											<a href="tel:(+51) 986 007 946">(+51) 986 007 946</a><br>
+										</span>
 									</li>
-									<li><i class="icon-black-envelope"></i><a href="mailto:<?php echo $emailx;?>"><?php echo $emailx; ?></a> <br><a href="mailto:ventas.in@innomedic.pe"><?php echo "ventas.in@innomedic.pe" ?></a></li>
+									<li>
+										<i class="icon-black-envelope"></i>
+										<a href="mailto:<?php echo $emailx;?>"><?php echo $emailx; ?></a><br>
+										<a href="mailto:ventas.in@innomedic.pe"><?php echo "ventas.in@innomedic.pe" ?></a>
+										<a href="mailto:ventas.inno@innomedic.pe">ventas.inno@innomedic.pe</a>
+									</li>
 								</ul>
 								<p class="text-right mt-2"><a href="#contactForm" class="btn btn-sm btn-hover-fill link-inside">Ponte en contacto</a></p>
 							</div>
@@ -158,7 +170,7 @@ foreach ($list_employe as $datas) {
 										</div>
 									</div>
 									<div class="price">
-										<h2 class="h2">S/<?php echo $xx->price; ?></h2>
+										<h2 class="h2"><?php echo $xx->price; ?></h2>
 										<p class="font-weight-bold theme-color"><?php echo $xx->title; ?></p>
 									</div>
 									<hr>
