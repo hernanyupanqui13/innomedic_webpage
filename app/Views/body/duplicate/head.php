@@ -129,10 +129,16 @@ foreach ($list_employe as $xx) {
 		<div class="container-fluid">
 			<div class="row align-items-center">
 				<div class="col-auto d-flex align-items-center">
-					<div class="header-info"><i class="icon-placeholder2"></i><?php echo esc($adress1);?></div>
-					<div class="header-info"><i class="icon-placeholder2"></i><?php echo esc($adress2);?></div>
-					<div class="header-phone"><i class="icon-telephone"></i><a href="tel:<?php echo esc($telephone); ?>"><?php echo esc($telephone); ?> </a><a href="tel:<?php echo esc($phone_one);?>">- <?php echo esc($phone_one); ?></a></div>
-					<div class="header-info"><i class="icon-black-envelope"></i><a href="mailto:ventasn@innomedic.pe"><?= esc($emailx); ?></a> / <a href="mailto:ventas.inn@innomedic.pe"><?= esc("ventas.inn@innomedic.pe"); ?></a></div>
+					<div class="header-phone">
+						<i class="icon-telephone"></i>
+						<a href="tel:<?php echo esc($telephone); ?>"><?php echo esc($telephone); ?> </a>
+						<a href="tel:<?php echo esc($phone_one);?>">- <?php echo esc($phone_one); ?></a>
+					</div>
+					<div class="header-info">
+						<i class="icon-black-envelope"></i>
+						<a href="mailto:ventasn@innomedic.pe"><?= esc($emailx); ?></a> / 
+						<a href="mailto:ventas.inn@innomedic.pe"><?= esc("ventas.inn@innomedic.pe"); ?></a>
+					</div>
 				</div>
 				<div class="col-auto ml-auto d-flex align-items-center">
 						<span class="header-social">

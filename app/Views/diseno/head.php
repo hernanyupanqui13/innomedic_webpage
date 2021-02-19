@@ -126,17 +126,18 @@ foreach ($list_employe as $xx) {
 		<div class="container-fluid">
 			<div class="row align-items-center">
 				<div class="col-auto col-sm-12 d-flex align-items-center">
-					<div class="header-info"><i class="icon-placeholder2"></i><?php echo esc($adress2);?></div>
-					<div class="header-info"><i class="icon-placeholder2"></i><?php echo esc($adress1);?></div>
+
 					<div class="header-phone">
 						<i class="icon-telephone"></i>
 						<a href="tel:<?php echo esc($telephone); ?>"><?php echo esc($telephone); ?> </a>
-						<a href="tel:<?php echo esc($phone_one);?>">- <?php echo esc($phone_one); ?></a>
+						<a href="tel:<?php echo esc($phone_one);?>">&nbsp; - &nbsp;<?php echo esc($phone_one); ?></a>
+						<a href="tel:(+51) 986 007 946">&nbsp; - &nbsp;(+51) 986 007 946</a>
 					</div>
 					<div class="header-info">
 						<i class="icon-black-envelope"></i>
 						<a href="mailto:ventasn@innomedic.pe"><?= esc($emailx); ?></a> / 
-						<a href="mailto:ventas.in@innomedic.pe"><?= esc("ventas.in@innomedic.pe"); ?></a>
+						<a href="mailto:ventas.in@innomedic.pe">ventas.in@innomedic.pe</a> /
+						<a href="mailto:ventas.inno0@innomedic.pe">ventas.inno@innomedic.pe</a>
 					</div>
 				</div>
 				<div class="col-auto ml-auto d-flex align-items-center">
