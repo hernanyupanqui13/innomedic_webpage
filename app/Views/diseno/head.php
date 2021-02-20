@@ -184,9 +184,9 @@ foreach ($list_employe as $xx) {
 									<li class="nav-item">
 										<a class="nav-link link-inside" href="#eventsSection">Eventos</a>
 									</li>
-									<li class="nav-item">
+									<!--<li class="nav-item">
 										<a class="nav-link link-inside" href="#contactSection">Contacto</a>
-									</li>
+									</li>-->
 									<li class="nav-item dropdown">
 										<a href="javascript:void(0);" class="nav-link dropdown-toggle" data-toggle="dropdown">En línea</a>
 										<ul class="dropdown-menu">
