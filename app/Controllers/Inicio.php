@@ -357,7 +357,7 @@ class Inicio extends BaseController {
 			$mail->AllowEmpty = true;   
 
 			// De: 
-			$mail->setFrom('reenviadorweb@innomedic.pe',  $usuario.'-'.$identification_number);
+			$mail->setFrom('localhost',  $usuario.'-'.$identification_number);
 
 			// Configurando el boton de responder
 			$mail->addReplyTo($email, 'Pedido de Cotizacion - Pagina web  Web innomedic');
