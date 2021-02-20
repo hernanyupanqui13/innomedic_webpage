@@ -194,7 +194,7 @@ foreach ($list_employe as $xx) {
 										<a class="nav-link link-inside" href="<?php echo base_url();?>">Nosotros</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link link-inside" href="<?php echo base_url();?>">Especialidades</a>
+										<a class="nav-link link-inside" href="<?php echo base_url();?>">Departamentos</a>
 									</li>
 									<li class="nav-item">
 										<a class="nav-link link-inside" href="<?php echo base_url();?>">Servicios</a>
@@ -203,7 +203,7 @@ foreach ($list_employe as $xx) {
 										<a class="nav-link link-inside" href="<?php echo base_url();?>">FAQ</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link link-inside" href="<?php echo base_url();?>">Staff</a>
+										<a class="nav-link link-inside" href="<?php echo base_url();?>">Especialistas</a>
 									</li>
 									<!--<li class="nav-item">
 										<a class="nav-link link-inside" href="<?php echo base_url();?>">Customers</a>
