@@ -330,13 +330,13 @@ class Inicio extends BaseController {
 
 			// Creando la configuracion del correo
 			$mail->isSMTP();
-			$mail->Host     = 'smtp.gmail.com';
+			$mail->Host     = 'localhost';
 			$mail->SMTPDebug  = 3;
-			$mail->Username = 'sistemas.innomedic@gmail.com';
-			$mail->Password = 's1st3m4s2411';
-			$mail->SMTPAuth = true;
-			$mail->SMTPSecure = 'ssl';   
-			$mail->Port     = 465;
+			//$mail->Username = 'sistemas.innomedic@gmail.com';
+			//$mail->Password = 's1st3m4s2411';
+			$mail->SMTPAuth = false;
+			$mail->SMTPSecure = '';   
+			$mail->Port     = 25;
 			$mail->CharSet = 'UTF-8';
 			$mail->AllowEmpty = true;   
 
