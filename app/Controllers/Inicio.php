@@ -327,13 +327,13 @@ class Inicio extends BaseController {
 				'paquete' => $paquete
 			);
 
-
+			/*
 			// Creando la configuracion del correo
 			$mail->isSMTP();
 			$mail->Host     = 'localhost';
 			$mail->SMTPDebug  = 3;
-			//$mail->Username = 'sistemas.innomedic@gmail.com';
-			//$mail->Password = 's1st3m4s2411';
+			$mail->Username = 'sistemas.innomedic@gmail.com';
+			$mail->Password = 's1st3m4s2411';
 			$mail->SMTPAuth = false;
 			$mail->SMTPSecure = '';   
 			$mail->Port     = 25;
@@ -341,7 +341,23 @@ class Inicio extends BaseController {
 			$mail->AllowEmpty = true;   
 
 			// De: 
-			$mail->setFrom('sistemas.innomedic@gmail.com',  "Sistemas Sistemas");
+			$mail->setFrom('sistemas.innomedic@gmail.com',  "Sistemas Sistemas");*/
+
+			$mail->isSMTP();
+			$mail->Host     = 'localhost';
+			$mail->SMTPSecure = false;
+			$mail->SMTPDebug  = 3;
+			$mail->Username = 'reenviadores@innomedic.pe';
+			$mail->Password = 's1st3m4s2411';
+			$mail->SMTPAuth = false;
+			$mail->SMTPAutoTLS = false; 
+			$mail->SMTPSecure = '';   
+			$mail->Port     = 25;
+			$mail->CharSet = 'UTF-8';
+			$mail->AllowEmpty = true;   
+
+			// De: 
+			$mail->setFrom('reenviadorweb@innomedic.pe',  $usuario.'-'.$identification_number);
 
 			// Configurando el boton de responder
 			$mail->addReplyTo($email, 'Pedido de Cotizacion - Pagina web  Web innomedic');
