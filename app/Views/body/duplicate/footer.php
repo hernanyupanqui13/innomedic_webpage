@@ -90,6 +90,7 @@
 									<input name="email" id="email" type="text" class="form-control" placeholder="Ingrese su email *" />
 									<span><i class="icon-black-envelope"></i></span>
 								</div>
+								<a class="btn">Test</a>
 							</form>
 						</div>
 						<div class="footer-social d-md-none d-lg-block">

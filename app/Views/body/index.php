@@ -542,7 +542,7 @@ foreach ($list_employe as $datas) {
 
 
 
-	<!-- Seccion FAQ -->
+	<!-- Seccion Preguntas -->
 	<section class="section bg-grey py-0" id="faqSection">
 		<div class="container-fluid px-0">
 			<div class="row no-gutters">
@@ -729,7 +729,9 @@ foreach ($list_employe as $datas) {
 							<div class="col-sm-6 mt-5 mt-md-0 text-center text-md-right">
 								<h2 class="text1">¡Consigue lo que siempre <br>has deseado!</h2>
 								<div class="text2">Ahora puede reservar citas en línea</div>
-								<a href="#" class="btn mt-2 mt-sm-3 mt-lg-4" data-toggle="modal" data-target="#modalBookingForm"><i class="icon-right-arrow"></i><span>Solicitar una cotización</span><i class="icon-right-arrow"></i></a>
+								<a class="btn mt-2 mt-sm-3 mt-lg-4"><i class="icon-right-arrow"></i><span>Solicitar una cotización</span><i class="icon-right-arrow"></i></a>
+								<!--<a href="#" class="btn mt-2 mt-sm-3 mt-lg-4" data-toggle="modal" data-target="#modalBookingForm"><i class="icon-right-arrow"></i><span>Solicitar una cotización</span><i class="icon-right-arrow"></i></a>-->
+
 							</div>
 						</div>
 					</div>

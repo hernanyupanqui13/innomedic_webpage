@@ -88,6 +88,8 @@
 									<input name="email" id="email" type="text" class="form-control" placeholder="Ingrese su email *" />
 									<span><i class="icon-black-envelope"></i></span>
 								</div>
+								<button type="submit" class="suscribe_button btn btn-sm">Suscribirse</button>
+
 							</form>
 						</div>
 						<div class="footer-social d-md-none d-lg-block">
@@ -119,7 +121,7 @@
 				</div>
 			</div>
 			<div class="col-sm-6 col-lg-4">
-				<h3>Blog Posts</h3>
+				<!--<h3>Blog Posts</h3>
 				<div class="h-decor"></div>
 			
 				<?php 
@@ -135,7 +137,7 @@
 								<p><?php echo $blog->mes; ?></p>
 							</div>
 						</div>
-				<?php } ?>
+				<?php } ?>-->
 				 
 								
 			</div>
@@ -488,6 +490,13 @@
 		width: 100%;
 		height: 450px;
 		max-height: 500px;
+	}
+
+	.suscribe_button {
+		margin-top: 10px;
+		color:white !important;
+		text-decoration:none;
+		font-size: 12px;		
 	}
 
 </style>
@@ -1388,7 +1397,7 @@
 	<script>
 
 	function mostrarPaquetes(id) {
-		/*
+		
 		$.ajax({
 			url: '<?php echo base_url('Inicio/recoger_informacion/');?>',
 			type: 'POST',
@@ -1415,7 +1424,7 @@
 
 		.always(function() {
 			console.log("complete");
-		});*/
+		});
 
 	}
 
