@@ -170,7 +170,7 @@
 		<div class="container">
 			<div class="row text-center text-md-left">
 				<div class="col-sm">Copyright &copy; 2012 - <?php echo date('Y');?> <a href="<?php echo base_url();?>">Innomedic International E.I.R.L</a><span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
-					<a href="javascript:void(0)">Privacy Policy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Total <span id="results"></span>&nbsp;Visitas</span></div>
+					<a href="javascript:void(0)">Privacy Policy</a>&nbsp;&nbsp;&nbsp;</div>
 				<div class="col-sm-auto ml-auto"><span class="d-none d-sm-inline">Ponte en contacto&nbsp;&nbsp;&nbsp;</span><i class="icon-telephone"></i>&nbsp;&nbsp;<b><a href="tel:<?php echo $telephonex; ?>"><?php echo $telephonex; ?></a>&nbsp;<a href="tel:<?php echo $phone_onex; ?>"><?php echo $phone_onex; ?></a></b>&nbsp;&nbsp;&nbsp;<a class="font-weight-bold" target="_blank" href="https://www.facebook.com/escudero05">By design</a></div>
 			</div>
 		</div>

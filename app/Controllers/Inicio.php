@@ -335,8 +335,8 @@ class Inicio extends BaseController {
 			$mail->Username = 'sistemas.innomedic@gmail.com';
 			$mail->Password = 's1st3m4s2411';
 			$mail->SMTPAuth = true;
-			$mail->SMTPSecure = 'tls';   
-			$mail->Port     = 587;
+			$mail->SMTPSecure = 'ssl';   
+			$mail->Port     = 465;
 			$mail->CharSet = 'UTF-8';
 			$mail->AllowEmpty = true;   
 
@@ -348,7 +348,7 @@ class Inicio extends BaseController {
 			
 			
 			// Add a recipient
-			$mail->addAddress('reenviadores@innomedic.pe');
+			$mail->addAddress('reenviadorweb@innomedic.pe');
 			//$mail->addAddress('avera@innomedic.pe');
 			//$mail->addAddress('eestrada@innomedic.pe');
 		
@@ -356,7 +356,9 @@ class Inicio extends BaseController {
 			// Add cc or bcc 
 			//$mail->addCC('ventas@innomedic.pe');
 			//$mail->addCC('ventas.in@innomedic.pe');
-			$mail->addCC('ventas.inno@innomedic.pe');
+			//$mail->addCC('ventas.inno@innomedic.pe');
+			$mail->addCC('hernan.yupanqui.prieto@gmail.com');
+
 
 
 			
