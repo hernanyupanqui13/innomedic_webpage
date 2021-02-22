@@ -300,7 +300,8 @@ foreach ($list_employe as $datas) {
 						<p><?= $static_one->description;?></p>
 					</div>
 					<div class="text-center text-md-left mt-2 mt-md-3">
-						<a href="#" class="btn-link" data-toggle="modal" data-target="#modalBookingForm">Ver mas sobre nosotros<i class="icon-right-arrow"></i></a>
+						<!--<a href="#" class="btn-link" data-toggle="modal" data-target="#modalBookingForm">Ver mas sobre nosotros<i class="icon-right-arrow"></i></a>-->
+						<a href="#" class="btn-link">Ver mas sobre nosotros<i class="icon-right-arrow"></i></a>
 					</div>
 				</div>
 				<!-- Video -->
@@ -343,7 +344,7 @@ foreach ($list_employe as $datas) {
 	<section class="section" id="departmentsSection" >
 		<div class="container">
 			<div class="title-wrap text-center">
-				<h2 class="h1">Nuestros Departamentos</h2>
+				<h2 class="h1">Nuestras Especialidades</h2>
 				<div class="h-decor"></div>
 			</div>
 			<p class="text-center max-500">Innomedic International se especializa en diferentes servicios médicos.</p>
@@ -599,7 +600,7 @@ foreach ($list_employe as $datas) {
 		<div class="container">
 			<div class="title-wrap text-center">
 				<div class="h-sub theme-color">Conocer al equipo</div>
-				<h1>Nuestras especialistas</h1>
+				<h1>Nuestros especialistas</h1>
 				<div class="h-decor"></div>
 			</div>
 			<p class="text-center max-600">Ofrecemos atención médica altamente especializada, de algunos de los principales especialistas nacionales en sus campos de medicina.</p>

@@ -170,7 +170,7 @@ foreach ($list_employe as $xx) {
 										<a class="nav-link link-inside" href="#aboutSection">Nosotros</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link link-inside" href="#departmentsSection">Departamentos</a>
+										<a class="nav-link link-inside" href="#departmentsSection">Especialidades</a>
 									</li>
 									<li class="nav-item">
 										<a class="nav-link link-inside" href="#servicesSection">Servicios</a>
