@@ -301,7 +301,7 @@ foreach ($list_employe as $datas) {
 					</div>
 					<div class="text-center text-md-left mt-2 mt-md-3">
 						<!--<a href="#" class="btn-link" data-toggle="modal" data-target="#modalBookingForm">Ver mas sobre nosotros<i class="icon-right-arrow"></i></a>-->
-						<a href="#" class="btn-link">Ver mas sobre nosotros<i class="icon-right-arrow"></i></a>
+						<a href="javascript:void(0);" class="btn-link">Ver mas sobre nosotros<i class="icon-right-arrow"></i></a>
 					</div>
 				</div>
 				<!-- Video -->
