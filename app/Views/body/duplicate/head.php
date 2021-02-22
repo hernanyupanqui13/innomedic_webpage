@@ -82,7 +82,7 @@ foreach ($list_employe as $xx) {
 
 <body class="shop-page layout-landing">
 
-
+<!--
 <div class="settings-panel">
 	<div class="settings-panel-buy-now">
 		<a href="#" data-toggle="modal" data-target="#modalBookingForm" class="settings-panel-btn btn-primary">
@@ -104,7 +104,7 @@ foreach ($list_employe as $xx) {
 			<div class="title">Accesibilidad</div>
 		</div>
 	</div>
-	<!--<div class="settings-panel-layout js-settings-panel-item">
+	<div class="settings-panel-layout js-settings-panel-item">
 		<div class="settings-panel-btn btn-primary js-settings-panel-btn">
 			<img src="color/icon-layout.png" alt="">
 		</div>
@@ -116,8 +116,8 @@ foreach ($list_employe as $xx) {
     <a href="" class="active"><img src="color/screen-layout-5.png" alt=""></a>
     <a href=""><img src="color/screen-layout-6.png" alt=""></a><a href=""><img src="color/screen-layout-7.png" alt=""></a>
 		</div>
-	</div>-->
-</div>
+	</div>
+</div>-->
 <!--header-->
 <header class="header">
 	<div class="header-quickLinks js-header-quickLinks d-lg-none">

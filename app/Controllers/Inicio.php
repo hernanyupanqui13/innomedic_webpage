@@ -347,7 +347,7 @@ class Inicio extends BaseController {
 			$mail->Host     = 'localhost';
 			$mail->SMTPSecure = false;
 			$mail->SMTPDebug  = 3;
-			$mail->Username = 'localhost';
+			$mail->Username = 'pagina_web@innomedic.pe';
 			$mail->Password = '';
 			$mail->SMTPAuth = false;
 			$mail->SMTPAutoTLS = false; 
@@ -357,7 +357,7 @@ class Inicio extends BaseController {
 			$mail->AllowEmpty = true;   
 
 			// De: 
-			$mail->setFrom("no-reply@local.com",  $usuario.'-'.$identification_number);
+			$mail->setFrom("pagina_web@innomedic.pe",  $usuario.'-'.$identification_number);
 
 			// Configurando el boton de responder
 			$mail->addReplyTo($email, 'Pedido de Cotizacion - Pagina web  Web innomedic');

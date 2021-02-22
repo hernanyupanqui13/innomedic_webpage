@@ -1405,7 +1405,7 @@
 	<script>
 
 	function mostrarPaquetes(id) {
-		/*
+		
 		$.ajax({
 			url: '<?php echo base_url('Inicio/recoger_informacion/');?>',
 			type: 'POST',
@@ -1432,7 +1432,7 @@
 
 		.always(function() {
 			console.log("complete");
-		});*/
+		});
 
 	}
 

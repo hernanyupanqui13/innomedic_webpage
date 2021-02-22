@@ -90,7 +90,7 @@
 									<input name="email" id="email" type="text" class="form-control" placeholder="Ingrese su email *" />
 									<span><i class="icon-black-envelope"></i></span>
 								</div>
-								<a class="btn">Test</a>
+								<button type="submit" class="suscribe_button btn btn-sm">Suscribirse</button>
 							</form>
 						</div>
 						<div class="footer-social d-md-none d-lg-block">
@@ -122,8 +122,8 @@
 				</div>
 			</div>
 			<div class="col-sm-6 col-lg-4">
-				<h3>Blog Posts</h3>
-				<div class="h-decor"></div>
+				<!--<h3>Blog Posts</h3>
+				<div class="h-decor"></div>-->
 				
 					<?php 
 						$db   = \Config\Database::connect();
@@ -326,6 +326,13 @@
 	  .slick-dots {
 	    display: none;
 	  }
+	}
+
+	.suscribe_button {
+		margin-top: 10px;
+		color:white !important;
+		text-decoration:none;
+		font-size: 12px;		
 	}
 
 		
