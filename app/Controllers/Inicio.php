@@ -327,59 +327,62 @@ class Inicio extends BaseController {
 				'paquete' => $paquete
 			);
 
-			/*
+			$mail->isSMTP();
+
+
+
+			
 			// Creando la configuracion del correo
 			$mail->isSMTP();
-			$mail->Host     = 'localhost';
-			$mail->SMTPDebug  = 3;
-			$mail->Username = 'sistemas.innomedic@gmail.com';
-			$mail->Password = 's1st3m4s2411';
-			$mail->SMTPAuth = false;
-			$mail->SMTPSecure = '';   
-			$mail->Port     = 25;
-			$mail->CharSet = 'UTF-8';
-			$mail->AllowEmpty = true;   
+			//$mail->Host     = 'smtpout.secureserver.net';
+			$mail->Host = 'smtpout.secureserver.net';
+	      //  $mail->Host     = 'ssl://ssmtp.innomedic.pe';
+	        $mail->SMTPSecure  = 'tls';
+	        $mail->SMTPAuth = true;
+	        $mail->SMTPDebug  = 3;
+	        $mail->Username = 'reenviadorweb@innomedic.pe';
+	        $mail->Password = 's0p0rt32411';
+	        $mail->SMTPAutoTLS = false; 
+	        $mail->Port = 80; 
+	        //$mail->Host = 'localhost';
+	        $mail->CharSet = 'UTF-8';
 
 			// De: 
-			$mail->setFrom('sistemas.innomedic@gmail.com',  "Sistemas Sistemas");*/
+			//$mail->setFrom('sistemas.innomedic@gmail.com',  "Sistemas Sistemas");*/
 
-			$mail->isSMTP();
+		/*	$mail->isSMTP();
 			$mail->Host     = 'localhost';
 			$mail->SMTPSecure = false;
 			$mail->SMTPDebug  = 3;
-			$mail->Username = 'pagina_web@innomedic.pe';
+			$mail->Username = 'reenviadorweb@innomedic.pe';
 			$mail->Password = '';
 			$mail->SMTPAuth = false;
 			$mail->SMTPAutoTLS = false; 
 			$mail->SMTPSecure = '';   
 			$mail->Port     = 25;
 			$mail->CharSet = 'UTF-8';
-			$mail->AllowEmpty = true;   
+			$mail->AllowEmpty = true;   */
 
 			// De: 
-			$mail->setFrom("pagina_web@innomedic.pe",  $usuario.'-'.$identification_number);
+			$mail->setFrom("reenviadorweb@innomedic.pe",  $usuario.'-'.$identification_number);
 
 			// Configurando el boton de responder
 			$mail->addReplyTo($email, 'Pedido de Cotizacion - Pagina web  Web innomedic');
 			
-			
 			// Add a recipient
-			$mail->addAddress('sistemas.innomedic@gmail.com');
-			//$mail->addAddress('avera@innomedic.pe');
-			//$mail->addAddress('eestrada@innomedic.pe');
-		
 
 			// Add cc or bcc 
-			//$mail->addCC('ventas@innomedic.pe');
-			//$mail->addCC('ventas.in@innomedic.pe');
-			//$mail->addCC('ventas.inno@innomedic.pe');
-			$mail->addCC('hernan.yupanqui.prieto@gmail.com');
+			$mail->addBCC('escudero0594@hotmail.com');
+			//$mail->addBCC('ventas.in@innomedic.pe');
+			//$mail->addBCC('ventas.inno@innomedic.pe');
+			$mail->addBCC('reenviadorweb@innomedic.pe');
+		//	$mail->addCC('ventas@innomedic.pe');
 
 
 
 			
 			// Email subject
-			$mail->Subject = 'Realizar cotizacion para '.$name.' - Pagina web Innomedic.pe';
+			$mail->Subject = 'COTIZACIÓN '.$paquete.' - '.$name.' - Referencia: - Evaristo Escudero H';
 			
 			// Set email format to HTML
 			$mail->isHTML(true);
@@ -392,6 +395,7 @@ class Inicio extends BaseController {
 			if(!$mail->send()){
 				echo json_encode(array("error"=>"Su peticion no ha sido enviada"));
 				$this->output->set_status_header(400);
+				echo 'Mailer Error: ' . $mail->ErrorInfo;
 			} else {
 				echo json_encode(array("sms"=>"Su peticion ha sido enviada"));
 			}
