@@ -9,8 +9,8 @@
 	<meta name="title" content="Innomedic.pe - Bienvenidos a la clinica  Innomedic International">
     <meta http-equiv="Content-Type" content="text/html; ISO-8859-1">
     <meta name="description" content="En la clínica innomedic international nos dedicamos a ofrecer servicios en la gestión de salud ocupacional.">
-    <link rel="canonical" href="http://www.innomedic.pe/">
-    <link rel="alternate" hreflang="es" href="http://www.innomedic.pe/">
+    <link rel="canonical" href="https://www.innomedic.pe/">
+    <link rel="alternate" hreflang="es" href="https://www.innomedic.pe/">
     <meta name="keywords" content="innomedic international, innomedic, clínica innomedic, salud ocupacional lima, medicina ocupacional, examenes medicos ocupacionales lima, salud ocupacional digesa, ocupacional la victoria">
     <meta name="robots" content="index, follow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -19,15 +19,15 @@
     <meta name="author" content="Evaristo Escudero Huillcamascco">
     <meta http-equiv="pragma" content="cache" />
     <meta http-equiv="content-type" content="text/html;UTF-8">
-    <meta name="url" content="http://www.innomedic.pe/">
-    <meta name="identifier-URL" content="http://www.innomedic.pe/">
+    <meta name="url" content="https://www.innomedic.pe/">
+    <meta name="identifier-URL" content="https://www.innomedic.pe/">
     <meta http-equiv="Last-Modified" content="0">
     <meta http-equiv="Expires" content="0" />
     <meta http-equiv="content-language" content="es">
     <meta property="og:title" content="Innomedic.pe"/>
     <meta property="og:description" content="En la clínica innomedic international nos dedicamos a ofrecer servicios en la gestión de salud ocupacional.">
     <meta property="og:type" content="Salud Ocupacional Innomedic International" />
-    <meta property="og:url" content="http://www.innomedic.pe/" />
+    <meta property="og:url" content="https://www.innomedic.pe/" />
     <meta property="og:image" content="<?php echo base_url().'/public/assets/';?>images/innomedic.png?v=<?php echo rand();?>" /> 
     <meta name="og:title" content="Innomedic.pe">
     <meta name="og:country-name" content="PE" />

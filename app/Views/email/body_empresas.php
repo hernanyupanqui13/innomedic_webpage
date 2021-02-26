@@ -28,6 +28,10 @@
     </head>
     
     <body>
+        <div class="img-container" style="display: flex; justify-content: center;">
+            <img src="https://www.innomedic.pe/public/assets/images/logo.png" alt="Logo Innomedic">
+        </div>
+        
         <div style="width: 100%; font-size: 1rem;" class="container ">
 			<div>
 			    <p class="display-4 text-justify">No dejar de pasar una opotunidad, el cliente espera que lo respondas mas rapido de lo que puedas, suerte en todo</p>

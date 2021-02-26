@@ -299,7 +299,6 @@ class Inicio extends BaseController {
 
 			// Deifniendo los tipos de correo con sus plantillas
 			$tipos_de_correo = array("personas"=>"body_personas", "empresas"=>"body_empresas");
-
 			
 			$mail = new PHPMailer();
 
@@ -330,7 +329,6 @@ class Inicio extends BaseController {
 			$mail->isSMTP();
 
 
-
 			
 			// Creando la configuracion del correo
 			$mail->isSMTP();
@@ -342,26 +340,13 @@ class Inicio extends BaseController {
 	        $mail->SMTPDebug  = 3;
 	        $mail->Username = 'reenviadorweb@innomedic.pe';
 	        $mail->Password = 's0p0rt32411';
-	        $mail->SMTPAutoTLS = false; 
+	     //   $mail->SMTPAutoTLS = true; 
 	        $mail->Port = 80; 
 	        //$mail->Host = 'localhost';
 	        $mail->CharSet = 'UTF-8';
 
 			// De: 
 			//$mail->setFrom('sistemas.innomedic@gmail.com',  "Sistemas Sistemas");*/
-
-		/*	$mail->isSMTP();
-			$mail->Host     = 'localhost';
-			$mail->SMTPSecure = false;
-			$mail->SMTPDebug  = 3;
-			$mail->Username = 'reenviadorweb@innomedic.pe';
-			$mail->Password = '';
-			$mail->SMTPAuth = false;
-			$mail->SMTPAutoTLS = false; 
-			$mail->SMTPSecure = '';   
-			$mail->Port     = 25;
-			$mail->CharSet = 'UTF-8';
-			$mail->AllowEmpty = true;   */
 
 			// De: 
 			$mail->setFrom("reenviadorweb@innomedic.pe",  $usuario.'-'.$identification_number);
@@ -371,18 +356,19 @@ class Inicio extends BaseController {
 			
 			// Add a recipient
 
+	        $nombresxx = ["ventas.in@innomedic.pe", "ventas.inno@innomedic.pe","ventas.inno@innomedic.pe"];
+			$nombreAleatorio = $nombresxx[ mt_rand(0, count($nombresxx) -1) ];
+			//echo "$nombreAleatorio";
+			 $mail->addAddress($nombreAleatorio);
+
 			// Add cc or bcc 
 			$mail->addBCC('escudero0594@hotmail.com');
-			//$mail->addBCC('ventas.in@innomedic.pe');
-			//$mail->addBCC('ventas.inno@innomedic.pe');
+			$mail->addBCC('dirazabal@innomedic.pe');
+			$mail->addBCC('kmelgarejo@innomedic.pe');
 			$mail->addBCC('reenviadorweb@innomedic.pe');
-		//	$mail->addCC('ventas@innomedic.pe');
 
-
-
-			
 			// Email subject
-			$mail->Subject = 'COTIZACIÓN '.$paquete.' - '.$name.' - Referencia: - Evaristo Escudero H';
+			$mail->Subject = 'COTIZACIÓN '.$paquete.' - '.$name.' - Referencia: - Evaristo Escudero '."-".$nombreAleatorio;
 			
 			// Set email format to HTML
 			$mail->isHTML(true);

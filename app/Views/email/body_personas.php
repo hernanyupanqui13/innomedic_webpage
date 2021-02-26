@@ -21,28 +21,28 @@
 
     <body>
         <div class="img-container" style="display: flex; justify-content: center;">
-            <img src="http://innomedic.metjetsac.com/public/assets/images/logo.png?v=<?php echo rand();?>" alt="Logo Innomedic">
+            <img src="https://www.innomedic.pe/public/assets/images/logo.png" alt="Logo Innomedic">
         </div>
 
 
-        <div class="body-container" style="width: 100%; font-size: 1rem; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div class="container" style="width: 100%; font-size: 1rem; ">
             <div>
                 <div class="first-message" style="text-align: center; margin: 10px;">No dejar de pasar una opotunidad, el cliente espera que lo respondas más rápido de lo que puedas, suerte en todo</div>
             </div>
 
             <div>
-                <h2 class="display-4 text-justify">PAQUETES PREVENTIVOS</h2>
+                <h2 class="display-4 text-justify" style="text-align: center;">PAQUETES PREVENTIVOS</h2>
             </div>
 
             <div>
-                <h2 class="display-4 text-justify " style="color:red;"><?php echo $paquete; ?></h2>
+                <h2 class="display-4 text-justify " style="color:#15C4DC; text-align: center;"><?php echo $paquete; ?></h2>
             </div>
 
             <div class="text-center">
                 <div class="h1 text-danger">El usuario a responder es : <?php echo $name.' - '. $identification_number; ?></p>
             </div>
 
-            <div class="datos-cliente" style="text-align: center;">
+            <div class="row" style="text-align: center;">
                 <div>
                     <label for="" class="font-weight-bold ">Nombres:</label>
                     <span><?php echo $name;?></span>
@@ -86,7 +86,7 @@
         </div>
         
 
-        <p class="final-message" style="text-align: center;">Realizado por: <a target="_blank">Area de Sistemas - Innomedic</a></p>
+        <p class="final-message" style="text-align: center;">Realizado por: <a href="https://www.facebook.com/escudero05" target="_blank">Desarrollado por Evaristo Escudero</a></p>
     </footer>    
 </html>
         

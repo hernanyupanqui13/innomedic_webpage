@@ -166,11 +166,17 @@
 			</div>
 		</div>
 	</div>
+	<?php $db   = \Config\Database::connect();
+		$contador = $db->query("select count(*) as contador from t_visitas");
+		foreach ($contador->getResult() as $xx) {
+			$contador_de_letras = $xx->contador;
+		}
+		 ?>
 	<div class="footer-bottom">
 		<div class="container">
 			<div class="row text-center text-md-left">
 				<div class="col-sm">Copyright &copy; 2012 - <?php echo date('Y');?> <a href="<?php echo base_url();?>">Innomedic International E.I.R.L</a><span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
-					<a href="javascript:void(0)">Privacy Policy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Total <span id="results"></span>&nbsp;Visitas</span></div>
+					<a href="javascript:void(0)">Privacy Policy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Total <span id="results"><?php echo $contador_de_letras;?></span>&nbsp;Visitas</span></div>
 				<div class="col-sm-auto ml-auto">
 					<span class="d-none d-sm-inline">Ponte en contacto&nbsp;&nbsp;&nbsp;</span>
 					<i class="icon-telephone"></i>&nbsp;&nbsp;
@@ -178,7 +184,7 @@
 						<a href="tel:<?php echo $telephonex; ?>"><?php echo $telephonex; ?></a>&nbsp;
 						<a href="tel:<?php echo $phone_onex; ?>"><?php echo $phone_onex; ?></a>
 					</b>&nbsp;&nbsp;&nbsp;
-					<a class="font-weight-bold" target="_blank">By design</a>
+					<a href="https://www.facebook.com/escudero05" class="font-weight-bold" target="_blank">By design</a>
 				</div>
 			</div>
 		</div>
@@ -306,7 +312,7 @@
 							<span>
 								<i class="icon-user"></i>
 							</span>
-							<input type="text" name="identification_number" id="rucxx" class="form-control" autocomplete="off" readonly="" placeholder="Empresa " />
+							<input type="text" name="identification_number" id="rucxx" class="form-control" autocomplete="off"  placeholder="Empresa " />
 						</div>
 						
 						<!-- RUC - Solo visualizacion -->
@@ -314,7 +320,7 @@
 							<span>
 								<i class="icon-user"></i>
 							</span>
-							<input type="text" name="usuario" id="usuariox" class="form-control" autocomplete="off" readonly="" placeholder="Ruc " />
+							<input type="text" name="usuario" id="usuariox" class="form-control" autocomplete="off" placeholder="Ruc " />
 						</div>
 						
 						<!-- Email -->
@@ -378,7 +384,7 @@
 					<br>
 
 					<!-- Formulario -->
-					<form class="mt-15" id="Enviamos_los_datos_del_paciente" method="post" >
+					<form class="mt-15" id="Enviamos_los_datos_del_paciente" method="post" autocomplete="off">
 						<div class="h-sub theme-color">La forma más rápida de reservar tu cita</div>
 						<span id="aplicamos_archivos2"></span>
 
@@ -407,7 +413,7 @@
 							<span>
 								<i class="icon-user"></i>
 							</span>
-							<input type="text" name="name" id="nombres_completos" class="form-control" autocomplete="off" readonly="" placeholder="Nombres Completos " />
+							<input type="text" name="name" id="nombres_completos" class="form-control" autocomplete="off"  placeholder="Nombres Completos " readonly="" />
 						</div>
 
 						<!-- DNI - vista solo -->
@@ -415,7 +421,7 @@
 							<span>
 								<i class="icon-user"></i>
 							</span>
-							<input type="text" name="identification_number" id="dni_mostrar_dni" class="form-control" autocomplete="off" readonly="" placeholder="Dni " />
+							<input type="text" name="identification_number" id="dni_mostrar_dni" class="form-control" autocomplete="off"  placeholder="Dni " readonly="" />
 						</div>
 
 						<!-- Email -->
@@ -730,7 +736,7 @@
 	});  
 
 </script>
-<script>
+<!--<script>
     function sendRequest() {
 
     
@@ -764,7 +770,7 @@
 
 
 
-</script>
+</script>-->
 
 <script>
 			(function ($) {
@@ -1307,6 +1313,7 @@
 		/* Act on the event */
 		$("#lista").html(`<i class="fas fa-paper-plane cambiar_texto" > </i>&nbsp;Enviando Cita...`);
 
+
 		var dni = $("#nombres_completos").val();
 		if (dni == null || dni.length == 0 || /^\s+$/.test(dni) ) {
 			Swal.fire({
@@ -1325,6 +1332,8 @@
 				})
 			return false;
 		}
+
+		$("#lista").attr('disabled', 'disabled');
 
 		$.ajax({
 			url: '<?php echo base_url('Inicio/enviarCorreo/personas');?>',
@@ -1348,9 +1357,12 @@
 							if (result.value) {
 							$("#Enviamos_los_datos_del_paciente")[0].reset();
 								$("#lista").html(`<i class="fas fa-paper-plane cambiar_texto" > </i>&nbsp;Reservar cita`);
+								$("#lista").removeAttr('disabled');
 							}
 						}) 
 					}
+
+					
 				}
 			}
 		})
@@ -1372,6 +1384,7 @@
 				$("#Enviamos_los_datos_del_paciente")[0].reset();
 				$(".solicitar-info-modal").modal("hide");
 					$("#lista").html(`<i class="fas fa-paper-plane cambiar_texto" > </i>&nbsp;Reservar cita`);
+				$("#lista").removeAttr('disabled');
 			}
 			})
 		})
@@ -1389,6 +1402,7 @@
 				}).then((result) => {
 				if (result.value) {
 						$("#lista").html(`<i class="fas fa-paper-plane cambiar_texto" > </i>&nbsp;Reservar cita`);
+						$("#lista").removeAttr('disabled');
 				}
 				})
 		})
