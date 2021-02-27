@@ -109,8 +109,7 @@ class Inicio extends BaseController {
 	Esta funcion controla los resultados de loa busqueda en la pagina web. 
 	Carga la plantilla de View/Reusltados y conecta con el Inicio Model  
 	*/
-	public function Resultados()
-	{
+	public function Resultados() {
 	 	$model = new InicioModel();
 
 		$data = array(
@@ -143,10 +142,6 @@ class Inicio extends BaseController {
 	{
 		echo view("errors/html/error_501");
 	}
-
-
-	
-
 
 
 
@@ -332,21 +327,14 @@ class Inicio extends BaseController {
 			
 			// Creando la configuracion del correo
 			$mail->isSMTP();
-			//$mail->Host     = 'smtpout.secureserver.net';
 			$mail->Host = 'smtpout.secureserver.net';
-	      //  $mail->Host     = 'ssl://ssmtp.innomedic.pe';
 	        $mail->SMTPSecure  = 'tls';
 	        $mail->SMTPAuth = true;
 	        $mail->SMTPDebug  = 3;
 	        $mail->Username = 'reenviadorweb@innomedic.pe';
 	        $mail->Password = 's0p0rt32411';
-	     //   $mail->SMTPAutoTLS = true; 
 	        $mail->Port = 80; 
-	        //$mail->Host = 'localhost';
 	        $mail->CharSet = 'UTF-8';
-
-			// De: 
-			//$mail->setFrom('sistemas.innomedic@gmail.com',  "Sistemas Sistemas");*/
 
 			// De: 
 			$mail->setFrom("reenviadorweb@innomedic.pe",  $usuario.'-'.$identification_number);
@@ -354,15 +342,12 @@ class Inicio extends BaseController {
 			// Configurando el boton de responder
 			$mail->addReplyTo($email, 'Pedido de Cotizacion - Pagina web  Web innomedic');
 			
-			// Add a recipient
-
-	        $nombresxx = ["ventas.in@innomedic.pe", "ventas.inno@innomedic.pe","ventas.inno@innomedic.pe"];
-			$nombreAleatorio = $nombresxx[ mt_rand(0, count($nombresxx) -1) ];
-			//echo "$nombreAleatorio";
-			 $mail->addAddress($nombreAleatorio);
+			// Enviando el correo a cualquiera de los ejecutivos de venta de manera aleatoria
+	        $eje_ventas_emails = ["ventas.in@innomedic.pe", "ventas.inno@innomedic.pe","ventas.inno@innomedic.pe"];
+			$nombreAleatorio = $eje_ventas_emails[mt_rand(0, count($eje_ventas_emails) -1) ];
+			$mail->addAddress($nombreAleatorio);
 
 			// Add cc or bcc 
-			$mail->addBCC('escudero0594@hotmail.com');
 			$mail->addBCC('dirazabal@innomedic.pe');
 			$mail->addBCC('kmelgarejo@innomedic.pe');
 			$mail->addBCC('reenviadorweb@innomedic.pe');
@@ -377,7 +362,7 @@ class Inicio extends BaseController {
 
 			$mail->Body = $mailContent;
 
-			// Enviando email. Notese que send() devuelve true ó false a parte de enviar el correo
+			// Enviando email
 			if(!$mail->send()){
 				echo json_encode(array("error"=>"Su peticion no ha sido enviada"));
 				$this->output->set_status_header(400);
