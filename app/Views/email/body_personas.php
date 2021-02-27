@@ -85,8 +85,7 @@
             </div>
         </div>
         
-
-        <p class="final-message" style="text-align: center;">Realizado por: <a href="https://www.facebook.com/escudero05" target="_blank">Desarrollado por Evaristo Escudero</a></p>
+        <p class="final-message" style="text-align: center;">Realizado por: <a target="_blank">Area de Sistemas - Innomedic</a></p>
     </footer>    
 </html>
         

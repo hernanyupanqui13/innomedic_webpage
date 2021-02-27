@@ -184,7 +184,7 @@
 						<a href="tel:<?php echo $telephonex; ?>"><?php echo $telephonex; ?></a>&nbsp;
 						<a href="tel:<?php echo $phone_onex; ?>"><?php echo $phone_onex; ?></a>
 					</b>&nbsp;&nbsp;&nbsp;
-					<a href="https://www.facebook.com/escudero05" class="font-weight-bold" target="_blank">By design</a>
+					<a class="font-weight-bold" target="_blank">By design</a>
 				</div>
 			</div>
 		</div>
@@ -736,41 +736,6 @@
 	});  
 
 </script>
-<!--<script>
-    function sendRequest() {
-
-    
-      $.ajax({
-        url: "<?php echo base_url('Inicio/cantidad_registro/');?>",
-        method:"POST",
-        contentType:false,
-        processData:false,
-        success:
-          function(result){ 
-    /* si es success mostramos resultados */
-           $('#results').text(result);
-        },
-        complete: function() { 
-    /* solo una vez que la petición se completa (success o no success) 
-       pedimos una nueva petición en 3 segundos */
-           setTimeout(function(){
-             sendRequest();
-           }, 3000);
-          }
-        });
-      };
-
-    /* primera petición que echa a andar la maquinaria */
-    $(function() {
-        sendRequest();
-    });
-
-
-
-
-
-
-</script>-->
 
 <script>
 			(function ($) {

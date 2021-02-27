@@ -70,7 +70,6 @@ foreach ($list_employe as $datas) {
 								<h5 class="link-drop-title"><i class="icon-pencil-writing"></i>Recibe una atencion personalizada</h5>
 								<p>Nuestro compromiso es ofrecer el mejor servicio al cliente, garantizando: trato amable, ambientes agradables, altísimos tiempos de respuesta, atención personalizada, equipamiento de última generación, historia clínica digital, plataforma online del cliente y diversos recursos tecnológicos que harán de sus servicios con nosotros una experiencia satisfactoria.</p>
 								<p class="text-right mt-2"><a  href="#" data-toggle="modal" data-target="#modalBookingForm" class="btn btn-sm btn-hover-fill link-inside">Ponte en contacto</a></p>
-								<!--<p class="text-right mt-2"><a  href="#" class="btn btn-sm btn-hover-fill link-inside">Ponte en contacto</a></p>-->
 							</div>
 						</div>
 						<!-- Comunicate con nosotros -->
@@ -197,7 +196,7 @@ foreach ($list_employe as $datas) {
 
 
 	<!-- Seccion Informes Aqui | View-->
-	<!--<section class="section" id="contactSection">
+	<section class="section" id="contactSection">
 		<div class="banner-contact-us" style="background-image: url('<?= esc(base_url('public/assets/images/content/contact-bg.png')) ?>?v=<?= rand();?>')">
 			<div class="container">
 				<div class="row no-gutters">
@@ -209,7 +208,7 @@ foreach ($list_employe as $datas) {
 							<h2 data-title="¡Informes aquí!"><span>¡INFORMES <br class="d-lg-none">  <span class="theme-color">AQUÍ!</span></span></h2>
 							<p>Nuestro equipo se contactará inmediatamente contigo. Cuidamos de ti, de tu equipo y empresa</p>
 							
-							<!-- Inicio del formulario --
+							<!-- Inicio del formulario -->
 							<form class="contact-form" id="contactForm" method="post" novalidate="novalidate">
 								<div class="successform">
 									<p>¡Su mensaje fue enviado exitosamente!</p>
@@ -217,18 +216,18 @@ foreach ($list_employe as $datas) {
 								<div class="errorform">
 									<p>Algo salió mal, intente actualizar y enviar el formulario nuevamente.</p>
 								</div>
-								<!-- Nombre --
+								<!-- Nombre -->
 								<div>
 									<input type="text" class="form-control" name="name" placeholder="Nombre">
 								</div>
 								<div class="row row-sm-space mt-15">
-									<!-- Celular --
-								<div class="col-sm-6"><input type="text" class="form-control" name="phone" placeholder="Celular"></div>
-									<!--Email--
-								<div class="col-sm-6 mt-15 mt-sm-0"><input type="text" class="form-control" name="email" placeholder="Email"></div>
+									<!-- Celular -->
+									<div class="col-sm-6"><input type="text" class="form-control" name="phone" placeholder="Celular"></div>
+									<!--Email-->
+									<div class="col-sm-6 mt-15 mt-sm-0"><input type="text" class="form-control" name="email" placeholder="Email"></div>
 								</div>
 
-								<!-- Buscador de RUC --
+								<!-- Buscador de RUC -->
 								<div class="row row-sm-space mt-15"> 
 									<div class="col-sm-8">
 										<input type="text" class="form-control" name="nruc" id="nruc" placeholder="Ingrese Ruc y de click en 'Buscar'" maxlength="11" pattern="([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]|[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])" onkeydown="return soloNumeros(event)">
@@ -240,16 +239,16 @@ foreach ($list_employe as $datas) {
 				                   		</button>
 									</div>
 								</div>
-								<!-- Empresa y RUC - View Only --
+								<!-- Empresa y RUC - View Only -->
 								<div class="row row-sm-space mt-15">
 									<div class="col-sm-6 mt-15 mt-sm-0"><input type="text" class="form-control" name="usuario" id="usuario" placeholder="Empresa" readonly=""></div>
 									<div class="col-sm-6 mt-15 mt-sm-0"><input type="text" class="form-control" name="identification_number" id="rucx" placeholder="Ruc" readonly=""></div>
 								</div>
-								<!-- Mensaje --
+								<!-- Mensaje -->
 								<div class="mt-15">
 									<textarea class="form-control" name="message" placeholder="Message"></textarea>
 								</div>
-								<!-- Cotizar ahora - Boton --
+								<!-- Cotizar ahora - Boton -->
 								<div class="mt-2 mt-lg-4 text-center text-md-left">
 									<button type="submit" class="btn"><i class="icon-right-arrow"></i><span>Cotizar Ahora</span><i class="icon-right-arrow"></i></button>
 								</div>
@@ -259,7 +258,7 @@ foreach ($list_employe as $datas) {
 				</div>
 			</div>
 		</div>
-	</section>-->
+	</section>
 
 
 

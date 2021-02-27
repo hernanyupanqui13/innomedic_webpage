@@ -88,14 +88,12 @@
 			);
 
 			$url = "https://e-consultaruc.sunat.gob.pe/cl-ti-itmrconsruc/jcrS00Alias";
-			//$url = "https://e-consultaruc.sunat.gob.pe/cl-ti-itmrconsruc/frameCriterioBusqueda.jsp";
 
 			$response = $this->curl->send( $url, $data );
 			
 			if( $this->curl->getHttpStatus()==200 && $response!="" )
 			{
 				//RazonSocial
-				//$patron='/<input type="hidden" name="desRuc" value="(.*)">/';
 				$patron = '/<td  class="bg" colspan=3>(.*)<\/td>/';
 				$output = preg_match_all($patron, $response, $matches, PREG_SET_ORDER);
 				
@@ -103,7 +101,10 @@
 				{
 
 					$RS = utf8_encode(str_replace('"','', ($matches[0][1])));
-					$RS = substr(trim($RS), 13, strlen(trim($RS)));
+					// Esto nos da:     NumeroRuc - NombreRazonSocial
+					$RS = trim($RS); 
+					// Esto extrae solo lo que necesitamos del formato anterior
+					$RS = trim(preg_split("/-/",$RS)[1]); 		
 					$rtn = array(
 						"ruc"=>$ruc,
 						"razon_social"=>$RS
