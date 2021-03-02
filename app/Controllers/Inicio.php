@@ -343,7 +343,7 @@ class Inicio extends BaseController {
 			$mail->addReplyTo($email, 'Pedido de Cotizacion - Pagina web  Web innomedic');
 			
 			// Enviando el correo a cualquiera de los ejecutivos de venta de manera aleatoria
-	        $eje_ventas_emails = ["ventas.in@innomedic.pe", "ventas.inno@innomedic.pe","ventas.inno@innomedic.pe"];
+	        $eje_ventas_emails = ["ventas.in@innomedic.pe", "ventas.inno@innomedic.pe","ventas@innomedic.pe"];
 			$nombreAleatorio = $eje_ventas_emails[mt_rand(0, count($eje_ventas_emails) -1) ];
 			$mail->addAddress($nombreAleatorio);
 
