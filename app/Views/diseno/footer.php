@@ -385,7 +385,7 @@
 
 					<!-- Formulario -->
 					<form class="mt-15" id="Enviamos_los_datos_del_paciente" method="post" autocomplete="off">
-						<div class="h-sub theme-color">La forma más rápida de reservar tu cita</div>
+						<div class="h-sub theme-color"></div> 
 						<span id="aplicamos_archivos2"></span>
 
 
@@ -1415,6 +1415,9 @@
 
 	}
 
+	$(document).ready(function() {
+		$("#modalBookingForm").modal('show');
+	});
 	</script>
 
 
