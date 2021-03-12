@@ -492,6 +492,60 @@
 		}
 	}
 
+
+	@keyframes like_button {
+		0% {
+		font-size: 20px;
+		
+		}
+		12.5% {
+		font-size: 33px;
+
+		}
+		25% {
+		font-size: 20px;
+		}
+		100% {
+		font-size: 20px;
+		}
+	}
+
+	@keyframes retire_button {
+		0% {
+			transform: translateX(0px) rotate(0deg)		
+		}
+		33% {
+			transform: translateX(-200px) rotate-(180deg);
+		}
+		66% {
+			transform: translateX(-300px) rotate(-360deg);
+		}
+		100% {
+			transform: translateX(-400px) rotate(-560deg);
+		}
+	}
+
+	.retire_button {
+		animation: retire_button 3s ease-in;
+	}
+
+
+	.like_button-active {
+		animation: like_button 4s infinite;
+	}
+
+	#like_button{
+		font-size: 20px;
+	}
+
+	.like_button_container {
+		transform: rotateY(180deg);
+	}
+
+	.like_button_container a:active {
+		color: #EBEBEB;
+	}
+
 	
 	@media only screen and (min-width: 880px) {
 		.slick-dots {
@@ -1417,8 +1471,17 @@
 
 	$(document).ready(function() {
 		$("#modalBookingForm").modal('show');
+
+
+
+		document.getElementById("like_button").add
 	});
+
+
+
+
 	</script>
+	<script src="<?=base_url();?>/app/Views/diseno/the_footer.js"></script>
 
 
 

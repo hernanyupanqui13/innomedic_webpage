@@ -151,6 +151,16 @@ class InicioModel extends Model
 		return $query->getResult();
 	}
 
+	public function countLike($array) {
+		$db   = \Config\Database::connect();
+		$builder = $db->table('t_likes');
+
+
+		$builder->set($array);
+		$builder->insert();                 			
+		
+	}
+
 
 	
 

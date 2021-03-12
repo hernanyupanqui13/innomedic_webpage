@@ -141,6 +141,7 @@ foreach ($list_employe as $xx) {
 					</div>
 				</div>
 				<div class="col-auto ml-auto d-flex align-items-center">
+					<div class="like_button_container"><a href="javascript:void(0)" title="Me gusta"><i class="fas fa-thumbs-up like_button-active" id="like_button"></i></a></div>
 					<span class="header-social">
 						<a target="_blank" href="https://es-la.facebook.com/InnomedicInternational/" class="hovicon"><i class="icon-facebook-logo-circle"></i></a>
 						<a target="_blank" href="https://twitter.com/Innomedic_Peru" class="hovicon"><i class="icon-twitter-logo-circle"></i></a>

@@ -376,6 +376,17 @@ class Inicio extends BaseController {
 	   	}
 	}
 
+	public function countLike() {
+		$model = new InicioModel();
+
+		$array = [
+			'direccionip'  => $_SERVER['REMOTE_ADDR'],
+			'direccionip4' => $_SERVER['REMOTE_ADDR'],
+		];
+
+		$model->countLike($array);
+	}
+
 }
 
 ?>
