@@ -7,7 +7,7 @@ $(document).ready(function() {
     like_button.addEventListener("click", () => {
         
         if (!already_liked) {
-            fetch(`${window.location.origin}/web-innomedic_v1/Inicio/countLike`)
+            fetch(`${window.location.origin}/Inicio/countLike`)
             .then( () => {
                 already_liked = true;
                 like_button.classList.remove("like_button-active");
