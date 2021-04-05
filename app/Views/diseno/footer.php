@@ -1304,15 +1304,16 @@
 			var url = '<?php echo base_url('public/reniec/consulta_reniec.php/');?>';
 			$.ajax({
 			type:'GET',
-			url:`https://dni.optimizeperu.com/api/persons/${dni}`,
+			/*url:`https://dni.optimizeperu.com/api/persons/${dni}`,*/
+			url: `${window.location.origin}/public/dni-peru-consult/entry_point.php?dni=${dni}`,
 
 			/*data:'dni='+dni,*/
 			success: function(datos_dni){
-				var datos = eval(datos_dni);
+				var datos_dni = JSON.parse(datos_dni);
 
-					var nombre =  datos_dni.name;
-					var apellido = datos_dni.first_name;
-					var apellido1 = datos_dni.last_name;
+					var nombre =  datos_dni.nombres;
+					var apellido = datos_dni.apellidoPaterno;
+					var apellido1 = datos_dni.apellidoMaterno;
 
 					var nombres_completos_data = `${nombre} ${apellido} ${apellido1}`;
 

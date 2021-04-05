@@ -34,6 +34,7 @@ class ComposerStaticInit36506fc51e888ede163a3cebce70d2da
         array (
             'Psr\\Log\\' => 8,
             'Prophecy\\' => 9,
+            'Peru\\' => 5,
             'PHPMailer\\PHPMailer\\' => 20,
         ),
         'L' => 
@@ -83,6 +84,10 @@ class ComposerStaticInit36506fc51e888ede163a3cebce70d2da
         array (
             0 => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy',
         ),
+        'Peru\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/giansalex/peru-consult/src/Peru',
+        ),
         'PHPMailer\\PHPMailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
@@ -124,6 +129,7 @@ class ComposerStaticInit36506fc51e888ede163a3cebce70d2da
     );
 
     public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert.php',
         'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Exception/AssertionFailedError.php',
