@@ -699,7 +699,7 @@ foreach ($list_employe as $datas) {
 
 
 	<!-- Seccion Eventos Clínicos -->
-	<section>
+	<!--<section>
 		<div class="section" id="eventsSection">
 			<div class="container">
 				<div class="title-wrap text-center">
@@ -707,9 +707,9 @@ foreach ($list_employe as $datas) {
 					<div class="h-decor"></div>
 				</div>
 			</div>
-		</div>
+		</div>-->
 		<!-- esto continua siendo parte de eventos clinicos -->						
-		<div class="section">
+		<!--<div class="section">
 			<div class="container-fluid px-0">
 				<div class="block-full-appointment bg-cover" style="background-image: url(<?php echo base_url('public/assets/images/content/online-appointment-bg.jpg');?>?v=<?php echo time();?>)">
 					<div class="container">
@@ -728,9 +728,9 @@ foreach ($list_employe as $datas) {
 							</div>
 							<div class="col-sm-6 mt-5 mt-md-0 text-center text-md-right">
 								<h2 class="text1">¡Consigue lo que siempre <br>has deseado!</h2>
-								<div class="text2">Ahora puede reservar citas en línea</div>
+								<div class="text2">Ahora puede reservar citas en línea</div>-->
 								<!--<a class="btn mt-2 mt-sm-3 mt-lg-4"><i class="icon-right-arrow"></i><span>Solicitar una cotización</span><i class="icon-right-arrow"></i></a>-->
-								<a href="#" class="btn mt-2 mt-sm-3 mt-lg-4" data-toggle="modal" data-target="#modalBookingForm"><i class="icon-right-arrow"></i><span>Solicitar una cotización</span><i class="icon-right-arrow"></i></a>
+								<!--<a href="#" class="btn mt-2 mt-sm-3 mt-lg-4" data-toggle="modal" data-target="#modalBookingForm"><i class="icon-right-arrow"></i><span>Solicitar una cotización</span><i class="icon-right-arrow"></i></a>
 
 							</div>
 						</div>
@@ -738,6 +738,6 @@ foreach ($list_employe as $datas) {
 				</div>
 			</div>
 		</div>
-	</section>
+	</section>-->
 	
 </div>
