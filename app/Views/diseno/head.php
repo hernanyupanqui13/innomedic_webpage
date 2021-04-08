@@ -182,9 +182,9 @@ foreach ($list_employe as $xx) {
 									<li class="nav-item">
 										<a class="nav-link link-inside" href="#specialistsSection">Especialistas</a>
 									</li>
-									<li class="nav-item">
+									<!--<li class="nav-item">
 										<a class="nav-link link-inside" href="#eventsSection">Eventos</a>
-									</li>
+									</li>-->
 									<!--<li class="nav-item">
 										<a class="nav-link link-inside" href="#contactSection">Contacto</a>
 									</li>-->

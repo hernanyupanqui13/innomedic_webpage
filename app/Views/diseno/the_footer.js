@@ -1,4 +1,14 @@
 let already_liked = false;
+// Vuelve el carrusel de clientes automatico
+function automaticSlide() {
+    setInterval(function () {
+        const clients_cards = document.getElementById("testimonialsSection");
+        clients_cards.querySelector(".slick-next").click();
+    }, 5000);
+
+    
+
+}
 
 $(document).ready(function() {
 
@@ -22,4 +32,5 @@ $(document).ready(function() {
         
     });
 
+    automaticSlide();
 });
