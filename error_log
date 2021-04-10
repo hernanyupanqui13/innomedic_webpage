@@ -2601,3 +2601,129 @@ Stack trace:
 #3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\View\Exceptions\ViewException))
 #4 {main}
   thrown in /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 308
+[10-Apr-2021 08:31:03 America/Chicago] PHP Fatal error:  Uncaught ErrorException: print_r(): Property access is not allowed yet in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php:100
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', '/home/mjfs4r8aj...', 100, Array)
+#1 /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php(100): print_r(Object(App\Controllers\Inicio), true)
+#2 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(308): include('/home/mjfs4r8aj...')
+#3 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(174): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#5 {main}
+  thrown in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php on line 100
+[10-Apr-2021 08:32:04 America/Chicago] PHP Fatal error:  Uncaught ErrorException: print_r(): Property access is not allowed yet in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php:100
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', '/home/mjfs4r8aj...', 100, Array)
+#1 /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php(100): print_r(Object(App\Controllers\Inicio), true)
+#2 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(308): include('/home/mjfs4r8aj...')
+#3 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(174): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#5 {main}
+  thrown in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php on line 100
+[10-Apr-2021 08:32:54 America/Chicago] PHP Fatal error:  Uncaught ErrorException: print_r(): Property access is not allowed yet in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php:100
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', '/home/mjfs4r8aj...', 100, Array)
+#1 /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php(100): print_r(Object(App\Controllers\Inicio), true)
+#2 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(308): include('/home/mjfs4r8aj...')
+#3 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(174): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#5 {main}
+  thrown in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php on line 100
+[10-Apr-2021 08:32:55 America/Chicago] PHP Fatal error:  Uncaught ErrorException: print_r(): Property access is not allowed yet in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php:100
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', '/home/mjfs4r8aj...', 100, Array)
+#1 /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php(100): print_r(Object(App\Controllers\Inicio), true)
+#2 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(308): include('/home/mjfs4r8aj...')
+#3 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(174): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#5 {main}
+  thrown in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php on line 100
+[10-Apr-2021 08:33:02 America/Chicago] PHP Fatal error:  Uncaught ErrorException: print_r(): Property access is not allowed yet in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php:100
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', '/home/mjfs4r8aj...', 100, Array)
+#1 /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php(100): print_r(Object(App\Controllers\Inicio), true)
+#2 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(308): include('/home/mjfs4r8aj...')
+#3 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(174): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#5 {main}
+  thrown in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php on line 100
+[10-Apr-2021 08:33:08 America/Chicago] PHP Fatal error:  Uncaught ErrorException: print_r(): Property access is not allowed yet in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php:100
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', '/home/mjfs4r8aj...', 100, Array)
+#1 /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php(100): print_r(Object(App\Controllers\Inicio), true)
+#2 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(308): include('/home/mjfs4r8aj...')
+#3 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(174): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#5 {main}
+  thrown in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php on line 100
+[10-Apr-2021 08:34:04 America/Chicago] PHP Fatal error:  Uncaught ErrorException: print_r(): Property access is not allowed yet in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php:100
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', '/home/mjfs4r8aj...', 100, Array)
+#1 /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php(100): print_r(Object(App\Controllers\Inicio), true)
+#2 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(308): include('/home/mjfs4r8aj...')
+#3 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(174): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#5 {main}
+  thrown in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php on line 100
+[10-Apr-2021 08:34:07 America/Chicago] PHP Fatal error:  Uncaught ErrorException: print_r(): Property access is not allowed yet in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php:100
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', '/home/mjfs4r8aj...', 100, Array)
+#1 /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php(100): print_r(Object(App\Controllers\Inicio), true)
+#2 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(308): include('/home/mjfs4r8aj...')
+#3 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(174): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#5 {main}
+  thrown in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php on line 100
+[10-Apr-2021 08:34:17 America/Chicago] PHP Fatal error:  Uncaught ErrorException: print_r(): Property access is not allowed yet in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php:100
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', '/home/mjfs4r8aj...', 100, Array)
+#1 /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php(100): print_r(Object(App\Controllers\Inicio), true)
+#2 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(308): include('/home/mjfs4r8aj...')
+#3 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(174): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#5 {main}
+  thrown in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php on line 100
+[10-Apr-2021 08:34:37 America/Chicago] PHP Fatal error:  Uncaught ErrorException: print_r(): Property access is not allowed yet in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php:100
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', '/home/mjfs4r8aj...', 100, Array)
+#1 /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php(100): print_r(Object(App\Controllers\Inicio), true)
+#2 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(308): include('/home/mjfs4r8aj...')
+#3 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(174): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#5 {main}
+  thrown in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php on line 100
+[10-Apr-2021 08:36:47 America/Chicago] PHP Fatal error:  Uncaught ErrorException: print_r(): Property access is not allowed yet in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php:100
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', '/home/mjfs4r8aj...', 100, Array)
+#1 /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php(100): print_r(Object(App\Controllers\Inicio), true)
+#2 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(308): include('/home/mjfs4r8aj...')
+#3 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(174): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#5 {main}
+  thrown in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php on line 100
+[10-Apr-2021 08:36:54 America/Chicago] PHP Fatal error:  Uncaught ErrorException: print_r(): Property access is not allowed yet in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php:100
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', '/home/mjfs4r8aj...', 100, Array)
+#1 /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php(100): print_r(Object(App\Controllers\Inicio), true)
+#2 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(308): include('/home/mjfs4r8aj...')
+#3 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(174): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#5 {main}
+  thrown in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php on line 100
+[10-Apr-2021 08:38:31 America/Chicago] PHP Fatal error:  Uncaught ErrorException: print_r(): Property access is not allowed yet in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php:100
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', '/home/mjfs4r8aj...', 100, Array)
+#1 /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php(100): print_r(Object(App\Controllers\Inicio), true)
+#2 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(308): include('/home/mjfs4r8aj...')
+#3 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(174): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#5 {main}
+  thrown in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php on line 100
+[10-Apr-2021 08:39:19 America/Chicago] PHP Fatal error:  Uncaught ErrorException: print_r(): Property access is not allowed yet in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php:100
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', '/home/mjfs4r8aj...', 100, Array)
+#1 /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php(100): print_r(Object(App\Controllers\Inicio), true)
+#2 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(308): include('/home/mjfs4r8aj...')
+#3 /home/mjfs4r8ajmst/public_html/vendor/codeigniter4/framework/system/Debug/Exceptions.php(174): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#5 {main}
+  thrown in /home/mjfs4r8ajmst/public_html/app/Views/errors/html/error_exception.php on line 100
