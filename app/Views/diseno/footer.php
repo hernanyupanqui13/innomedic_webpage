@@ -661,9 +661,7 @@
 
 <script src="<?= esc(base_url()).'/public/';?>assets/color/color.js?v=<?php echo rand();?>"></script>
 
-<!--da font asome-->
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
+<!-- RRHH Chat -->
 <script src="<?php echo base_url().'/public/assets/';?>color/chat.js?v=<?php echo time();?>"></script>
 <!--swla alert-->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.14.2/dist/sweetalert2.all.min.js" type="text/javascript" charset="utf-8" async defer></script>
