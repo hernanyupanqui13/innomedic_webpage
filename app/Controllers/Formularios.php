@@ -36,7 +36,7 @@ class Formularios extends BaseController {
 	}
 
 	public function getDistritos($province_name) {
-		echo $this->model->getDistritos($province_name);
+		echo $this->model->getDistritos($province_name); 
 	}
 
 
