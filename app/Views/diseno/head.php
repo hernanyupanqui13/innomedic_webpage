@@ -56,7 +56,7 @@
 
 	<!--Favicon-->
 	<link rel="icon" href="<?php echo base_url().'/public/';?>assets/images/favicon.png?v=<?php echo rand();?>" type="image/x-icon">
-	<script src="https://kit.fontawesome.com/5ccba85c99.js" crossorigin="anonymous"></script>
+	<!--<script src="https://kit.fontawesome.com/5ccba85c99.js" crossorigin="anonymous"></script>-->
 
 	<!-- Google Fonts -->
 
