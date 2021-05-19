@@ -2,8 +2,8 @@
   font-family: 'dentco';
   src:  url('fonts/dentco.eot');
   src:  url('fonts/dentco.eot') format('embedded-opentype'),
-    url('fonts/dentco.ttf') format('truetype'),
-    url('fonts/dentco.woff') format('woff'),
+    url('./fonts/dentco.ttf') format('truetype'),
+    url('./fonts/dentco.woff') format('woff'),
     url('fonts/dentco.svg') format('svg');
   font-weight: normal;
   font-style: normal;
