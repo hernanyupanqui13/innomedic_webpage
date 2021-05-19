@@ -25,7 +25,6 @@ class FormulariosModel extends Model
 
     public function getAllCountries() {
 
-        $this->db->query("USE bd_intra;");
         $query = $this->db->query("SELECT `name`
             FROM countries"
         );
@@ -39,7 +38,6 @@ class FormulariosModel extends Model
     }
 
     public function getAllDepartments() {
-        $this->db->query("USE bd_intra;");
         $query = $this->db->query("SELECT `name` FROM ubigeo_peru_departments");
         $result = [];
         foreach($query->getResult() as $item) {
@@ -51,7 +49,6 @@ class FormulariosModel extends Model
     }
 
     public function getProvincias($department_name) {
-        $this->db->query("USE bd_intra;");
         $query = $this->db->query("SELECT p.`name`
             FROM ubigeo_peru_provinces p
                 INNER JOIN ubigeo_peru_departments d
@@ -68,7 +65,6 @@ class FormulariosModel extends Model
     }
 
     public function getDistritos($province_name) {
-        $this->db->query("USE bd_intra;");
         $query = $this->db->query("SELECT d.`name`
             FROM ubigeo_peru_districts d
                 INNER JOIN ubigeo_peru_provinces p

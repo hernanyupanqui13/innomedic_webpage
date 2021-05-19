@@ -4,7 +4,6 @@ const buscar_dni_btn = document.getElementById("buscar-dni-btn");
 buscar_dni_btn.addEventListener("click", async function() {
     
     const dni = document.querySelector("#dni-ipt").value;
-    console.log(dni);
     let dni_obj = await buscarDni(dni);
     document.querySelector("#nombres-ipt").value = dni_obj.nombres;
     document.querySelector("#apellido_paterno-ipt").value = dni_obj.apellidoPaterno;
@@ -29,6 +28,8 @@ loadAutocompleteOptions(`./Formularios/getAllCountries`
 );
 loadLocationInputs();
 loadMigrationInputs();
+initDependentQuestion("contacto-directo-question");
+
 
 
 
@@ -65,12 +66,45 @@ main_form.addEventListener("submit", async (e) => {
 
 
 
-
 /*
 ---------------------------------------------------------------------------------------------------------
 FUNCIONES
 ---------------------------------------------------------------------------------------------------------
 */
+
+/* Funcion que inicializa las preguntas dependientes del formualrio. Hace visibles o invisibles preguntas dependientes (slaves)
+dependiendo de la respuesta a otra pregunta (master) */
+function initDependentQuestion(questionId) {
+    const question = document.querySelector(`#${questionId}`);
+
+    const slave =  question.querySelector(".dependent-slave");
+
+    const activeSlavesArray = [...question.querySelectorAll(".activeTrigger")];
+    const inactiveSlavesArray = [...question.querySelectorAll(".inactiveTrigger")];
+
+
+    for (let oneMaster of activeSlavesArray) {
+        console.log("FORIN");
+        oneMaster.addEventListener("change", () => {
+            if(oneMaster.checked) {
+                slave.classList.add("dependent-slave-active");
+            }
+            console.log("visible");
+        });
+    }
+
+    for (let oneMaster of inactiveSlavesArray) {
+        console.log("FOR in 2");
+        oneMaster.addEventListener("change", () => {
+            if(oneMaster.checked) {
+                slave.classList.remove("dependent-slave-active");
+            }
+            console.log("invisible");
+            
+        });
+    }
+
+}
 
 
 
