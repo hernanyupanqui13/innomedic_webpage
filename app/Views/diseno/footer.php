@@ -1143,7 +1143,7 @@
 		})(jQuery);
 </script>
 
-<script src="<?php echo base_url().'/public/sunatphp-master/';?>example/js/ajaxview.js?v=<?php echo rand();?>"></script>
+
     <script>
       $(document).ready(function(){
         $("#btn-submit").click(function(e){
@@ -1173,43 +1173,31 @@
             data: { "nruc" : $("#nruc").val() },
             type: "POST",
             dataType: "json",
-            url: "<?php echo base_url('public/sunatphp-master/example/consulta.php/');?>",
+            url: "<?php echo base_url('public/dni-peru-consult/ruc-consult.php/');?>",
           }).done(function( data, textStatus, jqXHR ){
-            if(data['success']!="false" && data['success']!=false)
-            {
-              $("#json_code").text(JSON.stringify(data, null, '\t'));
-              if(typeof(data['result'])!='undefined')
-              {
-                $("#tbody").html("");
-                $.each(data['result'], function(i, v)
-                {
-                  $("#usuario").val(data['result']['razon_social']);
-                  $("#rucx").val(data['result']['ruc']);
-                  $("#direccionx").val(data['result']['direccion']);
-                  
-                });
-              }
-              //$this.button('reset');
-              $("#error").hide();
-              $(".result").show();
-              //mostramos los resultados que esta pasando
-              $("#agregar_clase_x").removeClass('preloader');
-        	  $("#id_hidde_x").show();
-              $.ajaxunblock();
-            }
-            else
-            {
-              if(typeof(data['msg'])!='undefined')
-              {
-                alert( data['msg'] );
-              }
-              //$this.button('reset');
-              $.ajaxunblock();
-            }
+			  data = JSON.parse(data);
+            if(data) {
+
+				console.log(data);
+              
+				$("#tbody").html("");
+				$("#usuario").val(data.razonSocial);
+				$("#rucx").val(data.ruc);
+				$("#direccionx").val(data.direccion);
+
+			}
+
+			//$this.button('reset');
+			$("#error").hide();
+			$(".result").show();
+			//mostramos los resultados que esta pasando
+			$("#agregar_clase_x").removeClass('preloader');
+			$("#id_hidde_x").show();
+		
+            
           }).fail(function( jqXHR, textStatus, errorThrown ){
             alert( "Solicitud fallida:" + textStatus );
             $this.button('reset');
-            $.ajaxunblock();
           });
         });
       });
@@ -1240,43 +1228,29 @@
             data: { "nruc" : $("#nrucx").val() },
             type: "POST",
             dataType: "json",
-            url: "<?php echo base_url('public/sunatphp-master/example/consulta.php/');?>",
+            url: "<?php echo base_url('public/dni-peru-consult/ruc-consult.php/');?>",
           }).done(function( data, textStatus, jqXHR ){
-            if(data['success']!="false" && data['success']!=false)
-            {
-              $("#json_code").text(JSON.stringify(data, null, '\t'));
-              if(typeof(data['result'])!='undefined')
-              {
-                $("#tbody").html("");
-                $.each(data['result'], function(i, v)
-                {
-                  $("#usuariox").val(data['result']['razon_social']);
-                  $("#rucxx").val(data['result']['ruc']);
-                  $("#direccionx").val(data['result']['direccion']);
-                  
-                });
-              }
-              //$this.button('reset');
-              $("#error").hide();
-              $(".result").show();
-              //agremos las clases para que actulizen todos
-             $("#agregar_clase").removeClass('preloader');
-        	 $("#id_hidde").show();
-              $.ajaxunblock();
+            if(data) {
+              
+				$("#tbody").html("");
+				$("#usuariox").val(data.razonSocial);
+				$("#rucxx").val(data.ruc);
+				$("#direccionx").val(data.direccion);
+				
             }
-            else
-            {
-              if(typeof(data['msg'])!='undefined')
-              {
-                alert( data['msg'] );
-              }
-              //$this.button('reset');
-              $.ajaxunblock();
-            }
+
+			//$this.button('reset');
+			$("#error").hide();
+			$(".result").show();
+
+			//agremos las clases para que actulizen todos
+			$("#agregar_clase").removeClass('preloader');
+			$("#id_hidde").show();
+
+            
           }).fail(function( jqXHR, textStatus, errorThrown ){
             alert( "Solicitud fallida:" + textStatus );
             $this.button('reset');
-            $.ajaxunblock();
           });
         });
       });

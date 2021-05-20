@@ -16,6 +16,8 @@ use Peru\Services\RucInterface;
  */
 class Ruc implements RucInterface
 {
+    use RandomTrait;
+
     /**
      * @var ClientInterface
      */
@@ -46,8 +48,10 @@ class Ruc implements RucInterface
      */
     public function get(string $ruc): ?Company
     {
-        $random = $this->client->get(Endpoints::RANDOM);
-        $html = $this->client->get(Endpoints::CONSULT."?accion=consPorRuc&nroRuc=$ruc&numRnd=$random");
+        $htmlRandom = $this->client->get(Endpoints::RANDOM_PAGE);
+        $random = $this->getRandom($htmlRandom);
+
+        $html = $this->client->get(Endpoints::CONSULT."?accion=consPorRuc&nroRuc=$ruc&numRnd=$random&actReturn=1&modo=1");
 
         return $html === false ? null : $this->parser->parse($html);
     }

@@ -927,8 +927,6 @@
 	})(jQuery);
 </script>
 
-<script src="<?php echo base_url().'/public/sunatphp-master/';?>example/js/ajaxview.js?v=<?php echo rand();?>"></script>
-
 <!-- Buscar RUC | Script -->
 <script>
 
@@ -944,43 +942,27 @@
 				data: { "nruc" : $("#nrucx").val() },
 				type: "POST",
 				dataType: "json",
-				url: "<?php echo base_url('public/sunatphp-master/example/consulta.php/');?>",
+				url: "<?php echo base_url('public/dni-peru-consult/ruc-consult.php/');?>",
 
 			}).done(function( data, textStatus, jqXHR ) {
 
-				if(data['success']!="false" && data['success']!=false) {
-
-					$("#json_code").text(JSON.stringify(data, null, '\t'));
-					
-					if(typeof(data['result'])!='undefined') {
-						$("#tbody").html("");
-						$.each(data['result'], function(i, v) {
-
-							$("#usuariox").val(data['result']['razon_social']);
-							$("#rucxx").val(data['result']['ruc']);
-							$("#direccionx").val(data['result']['direccion']);
+				if(data) {	
+					$("#tbody").html("");
+				
+					$("#usuariox").val(data.razonSocial);
+					$("#rucxx").val(data.ruc);
+					$("#direccionx").val(data.direccion);
 							
-						});
-					}
-
+						
 					$("#error").hide();
 					$(".result").show();
-					$.ajaxunblock();
 
-				} else {
-
-					if(typeof(data['msg'])!='undefined') {
-						alert( data['msg'] );
-					}
-
-					$.ajaxunblock();
-				}
+				} 
 
 			}).fail(function( jqXHR, textStatus, errorThrown ) {
 
 				alert( "Solicitud fallida:" + textStatus );
 				$this.button('reset');
-				$.ajaxunblock();
 			});
 		});
 	});

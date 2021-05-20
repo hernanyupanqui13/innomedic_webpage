@@ -18,7 +18,7 @@ buscar_ruc_btn.addEventListener("click", async function (){
 
     let ruc_data = await buscarRuc(ruc);
 
-    document.querySelector("#empresa-razon_social-ipt").value = ruc_data.razon_social;
+    document.querySelector("#empresa-razon_social-ipt").value = ruc_data.razonSocial;
 });
 
 
@@ -84,23 +84,18 @@ function initDependentQuestion(questionId) {
 
 
     for (let oneMaster of activeSlavesArray) {
-        console.log("FORIN");
         oneMaster.addEventListener("change", () => {
             if(oneMaster.checked) {
                 slave.classList.add("dependent-slave-active");
             }
-            console.log("visible");
         });
     }
 
     for (let oneMaster of inactiveSlavesArray) {
-        console.log("FOR in 2");
         oneMaster.addEventListener("change", () => {
             if(oneMaster.checked) {
                 slave.classList.remove("dependent-slave-active");
             }
-            console.log("invisible");
-            
         });
     }
 
@@ -171,15 +166,15 @@ async function buscarRuc(ruc_number) {
         data: { "nruc" : ruc_number},
         type: "POST",
         dataType: "json",
-        url: `${window.location.origin}/public/sunatphp-master/example/consulta.php`
+        url: `${window.location.origin}/public/dni-peru-consult/ruc-consult.php?v=121/`
     })
     .done((data)=> {
         return data;
     });
 
-    console.log(response.result);
+    console.log(response);
 
-    return response.result;
+    return response;
 
 }
 

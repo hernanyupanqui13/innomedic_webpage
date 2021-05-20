@@ -85,7 +85,7 @@ body {
         <section>
             <h2>Datos del Paciente</h2>
             <div class="row mb-4">
-                <div class="col-autouto">
+                <div class="col-auto">
                     <div class="form-group">
                         <label for="dni-ipt">DNI</label>
                         <div class="simple_row">
@@ -96,7 +96,7 @@ body {
                 </div>
             </div>
             <div class="row mb-4">
-                <div class="col-auto2 col-md-4">
+                <div class="col-auto col-md-4">
                     <div class="form-group">
                         <label for="apellido_paterno-ipt">Nombres</label>
                         <input type="text" class="form-control" name="nombres" id="nombres-ipt" placeholder="" required>
@@ -116,7 +116,7 @@ body {
                 </div>
             </div>
             <div class="row mb-4">
-                <div class="col-autom-4 col-12">
+                <div class="col-auto col-12">
                     <div class="form-group">
                         <label for="fecha_nacimiento-ipt">Fecha de Nacimiento</label>
                         <input type="date" class="form-control" name="fecha_nacimiento" id="fecha_nacimiento-ipt" placeholder="Password" required>
@@ -140,7 +140,7 @@ body {
                 </div>
             </div>
             <div class="row mb-4">
-                <div class="col-auto2 col-sm-4">
+                <div class="col-auto col-sm-4">
                     <div class="form-group">
                         <label for="peso-ipt">Peso</label>
                         <input type="text" class="form-control" name="peso" id="peso-ipt" placeholder="Ingrese peso en Kg" required>
@@ -156,7 +156,7 @@ body {
                     <div class="form-group">
                         <label for="">Raza o Etnia</label>
                         <select class="form-select" name="raza" id="raza-ipt" aria-label="Default select example" required>
-                            <option selected>Seleccione una opcion</option>
+                            <option selected disabled value="">Seleccione una opcion</option>
                             <option value="mestizo">Mestizo</option>
                             <option value="afrodescendiente">Afrodescendiente</option>
                             <option value="andino">Andino</option>
@@ -182,7 +182,7 @@ body {
                 </div>
             </div>
             <div class="row mb-4 location-ipts">
-                <div class="col-auto2 col-sm-4">
+                <div class="col-auto col-sm-4">
                     <div class="form-group">
                         <label for="residencia-departamento-ipt">Departamento</label>
                         <input type="text" class="form-control location-departamento" name="residencia-departamento" id="residencia-departamento-ipt" placeholder="" required>
@@ -225,12 +225,12 @@ body {
                 </div>
             </div>
             <div class="row mb-4">
-                <label>Datos de-autoa empresa e que labora</label>
+                <label>Datos de la empresa en que labora</label>
                 <div class="col-12 col-sm-6">
                     <div class="form-group">
                         <label for="dni-ipt">RUC</label>
                         <div class="simple_row mb-4">
-                            <input type="text"-auto                                name="empresa-ruc" 
+                            <input type="text" name="empresa-ruc" 
                                 class="form-control" 
                                 id="empresa-ruc-ipt" 
                                 placeholder=""
@@ -254,13 +254,13 @@ body {
         <section>
             <h2>Antecedentes Epidemiologicos y Patologicos</h2>
             <div class="row mb-4">
-                <div class="col-auto
+                <div class="col-auto">
                     <div class="form-group">
                         <label for="inicio_sintomas-date-ipt">Fecha de inicio de sintomas</label>
                         <input type="date" class="form-control" name="inicio_sintomas-date" id="inicio_sintomas-date-ipt" placeholder="">
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-auto">
                     <div class="form-group">
                         <label for="inicio_aislamiento-date-ipt">Fecha de inicio de aislamiento</label>
                         <input type="date" class="form-control" name="inicio_aislamiento-date" id="inicio_aislamiento-date-ipt" placeholder="">
@@ -268,7 +268,7 @@ body {
                 </div>
             </div>
             <div class="row mb-4">
-                <div class="col-auton">
+                <div class="col-auto">
                     <label>¿Es Asintomatico?</label>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="asintomatico" id="si_asintomatico-rb" value="si">
@@ -285,7 +285,7 @@ body {
                 </div>
             </div>
             <div class="row mb-4 location-ipts">
-                <label>Lugar pr-autoable de infeccion</label>
+                <label>Lugar probable de infeccion</label>
                 <div class="col-12 col-sm-4">
                     <div class="form-group">
                         <small for="residencia-departamento-ipt">Departamento</small>
@@ -709,7 +709,7 @@ body {
                 </div>
             </div>
             <div class="row mb-4 location-ipts">
-                <div class="que-autoion mb-2">Lugar de Trabajo </div>
+                <div class="questionion mb-2">Lugar de Trabajo </div>
                 <div class="col-12 col-sm-3">
                     <div class="form-group">
                         <label for="trabajo-lugar-ipress-ipt">IPRESS</label>
@@ -736,7 +736,7 @@ body {
                 </div>
             </div>
             <div class="row mb-4 dependent-question" id="contacto-directo-question">
-                <div class="que-autoion mb-2">¿Has tenido contacto directo con un caso sospechoso, probable o confirmado en los 14 dias previos al inicio de sintomas?</div>
+                <div class="question mb-2">¿Has tenido contacto directo con un caso sospechoso, probable o confirmado en los 14 dias previos al inicio de sintomas?</div>
                 <div class="options">
                     <div class="form-check form-check-inline yes_option">
                         <input class="form-check-input dependent-master activeTrigger" type="radio" name="ultContacto" id="ultContacto-si-rb" value="si">
@@ -864,7 +864,7 @@ body {
                 </div>
             </div>
             <div class="row mb-4">
-                <div class="que-autoion mb-2">¿En los ultimos 14 dias calendario ha tenido alguno de los siguientes sintomas?</div>
+                <div class="question mb-2">¿En los ultimos 14 dias calendario ha tenido alguno de los siguientes sintomas?</div>
                 <div class="col yes_no-itemn options">
                     <div class="yes_no_question">Sensacion de alza termina o fiebre</div>
                     <div class="form-check form-check-inline yes_option">
@@ -972,7 +972,7 @@ body {
         <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
 
-    <script src="app/Views/formularios/admision-form-script.js"></script>
+    <script src="app/Views/formularios/admision-form-script.js?v=2"></script>
     <!--
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>

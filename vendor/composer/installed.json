@@ -110,24 +110,24 @@
         },
         {
             "name": "giansalex/peru-consult",
-            "version": "v4.2.2",
-            "version_normalized": "4.2.2.0",
+            "version": "v4.4.3",
+            "version_normalized": "4.4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/peru-consult.git",
-                "reference": "e29366438fa7e602f96704fd5e56825a0587ff5a"
+                "reference": "7e86420925eb2aeb6091897327bb980281331726"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/peru-consult/zipball/e29366438fa7e602f96704fd5e56825a0587ff5a",
-                "reference": "e29366438fa7e602f96704fd5e56825a0587ff5a",
+                "url": "https://api.github.com/repos/giansalex/peru-consult/zipball/7e86420925eb2aeb6091897327bb980281331726",
+                "reference": "7e86420925eb2aeb6091897327bb980281331726",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-json": "*",
                 "ext-libxml": "*",
-                "php": "^7.1"
+                "php": ">=7.1"
             },
             "require-dev": {
                 "behat/behat": "^3.5",
@@ -138,7 +138,7 @@
             "suggest": {
                 "react/http": "Allow Dni, Ruc async requests"
             },
-            "time": "2021-03-12T16:34:47+00:00",
+            "time": "2021-05-18T20:59:36+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -169,7 +169,7 @@
             ],
             "support": {
                 "issues": "https://github.com/giansalex/peru-consult/issues",
-                "source": "https://github.com/giansalex/peru-consult/tree/v4.2.2"
+                "source": "https://github.com/giansalex/peru-consult/tree/v4.4.3"
             },
             "funding": [
                 {

@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'ab3ce648ed82657140ffbbbc368a6f5a27c1f093',
+    'reference' => 'bb99b6bfc9f525e6144e2c88191daa0c516d5a94',
     'name' => 'codeigniter4/appstarter',
   ),
   'versions' => 
@@ -42,7 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'ab3ce648ed82657140ffbbbc368a6f5a27c1f093',
+      'reference' => 'bb99b6bfc9f525e6144e2c88191daa0c516d5a94',
     ),
     'codeigniter4/framework' => 
     array (
@@ -64,12 +64,12 @@ private static $installed = array (
     ),
     'giansalex/peru-consult' => 
     array (
-      'pretty_version' => 'v4.2.2',
-      'version' => '4.2.2.0',
+      'pretty_version' => 'v4.4.3',
+      'version' => '4.4.3.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'e29366438fa7e602f96704fd5e56825a0587ff5a',
+      'reference' => '7e86420925eb2aeb6091897327bb980281331726',
     ),
     'kint-php/kint' => 
     array (
