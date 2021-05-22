@@ -29,6 +29,7 @@ loadAutocompleteOptions(`./Formularios/getAllCountries`
 loadLocationInputs();
 loadMigrationInputs();
 initDependentQuestion("contacto-directo-question");
+initDependentQuestion("sintomas-question");
 
 
 
@@ -76,8 +77,10 @@ FUNCIONES
 dependiendo de la respuesta a otra pregunta (master) */
 function initDependentQuestion(questionId) {
     const question = document.querySelector(`#${questionId}`);
+    console.log(question);
 
     const slave =  question.querySelector(".dependent-slave");
+    console.log(slave);
 
     const activeSlavesArray = [...question.querySelectorAll(".activeTrigger")];
     const inactiveSlavesArray = [...question.querySelectorAll(".inactiveTrigger")];
@@ -85,16 +88,25 @@ function initDependentQuestion(questionId) {
 
     for (let oneMaster of activeSlavesArray) {
         oneMaster.addEventListener("change", () => {
+            console.log("activing");
             if(oneMaster.checked) {
                 slave.classList.add("dependent-slave-active");
+                [...slave.querySelectorAll("input")].forEach(element => {
+                    element.setAttribute("required", "true");
+                });;
+                
             }
         });
     }
 
     for (let oneMaster of inactiveSlavesArray) {
         oneMaster.addEventListener("change", () => {
+            console.log("inactive");
             if(oneMaster.checked) {
                 slave.classList.remove("dependent-slave-active");
+                [...slave.querySelectorAll("input")].forEach(element => {
+                    element.removeAttribute("required", "true");
+                });;
             }
         });
     }
@@ -183,11 +195,6 @@ async function loadCountryOptions(HTMLselector) {
     var data = await fetch(`${window.location.origin}/Formularios/getAllCountries`)
         .then(r => r.json())
         .then(response => { // Data form: [{name: "country"},{...},{...}]
-            /*let response = [];
-            data.forEach(element => {
-                response.push(element.name);
-            });*/
-
             console.log(response)
             return response;
         }
@@ -237,3 +244,13 @@ async function buscarDni(dni_number) {
 
     return dni_data;
 }
+
+
+function initOtrosQuestion(inputId) {
+    const parentElement = document.getElementById(inputId);
+    parentElement.parentNode.appendChild();
+    let extraInput = `<input type="text" class="extraInput">`;
+    
+}
+
+initOtrosQuestion("condicion-14-cb");

@@ -125,7 +125,7 @@ body {
                 
             </div>
             <div class="row mb-4">
-                <div class="col-auto
+                <div class="col-auto">
                     <div class="form-group">
                         <label>Sexo</label><br>
                         <div class="form-check form-check-inline">
@@ -174,7 +174,7 @@ body {
                 </div>
             </div>
             <div class="row mb-4">
-                <div class="col-auto
+                <div class="col-auto">
                     <div class="form-group">
                         <label for="residencia-text-ipt">Direccion de residencia actual</label>
                         <input type="text" class="form-control" name="residencia-text" id="residencia-text-ipt" placeholder="" required>
@@ -306,7 +306,7 @@ body {
                 </div>
             </div>
             <div class="row mb-4">
-                <div class="col-auto
+                <div class="col-auto">
                     <div class="mb-2 question">Sintomas</div>
                     <div class="grid-3 options">
                         <div class="form-check">
@@ -409,7 +409,7 @@ body {
                 </div>
             </div>
             <div class="row mb-4">
-                <div class="col-auto
+                <div class="col-auto">
                     <div class="mb-2 question">Signos</div>
                     <div class="grid-3 check-grid options">
                         <div class="form-check gx-2">
@@ -476,90 +476,90 @@ body {
                 </div>
             </div>
             <div class="row mb-4">
-                <div class="col-auto
+                <div class="col-auto">
                     <div class="question mb-2">Condiciones de comorbilidad o factores de riesgo</div>
                     <div class="grid-3 options">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-1-cb">
-                            <label class="form-check-label" for="signo-1-cb">
+                            <input class="form-check-input" type="checkbox" value="Embarazo" name="condiciones_comorbilidad[]" id="condicion-1-cb">
+                            <label class="form-check-label" for="condicion-1-cb">
                                 Embarazo
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-2-cb">
-                            <label class="form-check-label" for="signo-2-cb">
+                            <input class="form-check-input" type="checkbox" value="Enfermedad Cardiovascular" name="condiciones_comorbilidad[]" id="condicion-2-cb">
+                            <label class="form-check-label" for="condicion-2-cb">
                                 Enfermedad Cardiovascular
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-3-cb">
-                            <label class="form-check-label" for="signo-3-cb">
+                            <input class="form-check-input" type="checkbox" value="Diabetes" name="condiciones_comorbilidad[]" id="condicion-3-cb">
+                            <label class="form-check-label" for="condicion-3-cb">
                                 Diabetes
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-4-cb">
-                            <label class="form-check-label" for="signo-4-cb">
+                            <input class="form-check-input" type="checkbox" value="Enfermedad Hepatica" name="condiciones_comorbilidad[]" id="condicion-4-cb">
+                            <label class="form-check-label" for="condicion-4-cb">
                                 Enfermedad Hepatica
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-5-cb">
-                            <label class="form-check-label" for="signo-5-cb">
+                            <input class="form-check-input" type="checkbox" value="Enfermedad Cronica Neurologica o Neuromuscular" name="condiciones_comorbilidad[]" id="condicion-5-cb">
+                            <label class="form-check-label" for="condicion-5-cb">
                                 Enfermedad Cronica Neurologica o Neuromuscular
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-6-cb">
-                            <label class="form-check-label" for="signo-6-cb">
+                            <input class="form-check-input" type="checkbox" value="Obesidad" name="condiciones_comorbilidad[]" id="condicion-6-cb">
+                            <label class="form-check-label" for="condicion-6-cb">
                                 Obesidad
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-7-cb">
-                            <label class="form-check-label" for="signo-7-cb">
+                            <input class="form-check-input" type="checkbox" value="Tuberculosis" name="condiciones_comorbilidad[]" id="condicion-7-cb">
+                            <label class="form-check-label" for="condicion-7-cb">
                                 Tuberculosis
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-8-cb">
-                            <label class="form-check-label" for="signo-8-cb">
-                                Post parto/aborto(&leq; 6 semanas o 42 dias))
+                            <input class="form-check-input" type="checkbox" value="Post parto/aborto( ≤ 6 semanas o 42 dias)" name="condiciones_comorbilidad[]" id="condicion-8-cb">
+                            <label class="form-check-label" for="condicion-8-cb">
+                                Post parto/aborto(&leq; 6 semanas o 42 dias)
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-9-cb">
-                            <label class="form-check-label" for="signo-9-cb">
+                            <input class="form-check-input" type="checkbox" value="Inmunodeficiencia (incluye VIH)" name="condiciones_comorbilidad[]" id="condicion-9-cb">
+                            <label class="form-check-label" for="condicion-9-cb">
                                 Inmunodeficiencia (incluye VIH)
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-10-cb">
-                            <label class="form-check-label" for="signo-10-cb">
+                            <input class="form-check-input" type="checkbox" value="Enfermedad renal" name="condiciones_comorbilidad[]" id="condicion-10-cb">
+                            <label class="form-check-label" for="condicion-10-cb">
                                 Enfermedad renal
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-11-cb">
-                            <label class="form-check-label" for="signo-11-cb">
+                            <input class="form-check-input" type="checkbox" value="Enfermedad Pulmonar Cronica" name="condiciones_comorbilidad[]" id="condicion-11-cb">
+                            <label class="form-check-label" for="condicion-11-cb">
                                 Enfermedad Pulmonar Cronica
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-12-cb">
-                            <label class="form-check-label" for="signo-12-cb">
+                            <input class="form-check-input" type="checkbox" value="Asma" name="condiciones_comorbilidad[]" id="condicion-12-cb">
+                            <label class="form-check-label" for="condicion-12-cb">
                                 Asma
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-13-cb">
-                            <label class="form-check-label" for="signo-13-cb">
+                            <input class="form-check-input" type="checkbox" value="Cancer" name="condiciones_comorbilidad[]" id="condicion-13-cb">
+                            <label class="form-check-label" for="condicion-13-cb">
                                 Cancer
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-14-cb">
-                            <label class="form-check-label" for="signo-14-cb">
+                            <input class="form-check-input" type="checkbox" value="Otros" name="condiciones_comorbilidad[]" id="condicion-14-cb">
+                            <label class="form-check-label" for="condicion-14-cb">
                                 Otros
                             </label>
                         </div>
@@ -575,132 +575,65 @@ body {
                 </div>
             </div>
             <div class="row mb-4">
-                <div class="col-auto
-                    <div class="question mb-2">Signos</div>
-                    <div class="options grid-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-1-cb">
-                            <label class="form-check-label" for="signo-1-cb">
-                            Exudado faringeo
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-2-cb">
-                            <label class="form-check-label" for="signo-2-cb">
-                                Inyeccion conjuntivial
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-3-cb">
-                            <label class="form-check-label" for="signo-3-cb">
-                                Convulsion
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-4-cb">
-                            <label class="form-check-label" for="signo-4-cb">
-                                Disnea/taquipnea
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-5-cb">
-                            <label class="form-check-label" for="signo-5-cb">
-                                Auscultacion pulmonar anormal
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-6-cb">
-                            <label class="form-check-label" for="signo-6-cb">
-                                Halazgos anormales en radiografia
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-7-cb">
-                            <label class="form-check-label" for="signo-7-cb">
-                                Halazgos anormales en ecografia
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-8-cb">
-                            <label class="form-check-label" for="signo-8-cb">
-                                Halazgos anormales en tomografia
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-9-cb">
-                            <label class="form-check-label" for="signo-9-cb">
-                                Halazgos anormales en RMN
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-10-cb">
-                            <label class="form-check-label" for="signo-10-cb">
-                                Otros
-                            </label>
-                        </div>                        
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-4">
-                <div class="col-auto
+                <div class="col-auto">
                     <div class="question mb-2">Ocupacion </div>
                     <div class="grid-3 options">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="ocupacion-1-cb">
+                            <input class="form-check-input" type="radio" value="" name="ocupacion" id="ocupacion-1-cb">
                             <label class="form-check-label" for="ocupacion-1-cb">
                                 Trabajador de Salud
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="ocupacion-2-cb">
+                            <input class="form-check-input" type="radio" value="" name="ocupacion" id="ocupacion-2-cb">
                             <label class="form-check-label" for="ocupacion-2-cb">
                                 Policia
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="ocupacion-3-cb">
+                            <input class="form-check-input" type="radio" value="" name="ocupacion" id="ocupacion-3-cb">
                             <label class="form-check-label" for="ocupacion-3-cb">
                                 Militar
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="ocupacion-4-cb">
+                            <input class="form-check-input" type="radio" value="" name="ocupacion" id="ocupacion-4-cb">
                             <label class="form-check-label" for="ocupacion-4-cb">
                                 Estudiante
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="ocupacion-5-cb">
+                            <input class="form-check-input" type="radio" value="" name="ocupacion" id="ocupacion-5-cb">
                             <label class="form-check-label" for="ocupacion-5-cb">
                                 Medico
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="ocupacion-6-cb">
+                            <input class="form-check-input" type="radio" value="" name="ocupacion" id="ocupacion-6-cb">
                             <label class="form-check-label" for="ocupacion-6-cb">
                                 Enfermero(a)
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="ocupacion-7-cb">
+                            <input class="form-check-input" type="radio" value="" name="ocupacion" id="ocupacion-7-cb">
                             <label class="form-check-label" for="ocupacion-7-cb">
                                 Obstera
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="ocupacion-8-cb">
+                            <input class="form-check-input" type="radio" value="" name="ocupacion" id="ocupacion-8-cb">
                             <label class="form-check-label" for="ocupacion-8-cb">
                                 Laboratorista
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="ocupacion-9-cb">
+                            <input class="form-check-input" type="radio" value="" name="ocupacion" id="ocupacion-9-cb">
                             <label class="form-check-label" for="ocupacion-9-cb">
                                 Tecnico en Enfermeria
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="ocupacion-10-cb">
+                            <input class="form-check-input" type="radio" value="" name="ocupacion" id="ocupacion-10-cb">
                             <label class="form-check-label" for="ocupacion-10-cb">
                                 Otros
                             </label>
@@ -759,31 +692,31 @@ body {
                                 <label class="form-check-label" for="entorno-1-rb">Entorno de salud</label>
                             </div>
                             <div class="form-check form-check-inline no_option">
-                                <input class="form-check-input" type="radio" name="entorno-contacto" id="entorno-2-rb" value="Entorno Familiar" required>
+                                <input class="form-check-input" type="radio" name="entorno-contacto" id="entorno-2-rb" value="Entorno Familiar">
                                 <label class="form-check-label" for="entorno-2-rb">Entorno Familiar</label>
                             </div>
                             <div class="form-check form-check-inline no_option">
-                                <input class="form-check-input" type="radio" name="entorno-contacto" id="entorno-3-rb" value="Entorno Laboral" required>
+                                <input class="form-check-input" type="radio" name="entorno-contacto" id="entorno-3-rb" value="Entorno Laboral">
                                 <label class="form-check-label" for="entorno-3-rb">Entorno Laboral</label>
                             </div>
                             <div class="form-check form-check-inline no_option">
-                                <input class="form-check-input" type="radio" name="entorno-contacto" id="entorno-4-rb" value="Casa de Reposo" required>
+                                <input class="form-check-input" type="radio" name="entorno-contacto" id="entorno-4-rb" value="Casa de Reposo">
                                 <label class="form-check-label" for="entorno-4-rb">Casa de Reposo</label>
                             </div>
                             <div class="form-check form-check-inline no_option">
-                                <input class="form-check-input" type="radio" name="entorno-contacto" id="entorno-5-rb" value="Centro Penitenciario" required>
+                                <input class="form-check-input" type="radio" name="entorno-contacto" id="entorno-5-rb" value="Centro Penitenciario">
                                 <label class="form-check-label" for="entorno-5-rb">Centro Penitenciario</label>
                             </div>
                             <div class="form-check form-check-inline no_option">
-                                <input class="form-check-input" type="radio" name="entorno-contacto" id="entorno-6-rb" value="Albergue" required>
+                                <input class="form-check-input" type="radio" name="entorno-contacto" id="entorno-6-rb" value="Albergue">
                                 <label class="form-check-label" for="entorno-6-rb">Albergue</label>
                             </div>
                             <div class="form-check form-check-inline no_option">
-                                <input class="form-check-input" type="radio" name="entorno-contacto" id="entorno-7-rb" value="Desconocido" required>
+                                <input class="form-check-input" type="radio" name="entorno-contacto" id="entorno-7-rb" value="Desconocido">
                                 <label class="form-check-label" for="entorno-7-rb">Desconocido</label>
                             </div>
                             <div class="form-check form-check-inline no_option">
-                                <input class="form-check-input" type="radio" name="entorno-contacto" id="entorno-8-rb" value="Otros" required>
+                                <input class="form-check-input" type="radio" name="entorno-contacto" id="entorno-8-rb" value="Otros">
                                 <label class="form-check-label" for="entorno-8-rb">Otros</label>
                             </div>
                         </div>
@@ -797,7 +730,7 @@ body {
         <section>
             <h2>Ficha de Sintomatologia Covid 19</h2>
             <div class="row mb-4">
-                <div class="col-auto
+                <div class="col-auto">
                     <div class="question mb-2">Marque si presenta alguno de los siguientes factores de riesgo</div>
                     <div class="options">
                         <div class="form-check">
@@ -863,7 +796,7 @@ body {
                     </div>
                 </div>
             </div>
-            <div class="row mb-4">
+            <div class="row mb-4 dependent-question" id="sintomas-question">
                 <div class="question mb-2">¿En los ultimos 14 dias calendario ha tenido alguno de los siguientes sintomas?</div>
                 <div class="col yes_no-itemn options">
                     <div class="yes_no_question">Sensacion de alza termina o fiebre</div>
@@ -956,14 +889,22 @@ body {
                         <label class="form-check-label" for="ultimos_sintomas-9-no-rb">No</label>
                     </div>
                     
-                    <div class="yes_no_question">Esta tomando alguna medicacion (detallar cual o cuales)</div>
+                    <div class="yes_no_question" id="medicacion-bool">Esta tomando alguna medicacion (detallar cual o cuales)</div>
                     <div class="form-check form-check-inline yes_option">
-                        <input class="form-check-input" type="radio" name="ultimos_sintomas-10" id="ultimos_sintomas-10-si-rb" value="si">
+                        <input class="form-check-input dependent-master activeTrigger" type="radio" name="ultimos_sintomas-10" id="ultimos_sintomas-10-si-rb" value="si">
                         <label class="form-check-label" for="ultimos_sintomas-10-si-rb">Si</label>
                     </div>
                     <div class="form-check form-check-inline no_option">
-                        <input class="form-check-input" type="radio" name="ultimos_sintomas-10" id="ultimos_sintomas-10-no-rb" value="no" required>
-                        <label class="form-check-label" for="x-10-no-rb">No</label>
+                        <input class="form-check-input inactiveTrigger" type="radio" name="ultimos_sintomas-10" id="ultimos_sintomas-10-no-rb" value="no" required>
+                        <label class="form-check-label" for="ultimos_sintomas-10-no-rb">No</label>
+                    </div>
+                </div>
+                <!-- Pregunta Dependiente de la respuesta anterior -->
+                <div class="dependent-slave" data-dependeDe="#ultimos_sintomas-10-si-rb" id="entorno-pregunta">
+                    <div class="options col-auto">
+                        <div class="form-group">
+                            <input type="text" class="form-control " name="ultimas_medicinas" id="residencia-departamento-ipt" placeholder="Detalle las medicinas separadas por comas">
+                        </div>
                     </div>
                 </div>
             </div>
