@@ -31,6 +31,14 @@ loadMigrationInputs();
 initDependentQuestion("contacto-directo-question");
 initDependentQuestion("sintomas-question");
 
+//Inicializando todas las preguntas de clase otros_input
+[...document.querySelectorAll(".otros_input")].forEach(element => {
+    console.log(element.id)
+    initOtrosQuestion(element.id);
+});
+
+
+
 
 
 
@@ -247,10 +255,60 @@ async function buscarDni(dni_number) {
 
 
 function initOtrosQuestion(inputId) {
-    const parentElement = document.getElementById(inputId);
-    parentElement.parentNode.appendChild();
-    let extraInput = `<input type="text" class="extraInput">`;
+
+    // Creando la entradade texto extra
+    const triggerElement = document.querySelector(`#${inputId}`);
+    const parentElement = triggerElement.parentNode;
+    parentElement.innerHTML += `<input type="text" class="extraInput inactive">`;
+
+
+    // Hacer aparecer el la entrada de texto extra
+    document.querySelector(`#${inputId}`).addEventListener("change", event => {
+        event.stopPropagation();
+
+        const extraInput = parentElement.querySelector(".extraInput");
+
+        if (!event.target.checked) {                // Checkbox desactivado
+            extraInput.classList.add("inactive");
+            extraInput.classList.remove("active");
+            extraInput.value = "";
+            event.target.value = "";
+        } else {                                    // Checkbox activado 
+            extraInput.classList.add("active");
+            extraInput.classList.remove("inactive");
+        }
+
+    });
+
+    // Da el valor de la entrada de texto extra al checkbox que lo activo
+    parentElement.querySelector(".extraInput").addEventListener("change", event => {
+        document.querySelector(`#${inputId}`).value = event.target.value;
+    });
+
+
+    // Para radio Buttons
+    if(triggerElement.getAttribute("type")==="radio") {
+        const nameExtraInput = triggerElement.getAttribute("name");
+        [...document.getElementsByName(nameExtraInput)].forEach(element => {
+            element.addEventListener("change", event => {
+
+                const extraInput = parentElement.querySelector(".extraInput");
+
+                event.stopPropagation();
+
+                if(event.target.checked && event.target.id ==inputId) {
+                    console.log("active radio");
+                    extraInput.classList.add("active");
+                    extraInput.classList.remove("inactive");
+                } else {
+                    console.log("ianactive radio");
+                    extraInput.classList.add("inactive");
+                    extraInput.classList.remove("active");
+                    extraInput.value = "";
+                    event.target.value = "";
+                }
+            })
+        });
+    };
     
 }
-
-initOtrosQuestion("condicion-14-cb");

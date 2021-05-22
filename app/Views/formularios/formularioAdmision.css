@@ -6,3 +6,12 @@
 .dependent-slave-active {
     display: block;
 }
+
+
+.inactive {
+    display: none;
+}
+
+.active {
+    display: inline;
+}

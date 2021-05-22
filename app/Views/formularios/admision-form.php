@@ -400,7 +400,7 @@ body {
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="otros" name="sintomas" id="sintoma-16-cb">
+                            <input class="form-check-input otros_input" type="checkbox" value="otros" name="sintomas" id="sintoma-16-cb">
                             <label class="form-check-label" for="sintoma-16-cb">
                                 Otros
                             </label>
@@ -467,7 +467,7 @@ body {
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="signos" id="signo-10-cb">
+                            <input class="form-check-input otros_input" type="checkbox" value="" name="signos" id="signo-10-cb">
                             <label class="form-check-label" for="signo-10-cb">
                                 Otros
                             </label>
@@ -558,7 +558,7 @@ body {
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Otros" name="condiciones_comorbilidad[]" id="condicion-14-cb">
+                            <input class="form-check-input otros_input" type="checkbox" value="Otros" name="condiciones_comorbilidad[]" id="condicion-14-cb">
                             <label class="form-check-label" for="condicion-14-cb">
                                 Otros
                             </label>
@@ -633,7 +633,7 @@ body {
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" value="" name="ocupacion" id="ocupacion-10-cb">
+                            <input class="form-check-input otros_input" type="radio" value="" name="ocupacion" id="ocupacion-10-cb">
                             <label class="form-check-label" for="ocupacion-10-cb">
                                 Otros
                             </label>
@@ -716,7 +716,7 @@ body {
                                 <label class="form-check-label" for="entorno-7-rb">Desconocido</label>
                             </div>
                             <div class="form-check form-check-inline no_option">
-                                <input class="form-check-input" type="radio" name="entorno-contacto" id="entorno-8-rb" value="Otros">
+                                <input class="form-check-input otros_input" type="radio" name="entorno-contacto" id="entorno-8-rb" value="Otros">
                                 <label class="form-check-label" for="entorno-8-rb">Otros</label>
                             </div>
                         </div>
