@@ -16,11 +16,8 @@ class Formularios extends BaseController {
 	}
 
 	public function registerAnswers() {
-
-
-		echo json_encode($_POST);
-
-		//echo $this->model->registerAnswers();
+		$data = $this->request->getPost();
+		$this->model->registerAnswers($data);
 	}
 
 	public function getAllCountries() {

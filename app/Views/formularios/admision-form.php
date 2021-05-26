@@ -98,7 +98,7 @@ body {
             <div class="row mb-4">
                 <div class="col-auto col-md-4">
                     <div class="form-group">
-                        <label for="apellido_paterno-ipt">Nombres</label>
+                        <label for="nombres-ipt">Nombres</label>
                         <input type="text" class="form-control" name="nombres" id="nombres-ipt" placeholder="" required>
                     </div>
                 </div>        
@@ -205,13 +205,13 @@ body {
                 <div class="col-auto col-md-3">
                     <div>¿Eres migrante?</div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="es_migrante" id="si_migrante-rb" required>
+                        <input class="form-check-input" type="radio" name="es_migrante" id="si_migrante-rb" value="si" required>
                         <label class="form-check-label" for="si_migrante-rb">
                         Si
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="es_migrante" id="no_migrante-rb" checked>
+                        <input class="form-check-input" type="radio" name="es_migrante" id="no_migrante-rb" value="no" checked>
                         <label class="form-check-label" for="no_migrante-rb">
                         No
                         </label>
@@ -288,20 +288,20 @@ body {
                 <label>Lugar probable de infeccion</label>
                 <div class="col-12 col-sm-4">
                     <div class="form-group">
-                        <small for="residencia-departamento-ipt">Departamento</small>
-                        <input type="text" class="form-control location-departamento" name="residencia-departamento" id="residencia-departamento-ipt" placeholder="">
+                        <small for="lp_infeccion-departamento-ipt">Departamento</small>
+                        <input type="text" class="form-control location-departamento" name="lp_infeccion-departamento" id="lp_infeccion-departamento-ipt" placeholder="">
                     </div>
                 </div>
                 <div class="col-12 col-sm-4">
                     <div class="form-group">
-                        <small for="residencia-provincia-ipt">Provincia</small>
-                        <input type="text" class="form-control location-provincia" name="residencia-provincia" id="residencia-provincia-ipt" placeholder="">
+                        <small for="lp_infeccion-provincia-ipt">Provincia</small>
+                        <input type="text" class="form-control location-provincia" name="lp_infeccion-provincia" id="lp_infeccion-provincia-ipt" placeholder="">
                     </div>
                 </div>
                 <div class="col-12 col-sm-4">
                     <div class="form-group">
-                        <small for="residencia-distrito-ipt">Distrito</small>
-                        <input type="text" class="form-control location-distrito" name="residencia-distrito" id="residencia-distrito-ipt" placeholder="">
+                        <small for="lp_infeccion-distrito-ipt">Distrito</small>
+                        <input type="text" class="form-control location-distrito" name="lp_infeccion-distrito" id="lp_infeccion-distrito-ipt" placeholder="">
                     </div>
                 </div>
             </div>
@@ -310,97 +310,97 @@ body {
                     <div class="mb-2 question">Sintomas</div>
                     <div class="grid-3 options">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Tos" name="sintomas" id="sintoma-1-cb">
+                            <input class="form-check-input" type="checkbox" value="Tos" name="sintomas[]" id="sintoma-1-cb">
                             <label class="form-check-label" for="flexCheckDefault">
                             Tos
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Dolor de Garganta" name="sintomas" id="sintoma-2-cb">
+                            <input class="form-check-input" type="checkbox" value="Dolor de Garganta" name="sintomas[]" id="sintoma-2-cb">
                             <label class="form-check-label" for="sintoma-2-cb">
                                 Dolor de Garganta
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Congestion Nasal" name="sintomas" id="sintoma-3-cb">
+                            <input class="form-check-input" type="checkbox" value="Congestion Nasal" name="sintomas[]" id="sintoma-3-cb">
                             <label class="form-check-label" for="sintoma-3-cb">
                                 Congestion Nasal
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Dificultad Respiratoria" name="sintomas" id="sintoma-4-cb">
+                            <input class="form-check-input" type="checkbox" value="Dificultad Respiratoria" name="sintomas[]" id="sintoma-4-cb">
                             <label class="form-check-label" for="sintoma-4-cb">
                                 Dificultad Respiratoria
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Fiebre" name="sintomas" id="sintoma-5-cb">
+                            <input class="form-check-input" type="checkbox" value="Fiebre" name="sintomas[]" id="sintoma-5-cb">
                             <label class="form-check-label" for="sintoma-5-cb">
                                 Fiebre
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Escalofrios" name="sintomas" id="sintoma-6-cb">
+                            <input class="form-check-input" type="checkbox" value="Escalofrios" name="sintomas[]" id="sintoma-6-cb">
                             <label class="form-check-label" for="sintoma-6-cb">
                                 Escalofrios
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Malestar" name="sintomas" id="sintoma-7-cb">
+                            <input class="form-check-input" type="checkbox" value="Malestar" name="sintomas[]" id="sintoma-7-cb">
                             <label class="form-check-label" for="sintoma-7-cb">
                                 Malestar
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Diarrea" name="sintomas" id="sintoma-8-cb">
+                            <input class="form-check-input" type="checkbox" value="Diarrea" name="sintomas[]" id="sintoma-8-cb">
                             <label class="form-check-label" for="sintoma-8-cb">
                                 Diarrea
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Nauseas/Vomitos" name="sintomas" id="sintoma-9-cb">
+                            <input class="form-check-input" type="checkbox" value="Nauseas/Vomitos" name="sintomas[]" id="sintoma-9-cb">
                             <label class="form-check-label" for="sintoma-9-cb">
                                 Nauseas/Vomitos
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Cefalea" name="sintomas" id="sintoma-10-cb">
+                            <input class="form-check-input" type="checkbox" value="Cefalea" name="sintomas[]" id="sintoma-10-cb">
                             <label class="form-check-label" for="sintoma-10-cb">
                                 Cefalea
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Anostia" name="sintomas" id="sintoma-11-cb">
+                            <input class="form-check-input" type="checkbox" value="Anostia" name="sintomas[]" id="sintoma-11-cb">
                             <label class="form-check-label" for="sintoma-11-cb">
                                 Anostia
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Ageustia" name="sintomas" id="sintoma-12-cb">
+                            <input class="form-check-input" type="checkbox" value="Ageustia" name="sintomas[]" id="sintoma-12-cb">
                             <label class="form-check-label" for="sintoma-12-cb">
                                 Ageustia
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Dolor de oido" name="sintomas" id="sintoma-13-cb">
+                            <input class="form-check-input" type="checkbox" value="Dolor de oido" name="sintomas[]" id="sintoma-13-cb">
                             <label class="form-check-label" for="sintoma-13-cb">
                                 Dolor de oido
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Irritabilidad/confusion" name="sintomas" id="sintoma-14-cb">
+                            <input class="form-check-input" type="checkbox" value="Irritabilidad/confusion" name="sintomas[]" id="sintoma-14-cb">
                             <label class="form-check-label" for="sintoma-14-cb">
                                 Irritabilidad/confusion
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Dolor" name="sintomas" id="sintoma-15-cb">
+                            <input class="form-check-input" type="checkbox" value="Dolor" name="sintomas[]" id="sintoma-15-cb">
                             <label class="form-check-label" for="sintoma-15-cb">
                                 Dolor (Marque todos los que aplican)
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input otros_input" type="checkbox" value="otros" name="sintomas" id="sintoma-16-cb">
+                            <input class="form-check-input otros_input" type="checkbox" value="otros" name="sintomas[]" id="sintoma-16-cb">
                             <label class="form-check-label" for="sintoma-16-cb">
                                 Otros
                             </label>
@@ -413,61 +413,61 @@ body {
                     <div class="mb-2 question">Signos</div>
                     <div class="grid-3 check-grid options">
                         <div class="form-check gx-2">
-                            <input class="form-check-input" type="checkbox" value="Exudado faringeo" name="signos" id="signo-1-cb">
+                            <input class="form-check-input" type="checkbox" value="Exudado faringeo" name="signos[]" id="signo-1-cb">
                             <label class="form-check-label" for="signo-1-cb">
                             Exudado faringeo
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Inyeccion conjuntivial" name="signos" id="signo-2-cb">
+                            <input class="form-check-input" type="checkbox" value="Inyeccion conjuntivial" name="signos[]" id="signo-2-cb">
                             <label class="form-check-label" for="signo-2-cb">
                                 Inyeccion conjuntivial
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Convulsion" name="signos" id="signo-3-cb">
+                            <input class="form-check-input" type="checkbox" value="Convulsion" name="signos[]" id="signo-3-cb">
                             <label class="form-check-label" for="signo-3-cb">
                                 Convulsion
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Disnea/taquipnea" name="signos" id="signo-4-cb">
+                            <input class="form-check-input" type="checkbox" value="Disnea/taquipnea" name="signos[]" id="signo-4-cb">
                             <label class="form-check-label" for="signo-4-cb">
                                 Disnea/taquipnea
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Auscultacion pulmonar anormal" name="signos" id="signo-5-cb">
+                            <input class="form-check-input" type="checkbox" value="Auscultacion pulmonar anormal" name="signos[]" id="signo-5-cb">
                             <label class="form-check-label" for="signo-5-cb">
                                 Auscultacion pulmonar anormal
                             </label>
                         </div>
                         <div class="form-check gx-2">
-                            <input class="form-check-input" type="checkbox" value="Halazgos anormales en radiografia" name="signos" id="signo-6-cb">
+                            <input class="form-check-input" type="checkbox" value="Halazgos anormales en radiografia" name="signos[]" id="signo-6-cb">
                             <label class="form-check-label" for="signo-6-cb">
                                 Halazgos anormales en radiografia
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Halazgos anormales en ecografia" name="signos" id="signo-7-cb">
+                            <input class="form-check-input" type="checkbox" value="Halazgos anormales en ecografia" name="signos[]" id="signo-7-cb">
                             <label class="form-check-label" for="signo-7-cb">
                                 Halazgos anormales en ecografia
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Halazgos anormales en tomografia" name="signos" id="signo-8-cb">
+                            <input class="form-check-input" type="checkbox" value="Halazgos anormales en tomografia" name="signos[]" id="signo-8-cb">
                             <label class="form-check-label" for="signo-8-cb">
                                 Halazgos anormales en tomografia
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Halazgos anormales en RMN" name="signos" id="signo-9-cb">
+                            <input class="form-check-input" type="checkbox" value="Halazgos anormales en RMN" name="signos[]" id="signo-9-cb">
                             <label class="form-check-label" for="signo-9-cb">
                                 Halazgos anormales en RMN
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input otros_input" type="checkbox" value="Otros" name="signos" id="signo-10-cb">
+                            <input class="form-check-input otros_input" type="checkbox" value="Otros" name="signos[]" id="signo-10-cb">
                             <label class="form-check-label" for="signo-10-cb">
                                 Otros
                             </label>
@@ -569,8 +569,8 @@ body {
             <div class="row mb-4">
                 <div class="col-auto">
                     <div class="form-group">
-                        <label for="apellido_paterno-ipt">Fecha de cumplicion de embarazo</label>
-                        <input type="date" class="form-control" name="apellido_paterno" id="apellido_paterno-ipt" placeholder="">
+                        <label for="fc_embarazo-ipt">Fecha de cumplicion de embarazo</label>
+                        <input type="date" class="form-control" name="fc_embarazo" id="fc_embarazo-ipt" placeholder="">
                     </div>
                 </div>
             </div>
