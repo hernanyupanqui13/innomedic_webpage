@@ -36,7 +36,19 @@ class Formularios extends BaseController {
 		echo $this->model->getDistritos($province_name); 
 	}
 
+	public function getFullResultsById($id) {
+
+		echo json_encode($this->model->getFullResultsById($id));
+	}
 
 
+	public function QRcode($token) {
+		$urlRedirection = "http://intranet.innomedic.pe/";
+		$url = "https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=$urlRedirection%2F&choe=UTF-8";
+		$data = array("url"=>$url);
+
+		echo view('formularios/qrResult', $data);
+
+	}
 }
 	

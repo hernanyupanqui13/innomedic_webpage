@@ -57,11 +57,24 @@ main_form.addEventListener("submit", async (e) => {
             method: "post",
             mode: "no-cors",
             body: formData
+            })
+            .then(r => r.text())
+            .catch(error => {
+                console.log(error);
+            }
+        );
+
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Your work has been saved',
+            showConfirmButton: true,
         })
-        .then(r => r.text())
-        .catch(error => {
-            console.log(error);
-        });
+        .then( () => {
+            window.location = `${window.location.origin}/Formularios/QRcode`;
+        })
+
+
     }
 
     main_form.classList.add('was-validated')

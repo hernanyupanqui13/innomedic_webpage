@@ -20,14 +20,13 @@ class FormulariosModel extends Model
         $this->db->query("USE bd_intra;");
         $this->db->transStart();
 
-        $this->registerDireccion($data);
-        $this->registerEmpresa($data);
-        $this->registerPersona($data);
-        $this->registerDatosPersonales($data);
-        $this->registerSintomatologico($data);
-        $this->registerAntecedentesEyP($data);
-
-
+        echo $this->registerDireccion($data) . "<br>";
+        echo $this->registerEmpresa($data) . "<br>";
+        echo $this->registerPersona($data) . "<br>";
+        echo $this->registerDatosPersonales($data) . "<br>";
+        echo $this->registerSintomatologico($data) . "<br>";
+        echo $this->registerAntecedentesEyP($data) . "<br>";
+        echo $this->registerAll($data);
 
         $this->db->transComplete();
 
@@ -124,14 +123,14 @@ class FormulariosModel extends Model
     En cualquier caso devuelve el Id de la fila de la base de datos donde se aloja la empresa */
     public function registerEmpresa($data) {
         // Esto esta por implementar. Por ahora no hace nada. En un futuro deberia permitir que la funcion se use en cualquier escenario
-        if (!isset($data["ruc"])) {
-            return false;
+        if (!isset($data["empresa-ruc"])) {
+            return "false";
         }
         // Variables
         $ruc = $data["empresa-ruc"];
         $razon_social = $data["empresa-razon_social"];
 
-        $query = $this->db->query("SELECT * FROM bd_intra.ts_empresas
+        $query = $this->db->query("SELECT * FROM ts_empresas
             WHERE ruc = '$ruc';
         ");
 
@@ -141,7 +140,7 @@ class FormulariosModel extends Model
         if (count($array) == 1) {
             $id = $array[0]->Id;
             $this->db->query("SET @empresa_id = $id");
-            return $id;
+            return $id; 
         }
 
 
@@ -263,7 +262,10 @@ class FormulariosModel extends Model
         $contacto_covid19 = $data["ultimos_sintomas-9"];
         $tomando_medicina = $data["ultimos_sintomas-10"];
         $medicinas = $data["ultimas_medicinas"];
-        $factores_rzg = json_encode($data["factores-rzg"]);
+        $factores_rzg = json_encode($data["factores-rzg"], JSON_UNESCAPED_UNICODE);
+        echo $data["factores-rzg"];
+        echo json_encode($data["factores-rzg"]);
+        echo json_encode($data["factores-rzg"], JSON_UNESCAPED_UNICODE);
 
         $query_string = <<< QS
         INSERT INTO forms_sintomatologico (pregunta_1
@@ -309,9 +311,9 @@ class FormulariosModel extends Model
         $lp_infeccion_dep = $data["lp_infeccion-departamento"];
         $lp_infeccion_prov = $data["lp_infeccion-provincia"];
         $lp_infeccion_distr = $data["lp_infeccion-distrito"];
-        $sintomas = json_encode($data["sintomas"]);
-        $signos = json_encode($data["signos"]);
-        $c_comorbilidad = json_encode($data["condiciones_comorbilidad"]);
+        $sintomas = json_encode($data["sintomas"], JSON_UNESCAPED_UNICODE);
+        $signos = json_encode($data["signos"], JSON_UNESCAPED_UNICODE);
+        $c_comorbilidad = json_encode($data["condiciones_comorbilidad"], JSON_UNESCAPED_UNICODE);
         $cumplimiento_embarazo = $data["fc_embarazo"];
         $ocupacion = $data["ocupacion"];
         $lugar_trabajo_ipress = $data["trabajo-lugar-ipress"];
@@ -319,7 +321,7 @@ class FormulariosModel extends Model
         $lt_direccion_prov = $data["trabajo-lugar-provincia"];
         $lt_direccion_distr = $data["trabajo-lugar-distrito"];
         $contacto_directo = $data["ultContacto"];
-        $contacto_directo_entorno = $data["entorno-contacto"];
+        $contacto_directo_entorno = isset($data["entorno-contacto"]) ? $data["entorno-contacto"] : NULL;
 
 
 
@@ -378,7 +380,7 @@ class FormulariosModel extends Model
         return $antecedentes_qyp_id;
     }
 
-    public function registerAll() {
+    public function registerAll($data) {
         $this->db->query("INSERT INTO forms_respuestas (datos_personales_id
             , empresa_id
             , antecedentes_EyP_id
@@ -394,5 +396,56 @@ class FormulariosModel extends Model
         $id = $id->getRow();
         $id = $id->lastId;
         return $id;
+    }
+
+    public function getFullResultsById($id) {
+        $this->db->query("USE bd_intra;");
+        $query = $this->db->query("SELECT fr.Id, nombres, apellido_paterno, apellido_materno
+                , numero_documento, fecha_nacimiento
+                , d.direccion, dep.`name`, p.`name`, dis.`name`
+                , sexo, raza, talla, peso, numero_telefono
+                , es_migrante, (SELECT `name` FROM countries WHERE id = pais_origen) AS country
+                , pregunta_1, pregunta_2
+                , fiebre, perdida_gusto
+                , perdida_olfato, dificultad_respirar
+                , expectoracion, malestar_general
+                , diarrea, nauseas_vomitos
+                , contacto_covid19
+                , tomando_medicina, medicinas
+                , ruc, razon_social
+                , inicio_aislamiento, inicio_sintomas, es_asintomatico
+                , lugar_prob_infeccion, sintomas, signos, c_comorbilidad
+                , cumplimiento_embarazo, ocupacion, lugar_trabajo_ipress
+                , lugar_trabajo_direccion, contacto_directo_entorno 
+            FROM forms_respuestas fr
+                INNER JOIN forms_personas_datos fpd
+                    ON fpd.Id = fr.datos_personales_id
+                INNER JOIN direcciones d
+                    ON fpd.direccion_id = d.direccion_id
+                INNER JOIN ubigeo_peru_districts dis
+                    ON dis.id = d.distrito_id
+                INNER JOIN ubigeo_peru_provinces p 
+                        ON p.id = dis.province_id 
+                INNER JOIN ubigeo_peru_departments dep
+                    ON dep.id = dis.department_id
+                INNER JOIN personas_datos pd 
+                    ON pd.Id = fpd.persona_id
+                INNER JOIN forms_sintomatologico fs
+                    ON fs.Id = fr.sintomatologia_covid19_id
+                INNER JOIN ts_empresas te
+                    ON te.Id = fr.empresa_id
+                INNER JOIN forms_antecedentes_eyp fae 
+                    ON fae.Id = fr.antecedentes_EyP_id
+            WHERE fr.Id = $id"
+        );
+
+        $one_item = $query->getRow();
+
+        $one_item->pregunta_1 = json_decode($one_item->pregunta_1);
+        $one_item->sintomas = json_decode($one_item->sintomas);
+        $one_item->signos = json_decode($one_item->signos);
+        $one_item->c_comorbilidad = json_decode($one_item->c_comorbilidad);
+        
+        return $one_item;
     }
 }
