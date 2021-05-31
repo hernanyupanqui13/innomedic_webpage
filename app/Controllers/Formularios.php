@@ -17,7 +17,10 @@ class Formularios extends BaseController {
 
 	public function registerAnswers() {
 		$data = $this->request->getPost();
-		$this->model->registerAnswers($data);
+    $data["token"] = md5(date("d/m/Y-h:m:s") . random_bytes(32));
+    echo $this->model->registerAnswers($data);
+
+    echo 2;
 	}
 
 	public function getAllCountries() {
@@ -43,12 +46,16 @@ class Formularios extends BaseController {
 
 
 	public function QRcode($token) {
-		$urlRedirection = "http://intranet.innomedic.pe/";
+		$urlRedirection = "http://intranet.innomedic.pe/Admision/Admision/test/$token";
 		$url = "https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=$urlRedirection%2F&choe=UTF-8";
 		$data = array("url"=>$url);
 
 		echo view('formularios/qrResult', $data);
 
 	}
+
+  public function test() {
+    echo md5(date("d/m/Y-h:m:s") . random_bytes(32));
+  }
 }
 	

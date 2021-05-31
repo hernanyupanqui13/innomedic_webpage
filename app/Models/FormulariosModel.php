@@ -5,6 +5,7 @@ use CodeIgniter\Model;
 use CodeIgniter\Throttle\ThrottlerInterface;
 use org\bovigo\vfs\QuotaTestCase;
 use phpDocumentor\Reflection\Types\This;
+use PHPUnit\Util\Json;
 
 class FormulariosModel extends Model
 {
@@ -26,9 +27,11 @@ class FormulariosModel extends Model
         echo $this->registerDatosPersonales($data) . "<br>";
         echo $this->registerSintomatologico($data) . "<br>";
         echo $this->registerAntecedentesEyP($data) . "<br>";
-        echo $this->registerAll($data);
+        echo $this->registerAll($data) . "<br>";
 
         $this->db->transComplete();
+
+        
 
     }
 
@@ -263,9 +266,6 @@ class FormulariosModel extends Model
         $tomando_medicina = $data["ultimos_sintomas-10"];
         $medicinas = $data["ultimas_medicinas"];
         $factores_rzg = json_encode($data["factores-rzg"], JSON_UNESCAPED_UNICODE);
-        echo $data["factores-rzg"];
-        echo json_encode($data["factores-rzg"]);
-        echo json_encode($data["factores-rzg"], JSON_UNESCAPED_UNICODE);
 
         $query_string = <<< QS
         INSERT INTO forms_sintomatologico (pregunta_1
@@ -381,15 +381,18 @@ class FormulariosModel extends Model
     }
 
     public function registerAll($data) {
+      $token = $data["token"];
         $this->db->query("INSERT INTO forms_respuestas (datos_personales_id
             , empresa_id
             , antecedentes_EyP_id
             , sintomatologia_covid19_id
+            , ident_token
         )
         VALUES ( @personal_data_id
             , @empresa_id 
             , @antecedentes_eyp_id 
             , @sintomatologico_id
+            , '$token'
         );");
 
         $id = $this->db->query("SELECT LAST_INSERT_ID() AS lastId;");
