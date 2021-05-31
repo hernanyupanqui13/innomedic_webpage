@@ -143,7 +143,7 @@ foreach ($list_employe as $xx) {
 				<div class="col-auto ml-auto d-flex align-items-center">
 						<span class="header-social">
 							<a target="_blank" href="https://es-la.facebook.com/InnomedicInternational/" class="hovicon"><i class="icon-facebook-logo-circle"></i></a>
-							<a target="_blank" href="https://twitter.com/Innomedic_Peru" class="hovicon"><i class="icon-twitter-logo-circle"></i></a>
+							<!--<a target="_blank" href="https://twitter.com/Innomedic_Peru" class="hovicon"><i class="icon-twitter-logo-circle"></i></a>-->
 							<a target="_blank" href="https://www.instagram.com/innomedic_internacional/" class="hovicon"><i class="icon-instagram-circle"></i></a>
 							<a target="_blank" href="https://www.linkedin.com/in/innomedic-international-300125ba/" class="hovicon"><i  class="icon-linkedin"></i></a>
 							<a href="javascript:void()"  onclick="return alerta_users();" class="hovicon" data-toggle="tooltip" data-placement="bottom" title="Ingresar al Sistema"><i  class="icon-user"></i></a>

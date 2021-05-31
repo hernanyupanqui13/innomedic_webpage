@@ -62,9 +62,9 @@
 							<?php } ?>
 
 							<?php if ($twiterx=="" and $twiterx==null) {?>
-								<a href="javascript:void(0)" class="hovicon"><i class="icon-twitter-logo-circle"></i></a>
+								<!--<a href="javascript:void(0)" class="hovicon"><i class="icon-twitter-logo-circle"></i></a>-->
 							<?php }else{?>
-								<a target="_blank" href="<?php echo $twiterx;?>" class="hovicon"><i class="icon-twitter-logo-circle"></i></a>
+								<!--<a target="_blank" href="<?php echo $twiterx;?>" class="hovicon"><i class="icon-twitter-logo-circle"></i></a>-->
 							<?php } ?>
 
 							<?php if ($linkedinx=="" and $linkedinx==null) {?>
@@ -101,9 +101,9 @@
 							<?php } ?>
 
 							<?php if ($twiterx=="" and $twiterx==null) {?>
-								<a href="javascript:void(0)" class="hovicon"><i class="icon-twitter-logo-circle"></i></a>
+								<!--<a href="javascript:void(0)" class="hovicon"><i class="icon-twitter-logo-circle"></i></a>-->
 							<?php }else{?>
-								<a target="_blank" href="<?php echo $twiterx;?>" class="hovicon"><i class="icon-twitter-logo-circle"></i></a>
+								<!--<a target="_blank" href="<?php echo $twiterx;?>" class="hovicon"><i class="icon-twitter-logo-circle"></i></a>-->
 							<?php } ?>
 
 							<?php if ($linkedinx=="" and $linkedinx==null) {?>
