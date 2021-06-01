@@ -27,30 +27,30 @@ foreach ($list_employe as $datas) {
 	<!-- Seccion Slider -->
 	<section class="section mt-0">
 		<!-- Links Rapidos -->
-		<div class="quickLinks-wrap js-quickLinks-wrap-d d-none d-lg-flex">
+		<!--<div class="quickLinks-wrap js-quickLinks-wrap-d d-none d-lg-flex">
 			<div class="quickLinks js-quickLinks closed">
 				<div class="container">
-					<div class="row no-gutters">
+					<div class="row no-gutters">-->
 						<!-- Ubicacion -->
-						<div class="col">
+						<!--<div class="col">
 							<a href="#" class="link">
 								<i class="icon-placeholder"></i><span>Ubicación</span></a>
 							<div class="link-drop p-0">
 								<div id="googleMapDrop" class="google-map"></div>
 							</div>
-						</div>
+						</div>-->
 						<!-- Tiempo de Trabajo -->
-						<div class="col">
+						<!--<div class="col">
 							<a href="#" class="link">
 								<i class="icon-clock"></i><span>Tiempo de Trabajo</span>
 							</a>
 							<div class="link-drop">
 								<h5 class="link-drop-title"><i class="icon-clock"></i>Tiempo de trabajo</h5>
 								
-								<table class="row-table">
+								<table class="row-table">-->
 
 	 								<!-- to review-->
-									<?php foreach ($time_table as $item) {?>
+									<!--<?php foreach ($time_table as $item) {?>
 
 									<tr>
 										<td><?php echo $item->dia;?></td>
@@ -60,9 +60,9 @@ foreach ($list_employe as $datas) {
 									<?php } ?>
 								</table>
 							</div>
-						</div>
+						</div>-->
 						<!-- Contacto -->
-						<div class="col">
+						<!--<div class="col">
 							<a href="#" class="link">
 								<i class="icon-pencil-writing"></i><span>Contacto</span>
 							</a>
@@ -71,9 +71,9 @@ foreach ($list_employe as $datas) {
 								<p>Nuestro compromiso es ofrecer el mejor servicio al cliente, garantizando: trato amable, ambientes agradables, altísimos tiempos de respuesta, atención personalizada, equipamiento de última generación, historia clínica digital, plataforma online del cliente y diversos recursos tecnológicos que harán de sus servicios con nosotros una experiencia satisfactoria.</p>
 								<p class="text-right mt-2"><a  href="#" data-toggle="modal" data-target="#modalBookingForm" class="btn btn-sm btn-hover-fill link-inside">Ponte en contacto</a></p>
 							</div>
-						</div>
+						</div>-->
 						<!-- Comunicate con nosotros -->
-						<div class="col">
+						<!--<div class="col">
 							<a href="#" class="link">
 								<i class="icon-emergency-call"></i><span>Comunicate con nosotros</span></a>
 							<div class="link-drop">
@@ -105,7 +105,7 @@ foreach ($list_employe as $datas) {
 				</div>
 				<div class="quickLinks-open js-quickLinks-open"><span data-toggle="tooltip" data-placement="left" title="Open panel">+</span></div>
 			</div>
-		</div>
+		</div>-->
 
 		<!-- Slides -->
 		<div id="mainSliderWrapper">
@@ -114,7 +114,7 @@ foreach ($list_employe as $datas) {
 			</div>
 			<div class="main-slider mb-0 arrows-white arrows-bottom" id="mainSlider" data-slick='{"arrows": false, "dots": true}'>
 
-				<?php foreach ($news_slider as $slide_item) {?>
+				<!--<?php foreach ($news_slider as $slide_item) {?>
 
 				<div class="slide">
 					<div class="img--holder" data-bg="<?= esc(base_url('public/assets/images/content/slider/'.$slide_item->img));?>"></div>
@@ -122,7 +122,7 @@ foreach ($list_employe as $datas) {
 						<div class="vert-wrap container">
 							<div class="vert">
 								<div class="container">
-									<div class="slide-txt1 text-right" data-animation="fadeInDown" data-animation-delay="1s"><!--Quality Healthcare.<br>-->
+									<div class="slide-txt1 text-right" data-animation="fadeInDown" data-animation-delay="1s">
 										<b><?= $slide_item->title;?></b></div>
 									<div style="margin-left: 270px;" class="slide-txt2 text-right" data-animation="fadeInUp" data-animation-delay="1.5s"><?= esc($slide_item->description) ?></div>
 									<div class="slide-btn text-right"><a href="<?php echo $slide_item->url; ?>" class="btn link-inside" data-animation="fadeInUp" data-animation-delay="2s"><i class="icon-right-arrow"></i><span><?= esc($slide_item->btn);?></span><i class="icon-right-arrow"></i></a></div>
@@ -132,7 +132,74 @@ foreach ($list_employe as $datas) {
 					</div>
 				</div>
 
-				<?php } ?>
+				<?php } ?>-->
+
+        <div class="slide">
+					<div class="img--holder" data-bg="<?= esc(base_url('public/assets/images/content/slider/slider-anticuerpos.png'));?>"></div>
+					<div class="slide-content center">
+						<div class="vert-wrap container">
+							<div class="vert">
+								<div class="container">
+									<div class="slide-txt1 text-right" data-animation="fadeInDown" data-animation-delay="1s">
+										<b> </b>
+                  </div>
+									<div style="margin-left: 270px;" class="slide-txt2 text-right" data-animation="fadeInUp" data-animation-delay="1.5s"></div>
+									<!--<div class="slide-btn text-right" id="btn-anticuerpos">
+                    <a href="javascript:void(0)" class="btn link-inside" data-animation="fadeInUp" data-animation-delay="2s">
+                      <i class="icon-right-arrow"></i>
+                      <span>Conoce más</span>
+                      <i class="icon-right-arrow"></i>
+                    </a>
+                  </div>-->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+        <div class="slide">
+					<div class="img--holder" data-bg="<?= esc(base_url('public/assets/images/content/slider/slider-9.png'));?>"></div>
+					<div class="slide-content center">
+						<div class="vert-wrap container">
+							<div class="vert">
+								<div class="container">
+									<div class="slide-txt1 text-right" data-animation="fadeInDown" data-animation-delay="1s">
+										<b> </b>
+                  </div>
+									<div style="margin-left: 270px;" class="slide-txt2 text-right" data-animation="fadeInUp" data-animation-delay="1.5s"></div>
+									<!--<div class="slide-btn text-right" id="btn-molecular">
+                    <a href="#paquetes_preventivos_view" class="btn link-inside" data-animation="fadeInUp" data-animation-delay="2s">
+                      <i class="icon-right-arrow"></i>
+                      <span>Reserva tu cita</span>
+                      <i class="icon-right-arrow"></i>
+                    </a>
+                  </div>-->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+        <div class="slide">
+					<div class="img--holder" data-bg="<?= esc(base_url('public/assets/images/content/slider/slider-8.png'));?>"></div>
+					<div class="slide-content center">
+						<div class="vert-wrap container">
+							<div class="vert">
+								<div class="container">
+									<div class="slide-txt1 text-right" data-animation="fadeInDown" data-animation-delay="1s">
+										<b> </b>
+                  </div>
+									<div style="margin-left: 270px;" class="slide-txt2 text-right" data-animation="fadeInUp" data-animation-delay="1.5s"></div>
+									<!--<div class="slide-btn text-right" id="btn-pruebas">
+                    <a href="#month" class="btn link-inside" data-animation="fadeInUp" data-animation-delay="2s">
+                      <i class="icon-right-arrow"></i>
+                      <span>Saber más</span>
+                      <i class="icon-right-arrow"></i>
+                    </a>
+                  </div>-->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
