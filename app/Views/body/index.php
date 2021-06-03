@@ -179,6 +179,28 @@ foreach ($list_employe as $datas) {
 					</div></a>
 				</div>
         <div class="slide"><a href="#paquetes_preventivos_view">
+					<div class="img--holder" data-bg="<?= esc(base_url('public/assets/images/content/slider/slider-antigenos.png'));?>"></div>
+					<div class="slide-content center">
+						<div class="vert-wrap container">
+							<div class="vert">
+								<div class="container">
+									<div class="slide-txt1 text-right" data-animation="fadeInDown" data-animation-delay="1s">
+										<b> </b>
+                  </div>
+									<div style="margin-left: 270px;" class="slide-txt2 text-right" data-animation="fadeInUp" data-animation-delay="1.5s"></div>
+									<!--<div class="slide-btn text-right" id="btn-pruebas">
+                    <a href="#month" class="btn link-inside" data-animation="fadeInUp" data-animation-delay="2s">
+                      <i class="icon-right-arrow"></i>
+                      <span>Saber más</span>
+                      <i class="icon-right-arrow"></i>
+                    </a>
+                  </div>-->
+								</div>
+							</div>
+						</div>
+					</div></a>
+				</div>
+        <div class="slide"><a href="#paquetes_preventivos_view">
 					<div class="img--holder" data-bg="<?= esc(base_url('public/assets/images/content/slider/slider-8.png'));?>"></div>
 					<div class="slide-content center">
 						<div class="vert-wrap container">
