@@ -11,12 +11,13 @@
     <meta name="description" content="En la clínica innomedic international nos dedicamos a ofrecer servicios en la gestión de salud ocupacional.">
     <link rel="canonical" href="https://www.innomedic.pe/">
     <link rel="alternate" hreflang="es" href="https://www.innomedic.pe/">
+		<link rel="shortcut icon" href="<?php echo base_url().'/public/';?>assets/images/favicon.ico?v=<?php echo rand();?>">
     <meta name="keywords" content="innomedic international, innomedic, clínica innomedic, salud ocupacional lima, medicina ocupacional, examenes medicos ocupacionales lima, salud ocupacional digesa, ocupacional la victoria">
     <meta name="robots" content="index, follow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="Spanish">
     <meta name="revisit-after" content="1 days">
-    <meta name="author" content="Evaristo Escudero Huillcamascco">
+    <meta name="author" content="Area de Sistemas Innomedic">
     <meta http-equiv="pragma" content="cache" />
     <meta http-equiv="content-type" content="text/html;UTF-8">
     <meta name="url" content="https://www.innomedic.pe/">
@@ -55,7 +56,7 @@
 	<link href="<?php echo base_url().'/public/';?>assets/color/color.css" rel="stylesheet">
 
 	<!--Favicon-->
-	<link rel="icon" href="<?php echo base_url().'/public/';?>assets/images/favicon.png?v=<?php echo rand();?>" type="image/x-icon">
+	<link rel="icon" href="<?php echo base_url().'/public/';?>assets/images/favicon.ico?v=<?php echo rand();?>" type="image/x-icon">
 	<script src="https://kit.fontawesome.com/dc5ae8b9ac.js" crossorigin="anonymous"></script>
 	<!-- Google Fonts -->
 
