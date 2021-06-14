@@ -6227,10 +6227,10 @@ h1, h2, h3, h4, h5, h6 {
 
 h1,
 .h1 {
-  font-family: "Poppins", serif;
+  font-family: "Open Sans Innomedic", serif;
   line-height: 1em;
   margin-bottom: 10px;
-  font-weight: 600; }
+  font-weight: 500; }
   @media (max-width: 1023px) {
     h1,
     .h1 {
