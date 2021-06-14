@@ -1432,7 +1432,7 @@
       },
       mode: "no-cors"
     })
-		.done(function(data) {
+		.then(data => {
 
 			$(".solicitar-info-modal").modal("show");
 			
@@ -1445,11 +1445,7 @@
 			$("#paquete_texto").val(data.title) 		// Este elemento esta oculto en el HTML
 		})
 
-		.fail(function() {
-			console.log("error");
-		})
-
-		.always(function() {
+		.catch( () => {
 			console.log("complete");
 		});
 
