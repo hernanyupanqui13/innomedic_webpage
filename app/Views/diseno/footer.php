@@ -1435,6 +1435,7 @@
       },
       mode: "no-cors"
     })
+    .then( data => data.json())
 		.then(data => {
 
 			$(".solicitar-info-modal").modal("show");
