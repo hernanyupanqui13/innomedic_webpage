@@ -52,7 +52,7 @@
 	<link href="<?php echo base_url().'/public/';?>assets/vendor/animate/animate.min.css" rel="stylesheet">
 	<link href="<?php echo base_url().'/public/';?>assets/icons/style.css?v=<?php echo rand();?>" rel="stylesheet">
 	<link href="<?php echo base_url().'/public/';?>assets/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.css" rel="stylesheet">
-	<link href="<?php echo base_url().'/public/';?>assets/css/style-color-5.css" rel="stylesheet">
+	<link href="<?php echo base_url().'/public/';?>assets/css/style-color-5.css?v=<?php echo rand(); ?>" rel="stylesheet">
     <link href="<?php echo base_url().'/public/';?>assets/css/style_.css?v=<?php echo rand(); ?>" rel="stylesheet">
 	<link href="<?php echo base_url().'/public/';?>assets/color/color.css" rel="stylesheet">
 	<!--Favicon-->
