@@ -1,5 +1,5 @@
 $(function () {
-	$('head').append(`<link rel="stylesheet" href="public/assets/css/style-color-5.css?v=${Math.floor(Math.random() * 1000000)}"` rel="stylesheet">');
+	$('head').append(`<link rel="stylesheet" href="public/assets/css/style-color-5.css?v=${Math.floor(Math.random() * 1000000)}" rel="stylesheet">`);
 	$('.js-settings-panel-btn').on('click',function (e){
 		var $this = $(this).parent('.js-settings-panel-item');
 		$('.js-settings-panel-item').not($this).removeClass('opened');
