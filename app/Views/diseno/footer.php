@@ -1417,6 +1417,9 @@
 			type: 'POST',
 			dataType: 'json',
 			data: {id_paquete: id},
+      headers:{
+        'Access-Control-Allow-Origin': '*'
+      }
 		})
 
 		.done(function(data) {
