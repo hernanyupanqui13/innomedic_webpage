@@ -1422,9 +1422,12 @@
       }
 		});*/
 
+    const the_data = new FormData();
+    the_data.append("id_paquete", id);
+
     fetch("Inicio/recoger_informacion", {
       method: "post",
-      body: id,
+      body: the_data,
       headers: {
         'Access-Control-Allow-Origin': '*',
         "Access-Control-Allow-Headers": "Content-Type",
