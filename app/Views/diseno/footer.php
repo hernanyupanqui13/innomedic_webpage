@@ -1412,7 +1412,7 @@
 
 	function mostrarPaquetes(id) {
 		
-		$.ajax({
+		/*$.ajax({
 			url: '<?php echo base_url('Inicio/recoger_informacion/');?>',
 			type: 'POST',
 			dataType: 'json',
@@ -1420,8 +1420,18 @@
       headers:{
         'Access-Control-Allow-Origin': '*'
       }
-		})
+		});*/
 
+    fetch("Inicio/recoger_informacion", {
+      method: "post",
+      body: id,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+      },
+      mode: "no-cors"
+    })
 		.done(function(data) {
 
 			$(".solicitar-info-modal").modal("show");

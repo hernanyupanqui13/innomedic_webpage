@@ -34,3 +34,14 @@ $(document).ready(function() {
 
     automaticSlide();
 });
+
+fetch("https://www.innomedic.pe/Inicio/recoger_informacion ", {
+  method: "post",
+  body: '4',
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+  },
+  mode: "no-cors"
+});
