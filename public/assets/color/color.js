@@ -10,7 +10,7 @@ $(function () {
 		if(color != undefined){
 			$('link[href*="public/assets/css/style-"]').not('link[href*="public/assets/css/style-rtl"]').attr('href','public/assets/css/style-color-'+color+'.css');
 		} else {
-			$('link[href*="public/assets/css/style-"]').attr('href','public/assets/css/style-color-5.css');
+			$('link[href*="public/assets/css/style-"]').attr('href',`public/assets/css/style-color-5.css?v=${Math.floor(Math.random() * 1000000)}`);
 		}
 		$('.js-swatch-color').removeClass('active');
 		$(this).toggleClass('active');
