@@ -83,6 +83,7 @@
 
 .pricing-one__list li{
   text-align: left;
+  font-weight: 300;
 }
 .thm-btn.pricing-one__btn {
     padding: 0 60px;

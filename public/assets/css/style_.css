@@ -4,7 +4,7 @@
   margin-bottom: 28px;
   font-size: 50px;
   line-height: 1em;
-  font-weight: bold;
+  font-weight: 400;
   color: #26a7eb; }
   @media (max-width: 1023px) {
     .service-info-num {

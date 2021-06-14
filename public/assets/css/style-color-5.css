@@ -6137,7 +6137,7 @@ html, body {
 
 body {
   color: #787878;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   line-height: 27px;
@@ -6156,7 +6156,7 @@ body {
 
 b,
 strong {
-  font-weight: bold; }
+  font-weight: 400; }
 
 button,
 .btn {
@@ -17490,4 +17490,16 @@ span, h1, h2, h3, h4, h5, h6, div, strong, p, label, form, body {
 
 .body-text {
   font-weight: 300;
+}
+
+.headings {
+  font-weight: 500;
+}
+
+.body-text ul li {
+  font-weight: 300;
+}
+
+strong {
+  font-weight: 400;
 }

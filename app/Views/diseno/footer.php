@@ -4,7 +4,7 @@
 	<br><br>
 	<div class="container-fluid px-0">	
 		<div class="title-wrap text-center">
-			<h2 class="h1" ><span class="theme-color">Ubícanos</span></h2>
+			<h2 class="h1 headings" ><span class="theme-color">Ubícanos</span></h2>
 			<div class="h-decor"></div>
 		</div>
 		<div class="banner-center bg-cover">
@@ -142,7 +142,7 @@
 								
 			</div>
 			<div class="col-sm-6 col-lg-4">
-				<h3>Contacto</h3>
+				<h3 class="headings">Contacto</h3>
 				<div class="h-decor"></div>
 				<ul class="icn-list">
 					<li><i class="icon-placeholder2"></i><?php echo $address_onex;?>
@@ -212,15 +212,15 @@
 			</button>
 			<div class="modal-body">
 				<div class="modal-form">
-					<h3 class="text-center">Hacer una pregunta</h3>
-					<p class="text-center">Ponte en contacto con nuestro asesor<a target="_blank" href="https://wa.me/51966392469" class=""> CLIK AQUI!</a></p>
+					<h3 class="text-center headings">Hacer una pregunta</h3>
+					<p class="text-center body-text">Ponte en contacto con nuestro asesor<a target="_blank" href="https://wa.me/51966392469" class=""> CLIK AQUI!</a></p>
 
 					<!-- Inicio del formulario -->
 					<form class="mt-15" id="questionForm" method="post" novalidate>
-						<div class="successform">
+						<div class="successform body-text">
 							<p>¡Su mensaje fue enviado exitosamente!</p>
 						</div>
-						<div class="errorform">
+						<div class="errorform body-text">
 							<p>Algo salió mal, intente actualizar y enviar el formulario nuevamente.</p>
 						</div>
 						<!-- Nombres -->
@@ -231,21 +231,21 @@
 							<input type="text" name="name" class="form-control" autocomplete="off" placeholder="Nombres*"/>
 						</div>
 						<!-- Email -->
-						<div class="input-group">
+						<div class="input-group body-text">
 								<span>
 									<i class="icon-email2"></i>
 								</span>
 							<input type="text" name="email" class="form-control" autocomplete="off" placeholder="E-mail*"/>
 						</div>
 						<!-- Celular -->
-						<div class="input-group">
+						<div class="input-group body-text">
 								<span>
 									<i class="icon-smartphone"></i>
 								</span>
 							<input type="text" name="phone" class="form-control" autocomplete="off" placeholder="Celular"/>
 						</div>
 						<!-- Pregunta -->
-						<textarea name="message" class="form-control" placeholder="Tu comentario*"></textarea>
+						<textarea name="message" class="form-control body-text" placeholder="Tu comentario*"></textarea>
 						
 						<!-- Boton Preguntar -->
 						<div class="text-right mt-2">
@@ -267,22 +267,22 @@
 			</button>
 			<div class="modal-body">
 				<div class="modal-form">
-					<h1 class="theme-color" style="text-align: center;">Solicita una cotización</h1>
+					<h1 class="theme-color headings" style="text-align: center;">Solicita una cotización</h1>
 					<div class="text-center">
 						<img src="<?php echo base_url().'/public/assets/';?>images/<?php echo $logox;?>?v=<?php echo rand();?>" alt=""><br><br>
-						<span>Nuestro equipo se contactará inmediatamente contigo. Cuidamos de ti, de tu equipo y empresa</span>
+						<span class="body-text">Nuestro equipo se contactará inmediatamente contigo. Cuidamos de ti, de tu equipo y empresa</span>
 					</div>
 					<br>
 					<!-- Inicio del formulario --> 
 					<form class="mt-15" id="bookingForm" method="post" novalidate="">
 						<div class="successform">
-							<p>¡Su mensaje fue enviado exitosamente!</p>
+							<p class="body-text">¡Su mensaje fue enviado exitosamente!</p>
 						</div>
 						<div class="errorform">
-							<p>Algo salió mal, intente actualizar y enviar el formulario nuevamente.</p>
+							<p class="body-text">Algo salió mal, intente actualizar y enviar el formulario nuevamente.</p>
 						</div>
 						<!-- Nombres y Apellidos -->
-						<div class="input-group">
+						<div class="input-group body-text">
 							<span>
 								<i class="icon-user"></i>
 							</span>
@@ -293,26 +293,26 @@
 						<div class="row row-xs-space mt-1">
 							<div class="col-sm-8">
 								<div class="input-group">
-										<span>
-											<i class="icon-email2"></i>
-										</span>
+                  <span>
+                    <i class="icon-email2"></i>
+                  </span>
 									<input type="text" class="form-control" name="nruc" id="nrucx" placeholder="Ingrese Ruc y presione la tecla 'enter' " maxlength="11" pattern="([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]|[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])" onkeydown="return soloNumeros(event)">
 								</div>
 							</div>
 							<div class="col-sm-4 mt-1 mt-sm-0">
 								<button type="button"  class="btn btn-outline-success btn-rounded btn-sm" name="btn-submit" id="btn-submitx">
-		                     	 <span id="id_hidde"><i  class="fa fa-search"></i> Buscar</span>
-		                     	 <div id="agregar_clase" class=""></span>
-		                       </button>
+                  <span id="id_hidde"><i  class="fa fa-search"></i> Buscar</span>
+                  <div id="agregar_clase" class=""></span>
+                </button>
 							</div>
 						</div>
 						
 						<!-- Empresa - Solo visuzlizacion -->
-						<div class="input-group">
+						<div class="input-group body-text">
 							<span>
 								<i class="icon-user"></i>
 							</span>
-							<input type="text" name="identification_number" id="rucxx" class="form-control" autocomplete="off"  placeholder="Empresa " />
+							<input type="text" name="identification_number" id="rucxx" class="form-control body-text" autocomplete="off"  placeholder="Empresa " />
 						</div>
 						
 						<!-- RUC - Solo visualizacion -->
@@ -320,7 +320,7 @@
 							<span>
 								<i class="icon-user"></i>
 							</span>
-							<input type="text" name="usuario" id="usuariox" class="form-control" autocomplete="off" placeholder="Ruc " />
+							<input type="text" name="usuario" id="usuariox" class="form-control body-text" autocomplete="off" placeholder="Ruc " />
 						</div>
 						
 						<!-- Email -->
@@ -330,7 +330,7 @@
 									<span>
 										<i class="icon-email2"></i>
 									</span>
-									<input type="text" name="email" class="form-control" autocomplete="off" placeholder="Ingrese su e-mail" />
+									<input type="text" name="email" class="form-control body-text" autocomplete="off" placeholder="Ingrese su e-mail" />
 								</div>
 							</div>
 						</div>
@@ -375,10 +375,10 @@
 				<div class="modal-form">
 
 					<!-- Encabezado --> 
-					<h1 class="theme-color" style="text-align: center;"><span id="paquete"></span> A SOLICITAR</h1>
+					<h1 class="theme-color headings" style="text-align: center;"><span id="paquete"></span> A SOLICITAR</h1>
 					<div class="text-center">
 						<img src="<?php echo base_url().'/public/assets/';?>images/<?php echo $logox;?>?v=<?php echo rand();?>" alt=""><br><br>
-						<span>Nuestro equipo se contactará inmediatamente contigo. Cuidamos de ti</span>
+						<span class="body-text">Nuestro equipo se contactará inmediatamente contigo. Cuidamos de ti</span>
 					</div>
 
 					<br>
@@ -396,7 +396,7 @@
 										<span>
 											<i class="icon-email2"></i>
 										</span>
-									<input type="text" class="form-control" id="dni" name="dni" placeholder="Ingrese DNI presione enter" maxlength="8" pattern="([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]|[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])" onkeydown="return soloNumeros(event)">
+									<input type="text" class="form-control body-text" id="dni" name="dni" placeholder="Ingrese DNI presione enter" maxlength="8" pattern="([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]|[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])" onkeydown="return soloNumeros(event)">
 								</div>
 							</div>
 							<div class="col-sm-4 mt-1 mt-sm-0">
@@ -413,7 +413,7 @@
 							<span>
 								<i class="icon-user"></i>
 							</span>
-							<input type="text" name="name" id="nombres_completos" class="form-control" autocomplete="off"  placeholder="Nombres Completos " readonly="" />
+							<input type="text" name="name" id="nombres_completos" class="form-control body-text" autocomplete="off"  placeholder="Nombres Completos " readonly="" />
 						</div>
 
 						<!-- DNI - vista solo -->
@@ -421,7 +421,7 @@
 							<span>
 								<i class="icon-user"></i>
 							</span>
-							<input type="text" name="identification_number" id="dni_mostrar_dni" class="form-control" autocomplete="off"  placeholder="Dni " readonly="" />
+							<input type="text" name="identification_number" id="dni_mostrar_dni" class="form-control body-text" autocomplete="off"  placeholder="Dni " readonly="" />
 						</div>
 
 						<!-- Email -->
@@ -431,7 +431,7 @@
 									<span>
 										<i class="icon-email2"></i>
 									</span>
-									<input type="text" name="email" class="form-control" autocomplete="off" placeholder="Ingrese su e-mail"  required="" />
+									<input type="text" name="email" class="form-control body-text" autocomplete="off" placeholder="Ingrese su e-mail"  required="" />
 								</div>
 							</div>
 						</div>
@@ -444,18 +444,18 @@
 									<span>
 										<i class="icon-smartphone"></i>
 									</span>
-									<input type="number" name="phone" class="form-control" autocomplete="off" placeholder="Ingrese su teléfono"  required="" />
+									<input type="number" name="phone" class="form-control body-text" autocomplete="off" placeholder="Ingrese su teléfono"  required="" />
 								</div>
 							</div>
 						</div>
 
 						<!-- Paquete | No visible  -->
-						<input type="hidden" value="" name="paquete" id="paquete_texto">
+						<input type="hidden" value="" class="body-text" name="paquete" id="paquete_texto">
 						<!-- Mensaje -->
-						<textarea name="message" class="form-control" placeholder="Mensaje" rows="6"></textarea>
+						<textarea name="message" class="form-control body-text" placeholder="Mensaje" rows="6"></textarea>
 						<!-- Boton enviar -->
 						<div class="text-center mt-2">
-							<button type="submit" class="btn btn-sm btn-hover-fill " id="lista"><i class="fas fa-paper-plane cambiar_texto" > </i>&nbsp;Reserva tu cita</button>
+							<button type="submit" class="btn btn-sm btn-hover-fill body-text" id="lista"><i class="fas fa-paper-plane cambiar_texto" > </i>&nbsp;Reserva tu cita</button>
 						</div>
 					</form>
 				</div>

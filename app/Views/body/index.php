@@ -259,14 +259,14 @@ foreach ($list_employe as $datas) {
 									</div>-->
 									<div class="price">
 										<h2 class="h2"><?php echo $xx->price; ?></h2>
-										<h4 class="font-weight-bold theme-color-1"><?php echo $xx->title;?></h4>
+										<h4 class="theme-color-1 headings"><?php echo $xx->title;?></h4>
 									</div>
 									<hr>
 									<ul class="list-unstyled pricing-one__list body-text">
 										<?php echo $xx->text; ?>
 									</ul>
 									<!-- Boton de paquetes -->
-									<a href="<?php echo $xx->url; ?>" onclick="mostrarPaquetes('<?php echo $xx->Id; ?>')" class="thm-btn pricing-one__btn"><span><?php echo $xx->btn; ?></span></a>
+									<a href="<?php echo $xx->url; ?>" onclick="mostrarPaquetes('<?php echo $xx->Id; ?>')" class="thm-btn pricing-one__btn"><span class="body-text"><?php echo $xx->btn; ?></span></a>
 								</div>
 								</div>
 							<?php }
@@ -294,7 +294,7 @@ foreach ($list_employe as $datas) {
 					</div>
 					<div class="col-sm-6 col-lg-6 order-1 order-sm-2 d-flex">
 						<div class="pt-2 pt-lg-6">
-							<h2 data-title="¡Informes aquí!"><span>¡INFORMES <br class="d-lg-none">  <span class="theme-color">AQUÍ!</span></span></h2>
+							<h2 data-title="¡Informes aquí!" class="headings"><span>¡INFORMES <br class="d-lg-none">  <span class="theme-color">AQUÍ!</span></span></h2>
 							<p class="body-text">Nuestro equipo se contactará inmediatamente contigo. Cuidamos de ti, de tu equipo y empresa</p>
 							
 							<!-- Inicio del formulario -->
@@ -307,22 +307,22 @@ foreach ($list_employe as $datas) {
 								</div>
 								<!-- Nombre -->
 								<div>
-									<input type="text" class="form-control" name="name" placeholder="Nombre">
+									<input type="text" class="form-control body-text" name="name" placeholder="Nombre">
 								</div>
 								<div class="row row-sm-space mt-15">
 									<!-- Celular -->
-									<div class="col-sm-6"><input type="text" class="form-control" name="phone" placeholder="Celular"></div>
+									<div class="col-sm-6"><input type="text" class="form-control body-text" name="phone" placeholder="Celular"></div>
 									<!--Email-->
-									<div class="col-sm-6 mt-15 mt-sm-0"><input type="text" class="form-control" name="email" placeholder="Email"></div>
+									<div class="col-sm-6 mt-15 mt-sm-0"><input type="text" class="form-control body-text" name="email" placeholder="Email"></div>
 								</div>
 
 								<!-- Buscador de RUC -->
 								<div class="row row-sm-space mt-15"> 
 									<div class="col-sm-8">
-										<input type="text" class="form-control" name="nruc" id="nruc" placeholder="Ingrese Ruc y de click en 'Buscar'" maxlength="11" pattern="([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]|[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])" onkeydown="return soloNumeros(event)">
+										<input type="text" class="form-control body-text" name="nruc" id="nruc" placeholder="Ingrese Ruc y de click en 'Buscar'" maxlength="11" pattern="([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]|[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])" onkeydown="return soloNumeros(event)">
 									</div>
 									<div class="col-sm-4">
-                    <button type="submit" class="btn btn-outline-success btn-rounded btn-sm" name="btn-submit" id="btn-submit">
+                    <button type="submit" class="btn btn-outline-success btn-rounded btn-sm body-text" name="btn-submit" id="btn-submit">
                       <span id="id_hidde_x"><i  class="fa fa-search"></i> Buscar</span>
                       <div id="agregar_clase_x" class=""></span>
                     </button>
@@ -330,15 +330,15 @@ foreach ($list_employe as $datas) {
 								</div>
 								<!-- Empresa y RUC - View Only -->
 								<div class="row row-sm-space mt-15">
-									<div class="col-sm-6 mt-15 mt-sm-0"><input type="text" class="form-control" name="usuario" id="usuario" placeholder="Empresa" readonly=""></div>
-									<div class="col-sm-6 mt-15 mt-sm-0"><input type="text" class="form-control" name="identification_number" id="rucx" placeholder="Ruc" readonly=""></div>
+									<div class="col-sm-6 mt-15 mt-sm-0 "><input type="text" class="form-control body-text" name="usuario" id="usuario" placeholder="Empresa" readonly=""></div>
+									<div class="col-sm-6 mt-15 mt-sm-0 "><input type="text" class="form-control body-text" name="identification_number" id="rucx" placeholder="Ruc" readonly=""></div>
 								</div>
 								<!-- Mensaje -->
 								<div class="mt-15">
-									<textarea class="form-control" name="message" placeholder="Message"></textarea>
+									<textarea class="form-control body-text" name="message" placeholder="Message"></textarea>
 								</div>
 								<!-- Cotizar ahora - Boton -->
-								<div class="mt-2 mt-lg-4 text-center text-md-left">
+								<div class="mt-2 mt-lg-4 text-center text-md-left body-text">
 									<button type="submit" class="btn"><i class="icon-right-arrow"></i><span>Cotizar Ahora</span><i class="icon-right-arrow"></i></button>
 								</div>
 							</form>
@@ -361,9 +361,9 @@ foreach ($list_employe as $datas) {
 				<?php foreach ($lista_servicios as $xx) {?>
 					<div class="col-md-6 col-lg-4 col-xl-4">
 						<div class="icn-text-alt">
-							<div class="icn-text-alt-icn"><i class="<?php echo esc($xx->icon);?>"></i></div>
+							<div class="icn-text-alt-icn "><i class="<?php echo esc($xx->icon);?>"></i></div>
 							<div>
-								<h4 class="icn-text-alt-title"><?= esc($xx->title);?></h4>
+								<h4 class="icn-text-alt-title headings"><?= esc($xx->title);?></h4>
 								<p class="body-text"><?= esc($xx->description);?></p>
 							</div>
 						</div>
@@ -382,7 +382,7 @@ foreach ($list_employe as $datas) {
 				<div class="col-md-6">
 					<div class="title-wrap text-center text-md-left">
 						<div class="h-sub"><?= esc($static_one->subtitle);?></div>
-						<h2 class="h1">Bienvenido <span class="theme-color"><?=	esc($static_one->title);?></span></h2>
+						<h2 class="h1 headings">Bienvenido <span class="theme-color"><?=	esc($static_one->title);?></span></h2>
 					</div>
 					<div class="pr-xl-1">
 						<p class="body-text"><?= $static_one->description;?></p>
@@ -432,7 +432,7 @@ foreach ($list_employe as $datas) {
 	<section class="section" id="departmentsSection" >
 		<div class="container">
 			<div class="title-wrap text-center">
-				<h2 class="h1">Nuestras Especialidades</h2>
+				<h2 class="h1 headings">Nuestras Especialidades</h2>
 				<div class="h-decor"></div>
 			</div>
 			<p class="text-center max-500 body-text">Innomedic International se especializa en diferentes servicios médicos.</p>
@@ -449,7 +449,7 @@ foreach ($list_employe as $datas) {
 								} ?>
 							<div class="department-tab <?= esc($state);?>">
 								<div class="department-tab-icon"><i class="<?= esc($consultorio->icon);?>"></i></div>
-								<div class="department-tab-text"><?= esc($consultorio->name);?></div>
+								<div class="department-tab-text body-text"><?= esc($consultorio->name);?></div>
 							</div>
 						<?php } ?>
 						
@@ -460,7 +460,7 @@ foreach ($list_employe as $datas) {
 						<?php foreach ($lista_consultorios as $consultorio) {?>
 
 							<div class="department-item">
-								<h3 data-title="<?= esc($consultorio->name);?>"><span><?= esc($consultorio->name);?></span></h3>
+								<h3 data-title="<?= esc($consultorio->name);?>"><span class="body-text"><?= esc($consultorio->name);?></span></h3>
 								<div class="department-tab">
 									<div class="department-tab-icon"><i class="<?= esc($consultorio->icon);?>"></i></div>
 									<div class="department-tab-text"><?= esc($consultorio->name);?></div>
@@ -487,7 +487,7 @@ foreach ($list_employe as $datas) {
 			<div class="row">
 				<div class="col-lg-4">
 					<div class="title-wrap">
-						<h2 class="h1" style="font-size: 2.5em;">Nuestras <span class="theme-color">Áreas</span></h2>
+						<h2 class="h1 headings" style="font-size: 2.5em;">Nuestras <span class="theme-color">Áreas</span></h2>
 						<div class="h-decor"></div>
 					</div>
 					<div class="mt-4"></div>
@@ -495,7 +495,7 @@ foreach ($list_employe as $datas) {
 					<ul class="marker-list-md">
 						<?php
 						foreach ($consultoriasname as $area) {?>
-							<li><?php echo $area->name;?></li>
+							<li class="body-text"><?php echo $area->name;?></li>
 						<?php } ?>
 					</ul>
 				</div>
@@ -534,20 +534,20 @@ foreach ($list_employe as $datas) {
 				<div class="col-md-6 text-col">
 					<div class="title-wrap">
 						<div class="h-sub theme-color">Ver la diferencia</div>
-						<h2 class="h1" data-title="¿Por qué elegirnos?"><span>¿Por qué elegirnos?</span></h2>
+						<h2 class="h1 headings" data-title="¿Por qué elegirnos?"><span>¿Por qué elegirnos?</span></h2>
 					</div>
 					<div class="mt-2 mt-lg-4"></div>
 					<ul class="numbered-list-xl">
 						<li data-num='01.'>
-							<h5>Centrado en el paciente</h5>
+							<h5 class="headings">Centrado en el paciente</h5>
 							Si bien nuestro equipo aporta experiencia y conocimientos importantes, sabemos que cada paciente es el experto en su propia vida.
 						</li>
 						<li data-num='02.'>
-							<h5>Exhaustivo</h5>
+							<h5 class="headings">Exhaustivo</h5>
 							Ofrecemos atención médica integral centrada en la persona completa, en todas las edades y etapas de la vida.
 						</li>
 						<li data-num='03.'>
-							<h5>Horarios</h5>
+							<h5 class="headings">Horarios</h5>
 							Tenemos horarios flexibles.
 						</li>
 					</ul>
@@ -565,7 +565,7 @@ foreach ($list_employe as $datas) {
 	<section class="section" id="servicesSection">
 		<div class="container">
 			<div class="title-wrap text-center">
-				<h2 class="h1">Nuestros <span class="theme-color">Servicios</span></h2>
+				<h2 class="h1 headings">Nuestros <span class="theme-color">Servicios</span></h2>
 				<div class="h-decor"></div>
 			</div>
 			<div class="row js-service-card-style2-carousel">
@@ -575,7 +575,7 @@ foreach ($list_employe as $datas) {
 							<div class="service-card-icon">
 								<i class="<?php echo esc($service->icon);?>"></i>
 							</div>
-							<h5 class="service-card-name"><?php echo esc($service->title);?></h5>
+							<h5 class="service-card-name headings"><?php echo esc($service->title);?></h5>
 							<p class="body-text"><?php echo $service->desc;?></p>
 						</div>
 					</div>
@@ -596,7 +596,7 @@ foreach ($list_employe as $datas) {
 				<div class="col-sm-12 col-xl-7  ">
 					<div class="max-670 mx-lg-auto px-15">
 						<div class="title-wrap">
-							<h2 class="h1">Nuestras  <span class="theme-color">ventajas</span></h2>
+							<h2 class="h1 headings">Nuestras  <span class="theme-color">ventajas</span></h2>
 						</div>
 						<div class="mt-lg-5"></div>
 						<div class="row">
@@ -604,7 +604,7 @@ foreach ($list_employe as $datas) {
 								<ul class="marker-list-md">
 									<?php
 										foreach ($lista_ventajas_a as $ventaja_item) {?>
-										<li><?php echo $ventaja_item->name;?></li>
+										<li class="body-text"><?php echo $ventaja_item->name;?></li>
 									<?php } ?>
 								</ul>
 							</div>
@@ -612,7 +612,7 @@ foreach ($list_employe as $datas) {
 								<ul class="marker-list-md">
 									<?php
 										foreach ($lista_ventajas_b as $ventaja_item) {?>
-										<li><?php echo $ventaja_item->name;?></li>
+										<li class="body-text"><?php echo $ventaja_item->name;?></li>
 									<?php } ?>
 								</ul>
 							</div>
@@ -638,7 +638,7 @@ foreach ($list_employe as $datas) {
 				<div class="col-xl-6 order-2 order-xl-1">
 					<div class="faq-wrap px-15 px-lg-8">
 						<div class="title-wrap">
-							<h2 class="h1">Preguntas más frecuentes</h2>
+							<h2 class="h1 headings">Preguntas más frecuentes</h2>
 						</div>
 						<div class="mt-2 mt-lg-4"></div>
 						<?php
@@ -653,7 +653,10 @@ foreach ($list_employe as $datas) {
 							} ?>
 
 							<div class="faq-item">
-								<a data-toggle="collapse" data-parent="#faqAccordion1" href="#<?php echo $pregunta_item->identificador;?>" aria-expanded="true"><span><?php echo $count; ?>.</span><span><?php  echo $pregunta_item->title; ?></span></a>
+								<a data-toggle="collapse" data-parent="#faqAccordion1" href="#<?php echo $pregunta_item->identificador;?>" aria-expanded="true">
+                  <span class="body-text"><?php echo $count; ?>.</span>
+                  <span class="body-text"><?php  echo $pregunta_item->title; ?></span>
+                </a>
 								<div id="<?php 	echo $pregunta_item->identificador;?>" class="collapse <?php echo $state;?> faq-item-content" role="tabpanel">
 									<div>
 										<?php 
@@ -688,7 +691,7 @@ foreach ($list_employe as $datas) {
 		<div class="container">
 			<div class="title-wrap text-center">
 				<div class="h-sub theme-color">Conocer al equipo</div>
-				<h1>Nuestros especialistas</h1>
+				<h1 class="headings">Nuestros especialistas</h1>
 				<div class="h-decor"></div>
 			</div>
 			<p class="text-center max-600 body-text">Ofrecemos atención médica altamente especializada, de algunos de los principales especialistas nacionales en sus campos de medicina.</p>
@@ -712,7 +715,7 @@ foreach ($list_employe as $datas) {
 								<div class="d-flex justify-content-center"><img src="<?php echo esc(base_url('public/assets/images/content/'.$categoria_item->image));?>" class="img-fluid img-responsive img-circle" alt="Img " style="width: 124px; height: 121px;"></div>
 							</div>
 							<div class="doctor-box-top">
-								<h5 class="doctor-box-name"><?php echo esc($categoria_item->name);?></h5>
+								<h5 class="doctor-box-name headings"><?php echo esc($categoria_item->name);?></h5>
 								<div class="doctor-box-position"><?php echo esc($categoria_item->description);?></div>
 							</div>
 							<div class="doctor-box-booking">
@@ -734,7 +737,7 @@ foreach ($list_employe as $datas) {
 	<section class="section bg-grey mt-0" id="testimonialsSection">
 		<div class="container">
 			<div class="title-wrap text-center text-md-left">
-				<h2 class="h1 title-with-clone" data-title="Our Clients"><span>Nuestros <span class="theme-color">Clientes</span></span></h2>
+				<h2 class="h1 title-with-clone headings" data-title="Our Clients"><span>Nuestros <span class="theme-color">Clientes</span></span></h2>
 			</div>
 			
 			<div class="row">
