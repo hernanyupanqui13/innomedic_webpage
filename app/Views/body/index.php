@@ -232,9 +232,9 @@ foreach ($list_employe as $datas) {
 		<div class="container  p-3">
 			<div class="block-title text-center">
 				<div class="h-sub theme-color">Elija nuestro precio</div>
-				<h2 data-title="¡Nuestros Planes!"><span>Nuestros planes  <br class="d-lg-none">  <span class="theme-color">y precios</span></span></h2>
+				<h2 data-title="¡Nuestros Planes!" class="headings"><span>Nuestros planes  <br class="d-lg-none">  <span class="theme-color">y precios</span></span></h2>
 				
-				<span>Es importante realizar chequeos preventivos para detectar a tiempo enfermedades y posibles factores de riesgo. <br>
+				<span class="body-text">Es importante realizar chequeos preventivos para detectar a tiempo enfermedades y posibles factores de riesgo. <br>
 				En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
 			</div>
 		
@@ -252,21 +252,21 @@ foreach ($list_employe as $datas) {
 								} ?>
 								<div class="col-xl-4 col-lg-4 animated fadeInLeft paquete_item" >
 								<div class="pricing-one__single" style="<?php echo $btn_danger; ?>">
-									<div class="circle">
+									<!--<div class="circle">
 										<div class="count">
 											<h4><?php echo $xx->number; ?></h4>
 										</div>
-									</div>
+									</div>-->
 									<div class="price">
 										<h2 class="h2"><?php echo $xx->price; ?></h2>
-										<p class="font-weight-bold theme-color"><?php echo $xx->title; ?></p>
+										<h4 class="font-weight-bold theme-color-1"><?php echo $xx->title;?></h4>
 									</div>
 									<hr>
-									<ul class="list-unstyled pricing-one__list">
+									<ul class="list-unstyled pricing-one__list body-text">
 										<?php echo $xx->text; ?>
 									</ul>
 									<!-- Boton de paquetes -->
-									<a href="<?php echo $xx->url; ?>" onclick="return mostrarPaquetes('<?php echo $xx->Id; ?>')" class="thm-btn pricing-one__btn"><span><?php echo $xx->btn; ?></span></a>
+									<a href="<?php echo $xx->url; ?>" onclick="mostrarPaquetes('<?php echo $xx->Id; ?>')" class="thm-btn pricing-one__btn"><span><?php echo $xx->btn; ?></span></a>
 								</div>
 								</div>
 							<?php }
@@ -295,15 +295,15 @@ foreach ($list_employe as $datas) {
 					<div class="col-sm-6 col-lg-6 order-1 order-sm-2 d-flex">
 						<div class="pt-2 pt-lg-6">
 							<h2 data-title="¡Informes aquí!"><span>¡INFORMES <br class="d-lg-none">  <span class="theme-color">AQUÍ!</span></span></h2>
-							<p>Nuestro equipo se contactará inmediatamente contigo. Cuidamos de ti, de tu equipo y empresa</p>
+							<p class="body-text">Nuestro equipo se contactará inmediatamente contigo. Cuidamos de ti, de tu equipo y empresa</p>
 							
 							<!-- Inicio del formulario -->
 							<form class="contact-form" id="contactForm" method="post" novalidate="novalidate">
 								<div class="successform">
-									<p>¡Su mensaje fue enviado exitosamente!</p>
+									<p class="body-text">¡Su mensaje fue enviado exitosamente!</p>
 								</div>
 								<div class="errorform">
-									<p>Algo salió mal, intente actualizar y enviar el formulario nuevamente.</p>
+									<p class="body-text">Algo salió mal, intente actualizar y enviar el formulario nuevamente.</p>
 								</div>
 								<!-- Nombre -->
 								<div>
@@ -322,10 +322,10 @@ foreach ($list_employe as $datas) {
 										<input type="text" class="form-control" name="nruc" id="nruc" placeholder="Ingrese Ruc y de click en 'Buscar'" maxlength="11" pattern="([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]|[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])" onkeydown="return soloNumeros(event)">
 									</div>
 									<div class="col-sm-4">
-				                    	<button type="submit" class="btn btn-outline-success btn-rounded btn-sm" name="btn-submit" id="btn-submit">
-											<span id="id_hidde_x"><i  class="fa fa-search"></i> Buscar</span>
-											<div id="agregar_clase_x" class=""></span>
-				                   		</button>
+                    <button type="submit" class="btn btn-outline-success btn-rounded btn-sm" name="btn-submit" id="btn-submit">
+                      <span id="id_hidde_x"><i  class="fa fa-search"></i> Buscar</span>
+                      <div id="agregar_clase_x" class=""></span>
+                    </button>
 									</div>
 								</div>
 								<!-- Empresa y RUC - View Only -->
@@ -364,7 +364,7 @@ foreach ($list_employe as $datas) {
 							<div class="icn-text-alt-icn"><i class="<?php echo esc($xx->icon);?>"></i></div>
 							<div>
 								<h4 class="icn-text-alt-title"><?= esc($xx->title);?></h4>
-								<p><?= esc($xx->description);?></p>
+								<p class="body-text"><?= esc($xx->description);?></p>
 							</div>
 						</div>
 					</div>
@@ -385,7 +385,7 @@ foreach ($list_employe as $datas) {
 						<h2 class="h1">Bienvenido <span class="theme-color"><?=	esc($static_one->title);?></span></h2>
 					</div>
 					<div class="pr-xl-1">
-						<p><?= $static_one->description;?></p>
+						<p class="body-text"><?= $static_one->description;?></p>
 					</div>
 					<div class="text-center text-md-left mt-2 mt-md-3">
 						<!--<a href="#" class="btn-link" data-toggle="modal" data-target="#modalBookingForm">Ver mas sobre nosotros<i class="icon-right-arrow"></i></a>-->
@@ -435,7 +435,7 @@ foreach ($list_employe as $datas) {
 				<h2 class="h1">Nuestras Especialidades</h2>
 				<div class="h-decor"></div>
 			</div>
-			<p class="text-center max-500">Innomedic International se especializa en diferentes servicios médicos.</p>
+			<p class="text-center max-500 body-text">Innomedic International se especializa en diferentes servicios médicos.</p>
 			<div class="row mt-lg-4">
 				<div class="col-lg-8 col-xl-9">
 					<div class="department-tabs js-department-tabs d-none d-sm-flex">
@@ -465,7 +465,7 @@ foreach ($list_employe as $datas) {
 									<div class="department-tab-icon"><i class="<?= esc($consultorio->icon);?>"></i></div>
 									<div class="department-tab-text"><?= esc($consultorio->name);?></div>
 								</div>
-								<p><?= $consultorio->description;?></p>
+								<p class="body-text"><?= $consultorio->description;?></p>
 							</div>
 
 						<?php } ?>
@@ -576,7 +576,7 @@ foreach ($list_employe as $datas) {
 								<i class="<?php echo esc($service->icon);?>"></i>
 							</div>
 							<h5 class="service-card-name"><?php echo esc($service->title);?></h5>
-							<p><?php echo $service->desc;?></p>
+							<p class="body-text"><?php echo $service->desc;?></p>
 						</div>
 					</div>
 				<?php } ?>	
@@ -658,7 +658,7 @@ foreach ($list_employe as $datas) {
 									<div>
 										<?php 
 										if ($pregunta_item->description =="" or $pregunta_item->description==NULL) {?>
-											<p>Estamos agregando la información.</p>
+											<p class="body-text">Estamos agregando la información.</p>
 										<?php 
 										} else { ?>
 											<?php echo $pregunta_item->description;?>
@@ -691,7 +691,7 @@ foreach ($list_employe as $datas) {
 				<h1>Nuestros especialistas</h1>
 				<div class="h-decor"></div>
 			</div>
-			<p class="text-center max-600">Ofrecemos atención médica altamente especializada, de algunos de los principales especialistas nacionales en sus campos de medicina.</p>
+			<p class="text-center max-600 body-text">Ofrecemos atención médica altamente especializada, de algunos de los principales especialistas nacionales en sus campos de medicina.</p>
 			<form class="filterCarousel">
 				<div class="selectWrapper input-group">
 					<select class="form-control">
@@ -750,7 +750,7 @@ foreach ($list_employe as $datas) {
 										<img src="<?php echo base_url('public/assets/images/content/'.$empresa->img);?>" alt="Logo Empresa">
 									</div>
 									<h5 class="service-card-name"><?= $empresa->name;?></h5>
-									<p><?php echo $empresa->subtitle;?></p>
+									<p class="body-text"><?php echo $empresa->subtitle;?></p>
 									<div class="mt-2 mt-md-4"></div>
 									<a href="<?php echo $empresa->url;?>" target="_blank" class="btn-link" >Mas Información<i class="icon-right-arrow"></i></a>
 								</div>
@@ -772,7 +772,7 @@ foreach ($list_employe as $datas) {
 
 							<div class="service-info">
 								<div class="service-info-num"><span><?php echo $count; ?></span>/ <?php echo count($lista_empresas_clientes); ?></div>
-								<p><?php echo $empresa->description;?></p>
+								<p class="body-text"><?php echo $empresa->description;?></p>
 							</div>
 
 						<?php } ?>

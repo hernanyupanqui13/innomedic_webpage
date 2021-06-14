@@ -44,7 +44,7 @@
     text-align: center;
     background: #ffffff;
     border: 1px solid #eaeaea;
-    padding: 45px 60px 50px;
+    padding: 30px;
     border-radius: 30px;
 }
 .fadeInLeft {
@@ -77,8 +77,12 @@
 
 .pricing-one__list li i {
     padding-right: 7px;
-    color: #fa496e;
+    color: #398CBF;
     font-size: 14px;
+}
+
+.pricing-one__list li{
+  text-align: left;
 }
 .thm-btn.pricing-one__btn {
     padding: 0 60px;
@@ -99,7 +103,7 @@ a:active, a:hover, a:focus, a:visited {
     line-height: 64px;
     position: relative;
     transition: all .4s ease;
-    background-color: #1c70b4;
+    background-color: #0BBFAD;
     overflow: hidden;
 }
 .pricing-one__single .price h2 {
