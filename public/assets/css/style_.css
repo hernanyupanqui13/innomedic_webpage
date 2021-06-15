@@ -269,7 +269,7 @@ body:not(.touch) .services-tab-wrap .nav-link:hover {
 .department-tab-text {
   font-size: 14px;
   line-height: 1em;
-  font-weight: 600;
+  font-weight: 500;
   font-family: "Poppins", serif;
   color: #444444;
   transition: 0.2s; }
