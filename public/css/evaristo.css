@@ -101,7 +101,7 @@ a:active, a:hover, a:focus, a:visited {
     font-weight: bold;
     color: #fff;
     padding: 0px 50px;
-    line-height: 64px;
+    line-height: 44px;
     position: relative;
     transition: all .4s ease;
     background-color: #0BBFAD;

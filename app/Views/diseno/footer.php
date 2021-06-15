@@ -286,7 +286,7 @@
 							<span>
 								<i class="icon-user"></i>
 							</span>
-							<input type="text" name="name" class="form-control" autocomplete="off" placeholder="Nombres y apellidos " value="<?= old('lima') ?>" />
+							<input type="text" name="name" class="form-control body-text" autocomplete="off" placeholder="Nombres y apellidos " value="<?= old('lima') ?>" />
 						</div>
 						
 						<!-- RUC -->
@@ -296,12 +296,12 @@
                   <span>
                     <i class="icon-email2"></i>
                   </span>
-									<input type="text" class="form-control" name="nruc" id="nrucx" placeholder="Ingrese Ruc y presione la tecla 'enter' " maxlength="11" pattern="([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]|[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])" onkeydown="return soloNumeros(event)">
+									<input type="text" class="form-control body-text" name="nruc" id="nrucx" placeholder="Ingrese Ruc y presione la tecla 'enter' " maxlength="11" pattern="([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]|[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])" onkeydown="return soloNumeros(event)">
 								</div>
 							</div>
 							<div class="col-sm-4 mt-1 mt-sm-0">
 								<button type="button"  class="btn btn-outline-success btn-rounded btn-sm" name="btn-submit" id="btn-submitx">
-                  <span id="id_hidde"><i  class="fa fa-search"></i> Buscar</span>
+                  <span id="id_hidde" class="busca_btn"><i  class="fa fa-search busca_btn"></i> Buscar</span>
                   <div id="agregar_clase" class=""></span>
                 </button>
 							</div>
@@ -312,7 +312,7 @@
 							<span>
 								<i class="icon-user"></i>
 							</span>
-							<input type="text" name="identification_number" id="rucxx" class="form-control body-text" autocomplete="off"  placeholder="Empresa " />
+							<input type="text" name="identification_number" id="rucxx" class="form-control body-text" autocomplete="off"  placeholder="Empresa" />
 						</div>
 						
 						<!-- RUC - Solo visualizacion -->
@@ -342,13 +342,13 @@
 									<span>
 										<i class="icon-smartphone"></i>
 									</span>
-									<input type="number" name="phone" class="form-control" autocomplete="off" placeholder="Ingrese su teléfono" />
+									<input type="number" name="phone" class="form-control body-text" autocomplete="off" placeholder="Ingrese su teléfono" />
 								</div>
 							</div>
 						</div>
 
 						<!-- Mensaje -->
-						<textarea name="message" class="form-control" placeholder="Mensaje" rows="6"></textarea>
+						<textarea name="message" class="form-control body-text" placeholder="Mensaje" rows="6"></textarea>
 
 						<!-- Boton de Enviar -->
 						<div class="text-center mt-2">
@@ -401,7 +401,7 @@
 							</div>
 							<div class="col-sm-4 mt-1 mt-sm-0">
 								<button id="botoncito" class="botoncito btn btn-outline-success">
-									<span id="id_hiddexx"><i  class="fa fa-search"></i> Buscar</span>
+									<span id="id_hiddexx" class="busca_btn"><i  class="fa fa-search busca_btn"></i> Buscar</span>
 									<div id="agregar_clase_xx" class=""></span>
 								</button>
 							</div>
@@ -564,7 +564,7 @@
 		margin-top: 10px;
 		color:white !important;
 		text-decoration:none;
-		font-size: 12px;		
+		font-size: 16px;		
 	}
 
 </style>

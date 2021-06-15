@@ -231,11 +231,11 @@ foreach ($list_employe as $datas) {
 	<section id="paquetes_preventivos_view" style="background-image: url('<?= esc(base_url('public/assets/images/content/slider/testimonials-1-shape-4.png'))?>'); background-repeat: no-repeat; background-size: cover;">
 		<div class="container  p-3">
 			<div class="block-title text-center">
-				<div class="h-sub theme-color">Elija nuestro precio</div>
+				<div class="h-sub theme-color">Pruebas de descarte COVID-19</div>
 				<h2 data-title="¡Nuestros Planes!" class="headings"><span>Nuestros planes  <br class="d-lg-none">  <span class="theme-color">y precios</span></span></h2>
 				
 				<span class="body-text">Es importante realizar chequeos preventivos para detectar a tiempo enfermedades y posibles factores de riesgo. <br>
-				En Innomedic, cuidamos la integridad de tu salud. 👨‍👩‍👦</span>
+				En Innomedic cuidamos de tu bienestar y salud 👨‍👩‍👦</span>
 			</div>
 		
 			<!-- Contenido dinamico -->
@@ -323,7 +323,7 @@ foreach ($list_employe as $datas) {
 									</div>
 									<div class="col-sm-4">
                     <button type="submit" class="btn btn-outline-success btn-rounded btn-sm body-text" name="btn-submit" id="btn-submit">
-                      <span id="id_hidde_x"><i  class="fa fa-search"></i> Buscar</span>
+                      <span id="id_hidde_x"><i  class="fa fa-search busca_btn"></i> Buscar</span>
                       <div id="agregar_clase_x" class=""></span>
                     </button>
 									</div>
@@ -339,7 +339,7 @@ foreach ($list_employe as $datas) {
 								</div>
 								<!-- Cotizar ahora - Boton -->
 								<div class="mt-2 mt-lg-4 text-center text-md-left body-text">
-									<button type="submit" class="btn"><i class="icon-right-arrow"></i><span>Cotizar Ahora</span><i class="icon-right-arrow"></i></button>
+									<button type="submit" class="btn"><i class="icon-right-arrow"></i><span class="cotizar_btn">Cotizar Ahora</span><i class="icon-right-arrow"></i></button>
 								</div>
 							</form>
 						</div>
