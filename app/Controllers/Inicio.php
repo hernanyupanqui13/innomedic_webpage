@@ -387,6 +387,21 @@ class Inicio extends BaseController {
 		$model->countLike($array);
 	}
 
+
+	public function nosotros() {
+		$model = new InicioModel();
+		
+		$data = [
+			'title' =>array("Innomedic | Clínica Innomedic International | Salud ocupacional","") ,
+			'list_employe' => $model->lisatemploye(),
+			'lista_employes_data' => $model->lista_employes_data()
+		];
+
+		echo view("diseno/head",$data);
+		echo view("body/nosotros",$data);
+		echo view("diseno/footer",$data);	
+	}
+
 }
 
 ?>

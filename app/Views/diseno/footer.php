@@ -1,17 +1,3 @@
-<!-- Start of footer -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
-<div>
-	<br><br>
-	<div class="container-fluid px-0">	
-		<div class="title-wrap text-center">
-			<h2 class="h1 headings" ><span class="theme-color">Ubícanos</span></h2>
-			<div class="h-decor"></div>
-		</div>
-		<div class="banner-center bg-cover">
-			<iframe class="iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.356645417313!2d-77.00072238457506!3d-12.087719045956215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c7381a11b45d%3A0x7757a26d8d254df4!2sINNOMEDIC%20(%20SEDES%20JAVIER%20PRADO)!5e0!3m2!1ses!2spe!4v1591974754216!5m2!1ses!2spe"   frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-		</div>
-	</div>
-</div>
 
 
 
