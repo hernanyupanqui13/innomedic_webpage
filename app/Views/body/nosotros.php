@@ -6,14 +6,14 @@
 </style>
 <div class="row m-1">
   <div class="col-md-9 col-12">
-    <h2 class="headings">Mision</h2>
+    <h2 class="headings">Misión</h2>
     <p>
       Brindar la mejor experiencia desde el primer contacto con nuestros pacientes 
       y colaboradores, por nuestro servicio de calidad y fiabilidad en nuestras 
       evaluaciones médicas ocupacionales, respaldados por nuestro excelente staff de médicos.
     </p>
 
-    <h2 class="headings">Vision</h2>
+    <h2 class="headings">Visión</h2>
     <p>
       Ser reconocidos como un centro de evaluaciones 
       médicas de prestigio gracias a la calidez de nuestro trato, 
