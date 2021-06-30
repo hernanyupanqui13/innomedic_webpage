@@ -168,19 +168,19 @@ foreach ($list_employe as $xx) {
 							<div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
 								<ul class="navbar-nav">
 									<li class="nav-item">
-										<a class="nav-link link-inside" href="#aboutSection">Nosotros</a>
+										<a class="nav-link link-inside" href="<?= base_url() ?>#aboutSection">Nosotros</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link link-inside" href="#departmentsSection">Especialidades</a>
+										<a class="nav-link link-inside" href="<?= base_url() ?>#departmentsSection">Especialidades</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link link-inside" href="#servicesSection">Servicios</a>
+										<a class="nav-link link-inside" href="<?= base_url() ?>#servicesSection">Servicios</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link link-inside" href="#faqSection">Preguntas</a>
+										<a class="nav-link link-inside" href="<?= base_url() ?>#faqSection">Preguntas</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link link-inside" href="#specialistsSection">Especialistas</a>
+										<a class="nav-link link-inside" href="<?= base_url() ?>#specialistsSection">Especialistas</a>
 									</li>
 									<!--<li class="nav-item">
 										<a class="nav-link link-inside" href="#eventsSection">Eventos</a>

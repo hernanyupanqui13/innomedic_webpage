@@ -1442,11 +1442,11 @@
 	}
 
 	$(document).ready(function() {
-		$("#modalBookingForm").modal('show');
+    console.log(window.location);
+    if(window.location.pathname !== "/Inicio/nosotros") {
+      $("#modalBookingForm").modal('show');
+    }
 
-
-
-		document.getElementById("like_button").add
 	});
 
 
