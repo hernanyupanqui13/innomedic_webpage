@@ -56,7 +56,6 @@
 	<link href="<?php echo base_url().'/public/';?>assets/color/color.css" rel="stylesheet">
 
 	<!--Favicon-->
-	<link rel="icon" href="<?php echo base_url().'/public/';?>assets/images/favicon.ico?v=<?php echo rand();?>" type="image/x-icon">
 	<script src="https://kit.fontawesome.com/dc5ae8b9ac.js" crossorigin="anonymous"></script>
 	<!-- Google Fonts -->
 
