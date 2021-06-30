@@ -6,7 +6,6 @@
 	"license": "MIT",
 	"require": {
 		"php": ">=7.2",
-		"codeigniter4/framework": "^4",
 		"phpmailer/phpmailer": "^6.1",
 		"giansalex/peru-consult": "^4.2"
 	},

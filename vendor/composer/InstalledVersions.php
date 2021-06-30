@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'bb99b6bfc9f525e6144e2c88191daa0c516d5a94',
+    'reference' => '6f1efcff4a1e5dbe7be8234541c8849bfac00f24',
     'name' => 'codeigniter4/appstarter',
   ),
   'versions' => 
@@ -42,16 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'bb99b6bfc9f525e6144e2c88191daa0c516d5a94',
-    ),
-    'codeigniter4/framework' => 
-    array (
-      'pretty_version' => 'v4.0.4',
-      'version' => '4.0.4.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '1edcf84f77ff794640fddbfc59a10a024cd15b50',
+      'reference' => '6f1efcff4a1e5dbe7be8234541c8849bfac00f24',
     ),
     'doctrine/instantiator' => 
     array (
@@ -70,33 +61,6 @@ private static $installed = array (
       array (
       ),
       'reference' => '7e86420925eb2aeb6091897327bb980281331726',
-    ),
-    'kint-php/kint' => 
-    array (
-      'pretty_version' => '3.3',
-      'version' => '3.3.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '335ac1bcaf04d87df70d8aa51e8887ba2c6d203b',
-    ),
-    'laminas/laminas-escaper' => 
-    array (
-      'pretty_version' => '2.6.1',
-      'version' => '2.6.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '25f2a053eadfa92ddacb609dcbbc39362610da70',
-    ),
-    'laminas/laminas-zendframework-bridge' => 
-    array (
-      'pretty_version' => '1.0.4',
-      'version' => '1.0.4.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'fcd87520e4943d968557803919523772475e8ea3',
     ),
     'mikey179/vfsstream' => 
     array (
@@ -237,15 +201,6 @@ private static $installed = array (
       ),
       'reference' => '34c18baa6a44f1d1fbf0338907139e9dce95b997',
     ),
-    'psr/log' => 
-    array (
-      'pretty_version' => '1.1.3',
-      'version' => '1.1.3.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '0f73288fd15629204f9d42b7055f72dacbe811fc',
-    ),
     'sebastian/code-unit-reverse-lookup' => 
     array (
       'pretty_version' => '1.0.1',
@@ -380,13 +335,6 @@ private static $installed = array (
       array (
       ),
       'reference' => 'bafc69caeb4d49c39fd0779086c03a3738cbb389',
-    ),
-    'zendframework/zend-escaper' => 
-    array (
-      'replaced' => 
-      array (
-        0 => '2.6.1',
-      ),
     ),
   ),
 );
