@@ -11,7 +11,7 @@
     <meta name="description" content="En la clínica innomedic international nos dedicamos a ofrecer servicios en la gestión de salud ocupacional.">
     <link rel="canonical" href="https://www.innomedic.pe/">
     <link rel="alternate" hreflang="es" href="https://www.innomedic.pe/">
-		<link rel="shortcut icon" href="<?php echo base_url().'/public/';?>assets/images/favicon.ico?v=<?php echo rand();?>">
+		<link rel="shortcut icon" href="<?php echo base_url().'/public/';?>assets/images/favicon2.ico">
     <meta name="keywords" content="innomedic international, innomedic, clínica innomedic, salud ocupacional lima, medicina ocupacional, examenes medicos ocupacionales lima, salud ocupacional digesa, ocupacional la victoria">
     <meta name="robots" content="index, follow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
