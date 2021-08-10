@@ -134,7 +134,7 @@ foreach ($list_employe as $datas) {
 
 				<?php } ?>-->
 
-        <div class="slide"><a href="#paquetes_preventivos_view">
+        <!--<div class="slide"><a href="#paquetes_preventivos_view">
 					<div class="img--holder" data-bg="<?= esc(base_url('public/assets/images/content/slider/slider-anticuerpos.png'));?>"></div>
 					<div class="slide-content center">
 						<div class="vert-wrap container">
@@ -144,18 +144,18 @@ foreach ($list_employe as $datas) {
 										<b> </b>
                   </div>
 									<div style="margin-left: 270px;" class="slide-txt2 text-right" data-animation="fadeInUp" data-animation-delay="1.5s"></div>
-									<!--<div class="slide-btn text-right" id="btn-anticuerpos">
+									<div class="slide-btn text-right" id="btn-anticuerpos">
                     <a href="javascript:void(0)" class="btn link-inside" data-animation="fadeInUp" data-animation-delay="2s">
                       <i class="icon-right-arrow"></i>
                       <span>Conoce más</span>
                       <i class="icon-right-arrow"></i>
                     </a>
-                  </div>-->
+									</div>
 								</div>
 							</div>
 						</div>
 					</div></a>
-				</div>
+				</div>-->
         <div class="slide"><a href="#paquetes_preventivos_view">
 					<div class="img--holder" data-bg="<?= esc(base_url('public/assets/images/content/slider/slider-9.png'));?>"></div>
 					<div class="slide-content center">
