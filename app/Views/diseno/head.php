@@ -190,7 +190,7 @@ foreach ($list_employe as $xx) {
 									<li class="nav-item dropdown">
 										<a href="javascript:void(0);" class="nav-link dropdown-toggle" data-toggle="dropdown">En línea</a>
 										<ul class="dropdown-menu">
-											<li><a target="_blank" class="dropdown-item" href="http://200.4.213.137:8021/">Resultados</a></li>
+											<li><a target="_blank" class="dropdown-item" href="http://192.141.41.206:80">Resultados</a></li>
 										</ul>
 									</li>
 								</ul>
