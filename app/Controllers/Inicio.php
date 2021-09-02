@@ -402,6 +402,14 @@ class Inicio extends BaseController {
 		echo view("diseno/footer",$data);	
 	}
 
+
+	public function resultadosEnLinea() {
+		helper('url'); 
+		redirect("./javascript:void(window.location = 'www.google.com')");
+
+		
+	}
+
 }
 
 ?>
