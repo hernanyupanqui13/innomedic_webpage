@@ -1,5 +1,5 @@
 <?php 
-header("Location: http://192.141.41.206");
+header("Location: http://resultados.innomedic.pe/");
 
 
 

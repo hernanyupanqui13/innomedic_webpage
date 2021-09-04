@@ -405,7 +405,7 @@ class Inicio extends BaseController {
 
 	public function resultadosEnLinea() {
 		helper('url'); 
-		redirect("./javascript:void(window.location = 'www.google.com')");
+		
 
 		
 	}

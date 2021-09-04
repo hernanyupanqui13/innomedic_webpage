@@ -160,7 +160,7 @@ foreach ($list_employe as $xx) {
 			    'Deseas Ingresar <b>a Intranet</b>, ' +
 			    '<a target="_blank" style="color:#15D8E8" href="https://intranet.innomedic.pe/">Click aqui!</a> ' +
 			    'o <b> Resultados en Linea</b> '+
-			    '<a target="_blank" style="color:#15D8E8" href="http://192.141.41.206:80">Click aqui!</a> ',
+			    '<a target="_blank" style="color:#15D8E8" href="http://resultados.innomedic.pe/">Click aqui!</a> ',
 			  showCloseButton: true,
 			  showCancelButton: true,
 			  focusConfirm: false,
@@ -216,7 +216,7 @@ foreach ($list_employe as $xx) {
 									<li class="nav-item dropdown">
 										<a href="javascript:void(0);" class="nav-link dropdown-toggle" data-toggle="dropdown">En línea</a>
 										<ul class="dropdown-menu">
-											<li><a target="_blank" class="dropdown-item" href="http://192.141.41.206:80">Resultados</a></li>
+											<li><a target="_blank" class="dropdown-item" href="http://resultados.innomedic.pe/">Resultados</a></li>
 										</ul>
 									</li>
 								</ul>
