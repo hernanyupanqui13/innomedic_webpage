@@ -1,5 +1,5 @@
 <?php 
-header("Location: http://resultados.innomedic.pe/");
+header("Location: https://resultados.innomedic.pe/");
 
 
 
