@@ -1,0 +1,6 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^resultados\.innomedic\.pe$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.resultados\.innomedic\.pe$
+RewriteRule ^/?$ "http\:\/\/192\.141\.41\.206" [R=301,L]
+
